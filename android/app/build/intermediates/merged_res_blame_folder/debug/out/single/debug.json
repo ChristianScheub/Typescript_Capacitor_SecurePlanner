@@ -1,0 +1,206 @@
+[
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-port-xhdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-port-xhdpi/splash.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-pngs-33:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-land-xhdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-land-xhdpi/splash.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/layout_activity_main.xml.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/layout/activity_main.xml"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-land-xxxhdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-land-xxxhdpi/splash.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable/splash.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-port-mdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-port-mdpi/splash.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-land-xxhdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-land-xxhdpi/splash.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-land-mdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-land-mdpi/splash.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-port-hdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-port-hdpi/splash.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/xml_config.xml.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/xml/config.xml"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-land-hdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-land-hdpi/splash.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-port-xxxhdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-port-xxxhdpi/splash.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/drawable_ic_launcher_background.xml.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/xml_file_paths.xml.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/xml/file_paths.xml"
+    },
+    {
+        "merged": "de.scheub.securePlaner.app-merged_res-37:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "de.scheub.securePlaner.app-main-39:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-merged_res-37:/drawable-port-xxhdpi_splash.png.flat",
+        "source": "/Users/christianscheub/.gradle/daemon/8.0.2/de.scheub.securePlaner.app-main-39:/drawable-port-xxhdpi/splash.png"
+    }
+]

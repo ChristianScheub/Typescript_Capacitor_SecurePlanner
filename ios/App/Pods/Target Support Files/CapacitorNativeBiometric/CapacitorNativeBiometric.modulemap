@@ -1,0 +1,6 @@
+framework module CapacitorNativeBiometric {
+  umbrella header "CapacitorNativeBiometric-umbrella.h"
+
+  export *
+  module * { export * }
+}

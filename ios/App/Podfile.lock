@@ -1,0 +1,52 @@
+PODS:
+  - Capacitor (5.7.0):
+    - CapacitorCordova
+  - CapacitorApp (5.0.7):
+    - Capacitor
+  - CapacitorCordova (5.7.0)
+  - CapacitorDevice (5.0.7):
+    - Capacitor
+  - CapacitorFilesystem (5.2.1):
+    - Capacitor
+  - CapacitorNativeBiometric (0.0.1):
+    - Capacitor
+  - CapacitorShare (5.0.7):
+    - Capacitor
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorDevice (from `../../node_modules/@capacitor/device`)"
+  - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
+  - CapacitorNativeBiometric (from `../../node_modules/capacitor-native-biometric`)
+  - "CapacitorShare (from `../../node_modules/@capacitor/share`)"
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../node_modules/@capacitor/app"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorDevice:
+    :path: "../../node_modules/@capacitor/device"
+  CapacitorFilesystem:
+    :path: "../../node_modules/@capacitor/filesystem"
+  CapacitorNativeBiometric:
+    :path: "../../node_modules/capacitor-native-biometric"
+  CapacitorShare:
+    :path: "../../node_modules/@capacitor/share"
+
+SPEC CHECKSUMS:
+  Capacitor: fc155ee2ee45a2093d716f13cf5aa5a865e2d85a
+  CapacitorApp: 17fecd0e6cb23feafac7eb0939417389038b0979
+  CapacitorCordova: e825fce1a2e14e4b5730641c7e098dccf74397b7
+  CapacitorDevice: fc91bdb484dc0e70755e9b621cd557afe642613a
+  CapacitorFilesystem: 9f3e3c7fea2fff12f46dd5b07a2914f2103e4cfc
+  CapacitorNativeBiometric: b47637a8cd349bdac014424bb4ddcae9ee5d4919
+  CapacitorShare: c6a1ebbf0114ff9e863b966cd6052678fa25d480
+
+PODFILE CHECKSUM: 7bbc718d2568e46b3742d17f3181a988b417cb23
+
+COCOAPODS: 1.14.3
