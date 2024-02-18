@@ -1,5 +1,6 @@
 
-# LocalNotes
+# Secure Planner
+(The readme is still being revised, the app is based on the Local notes app ;)
 
 Last Edit: 02.2024 <br>
 Language: Typescript React Capacitor<br>
@@ -7,9 +8,6 @@ Language: Typescript React Capacitor<br>
 With this app, it is possible to securely store notes locally with AES & Triple DES encryption, edit/delete them and search them.
 It is also possible to decrypt the notes using native biometrics (e.g. fingerprint sensor). (More on this under Security)
 
-Google Play Store: https://play.google.com/store/apps/details?id=de.scheub.localNotes
-<br />
-Apple App Store: https://apps.apple.com/de/app/local-notes/id6474680128
 <br><br><br>
 
 Deutsche Kurzbeschreibung:
