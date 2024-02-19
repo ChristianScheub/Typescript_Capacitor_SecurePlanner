@@ -3,7 +3,7 @@ import { act } from "react-dom/test-utils";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ViewNoteContainer from "./container-viewNote";
 import { BrowserRouter as Router } from "react-router-dom";
-import { encryptAndStore } from "../encryptionEngine";
+import { encryptAndStore } from "../../services/encryptionEngine/encryptionEngine";
 
 const mockEncryptionKey = "some-encryption-key";
 const mockSearchQuery = "";

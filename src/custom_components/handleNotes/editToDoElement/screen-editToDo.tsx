@@ -7,7 +7,7 @@ import { Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn";
 import { FaRegSave } from "react-icons/fa";
-import { ToDoItem } from "../types/ToDoItem.types";
+import { ToDoItem } from "../../types/ToDoItem.types";
 
 
 interface ScreenEditTodoProps {
@@ -32,7 +32,14 @@ const ScreenEditTodo: React.FC<ScreenEditTodoProps> = ({
   const { t } = useTranslation();
 
   return (
-    <div className="edit-todo">
+    <div className="edit-todo"
+      style={{
+        margin: "2vw",
+        color: "white",
+        minHeight: "70vh",
+        marginTop: "env(safe-area-inset-top)",
+      }}
+    >
       <Card
         style={{
           backgroundColor: "#49454F",

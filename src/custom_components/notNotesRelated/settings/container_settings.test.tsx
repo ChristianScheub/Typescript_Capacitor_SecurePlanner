@@ -8,9 +8,9 @@ import {
 } from "@testing-library/react";
 import SettingsContainer from "./container_settings";
 import { MemoryRouter } from "react-router-dom";
-import { encryptAndStore } from "../../handleNotes/encryptionEngine";
+import { encryptAndStore } from "../../services/encryptionEngine/encryptionEngine";
 import { NativeBiometric } from "capacitor-native-biometric";
-import * as fingerprintLogic from "../fingerprintLogic";
+import * as fingerprintLogic from "../../services/fingerprintLogic/fingerprintLogic";
 import { act } from "react-dom/test-utils";
 
 jest.mock("capacitor-native-biometric", () => ({

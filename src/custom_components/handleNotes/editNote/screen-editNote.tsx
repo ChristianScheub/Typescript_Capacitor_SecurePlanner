@@ -4,7 +4,7 @@ import { FaRegSave, FaRegClock, FaTrash, FaCheck } from "react-icons/fa";
 import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn";
 import { useTranslation } from "react-i18next";
 import { Card } from "react-bootstrap";
-import { ToDoList } from "../types/ToDoList.types";
+import { ToDoList } from "../../types/ToDoList.types";
 import { MdOutlineEdit } from "react-icons/md";
 import { IoAddSharp } from "react-icons/io5";
 import ProgressBar from "./progressBars/screen-progressBar";
@@ -16,6 +16,7 @@ interface EditNoteViewProps {
   progressOverall: number;
   progressToday: number;
   progressHighPriority: number;
+  progressNext7Days: number;
   getPriorityText: (priority: Priority) => string;
   handleSave: () => void;
   handleEdit: (toDoId: string) => void;
@@ -35,6 +36,7 @@ const EditNoteView: React.FC<EditNoteViewProps> = ({
   progressOverall,
   progressToday,
   progressHighPriority,
+  progressNext7Days,
   getPriorityText,
   handleSave,
   handleEdit,
@@ -119,6 +121,7 @@ const EditNoteView: React.FC<EditNoteViewProps> = ({
 
         <ProgressBar title={t("editNote_progressBar_Total")} progress={progressOverall} />
         <ProgressBar title={t("editNote_progressBar_Today")} progress={progressToday} />
+        <ProgressBar title={t("editNote_progressBar_7Days")} progress={progressNext7Days} />
         <ProgressBar title={t("editNote_progressBar_Priority")} progress={progressHighPriority} />
 
         {toDoList.toDoItem.map((item, index) => (
@@ -133,30 +136,9 @@ const EditNoteView: React.FC<EditNoteViewProps> = ({
             }}
           >
             <Card.Body>
-              <table style={{ width: "80vw" }}>
+              <table style={{ width: "90vw" }}>
                 <tbody>
                   <tr>
-                    <td
-                      style={{ textAlign: "left", width: "10vw" }}
-                      onClick={(event) => handleDoneToDo(event, index)}
-                    >
-                      <button
-                        style={{
-                          width: "5vw",
-                          height: "5vh",
-                          backgroundColor: "#49454F",
-                          border: "none",
-                        }}
-                      >
-                        <FaCheck
-                          style={{
-                            width: "4vw",
-                            height: "4vw",
-                            color: "white",
-                          }}
-                        />
-                      </button>
-                    </td>
 
                     <td onClick={(event) => handleDoneToDo(event, index)}>
                       <div

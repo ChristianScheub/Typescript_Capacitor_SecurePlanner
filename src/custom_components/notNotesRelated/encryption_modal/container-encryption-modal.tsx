@@ -5,8 +5,8 @@ import {
   getPasswordFromFingerprint,
   storePasswordFromFingerprint,
   availableBiometric,
-} from "../fingerprintLogic";
-import { getPBKDF2_Password } from "../../handleNotes/encryptionEngine";
+} from "../../services/fingerprintLogic/fingerprintLogic";
+import { getPBKDF2_Password } from "../../services/encryptionEngine/encryptionEngine";
 import { useTranslation } from 'react-i18next';
 
 interface EncryptionKeyModalContainerProps {

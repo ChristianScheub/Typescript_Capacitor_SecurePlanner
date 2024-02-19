@@ -9,8 +9,8 @@ import {
 import "@testing-library/jest-dom/extend-expect";
 import EncryptionKeyModalContainer from "./container-encryption-modal";
 import { BrowserRouter as Router } from "react-router-dom";
-import * as fingerprintLogic from "../fingerprintLogic";
-import { getPBKDF2_Password } from '../../handleNotes/encryptionEngine';
+import * as fingerprintLogic from "../../services/fingerprintLogic/fingerprintLogic";
+import { getPBKDF2_Password } from '../../services/encryptionEngine/encryptionEngine';
 
 
 jest.mock("capacitor-native-biometric", () => ({
@@ -44,7 +44,7 @@ jest.mock("../fingerprintLogic", () => ({
   storePasswordFromFingerprint: jest.fn(),
 }));
 
-jest.mock('../../handleNotes/encryptionEngine', () => ({
+jest.mock('../../services/encryptionEngine/encryptionEngine', () => ({
   getPBKDF2_Password: jest.fn().mockImplementation(password => password),
 }));
 

@@ -6,7 +6,7 @@ import {
   encryptAndStore,
   decryptFromStorage,
   getPBKDF2_Password
-} from "./custom_components/handleNotes/encryptionEngine";
+} from "./custom_components/services/encryptionEngine/encryptionEngine";
 import { act } from "react-dom/test-utils";
 
 

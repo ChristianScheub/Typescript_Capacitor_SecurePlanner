@@ -3,9 +3,9 @@ import ScreenEditTodo from "./screen-editToDo";
 import { Priority } from "./priorityIndicator/priority.enum";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ToDoItem } from "../types/ToDoItem.types";
-import { ToDoList } from "../types/ToDoList.types";
-import { encryptAndStore, decryptFromStorage } from "../encryptionEngine";
+import { ToDoItem } from "../../types/ToDoItem.types";
+import { ToDoList } from "../../types/ToDoList.types";
+import  ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 
 interface EditToDoContainerProps {
   encryptionKey: string;
@@ -35,7 +35,7 @@ const EditTodoContainer: React.FC<EditToDoContainerProps> = ({
         toDoTitle: "",
         toDoText: "",
         toDoEndDate: new Date(),
-        toDoDone: false
+        toDoDone: false,
       },
     ],
   });
@@ -43,12 +43,10 @@ const EditTodoContainer: React.FC<EditToDoContainerProps> = ({
     const loadAndDecryptNote = async () => {
       if (noteId) {
         try {
-          const decryptedContent = await decryptFromStorage(
-            encryptionKey,
-            noteId
-          );
-          const noteData: ToDoList = JSON.parse(decryptedContent);
-          setToDoList(noteData);
+          const noteData = await ToDoListService.loadToDoList(noteId, encryptionKey);
+          if(noteData){
+            setToDoList(noteData);
+          }
         } catch (error) {
           console.error(
             "Fehler beim Laden und Entschlüsseln der Notiz:",
@@ -67,7 +65,7 @@ const EditTodoContainer: React.FC<EditToDoContainerProps> = ({
     toDoTitle: "",
     toDoText: "",
     toDoEndDate: new Date(),
-    toDoDone: false
+    toDoDone: false,
   });
   useEffect(() => {
     const priorityKeyMap: Record<Priority, string> = {
@@ -82,21 +80,40 @@ const EditTodoContainer: React.FC<EditToDoContainerProps> = ({
 
   useEffect(() => {
     const loadAndDecryptNote = async () => {
+      if (noteId) {
+        try {
+          let updatedToDoList = { ...toDoList };
+          if (toDoItemIdInt >= updatedToDoList.toDoItem.length) {
+            updatedToDoList.toDoItem.push(toDoListItem);
+          } else {
+            updatedToDoList.toDoItem[toDoItemIdInt] = toDoListItem;
+          }
+          await ToDoListService.saveToDoList(updatedToDoList, encryptionKey, noteId || Date.now().toString());
+        } catch (error) {
+          console.error(
+            "Fehler beim Sichern des ToDos:",
+            error
+          );
+        }
+      }
+    };
+    loadAndDecryptNote();
+  }, [toDoListItem]);
+
+  useEffect(() => {
+    const loadAndDecryptNote = async () => {
       if (noteId && toDoItemIdInt !== null && !isNaN(toDoItemIdInt)) {
         try {
-          const decryptedContent = await decryptFromStorage(
-            encryptionKey,
-            noteId
-          );
-          const listData: ToDoList = JSON.parse(decryptedContent);
-
-          // Prüfen, ob der Index innerhalb der Grenzen des toDoItem-Arrays liegt
-          if (listData.toDoItem && toDoItemIdInt < listData.toDoItem.length) {
-            setToDoListItem(listData.toDoItem[toDoItemIdInt]);
-          } else {
-            console.error(
-              "ToDoItem-Index liegt außerhalb der Grenzen des Arrays"
-            );
+          const noteData = await ToDoListService.loadToDoList(noteId, encryptionKey);
+          if(noteData){
+            const listData: ToDoList = noteData;
+            if (listData.toDoItem && toDoItemIdInt < listData.toDoItem.length) {
+              setToDoListItem(listData.toDoItem[toDoItemIdInt]);
+            } else {
+              console.error(
+                "ToDoItem-Index liegt außerhalb der Grenzen des Arrays"
+              );
+            }
           }
         } catch (error) {
           console.error(
@@ -111,21 +128,6 @@ const EditTodoContainer: React.FC<EditToDoContainerProps> = ({
   }, [noteId, toDoItemIdInt, encryptionKey]);
 
   const handleSave = () => {
-    let updatedToDoList = { ...toDoList };
-    console.log(toDoItemIdInt);
-    if (toDoItemIdInt >= updatedToDoList.toDoItem.length) {
-      updatedToDoList.toDoItem.push(toDoListItem);
-    } else {
-      updatedToDoList.toDoItem[toDoItemIdInt] = toDoListItem;
-    }
-    console.log(updatedToDoList);
-    const noteDataString = JSON.stringify(updatedToDoList);
-    encryptAndStore(
-      noteDataString,
-      encryptionKey,
-      noteId || Date.now().toString()
-    );
-
     navigate(-1);
   };
 

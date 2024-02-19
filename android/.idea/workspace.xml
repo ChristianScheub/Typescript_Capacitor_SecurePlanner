@@ -5,60 +5,144 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42535abe-a020-475f-9086-dac8ebec9498" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/scheub/localNotes/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_e52d702f073ee48963b650051a10f8c638b086fd2ba956d29ec9848366e2f452_bucket_0/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_e52d702f073ee48963b650051a10f8c638b086fd2ba956d29ec9848366e2f452_bucket_1/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_e52d702f073ee48963b650051a10f8c638b086fd2ba956d29ec9848366e2f452_bucket_2/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_e52d702f073ee48963b650051a10f8c638b086fd2ba956d29ec9848366e2f452_bucket_3/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_082af976115ba9b99d0d2794593153b083d881eb86142f40c5f35a05f402569e_bucket_0/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_082af976115ba9b99d0d2794593153b083d881eb86142f40c5f35a05f402569e_bucket_1/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_082af976115ba9b99d0d2794593153b083d881eb86142f40c5f35a05f402569e_bucket_2/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_082af976115ba9b99d0d2794593153b083d881eb86142f40c5f35a05f402569e_bucket_3/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_0ab35d8c42acfd4620de7cad517fb1eaf31915782d09061c3a99d1ccd805890d_bucket_0/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_0ab35d8c42acfd4620de7cad517fb1eaf31915782d09061c3a99d1ccd805890d_bucket_1/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_0ab35d8c42acfd4620de7cad517fb1eaf31915782d09061c3a99d1ccd805890d_bucket_2/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_0ab35d8c42acfd4620de7cad517fb1eaf31915782d09061c3a99d1ccd805890d_bucket_3/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_13c87bb19aeeace1b9ea4698c5e671c08d20a79dd0aec6d8e889f39ed51749dd_bucket_0/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_13c87bb19aeeace1b9ea4698c5e671c08d20a79dd0aec6d8e889f39ed51749dd_bucket_1/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_13c87bb19aeeace1b9ea4698c5e671c08d20a79dd0aec6d8e889f39ed51749dd_bucket_2/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_13c87bb19aeeace1b9ea4698c5e671c08d20a79dd0aec6d8e889f39ed51749dd_bucket_3/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_19c77bed60a5eadcb4aca5b6095e64fc719bc42214d02d1725c07fabd7c69535_bucket_0/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_19c77bed60a5eadcb4aca5b6095e64fc719bc42214d02d1725c07fabd7c69535_bucket_1/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_19c77bed60a5eadcb4aca5b6095e64fc719bc42214d02d1725c07fabd7c69535_bucket_2/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_19c77bed60a5eadcb4aca5b6095e64fc719bc42214d02d1725c07fabd7c69535_bucket_3/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_97d34eb0206b41783ec70eda1d4c5b9694398a665478c15945cac8c910c77590_bucket_0/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_97d34eb0206b41783ec70eda1d4c5b9694398a665478c15945cac8c910c77590_bucket_1/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_97d34eb0206b41783ec70eda1d4c5b9694398a665478c15945cac8c910c77590_bucket_2/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_97d34eb0206b41783ec70eda1d4c5b9694398a665478c15945cac8c910c77590_bucket_3/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_c2bf160b5e446ec834dc473dd19ca6ab23bc62fa1cf7d9098c92a796175165f3_bucket_0/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_c2bf160b5e446ec834dc473dd19ca6ab23bc62fa1cf7d9098c92a796175165f3_bucket_1/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_c2bf160b5e446ec834dc473dd19ca6ab23bc62fa1cf7d9098c92a796175165f3_bucket_2/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_c2bf160b5e446ec834dc473dd19ca6ab23bc62fa1cf7d9098c92a796175165f3_bucket_3/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_d330edef527d70c27e42d294651bd6363e0d9ad5f15d971bd21e00d9d7d5d966_bucket_0/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_d330edef527d70c27e42d294651bd6363e0d9ad5f15d971bd21e00d9d7d5d966_bucket_1/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_d330edef527d70c27e42d294651bd6363e0d9ad5f15d971bd21e00d9d7d5d966_bucket_2/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/otherProjects/jar_d330edef527d70c27e42d294651bd6363e0d9ad5f15d971bd21e00d9d7d5d966_bucket_3/graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/source_set_path_map/debug/file-map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/source_set_path_map/debug/file-map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/static/js/main.f3beae99.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/static/js/main.f3beae99.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/static/js/main.f3beae99.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/.transforms/04354be65bf0f5200be6e6d1d9bb8e2e/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/.transforms/1db1b727f918c62c670dd89b4f7aac2a/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/.transforms/4baf79944a69811268582ada59d1f38e/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/.transforms/5834cea348af9d77604aa9ace5bd3c26/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/.transforms/c76e69a5aa30addd146e49322dee5c2e/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/.transforms/c76e69a5aa30addd146e49322dee5c2e/transformed/desugar_graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/.transforms/cf5dba4c83b485818d66a746465231b6/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/aar_metadata/debug/aar-metadata.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/compile_r_class_jar/debug/R.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/compile_symbol_list/debug/R.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/incremental/packageDebugAssets/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/navigation_json/debug/navigation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/runtime_library_classes_jar/debug/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/css/main.62495b86.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/css/main.62495b86.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/276.a4293b09.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/276.a4293b09.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/284.97bb385a.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/284.97bb385a.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/64.202a8623.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/64.202a8623.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/732.e8b28b30.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/732.e8b28b30.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/main.3fe8f75b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/main.3fe8f75b.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/main.3fe8f75b.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../capacitor.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../capacitor.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../electron/capacitor.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../electron/capacitor.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../electron/electron-builder.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../electron/electron-builder.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../electron/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../electron/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.f3beae99.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.f3beae99.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.f3beae99.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App.xcodeproj/xcuserdata/christianscheub.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App.xcodeproj/xcuserdata/christianscheub.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/IDEFindNavigatorScopes.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/Assets.xcassets/AppIcon.appiconset/icon_notes.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/Assets.xcassets/AppIcon.appiconset/icon_notes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/Assets.xcassets/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/Assets.xcassets/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/plugins/backswipe/BackswipePlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/plugins/backswipe/BackswipePlugin.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/public/static/js/main.f3beae99.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/public/static/js/main.f3beae99.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/public/static/js/main.f3beae99.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/Pods/Pods.xcodeproj/xcuserdata/christianscheub.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/Pods/Pods.xcodeproj/xcuserdata/christianscheub.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/App.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/container-editNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/container-editNote.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/editNote.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/editNote.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/encryptionEngine.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/encryptionEngine.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/container-editToDo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/container-editToDo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/dataPicker/screen-dataPicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/dataPicker/screen-dataPicker.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/priorityIndicator/screen-PriorityIndicator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/priorityIndicator/screen-PriorityIndicator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/encryptionEngine.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/encryptionEngine.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/types/ToDoItem.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/types/ToDoList.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/getNotes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/getNotes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/viewNote.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/viewNote.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/container-encryption-modal.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/container-encryption-modal.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/container-encryption-modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/container-encryption-modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/fingerprintLogic.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/fingerprintLogic.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/fingerprintLogic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/fingerprintLogic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/navBar/container-navBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/navBar/container-navBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/fingerprintLogic.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/fingerprintLogic.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/container_settings.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/container_settings.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/container_settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/container_settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/ar/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/ar/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/locales/de/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/de/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/en/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/es/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/es/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/fr/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/fr/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/hi/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/hi/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/ja/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/ja/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/ko/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/ko/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/pt/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/pt/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/zh/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/zh/translation.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

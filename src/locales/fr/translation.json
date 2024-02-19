@@ -43,6 +43,7 @@
   "editToDoElement_DetailText":"Texte détaillé de la tâche...",
   "editNote_ToDoDeleteConfirm": "Êtes-vous sûr de vouloir supprimer cette tâche ?",
   "editNote_progressBar_Total": "Total complété",
-  "editNote_progressBar_Today": "Complété avec la date d'aujourd'hui",
-  "editNote_progressBar_Priority": "Priorité élevée complétée"
+  "editNote_progressBar_Today": "Tâches terminées aujourd'hui",
+  "editNote_progressBar_Priority": "Tâches prioritaires élevées terminées",
+  "editNote_progressBar_7Days": "Tâches à terminer dans les 7 prochains jours"
 }

@@ -2,7 +2,7 @@
 //  BackswipePlugin.swift
 //  App
 //
-//  Created by Christian Scheub on 19.12.23.
+//  Created by Christian Scheub on 19.02.24.
 //
 
 import Foundation

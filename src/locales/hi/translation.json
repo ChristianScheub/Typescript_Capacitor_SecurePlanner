@@ -43,6 +43,7 @@
   "editToDoElement_DetailText":"टूडू का विस्तारक टेक्स्ट...",
   "editNote_ToDoDeleteConfirm": "क्या आप सुनिश्चित हैं कि आप इस टूडू को हटाना चाहते हैं?",
   "editNote_progressBar_Total": "कुल पूरा हुआ",
-  "editNote_progressBar_Today": "आज की समाप्ति तिथि के साथ पूरा हुआ",
-  "editNote_progressBar_Priority": "उच्च प्राथमिकता पूरी हुई"
+  "editNote_progressBar_Today": "आज पूरी हुई कार्यसूचियाँ",
+  "editNote_progressBar_Priority": "उच्च प्राथमिकता की कार्यसूचियाँ पूरी हुई",
+  "editNote_progressBar_7Days": "आगामी 7 दिनों में पूरी कार्यसूचियाँ"
 }

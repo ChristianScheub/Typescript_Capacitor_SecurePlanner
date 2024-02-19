@@ -6,15 +6,15 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="22"
-8-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+8-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+9-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
 10
 11    <!-- Permissions -->
 12
 13    <uses-permission android:name="android.permission.INTERNET" />
-13-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:40:5-67
-13-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:40:22-64
+13-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:40:5-67
+13-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:40:22-64
 14    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 14-->[androidx.biometric:biometric:1.0.1] /Users/christianscheub/.gradle/caches/transforms-3/d0262bc04065617c10aed276508b0d46/transformed/biometric-1.0.1/AndroidManifest.xml:24:5-72
 14-->[androidx.biometric:biometric:1.0.1] /Users/christianscheub/.gradle/caches/transforms-3/d0262bc04065617c10aed276508b0d46/transformed/biometric-1.0.1/AndroidManifest.xml:24:22-69
@@ -34,74 +34,74 @@
 21-->[androidx.core:core:1.10.0] /Users/christianscheub/.gradle/caches/transforms-3/4084e7bcb4a1738e1ff26326a1997c6e/transformed/core-1.10.0/AndroidManifest.xml:26:22-94
 22
 23    <application
-23-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:4:5-36:19
+23-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:4:5-36:19
 24        android:allowBackup="true"
-24-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:5:9-35
+24-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:5:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 25-->[androidx.core:core:1.10.0] /Users/christianscheub/.gradle/caches/transforms-3/4084e7bcb4a1738e1ff26326a1997c6e/transformed/core-1.10.0/AndroidManifest.xml:28:18-86
 26        android:debuggable="true"
 27        android:icon="@mipmap/ic_launcher"
-27-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:6:9-43
+27-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:6:9-43
 28        android:label="@string/app_name"
-28-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:7:9-41
+28-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:7:9-41
 29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:8:9-54
+29-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:8:9-54
 30        android:supportsRtl="true"
-30-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:9:9-35
+30-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:9:9-35
 31        android:testOnly="true"
 32        android:theme="@style/AppTheme" >
-32-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:10:9-40
+32-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:10:9-40
 33        <activity
-33-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:12:9-25:20
+33-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:12:9-25:20
 34            android:name="de.scheub.securePlaner.MainActivity"
-34-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:14:13-41
+34-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:14:13-41
 35            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-35-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:13:13-129
+35-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:13:13-129
 36            android:exported="true"
-36-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:18:13-36
+36-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:18:13-36
 37            android:label="@string/title_activity_main"
-37-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:15:13-56
+37-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:15:13-56
 38            android:launchMode="singleTask"
-38-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:17:13-44
+38-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:17:13-44
 39            android:theme="@style/AppTheme.NoActionBarLaunch" >
-39-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:16:13-62
+39-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:16:13-62
 40            <intent-filter>
-40-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:20:13-23:29
+40-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:20:13-23:29
 41                <action android:name="android.intent.action.MAIN" />
-41-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:21:17-69
-41-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:21:25-66
+41-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:21:17-69
+41-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:21:25-66
 42
 43                <category android:name="android.intent.category.LAUNCHER" />
-43-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:22:17-77
-43-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:22:27-74
+43-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:22:17-77
+43-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:22:27-74
 44            </intent-filter>
 45        </activity>
 46
 47        <provider
 48            android:name="androidx.core.content.FileProvider"
-48-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:28:13-62
+48-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:28:13-62
 49            android:authorities="de.scheub.securePlaner.fileprovider"
-49-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:29:13-64
+49-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:29:13-64
 50            android:exported="false"
-50-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:30:13-37
+50-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:30:13-37
 51            android:grantUriPermissions="true" >
-51-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:31:13-47
+51-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:31:13-47
 52            <meta-data
-52-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:32:13-34:64
+52-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:32:13-34:64
 53                android:name="android.support.FILE_PROVIDER_PATHS"
-53-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:33:17-67
+53-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:33:17-67
 54                android:resource="@xml/file_paths" />
-54-->/Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:34:17-51
+54-->/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:34:17-51
 55        </provider>
 56
 57        <activity
-57-->[:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-11:59
+57-->[:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-11:59
 58            android:name="com.epicshaggy.biometric.AuthActivity"
-58-->[:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-65
+58-->[:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-65
 59            android:label="@string/title_activity_auth_activity"
-59-->[:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-65
+59-->[:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-65
 60            android:theme="@style/AppTheme.Transparent" />
-60-->[:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-56
+60-->[:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-56
 61        <activity
 61-->[androidx.biometric:biometric:1.0.1] /Users/christianscheub/.gradle/caches/transforms-3/d0262bc04065617c10aed276508b0d46/transformed/biometric-1.0.1/AndroidManifest.xml:28:9-31:67
 62            android:name="androidx.biometric.DeviceCredentialHandlerActivity"

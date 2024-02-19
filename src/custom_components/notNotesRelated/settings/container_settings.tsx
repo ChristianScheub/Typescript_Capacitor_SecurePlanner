@@ -2,7 +2,7 @@ import { NavigateFunction } from "react-router-dom";
 import { NativeBiometric } from "capacitor-native-biometric";
 import SettingsView from "./screen_settings";
 import React, { useState, useEffect } from "react";
-import { availableBiometric } from "../fingerprintLogic";
+import { availableBiometric } from "../../services/fingerprintLogic/fingerprintLogic";
 import { Filesystem, Directory } from "@capacitor/filesystem";
 import { useLocation } from "react-router-dom";
 import { Share } from "@capacitor/share";
@@ -10,7 +10,7 @@ import { Capacitor } from "@capacitor/core";
 import {
   makeReadyForExport,
   makeReadyForImport,
-} from "../../handleNotes/encryptionEngine";
+} from "../../services/encryptionEngine/encryptionEngine";
 import { useTranslation } from "react-i18next";
 
 const SettingsContainer: React.FC = () => {

@@ -43,6 +43,7 @@
   "editToDoElement_DetailText":"待办事项的详细文本...",
   "editNote_ToDoDeleteConfirm": "您确定要删除此待办事项吗？",
   "editNote_progressBar_Total": "总完成度",
-  "editNote_progressBar_Today": "截止日期为今天的完成度",
-  "editNote_progressBar_Priority": "高优先级完成度"
+  "editNote_progressBar_Today": "今天完成的任务",
+  "editNote_progressBar_Priority": "完成的高优先级任务",
+  "editNote_progressBar_7Days": "接下来7天要完成的任务"
 }

@@ -43,6 +43,7 @@
   "editToDoElement_DetailText":"Detail text of the ToDo...",
   "editNote_ToDoDeleteConfirm": "Are you sure you want to delete this ToDo?",
   "editNote_progressBar_Total": "Total completed",
-  "editNote_progressBar_Today": "Completed with today's end date",
-  "editNote_progressBar_Priority": "High priority completed"
+  "editNote_progressBar_Today": "Todos completed today",
+  "editNote_progressBar_Priority": "High priority Todos completed",
+  "editNote_progressBar_7Days": "Todos to be completed in the next 7 days"
 }

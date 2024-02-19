@@ -38,11 +38,12 @@
   "editToDoElement_High":"Hoch",
   "editToDoElement_Middle":"Mittel",
   "editToDoElement_Low":"Niedrig",
-  "editToDoElement_Priority":"Priority",
+  "editToDoElement_Priority":"Priorität",
   "editToDoElement_EndDate":"Enddatum",
   "editToDoElement_DetailText":"Detailtext des ToDos...",
   "editNote_ToDoDeleteConfirm": "Sind sie sicher, dass sie dieses ToDo löschen möchten?",
   "editNote_progressBar_Total": "Gesamt erledigt",
-  "editNote_progressBar_Today": "Mit Enddatum heute erledigt",
-  "editNote_progressBar_Priority": "Prio Hoch erledigt"
+  "editNote_progressBar_Today": "ToDos von heute erledigt",
+  "editNote_progressBar_Priority": "Prio Hoch erledigt",
+  "editNote_progressBar_7Days": "ToDos der nächsten 7 Tage erledigt"
 }

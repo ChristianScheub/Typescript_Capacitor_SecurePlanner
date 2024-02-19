@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams,useLocation } from "react-router-dom";
-import { encryptAndStore, decryptFromStorage } from "../encryptionEngine";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { isEqual } from '../../services/equals/equals';
 import EditNoteView from "./screen-editNote";
-import { ToDoList } from "../types/ToDoList.types"; // Angenommen, ToDoItem ist korrekt importiert
+import { ToDoList } from "../../types/ToDoList.types";
 import { useTranslation } from "react-i18next";
-import { ToDoItem } from "../types/ToDoItem.types";
 import { Priority } from "../editToDoElement/priorityIndicator/priority.enum";
+import  ToDoListService from "../../services/toDoListHandler/toDoListHandler";
+import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
+
 
 interface EditNoteContainerProps {
   encryptionKey: string;
@@ -24,18 +26,16 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
     toDoItem: [],
   });
   const location = useLocation();
-  const isNewPath = location.pathname.includes('new');
+  const isNewPath = location.pathname.includes("new");
 
   useEffect(() => {
     const loadAndDecryptNote = async () => {
       if (noteId) {
         try {
-          const decryptedContent = await decryptFromStorage(
-            encryptionKey,
-            noteId
-          );
-          const noteData: ToDoList = JSON.parse(decryptedContent);
-          setToDoList(noteData);
+          const noteData = await ToDoListService.loadToDoList(noteId, encryptionKey);
+          if(noteData){
+            setToDoList(noteData);
+          }
         } catch (error) {
           console.error(
             "Fehler beim Laden und Entschlüsseln der Notiz:",
@@ -44,23 +44,22 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
         }
       }
     };
-
     loadAndDecryptNote();
   }, [noteId, encryptionKey]);
 
-  useEffect(() => {
+  useEffect(() => {    
+    const sortedToDoList = ToDoListService.sortToDoList(toDoList);
+    if (!isEqual(sortedToDoList.toDoItem, toDoList.toDoItem)) {
+      setToDoList(sortedToDoList);
+    }
+
     const loadAndDecryptNote = async () => {
       if (noteId) {
         try {
-          const noteDataString = JSON.stringify(toDoList);
-          encryptAndStore(
-            noteDataString,
-            encryptionKey,
-            noteId
-          );
+          await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
         } catch (error) {
           console.error(
-            "Fehler beim Laden und Entschlüsseln der Notiz:",
+            "Fehler beim Speichern der Notiz:",
             error
           );
         }
@@ -70,51 +69,33 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
     loadAndDecryptNote();
   }, [toDoList]);
 
-  const isToday = (dateInput: Date | string): boolean => {
-    const date = new Date(dateInput);
-    const today = new Date();
-    return (
-      date.getDate() === today.getDate() &&
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear()
-    );
-  };
-
-  const calculateProgress = (
-    toDoItems: ToDoItem[],
-    predicate: (item: ToDoItem) => Boolean,
-    totalPredicate: (item: ToDoItem) => Boolean = () => true
-  ): number => {
-    const totalItems = toDoItems.filter(totalPredicate).length;
-    const doneItems = toDoItems.filter(predicate).length;
-    let progress = totalItems > 0 ? (doneItems / totalItems) * 100 : 0;
-    progress = Math.round(progress * 10) / 10;
-    return progress;
-  };
-
-  const progressOverall = calculateProgress(
+  const progressOverall = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
     (item) => item.toDoDone
   );
-  const progressToday = calculateProgress(
+  const progressToday = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
-    (item) => item.toDoDone && isToday(item.toDoEndDate),
-    (item) => isToday(item.toDoEndDate)
+    (item) => item.toDoDone && ProgressToDoListService.isNextNDays(item.toDoEndDate,0),
+    (item) => ProgressToDoListService.isNextNDays(item.toDoEndDate, 0)
   );
-  const progressHighPriority = calculateProgress(
+  
+  const progressNext7Days = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
-    (item) => item.toDoDone && 
-      (item.toDoPriority === Priority.High || item.toDoPriority === Priority.Highest),
-    (item) => item.toDoPriority === Priority.High || item.toDoPriority === Priority.Highest // Nur To-Dos mit hoher Priorität zählen
+    (item) => item.toDoDone && ProgressToDoListService.isNextNDays(item.toDoEndDate, 7),
+    (item) => ProgressToDoListService.isNextNDays(item.toDoEndDate, 7)
+  );
+  
+  
+  const progressHighPriority = ProgressToDoListService.calculateProgress(
+    toDoList.toDoItem,
+    (item) =>
+      item.toDoDone &&
+      [Priority.High, Priority.Highest].includes(item.toDoPriority),
+    (item) => [Priority.High, Priority.Highest].includes(item.toDoPriority)
   );
 
-  const handleSave = () => {
-    const noteDataString = JSON.stringify(toDoList);
-    encryptAndStore(
-      noteDataString,
-      encryptionKey,
-      noteId || Date.now().toString()
-    );
+  const handleSave = async() => {
+    await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
     navigate(-1);
   };
 
@@ -181,14 +162,14 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
     });
   };
 
-  const getPriorityText = (priority: Priority): string => {  
+  const getPriorityText = (priority: Priority): string => {
     const priorityKeyMap: Record<Priority, string> = {
       [Priority.Low]: "editToDoElement_Low",
       [Priority.Middle]: "editToDoElement_Middle",
       [Priority.High]: "editToDoElement_High",
       [Priority.Highest]: "editToDoElement_Highest",
     };
-  
+
     const i18nKey = priorityKeyMap[priority];
     return t(i18nKey);
   };
@@ -200,6 +181,7 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
       progressOverall={progressOverall}
       progressToday={progressToday}
       progressHighPriority={progressHighPriority}
+      progressNext7Days={progressNext7Days}
       getPriorityText={getPriorityText}
       handleSave={handleSave}
       handleEdit={handleEditToDo}

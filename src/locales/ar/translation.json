@@ -43,6 +43,7 @@
   "editToDoElement_DetailText":"نص تفصيلي للمهمة...",
   "editNote_ToDoDeleteConfirm": "هل أنت متأكد أنك تريد حذف هذه المهمة؟",
   "editNote_progressBar_Total": "الإجمالي المكتمل",
-  "editNote_progressBar_Today": "المكتملة بتاريخ اليوم",
-  "editNote_progressBar_Priority": "الأولوية العالية المكتملة"
+  "editNote_progressBar_Today": "المهام المكتملة اليوم",
+  "editNote_progressBar_Priority": "المهام ذات الأولوية العالية المكتملة",
+  "editNote_progressBar_7Days": "المهام التي يجب إنجازها خلال الأيام السبعة القادمة"
 }

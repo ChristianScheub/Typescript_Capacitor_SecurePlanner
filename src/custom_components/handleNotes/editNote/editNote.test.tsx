@@ -5,7 +5,7 @@ import getAllNotes from "../viewNote/getNotes";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import EditNoteContainer from "./container-editNote";
-import { encryptAndStore, decryptFromStorage } from "../encryptionEngine";
+import { encryptAndStore, decryptFromStorage } from "../../services/encryptionEngine/encryptionEngine";
 import { act } from "react-dom/test-utils";
 import { useState, useEffect } from "react";
 

@@ -43,6 +43,7 @@
   "editToDoElement_DetailText":"ToDoの詳細テキスト...",
   "editNote_ToDoDeleteConfirm": "このToDoを削除してもよろしいですか？",
   "editNote_progressBar_Total": "合計完了",
-  "editNote_progressBar_Today": "本日の終了日まで完了",
-  "editNote_progressBar_Priority": "高優先度完了"
+  "editNote_progressBar_Today": "今日完了したタスク",
+  "editNote_progressBar_Priority": "高優先度のタスクが完了",
+  "editNote_progressBar_7Days": "次の7日間に完了するタスク"
 }

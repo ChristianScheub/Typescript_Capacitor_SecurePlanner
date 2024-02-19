@@ -43,6 +43,7 @@
   "editToDoElement_DetailText":"할 일 세부 내용...",
   "editNote_ToDoDeleteConfirm": "이 할 일을 삭제하시겠습니까?",
   "editNote_progressBar_Total": "전체 완료",
-  "editNote_progressBar_Today": "오늘 마감일로 완료",
-  "editNote_progressBar_Priority": "높은 우선순위 완료"
+  "editNote_progressBar_Today": "오늘 완료된 할 일",
+  "editNote_progressBar_Priority": "높은 우선 순위 할 일 완료",
+  "editNote_progressBar_7Days": "다음 7 일 내에 완료되어야 할 일"
 }

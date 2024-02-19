@@ -1,27 +1,27 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:27:9-35:20
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:27:9-35:20
 	android:grantUriPermissions
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:31:13-47
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:31:13-47
 	android:authorities
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:29:13-64
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:29:13-64
 	android:exported
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:30:13-37
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:30:13-37
 	android:name
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:28:13-62
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:28:13-62
 manifest
-ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
-MERGED from [:capacitor-app] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:capacitor-device] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/device/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:capacitor-filesystem] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/filesystem/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:capacitor-share] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-14:12
-MERGED from [:capacitor-android] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/android/capacitor/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
+ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+MERGED from [:capacitor-app] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:capacitor-device] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/device/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:capacitor-filesystem] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/filesystem/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:capacitor-share] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-14:12
+MERGED from [:capacitor-android] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/android/capacitor/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/christianscheub/.gradle/caches/transforms-3/acb0279fa605e581f304fa8780c50bc3/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.biometric:biometric:1.0.1] /Users/christianscheub/.gradle/caches/transforms-3/d0262bc04065617c10aed276508b0d46/transformed/biometric-1.0.1/AndroidManifest.xml:17:1-34:12
 MERGED from [androidx.navigation:navigation-ui:2.0.0] /Users/christianscheub/.gradle/caches/transforms-3/72aa28c96a7c8d42723d246e7e451867/transformed/navigation-ui-2.0.0/AndroidManifest.xml:17:1-22:12
@@ -70,29 +70,29 @@ MERGED from [androidx.print:print:1.0.0] /Users/christianscheub/.gradle/caches/t
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/christianscheub/.gradle/caches/transforms-3/c4eb8610416ba9fcff7203d70109fbae/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [org.apache.cordova:framework:10.1.1] /Users/christianscheub/.gradle/caches/transforms-3/05c878bccf3e6fff3e743a9590f85fe9/transformed/framework-10.1.1/AndroidManifest.xml:20:1-27:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/christianscheub/.gradle/caches/transforms-3/929d5f8acb11449740269fb4ba43b198/transformed/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
 	package
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:1-41:12
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:4:5-36:19
-MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-12:19
-MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-12:19
-MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-9:19
-MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-9:19
+ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:4:5-36:19
+MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-12:19
+MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-12:19
+MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-9:19
+MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-9:19
 MERGED from [androidx.biometric:biometric:1.0.1] /Users/christianscheub/.gradle/caches/transforms-3/d0262bc04065617c10aed276508b0d46/transformed/biometric-1.0.1/AndroidManifest.xml:27:5-32:19
 MERGED from [androidx.biometric:biometric:1.0.1] /Users/christianscheub/.gradle/caches/transforms-3/d0262bc04065617c10aed276508b0d46/transformed/biometric-1.0.1/AndroidManifest.xml:27:5-32:19
 MERGED from [com.google.android.material:material:1.1.0] /Users/christianscheub/.gradle/caches/transforms-3/25c9eb08f1c2b130feb9d6f102999a93/transformed/material-1.1.0/AndroidManifest.xml:22:5-20
@@ -114,63 +114,63 @@ MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/christians
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.10.0] /Users/christianscheub/.gradle/caches/transforms-3/4084e7bcb4a1738e1ff26326a1997c6e/transformed/core-1.10.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:9:9-35
 	android:label
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:7:9-41
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:7:9-41
 	android:roundIcon
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:8:9-54
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:8:9-54
 	android:icon
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:6:9-43
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:6:9-43
 	android:allowBackup
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:5:9-35
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:5:9-35
 	android:theme
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:10:9-40
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:10:9-40
 activity#de.scheub.securePlaner.MainActivity
-ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:12:9-25:20
+ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:12:9-25:20
 	android:label
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:15:13-56
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:15:13-56
 	android:launchMode
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:17:13-44
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:17:13-44
 	android:exported
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:18:13-36
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:18:13-36
 	android:configChanges
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:13:13-129
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:13:13-129
 	android:theme
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:16:13-62
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:16:13-62
 	android:name
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:14:13-41
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:14:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:20:13-23:29
+ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:20:13-23:29
 action#android.intent.action.MAIN
-ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:21:17-69
+ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:21:25-66
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:22:17-77
+ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:22:27-74
 uses-permission#android.permission.INTERNET
-ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:40:5-67
+ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:40:5-67
 	android:name
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:40:22-64
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:40:22-64
 uses-sdk
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-MERGED from [:capacitor-app] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-app] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-device] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/device/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-device] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/device/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-filesystem] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/filesystem/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-filesystem] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/filesystem/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-share] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-share] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-android] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/android/capacitor/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-android] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/@capacitor/android/capacitor/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-44
-MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-44
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+MERGED from [:capacitor-app] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-app] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-device] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/device/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-device] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/device/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-filesystem] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/filesystem/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-filesystem] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/filesystem/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-share] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-share] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-android] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/android/capacitor/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-android] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/android/capacitor/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-44
+MERGED from [:capacitor-cordova-android-plugins] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/capacitor-cordova-android-plugins/build/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/christianscheub/.gradle/caches/transforms-3/acb0279fa605e581f304fa8780c50bc3/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/christianscheub/.gradle/caches/transforms-3/acb0279fa605e581f304fa8780c50bc3/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.biometric:biometric:1.0.1] /Users/christianscheub/.gradle/caches/transforms-3/d0262bc04065617c10aed276508b0d46/transformed/biometric-1.0.1/AndroidManifest.xml:20:5-22:41
@@ -267,30 +267,30 @@ MERGED from [org.apache.cordova:framework:10.1.1] /Users/christianscheub/.gradle
 MERGED from [org.apache.cordova:framework:10.1.1] /Users/christianscheub/.gradle/caches/transforms-3/05c878bccf3e6fff3e743a9590f85fe9/transformed/framework-10.1.1/AndroidManifest.xml:25:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/christianscheub/.gradle/caches/transforms-3/929d5f8acb11449740269fb4ba43b198/transformed/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/christianscheub/.gradle/caches/transforms-3/929d5f8acb11449740269fb4ba43b198/transformed/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:32:13-34:64
+ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:32:13-34:64
 	android:resource
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:34:17-51
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:34:17-51
 	android:name
-		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:33:17-67
+		ADDED from /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/src/main/AndroidManifest.xml:33:17-67
 activity#com.epicshaggy.biometric.AuthActivity
-ADDED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-11:59
+ADDED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-11:59
 	android:label
-		ADDED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-65
+		ADDED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-65
 	android:theme
-		ADDED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-56
+		ADDED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-56
 	android:name
-		ADDED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/SecurePlanner/TypeScript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-65
+		ADDED from [:capacitor-native-biometric] /Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-65
 uses-permission#android.permission.USE_BIOMETRIC
 ADDED from [androidx.biometric:biometric:1.0.1] /Users/christianscheub/.gradle/caches/transforms-3/d0262bc04065617c10aed276508b0d46/transformed/biometric-1.0.1/AndroidManifest.xml:24:5-72
 	android:name
