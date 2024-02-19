@@ -46,8 +46,12 @@ const EditNoteView: React.FC<EditNoteViewProps> = ({
   handleDeleteToDo,
   handleDoneToDo,
 }) => {
-  const formattedDate = formatDate(new Date(toDoList.date));
+  const formattedDate = (new Date(toDoList.date)).toLocaleDateString();
   const { t } = useTranslation();
+
+
+
+
 
   return (
     <div
@@ -150,10 +154,10 @@ const EditNoteView: React.FC<EditNoteViewProps> = ({
                       >
                         <h4>{item.toDoTitle}</h4>
                         <b>{t("editToDoElement_EndDate")}: </b>
-                        <i>{formatDate(item.toDoEndDate)}</i>
+                        <i dangerouslySetInnerHTML={{ __html: formatDate(item.toDoEndDate) }}></i>
                         <br />
                         <b>{t("editToDoElement_Priority")}: </b>
-                        <i>{getPriorityText(item.toDoPriority)}</i>
+                        <i dangerouslySetInnerHTML={{ __html: getPriorityText(item.toDoPriority) }}></i>
                       </div>
                     </td>
                     <td

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
-import { isEqual } from '../../services/equals/equals';
+import { isEqual } from "../../services/equals/equals";
 import EditNoteView from "./screen-editNote";
 import { ToDoList } from "../../types/ToDoList.types";
 import { useTranslation } from "react-i18next";
 import { Priority } from "../editToDoElement/priorityIndicator/priority.enum";
-import  ToDoListService from "../../services/toDoListHandler/toDoListHandler";
+import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
-
+import { ToDoItem } from "../../types/ToDoItem.types";
 
 interface EditNoteContainerProps {
   encryptionKey: string;
@@ -32,8 +32,11 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
     const loadAndDecryptNote = async () => {
       if (noteId) {
         try {
-          const noteData = await ToDoListService.loadToDoList(noteId, encryptionKey);
-          if(noteData){
+          const noteData = await ToDoListService.loadToDoList(
+            noteId,
+            encryptionKey
+          );
+          if (noteData) {
             setToDoList(noteData);
           }
         } catch (error) {
@@ -47,7 +50,7 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
     loadAndDecryptNote();
   }, [noteId, encryptionKey]);
 
-  useEffect(() => {    
+  useEffect(() => {
     const sortedToDoList = ToDoListService.sortToDoList(toDoList);
     if (!isEqual(sortedToDoList.toDoItem, toDoList.toDoItem)) {
       setToDoList(sortedToDoList);
@@ -58,10 +61,7 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
         try {
           await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
         } catch (error) {
-          console.error(
-            "Fehler beim Speichern der Notiz:",
-            error
-          );
+          console.error("Fehler beim Speichern der Notiz:", error);
         }
       }
     };
@@ -75,17 +75,18 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
   );
   const progressToday = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
-    (item) => item.toDoDone && ProgressToDoListService.isNextNDays(item.toDoEndDate,0),
+    (item) =>
+      item.toDoDone && ProgressToDoListService.isNextNDays(item.toDoEndDate, 0),
     (item) => ProgressToDoListService.isNextNDays(item.toDoEndDate, 0)
   );
-  
+
   const progressNext7Days = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
-    (item) => item.toDoDone && ProgressToDoListService.isNextNDays(item.toDoEndDate, 7),
+    (item) =>
+      item.toDoDone && ProgressToDoListService.isNextNDays(item.toDoEndDate, 7),
     (item) => ProgressToDoListService.isNextNDays(item.toDoEndDate, 7)
   );
-  
-  
+
   const progressHighPriority = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
     (item) =>
@@ -94,7 +95,7 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
     (item) => [Priority.High, Priority.Highest].includes(item.toDoPriority)
   );
 
-  const handleSave = async() => {
+  const handleSave = async () => {
     await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
     navigate(-1);
   };
@@ -116,7 +117,14 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
     const day = date.getDate().toString().padStart(2, "0");
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const year = date.getFullYear().toString();
-    return `${day}.${month}.${year}`;
+    const toDoEndDate = `${day}.${month}.${year}`;
+    const today: Date = new Date();
+    let formattedDate: string = toDoEndDate;
+
+    if (date.toDateString() === today.toDateString()) {
+      formattedDate = `<span style="color: red;">${toDoEndDate}</span>`;
+    }
+    return formattedDate;
   }
 
   const updateToDoList = <K extends keyof ToDoList>(
@@ -170,7 +178,10 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
       [Priority.Highest]: "editToDoElement_Highest",
     };
 
-    const i18nKey = priorityKeyMap[priority];
+    let i18nKey = priorityKeyMap[priority];
+    if (priority === Priority.Highest) {
+      i18nKey = `<span style="color: red;">${t(i18nKey)}</span>`;
+    }
     return t(i18nKey);
   };
 
