@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { Priority  } from './priority.enum';
 import { useTranslation } from 'react-i18next';
-import { ToDoItem } from "../../../types/ToDoItem.types";
+import { ToDoItem } from "../../../../custom_components/types/ToDoItem.types";
 
 const priorityColors: Record<Priority, string> = {
   [Priority.Low]: "#28a745",

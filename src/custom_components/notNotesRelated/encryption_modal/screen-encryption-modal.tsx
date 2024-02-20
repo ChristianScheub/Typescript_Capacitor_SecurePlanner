@@ -1,7 +1,7 @@
 import React, { FormEvent, RefObject } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn";
+import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn/floatingBtn";
 import { FaInfoCircle } from "react-icons/fa";
 import { PiFingerprintThin } from "react-icons/pi";
 import { useTranslation } from 'react-i18next';

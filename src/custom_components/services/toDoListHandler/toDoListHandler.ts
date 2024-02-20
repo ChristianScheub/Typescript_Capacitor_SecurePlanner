@@ -3,7 +3,7 @@ import {
   decryptFromStorage,
 } from "../encryptionEngine/encryptionEngine";
 import { ToDoList } from "../../types/ToDoList.types";
-import { Priority } from "../../handleNotes/editToDoElement/priorityIndicator/priority.enum";
+import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
 
 export interface ToDoListService {
   loadAllToDoLists: (

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { FaRegSave, FaRegClock, FaTrash, FaCheck } from "react-icons/fa";
-import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn";
+import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn/floatingBtn";
 import { useTranslation } from "react-i18next";
 import { Card } from "react-bootstrap";
 import { ToDoList } from "../../types/ToDoList.types";
 import { MdOutlineEdit } from "react-icons/md";
 import { IoAddSharp } from "react-icons/io5";
 import ProgressBar from "../../../modules/ui/progress/progressBar/screen-progressBar";
-import { Priority } from "../editToDoElement/priorityIndicator/priority.enum";
+import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
 
 interface View_EditNoteViewProps {
   toDoList: ToDoList;

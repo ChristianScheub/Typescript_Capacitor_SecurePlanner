@@ -1,4 +1,4 @@
-import { Priority } from '../handleNotes/editToDoElement/priorityIndicator/priority.enum';
+import { Priority } from '../../modules/ui/editToDo/priorityIndicator/priority.enum';
 
 export interface ToDoItem {
     toDoPriority: Priority;

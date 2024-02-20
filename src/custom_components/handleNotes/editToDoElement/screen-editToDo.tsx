@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import PrioritySlider from "./priorityIndicator/screen-PriorityIndicator";
-import DatePickerComponent from "./dataPicker/screen-dataPicker";
+import PrioritySlider from "../../../modules/ui/editToDo/priorityIndicator/screen-PriorityIndicator";
+import DatePickerComponent from "../../../modules/ui/editToDo/dataPicker/screen-dataPicker";
 import { Card } from "react-bootstrap";
-import { Priority } from "./priorityIndicator/priority.enum";
+import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
 import { Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn";
+import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn/floatingBtn";
 import { FaRegSave } from "react-icons/fa";
 import { ToDoItem } from "../../types/ToDoItem.types";
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { FaPlusCircle, FaArrowRight } from "react-icons/fa";
-import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn";
+import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn/floatingBtn";
 import { useTranslation } from "react-i18next";
 import ProgressCircle from "../../../modules/ui/progress/progressCircle/progressCircle";
 import { ToDoListWithKey } from "../../types/ToDoListKey.types";

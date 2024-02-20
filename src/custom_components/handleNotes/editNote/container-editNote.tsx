@@ -4,7 +4,7 @@ import { isEqual } from "../../services/equals/equals";
 import EditNoteView from "./screen-editNote";
 import { ToDoList } from "../../types/ToDoList.types";
 import { useTranslation } from "react-i18next";
-import { Priority } from "../editToDoElement/priorityIndicator/priority.enum";
+import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
 

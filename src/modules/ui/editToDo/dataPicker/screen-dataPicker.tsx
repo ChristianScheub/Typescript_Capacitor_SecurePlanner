@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { SlCalender } from "react-icons/sl";
-import { ToDoItem } from "../../../types/ToDoItem.types";
+import { ToDoItem } from "../../../../custom_components/types/ToDoItem.types";
 
 
 interface DatePickerComponentProps {
