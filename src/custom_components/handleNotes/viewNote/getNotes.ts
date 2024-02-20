@@ -1,62 +1,44 @@
 import { useState, useEffect } from "react";
-import { decryptFromStorage } from "../../services/encryptionEngine/encryptionEngine";
-import { Location } from 'react-router-dom';
+import { Location } from "react-router-dom";
+import { ToDoListWithKey } from "../../types/ToDoListKey.types";
+import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
+import { ToDoItem } from "../../types/ToDoItem.types";
 
-interface Note {
-  id: string;
-  content: string;
-  title: string;
-  date: Date;
-  additionalInfo: String;
-}
-
-const isJsonString = (str: string): boolean => {
-  try {
-    const data = JSON.parse(str);
-    const test = data.content + data.title;
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
-
-const useAllNotes = (encryptionKey: string, searchQuery: string, location: Location): Note[] => {
-  const [notes, setNotes] = useState<Note[]>([]);
+const useAllNotes = (
+  encryptionKey: string,
+  searchQuery: string,
+  location: Location
+): ToDoListWithKey[] => {
+  const [toDoLists, setToDoLists] = useState<ToDoListWithKey[]>([]);
 
   useEffect(() => {
     const loadAndDecryptNotes = async () => {
-      const loadedNotes: Note[] = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key) {
-          try {
-            const originalText = await decryptFromStorage(encryptionKey, key);
-            if (originalText && isJsonString(originalText)) {
-              const noteData = JSON.parse(originalText);
-              loadedNotes.push({
-                id: key,
-                content: noteData.content,
-                title: noteData.title,
-                date: new Date(noteData.date),
-                additionalInfo: "",
-              });
-            }
-          } catch (error) {
-            //console.log("Decryption or JSON parsing failed", error);
-          }
-        }
+      const loadedNotes = await ToDoListService.loadAllToDoLists(encryptionKey);
+      if (loadedNotes) {
+        const filteredNotes = loadedNotes
+          .map(([toDoList, key]) => ({ toDoList, key }))
+          .filter(({ toDoList }) => {
+            return (
+              toDoList.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              toDoList.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              toDoList.toDoItem.some((item: ToDoItem) =>
+                item.toDoTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                item.toDoText.toLowerCase().includes(searchQuery.toLowerCase())
+              )
+            );
+          });
+        filteredNotes.sort((a, b) => {
+          if (a.key < b.key) return -1;
+          if (a.key > b.key) return 1;
+          return 0;
+        });
+        setToDoLists(filteredNotes);
       }
-      const filteredNotes = loadedNotes.filter((note) =>
-        note.content.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      filteredNotes.sort((a, b) => b.date.getTime() - a.date.getTime());
-
-      setNotes(filteredNotes);
     };
     loadAndDecryptNotes();
-  }, [encryptionKey, searchQuery,location]);
+  }, [encryptionKey, searchQuery, location]);
 
-  return notes;
+  return toDoLists;
 };
 
 export default useAllNotes;

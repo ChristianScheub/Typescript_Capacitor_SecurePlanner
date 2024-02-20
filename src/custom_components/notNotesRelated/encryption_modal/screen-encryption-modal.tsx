@@ -7,7 +7,7 @@ import { PiFingerprintThin } from "react-icons/pi";
 import { useTranslation } from 'react-i18next';
 
 
-interface EncryptionKeyModalViewProps {
+interface View_EncryptionKeyModalProps {
   handleKeySubmit: (event: FormEvent) => void;
   activateFingerprint: () => void;
   showFingerprintBtn: boolean;
@@ -15,7 +15,7 @@ interface EncryptionKeyModalViewProps {
   inputRef: RefObject<HTMLInputElement>;
 }
 
-const EncryptionKeyModalView: React.FC<EncryptionKeyModalViewProps> = ({
+const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
   handleKeySubmit,
   activateFingerprint,
   showFingerprintBtn,
@@ -111,4 +111,4 @@ const EncryptionKeyModalView: React.FC<EncryptionKeyModalViewProps> = ({
   );
 };
 
-export default EncryptionKeyModalView;
+export default View_EncryptionKeyModal;

@@ -13,7 +13,7 @@ import {
 } from "../../services/encryptionEngine/encryptionEngine";
 import { useTranslation } from "react-i18next";
 
-const SettingsContainer: React.FC = () => {
+const Container_Settings: React.FC = () => {
   const { t } = useTranslation();
 
   const handleImpressumClick = (navigate: NavigateFunction) => {
@@ -209,4 +209,4 @@ const SettingsContainer: React.FC = () => {
   );
 };
 
-export default SettingsContainer;
+export default Container_Settings;

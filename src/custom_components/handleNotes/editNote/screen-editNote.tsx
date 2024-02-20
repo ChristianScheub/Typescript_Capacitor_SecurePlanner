@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { FaRegSave, FaRegClock, FaTrash, FaCheck } from "react-icons/fa";
 import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn";
@@ -7,10 +7,10 @@ import { Card } from "react-bootstrap";
 import { ToDoList } from "../../types/ToDoList.types";
 import { MdOutlineEdit } from "react-icons/md";
 import { IoAddSharp } from "react-icons/io5";
-import ProgressBar from "./progressBars/screen-progressBar";
+import ProgressBar from "../../../modules/ui/progress/progressBar/screen-progressBar";
 import { Priority } from "../editToDoElement/priorityIndicator/priority.enum";
 
-interface EditNoteViewProps {
+interface View_EditNoteViewProps {
   toDoList: ToDoList;
   isNewPath: Boolean
   progressOverall: number;
@@ -30,7 +30,7 @@ interface EditNoteViewProps {
   handleDoneToDo: (event: React.MouseEvent, toDoId: number) => void;
 }
 
-const EditNoteView: React.FC<EditNoteViewProps> = ({
+const View_EditNote: React.FC<View_EditNoteViewProps> = ({
   toDoList,
   isNewPath,
   progressOverall,
@@ -49,7 +49,12 @@ const EditNoteView: React.FC<EditNoteViewProps> = ({
   const formattedDate = (new Date(toDoList.date)).toLocaleDateString();
   const { t } = useTranslation();
 
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
+  const handleProgressBarClick = (id: string) => {
+    // Schaltet den Tooltip um oder setzt ihn zurück, falls er bereits aktiv ist
+    setActiveTooltip(activeTooltip === id ? null : id);
+  };
 
 
 
@@ -123,10 +128,14 @@ const EditNoteView: React.FC<EditNoteViewProps> = ({
           />
         </Form.Group>
 
-        <ProgressBar title={t("editNote_progressBar_Total")} progress={progressOverall} />
-        <ProgressBar title={t("editNote_progressBar_Today")} progress={progressToday} />
-        <ProgressBar title={t("editNote_progressBar_7Days")} progress={progressNext7Days} />
-        <ProgressBar title={t("editNote_progressBar_Priority")} progress={progressHighPriority} />
+        <ProgressBar title={t("editNote_progressBar_Total")} progress={progressOverall} infoText={t("editNote_progressBar_Total_Explanation", {count: progressOverall})} active={activeTooltip === 'total'}
+        onClick={() => handleProgressBarClick('total')} />
+        <ProgressBar title={t("editNote_progressBar_Today")} progress={progressToday} infoText={t("editNote_progressBar_Today_Explanation", {count: progressToday})} active={activeTooltip === 'today'}
+        onClick={() => handleProgressBarClick('today')}/>
+        <ProgressBar title={t("editNote_progressBar_7Days")} progress={progressNext7Days} infoText={t("editNote_progressBar_7Days_Explanation", {count: progressNext7Days})} active={activeTooltip === '7Days'}
+        onClick={() => handleProgressBarClick('7Days')}/>
+        <ProgressBar title={t("editNote_progressBar_Priority")} progress={progressHighPriority} infoText={t("editNote_progressBar_Priority_Explanation", {count: progressHighPriority})} active={activeTooltip === 'Priority'}
+        onClick={() => handleProgressBarClick('Priority')}/>
 
         {toDoList.toDoItem.map((item, index) => (
           <Card
@@ -134,13 +143,12 @@ const EditNoteView: React.FC<EditNoteViewProps> = ({
             style={{
               backgroundColor: "#49454F",
               color: "white",
-              height: "13vh",
               margin: "2vw",
               minHeight: "13vh",
             }}
           >
             <Card.Body>
-              <table style={{ width: "90vw" }}>
+              <table style={{ width: "80vw" }}>
                 <tbody>
                   <tr>
 
@@ -225,4 +233,4 @@ const EditNoteView: React.FC<EditNoteViewProps> = ({
   );
 };
 
-export default EditNoteView;
+export default View_EditNote;

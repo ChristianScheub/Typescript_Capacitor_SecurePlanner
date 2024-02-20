@@ -1,30 +1,54 @@
-import React from 'react';
-import { Card, Row, Col } from 'react-bootstrap';
+import React from "react";
+import { Card, Row, Col } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { FaPlusCircle } from 'react-icons/fa';
-import FloatingBtn, { ButtonAlignment } from '../../../modules/ui/floatingBtn';
-import { useTranslation } from 'react-i18next';
+import { FaPlusCircle, FaArrowRight } from "react-icons/fa";
+import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn";
+import { useTranslation } from "react-i18next";
+import ProgressCircle from "../../../modules/ui/progress/progressCircle/progressCircle";
+import { ToDoListWithKey } from "../../types/ToDoListKey.types";
+import { ToDoList } from "../../types/ToDoList.types";
+import { MdArrowForwardIos } from "react-icons/md";
 
-
-interface Note {
-  id: string;
-  title: string;
-  content: string;
-}
-
-interface ViewNoteViewProps {
-  notes: Note[];
+interface View_ViewNoteProps {
+  notes: ToDoListWithKey[];
   onNavigateToEdit: (noteId: string) => void;
   onNavigateToCreateNew: () => void;
+  calculateProgress: (items: ToDoList) => number;
+  calculateProgressDays: (items: ToDoList, days: number) => number;
 }
 
-const ViewNoteView: React.FC<ViewNoteViewProps> = ({ notes, onNavigateToEdit, onNavigateToCreateNew }) => {
+const View_ViewNote: React.FC<View_ViewNoteProps> = ({
+  notes,
+  onNavigateToEdit,
+  onNavigateToCreateNew,
+  calculateProgress,
+  calculateProgressDays,
+}) => {
   const truncateText = (text: string, maxLength: number): string => {
     if (text.length <= maxLength) return text;
     return text.substr(0, maxLength) + "...";
   };
-  const { t } = useTranslation();
+  const breakText = (text: string, maxLength: number): string => {
+    let brokenText = "";
+    let currentIndex = 0;
 
+    while (currentIndex < text.length) {
+      let spaceIndex = currentIndex + maxLength;
+      if (spaceIndex < text.length && text[spaceIndex] !== " ") {
+        while (spaceIndex < text.length && text[spaceIndex] !== " ") {
+          spaceIndex++;
+        }
+      }
+      if (spaceIndex === text.length) {
+        spaceIndex = currentIndex + maxLength;
+      }
+      brokenText += text.substring(currentIndex, spaceIndex) + " ";
+      currentIndex = spaceIndex;
+    }
+    return brokenText.trim();
+  };
+
+  const { t } = useTranslation();
 
   return (
     <div
@@ -33,22 +57,93 @@ const ViewNoteView: React.FC<ViewNoteViewProps> = ({ notes, onNavigateToEdit, on
       }}
     >
       {notes.length > 0 ? (
-        <Row xs={2} md={2} lg={3} style={{ margin: "1vw" }}>
+        <Row xs={1} md={1} lg={2} style={{ margin: "1vw" }}>
           {notes.map((note) => (
-            <Col key={note.id} style={{ marginBottom: "5vw" }}>
+            <Col key={note.key} style={{ marginBottom: "5vw" }}>
               <Card
                 style={{
                   backgroundColor: "#49454F",
                   color: "white",
-                  height: "100%",
                   margin: "2vw",
                   minHeight: "20vh",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
-                onClick={() => onNavigateToEdit(note.id)}
+                onClick={() => onNavigateToEdit(note.key)}
               >
                 <Card.Body>
-                  <Card.Title>{truncateText(note.title, 10)}</Card.Title>
-                  <Card.Text>{truncateText(note.content, 100)}</Card.Text>
+                  <table
+                    style={{
+                      paddingTop: "1vh",
+                      marginLeft: "4vw",
+                      width: "82vw"
+                    }}
+                  >
+                    <tr>
+                      <td>
+                        <Card.Title style={{
+                      marginLeft: note.toDoList.content ? "1vw" : "2vw",
+                    }}>
+                          {truncateText(note.toDoList.title, 15)}
+                        </Card.Title>
+                        <table
+                          style={{
+                            height: "100%",
+                            width: "70vw",
+                          }}
+                        >
+                          <tr>
+                            {note.toDoList.content ? (
+                              <td style={{ height: "100%" }}>
+                                <Card.Text>
+                                  {breakText(
+                                    truncateText(note.toDoList.content, 20),
+                                    6
+                                  )}
+                                </Card.Text>
+                              </td>
+                            ) : (
+                              <td
+                                style={{
+                                  paddingLeft: "2vw",
+                                  paddingRight: "2vw",
+                                }}
+                              >
+                                <ProgressCircle
+                                  title={t("viewNote_progressCircle_7Days")}
+                                  progress={calculateProgressDays(
+                                    note.toDoList,
+                                    7
+                                  )}
+                                />
+                              </td>
+                            )}
+                            <td>
+                              <ProgressCircle
+                                title={t("viewNote_progressCircle_Today")}
+                                progress={calculateProgressDays(
+                                  note.toDoList,
+                                  0
+                                )}
+                              />
+                            </td>
+                            <td style={{ paddingLeft: "2vw" }}>
+                              <ProgressCircle
+                                title={t("viewNote_progressCircle_Total")}
+                                progress={calculateProgress(note.toDoList)}
+                              />
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td style={{ paddingLeft: "2vw",textAlign:"right",width: "100%" }}>
+                        <MdArrowForwardIos
+                          style={{ color: "white", fontSize: "2em" }}
+                        />
+                      </td>
+                    </tr>
+                  </table>
                 </Card.Body>
               </Card>
             </Col>
@@ -64,15 +159,13 @@ const ViewNoteView: React.FC<ViewNoteViewProps> = ({ notes, onNavigateToEdit, on
           }}
         >
           <Card.Body>
-            <Card.Text>
-              {truncateText(t('placeholder_noNotes'), 150)}
-            </Card.Text>
+            <Card.Text>{truncateText(t("placeholder_noNotes"), 150)}</Card.Text>
           </Card.Body>
         </Card>
       )}
 
       <FloatingBtn
-        alignment={ButtonAlignment.CENTER}
+        alignment={ButtonAlignment.RIGHT}
         icon={FaPlusCircle}
         onClick={onNavigateToCreateNew}
       />
@@ -80,4 +173,4 @@ const ViewNoteView: React.FC<ViewNoteViewProps> = ({ notes, onNavigateToEdit, on
   );
 };
 
-export default ViewNoteView;
+export default View_ViewNote;

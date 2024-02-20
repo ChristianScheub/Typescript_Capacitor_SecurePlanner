@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Datenschutz from "./modules/legal/datenschutz";
 import Impressum from "./modules/legal/impressum";
-import SettingsContainer from "./custom_components/notNotesRelated/settings/container_settings";
-import EncryptionKeyModalContainer from "./custom_components/notNotesRelated/encryption_modal/container-encryption-modal";
+import Container_Settings from "./custom_components/notNotesRelated/settings/container_settings";
+import Container_EncryptionKeyModal from "./custom_components/notNotesRelated/encryption_modal/container-encryption-modal";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBarContainer from "./custom_components/notNotesRelated/navBar/container-navBar";
-import ViewNoteContainer from "./custom_components/handleNotes/viewNote/container-viewNote";
-import EditNoteContainer from "./custom_components/handleNotes/editNote/container-editNote";
-import EditToDoContainer from "./custom_components/handleNotes/editToDoElement/container-editToDo";
+import Container_ViewNote from "./custom_components/handleNotes/viewNote/container-viewNote";
+import Container_EditNote from "./custom_components/handleNotes/editNote/container-editNote";
+import Container_EditTodo from "./custom_components/handleNotes/editToDoElement/container-editToDo";
 
 import "./i18n";
 
@@ -26,10 +26,10 @@ const App: React.FC = () => {
               <Route
                 path="/"
                 element={
-                  <EncryptionKeyModalContainer onSubmit={setEncryptionKey} />
+                  <Container_EncryptionKeyModal onSubmit={setEncryptionKey} />
                 }
               />
-              <Route path="/settingsHome" element={<SettingsContainer />} />
+              <Route path="/settingsHome" element={<Container_Settings />} />
               <Route path="/impressumHome" element={<Impressum />} />
             </Routes>
           </Router>
@@ -51,27 +51,27 @@ const App: React.FC = () => {
                 <Route path="/datenschutz" element={<Datenschutz />} />
                 <Route path="/impressum" element={<Impressum />} />
 
-                <Route path="/settings" element={<SettingsContainer />} />
+                <Route path="/settings" element={<Container_Settings />} />
 
                 <Route
                   path="/edit/:noteId"
-                  element={<EditNoteContainer encryptionKey={encryptionKey} />}
+                  element={<Container_EditNote encryptionKey={encryptionKey} />}
                 />
 
                 <Route
                   path="/edit/:noteId/NOICE"
-                  element={<EditToDoContainer encryptionKey={encryptionKey}/>}
+                  element={<Container_EditTodo encryptionKey={encryptionKey}/>}
                 />
 
                 <Route
                   path="/edit/:noteId/:toDoItemId"
-                  element={<EditToDoContainer encryptionKey={encryptionKey}/>}
+                  element={<Container_EditTodo encryptionKey={encryptionKey}/>}
                 />
 
                 <Route
                   path="/"
                   element={
-                    <ViewNoteContainer
+                    <Container_ViewNote
                       encryptionKey={encryptionKey}
                       searchQuery={searchQuery}
                     />
@@ -79,7 +79,7 @@ const App: React.FC = () => {
                 />
                 <Route
                   path="/edit/new"
-                  element={<EditNoteContainer encryptionKey={encryptionKey} />}
+                  element={<Container_EditNote encryptionKey={encryptionKey} />}
                 />
               </Routes>
               <NavBarContainer setSearchQuery={setSearchQuery} />

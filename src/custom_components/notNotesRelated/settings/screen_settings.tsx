@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import UsedLibsListContainer from "../../../modules/legal/usedLibs/container_usedLibList";
 import NavBarContainer from "../navBar/container-navBar";
 
-interface SettingsProps {
+interface View_SettingsProps {
   showFingerprintBtn: boolean;
   onDeleteAllClick: (
     showFingerprintBtn: boolean,
@@ -21,7 +21,7 @@ interface SettingsProps {
   isAlreadyLoggedIn: boolean;
 }
 
-const SettingsView: React.FC<SettingsProps> = ({
+const View_Settings: React.FC<View_SettingsProps> = ({
   showFingerprintBtn,
   onDeleteAllClick,
   onDeleteBiometryClick,
@@ -166,4 +166,4 @@ const SettingsView: React.FC<SettingsProps> = ({
   );
 };
 
-export default SettingsView;
+export default View_Settings;

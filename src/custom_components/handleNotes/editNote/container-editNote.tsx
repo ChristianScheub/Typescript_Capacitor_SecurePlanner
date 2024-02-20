@@ -7,13 +7,12 @@ import { useTranslation } from "react-i18next";
 import { Priority } from "../editToDoElement/priorityIndicator/priority.enum";
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
-import { ToDoItem } from "../../types/ToDoItem.types";
 
-interface EditNoteContainerProps {
+interface Container_EditNoteProps {
   encryptionKey: string;
 }
 
-const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
+const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   encryptionKey,
 }) => {
   let { noteId } = useParams<{ noteId?: string }>();
@@ -73,20 +72,8 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
     toDoList.toDoItem,
     (item) => item.toDoDone
   );
-  const progressToday = ProgressToDoListService.calculateProgress(
-    toDoList.toDoItem,
-    (item) =>
-      item.toDoDone && ProgressToDoListService.isNextNDays(item.toDoEndDate, 0),
-    (item) => ProgressToDoListService.isNextNDays(item.toDoEndDate, 0)
-  );
-
-  const progressNext7Days = ProgressToDoListService.calculateProgress(
-    toDoList.toDoItem,
-    (item) =>
-      item.toDoDone && ProgressToDoListService.isNextNDays(item.toDoEndDate, 7),
-    (item) => ProgressToDoListService.isNextNDays(item.toDoEndDate, 7)
-  );
-
+  const progressToday = ProgressToDoListService.calculateProgressForNextNDays(toDoList.toDoItem, 0);
+  const progressNext7Days = ProgressToDoListService.calculateProgressForNextNDays(toDoList.toDoItem, 7);
   const progressHighPriority = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
     (item) =>
@@ -205,4 +192,4 @@ const EditNoteContainer: React.FC<EditNoteContainerProps> = ({
   );
 };
 
-export default EditNoteContainer;
+export default Container_EditNote;

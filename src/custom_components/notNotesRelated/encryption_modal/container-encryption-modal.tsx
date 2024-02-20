@@ -1,6 +1,6 @@
 import React, { FormEvent, useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import EncryptionKeyModalScreen from "./screen-encryption-modal";
+import View_EncryptionKeyModal from "./screen-encryption-modal";
 import {
   getPasswordFromFingerprint,
   storePasswordFromFingerprint,
@@ -9,12 +9,12 @@ import {
 import { getPBKDF2_Password } from "../../services/encryptionEngine/encryptionEngine";
 import { useTranslation } from 'react-i18next';
 
-interface EncryptionKeyModalContainerProps {
+interface Container_EncryptionKeyModalProps {
   onSubmit: (encryptionKey: string) => void;
 }
 
-const EncryptionKeyModalContainer: React.FC<
-  EncryptionKeyModalContainerProps
+const Container_EncryptionKeyModal: React.FC<
+Container_EncryptionKeyModalProps
 > = ({ onSubmit }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ const EncryptionKeyModalContainer: React.FC<
   };
 
   return (
-    <EncryptionKeyModalScreen
+    <View_EncryptionKeyModal
       showFingerprintBtn={showFingerprintBtn}
       activateFingerprint={activateFingerprint}
       handleKeySubmit={handleKeySubmit}
@@ -75,4 +75,4 @@ const EncryptionKeyModalContainer: React.FC<
   );
 };
 
-export default EncryptionKeyModalContainer;
+export default Container_EncryptionKeyModal;

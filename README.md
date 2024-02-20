@@ -5,21 +5,21 @@
 Last Edit: 02.2024 <br>
 Language: Typescript React Capacitor<br>
 
-With this app, it is possible to securely store notes locally with AES & Triple DES encryption, edit/delete them and search them.
-It is also possible to decrypt the notes using native biometrics (e.g. fingerprint sensor). (More on this under Security)
+With this app, it is possible to securely store ToDo Lists locally with AES & Triple DES encryption, edit/delete them and search them.
+It is also possible to decrypt the ToDo Lists using native biometrics (e.g. fingerprint sensor). (More on this under Security)
 
 <br><br><br>
 
 Deutsche Kurzbeschreibung:
-Mit dieser App ist es möglich Notizen mit AES-Verschlüsselung & TripleDES sicher lokal zu speichern, sie zu bearbeiten/löschen und sie zu durchsuchen.
-Zudem ist es möglich mithilfe der Native Biometric (z.B. Fingerabdruck Sensor) die Notizen zu entschlüsseln. (Mehr dazu unter Security)
+Mit dieser App ist es möglich To DO Listen mit AES-Verschlüsselung & TripleDES sicher lokal zu speichern, sie zu bearbeiten/löschen und sie zu durchsuchen.
+Zudem ist es möglich mithilfe der Native Biometric (z.B. Fingerabdruck Sensor) die Listen zu entschlüsseln. (Mehr dazu unter Security)
 
 | Start Screen | Notes Overview | Note Edit | Settings |
 |--------------|----------------|-----------|-----------|
 | <img src="images/startScreen.jpeg" alt="Start Screen" height="300"> | <img src="images/notesOverview.png" alt="Notes Overview" height="300"> | <img src="images/editScreen.jpeg" alt="Note Edit" height="300"> | <img src="images/settingsScreen.png" alt="Note Edit" height="300"> |
 
 ## Security
-First of all: All notes are stored encrypted with AES256. 
+First of all: All To Do Lists are stored encrypted with AES256. 
 
 - The user's password is first hashed using PBKDF2 with 60,001 iterations and a fixed salt.
 - This hash is then passed through 2,000 iterations using PBKDF2 with a different salt for each note. 

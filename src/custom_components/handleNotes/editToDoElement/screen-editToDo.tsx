@@ -10,7 +10,7 @@ import { FaRegSave } from "react-icons/fa";
 import { ToDoItem } from "../../types/ToDoItem.types";
 
 
-interface ScreenEditTodoProps {
+interface View_EditTodoProps {
   title: string;
   desc: string
   endDate: Date;
@@ -20,7 +20,7 @@ interface ScreenEditTodoProps {
   onHandleSave: () => void;
 }
 
-const ScreenEditTodo: React.FC<ScreenEditTodoProps> = ({
+const View_EditTodo: React.FC<View_EditTodoProps> = ({
   title,
   desc,
   endDate,
@@ -46,7 +46,7 @@ const ScreenEditTodo: React.FC<ScreenEditTodoProps> = ({
           color: "white",
           height: "100%",
           margin: "2vw",
-          minHeight: "20vh",
+          minHeight: "30vh",
         }}
       >
         <Card.Body>
@@ -120,4 +120,4 @@ const ScreenEditTodo: React.FC<ScreenEditTodoProps> = ({
   );
 };
 
-export default ScreenEditTodo;
+export default View_EditTodo;

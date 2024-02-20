@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ScreenEditTodo from "./screen-editToDo";
+import View_EditTodo from "./screen-editToDo";
 import { Priority } from "./priorityIndicator/priority.enum";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -7,11 +7,11 @@ import { ToDoItem } from "../../types/ToDoItem.types";
 import { ToDoList } from "../../types/ToDoList.types";
 import  ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 
-interface EditToDoContainerProps {
+interface Container_EditTodoProps {
   encryptionKey: string;
 }
 
-const EditTodoContainer: React.FC<EditToDoContainerProps> = ({
+const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
   encryptionKey,
 }) => {
   const navigate = useNavigate();
@@ -139,7 +139,7 @@ const EditTodoContainer: React.FC<EditToDoContainerProps> = ({
   };
 
   return (
-    <ScreenEditTodo
+    <View_EditTodo
       title={toDoListItem.toDoTitle}
       desc={toDoListItem.toDoText}
       endDate={toDoListItem.toDoEndDate}
@@ -151,4 +151,4 @@ const EditTodoContainer: React.FC<EditToDoContainerProps> = ({
   );
 };
 
-export default EditTodoContainer;
+export default Container_EditTodo;

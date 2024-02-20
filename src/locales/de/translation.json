@@ -43,7 +43,15 @@
   "editToDoElement_DetailText":"Detailtext des ToDos...",
   "editNote_ToDoDeleteConfirm": "Sind sie sicher, dass sie dieses ToDo löschen möchten?",
   "editNote_progressBar_Total": "Gesamt erledigt",
+  "editNote_progressBar_Total_Explanation":"Sie haben {{count}}% der ToDos schon erledigt!",
   "editNote_progressBar_Today": "ToDos von heute erledigt",
+  "editNote_progressBar_Today_Explanation":"Sie haben {{count}}% der ToDos die heute als Enddatum haben erledigt!",
   "editNote_progressBar_Priority": "Prio Hoch erledigt",
-  "editNote_progressBar_7Days": "ToDos der nächsten 7 Tage erledigt"
+  "editNote_progressBar_Priority_Explanation":"Sie haben {{count}}% der ToDos dieser Liste mit Prio Hoch erledigt!",
+  "editNote_progressBar_7Days": "ToDos der nächsten 7 Tage erledigt",
+  "editNote_progressBar_7Days_Explanation":"Sie haben {{count}}% der ToDos die in den nächsten 7 Tagen fällig sind erledigt!",
+  "viewNote_progressCircle_Total": "Gesamt",
+  "viewNote_progressCircle_Today": "Heute",
+  "viewNote_progressCircle_7Days": "7 Tage"
+
 }
