@@ -18,14 +18,15 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   let { noteId } = useParams<{ noteId?: string }>();
   const navigate = useNavigate();
   const { t } = useTranslation();
+
   const [toDoList, setToDoList] = useState<ToDoList>({
     title: "",
     date: new Date(),
     content: "",
     toDoItem: [],
   });
-  const location = useLocation();
-  const isNewPath = location.pathname.includes("new");
+
+  const isNewPath = localStorage.length < 3;
 
   useEffect(() => {
     const loadAndDecryptNote = async () => {
@@ -56,7 +57,12 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     }
 
     const loadAndDecryptNote = async () => {
-      if (noteId) {
+      if (
+        noteId &&
+        (toDoList.title !== "" ||
+          toDoList.content !== "" ||
+          toDoList.toDoItem.length > 0)
+      ) {
         try {
           await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
         } catch (error) {
@@ -72,8 +78,13 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     toDoList.toDoItem,
     (item) => item.toDoDone
   );
-  const progressToday = ProgressToDoListService.calculateProgressForNextNDays(toDoList.toDoItem, 0);
-  const progressNext7Days = ProgressToDoListService.calculateProgressForNextNDays(toDoList.toDoItem, 7);
+  const progressToday = ProgressToDoListService.calculateProgressForNextNDays(
+    toDoList.toDoItem,
+    0
+  );
+  const progressNext7Days =
+    ProgressToDoListService.calculateProgressForNextNDays(toDoList.toDoItem, 7);
+    
   const progressHighPriority = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
     (item) =>
@@ -114,11 +125,11 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     return formattedDate;
   }
 
-  const updateToDoList = <K extends keyof ToDoList>(
+  const updateToDoList = async <K extends keyof ToDoList>(
     key: K,
     value: ToDoList[K]
   ) => {
-    setToDoList({ ...toDoList, [key]: value });
+    await setToDoList({ ...toDoList, [key]: value });
   };
 
   function handleAdd() {

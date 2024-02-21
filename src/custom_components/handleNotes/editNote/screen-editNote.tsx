@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { FaRegSave, FaRegClock, FaTrash, FaCheck } from "react-icons/fa";
-import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn/floatingBtn";
+import { FaRegSave, FaRegClock, FaTrash } from "react-icons/fa";
+import { FaArrowDownLong } from "react-icons/fa6";
+import FloatingBtn, {
+  ButtonAlignment,
+} from "../../../modules/ui/floatingBtn/floatingBtn";
 import { useTranslation } from "react-i18next";
 import { Card } from "react-bootstrap";
 import { ToDoList } from "../../types/ToDoList.types";
@@ -12,7 +15,7 @@ import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priorit
 
 interface View_EditNoteViewProps {
   toDoList: ToDoList;
-  isNewPath: Boolean
+  isNewPath: Boolean;
   progressOverall: number;
   progressToday: number;
   progressHighPriority: number;
@@ -46,17 +49,14 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
   handleDeleteToDo,
   handleDoneToDo,
 }) => {
-  const formattedDate = (new Date(toDoList.date)).toLocaleDateString();
+  const formattedDate = new Date(toDoList.date).toLocaleDateString();
   const { t } = useTranslation();
 
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
   const handleProgressBarClick = (id: string) => {
-    // Schaltet den Tooltip um oder setzt ihn zurück, falls er bereits aktiv ist
     setActiveTooltip(activeTooltip === id ? null : id);
   };
-
-
 
   return (
     <div
@@ -105,7 +105,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
             }}
           />
           <Form.Text style={{ color: "#CBCBCD", fontSize: "1rem" }}>
-            {formattedDate}
+            {formattedDate},  {toDoList.toDoItem.length}
           </Form.Text>
         </div>
 
@@ -128,15 +128,43 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
           />
         </Form.Group>
 
-        <ProgressBar title={t("editNote_progressBar_Total")} progress={progressOverall} infoText={t("editNote_progressBar_Total_Explanation", {count: progressOverall})} active={activeTooltip === 'total'}
-        onClick={() => handleProgressBarClick('total')} />
-        <ProgressBar title={t("editNote_progressBar_Today")} progress={progressToday} infoText={t("editNote_progressBar_Today_Explanation", {count: progressToday})} active={activeTooltip === 'today'}
-        onClick={() => handleProgressBarClick('today')}/>
-        <ProgressBar title={t("editNote_progressBar_7Days")} progress={progressNext7Days} infoText={t("editNote_progressBar_7Days_Explanation", {count: progressNext7Days})} active={activeTooltip === '7Days'}
-        onClick={() => handleProgressBarClick('7Days')}/>
-        <ProgressBar title={t("editNote_progressBar_Priority")} progress={progressHighPriority} infoText={t("editNote_progressBar_Priority_Explanation", {count: progressHighPriority})} active={activeTooltip === 'Priority'}
-        onClick={() => handleProgressBarClick('Priority')}/>
-
+        <ProgressBar
+          title={t("editNote_progressBar_Total")}
+          progress={progressOverall}
+          infoText={t("editNote_progressBar_Total_Explanation", {
+            count: progressOverall,
+          })}
+          active={activeTooltip === "total"}
+          onClick={() => handleProgressBarClick("total")}
+        />
+        <ProgressBar
+          title={t("editNote_progressBar_Today")}
+          progress={progressToday}
+          infoText={t("editNote_progressBar_Today_Explanation", {
+            count: progressToday,
+          })}
+          active={activeTooltip === "today"}
+          onClick={() => handleProgressBarClick("today")}
+        />
+        <ProgressBar
+          title={t("editNote_progressBar_7Days")}
+          progress={progressNext7Days}
+          infoText={t("editNote_progressBar_7Days_Explanation", {
+            count: progressNext7Days,
+          })}
+          active={activeTooltip === "7Days"}
+          onClick={() => handleProgressBarClick("7Days")}
+        />
+        <ProgressBar
+          title={t("editNote_progressBar_Priority")}
+          progress={progressHighPriority}
+          infoText={t("editNote_progressBar_Priority_Explanation", {
+            count: progressHighPriority,
+          })}
+          active={activeTooltip === "Priority"}
+          onClick={() => handleProgressBarClick("Priority")}
+        />
+        
         {toDoList.toDoItem.map((item, index) => (
           <Card
             key={index}
@@ -151,7 +179,6 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
               <table style={{ width: "80vw" }}>
                 <tbody>
                   <tr>
-
                     <td onClick={(event) => handleDoneToDo(event, index)}>
                       <div
                         style={{
@@ -162,10 +189,18 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                       >
                         <h4>{item.toDoTitle}</h4>
                         <b>{t("editToDoElement_EndDate")}: </b>
-                        <i dangerouslySetInnerHTML={{ __html: formatDate(item.toDoEndDate) }}></i>
+                        <i
+                          dangerouslySetInnerHTML={{
+                            __html: formatDate(item.toDoEndDate),
+                          }}
+                        ></i>
                         <br />
                         <b>{t("editToDoElement_Priority")}: </b>
-                        <i dangerouslySetInnerHTML={{ __html: getPriorityText(item.toDoPriority) }}></i>
+                        <i
+                          dangerouslySetInnerHTML={{
+                            __html: getPriorityText(item.toDoPriority),
+                          }}
+                        ></i>
                       </div>
                     </td>
                     <td
@@ -214,6 +249,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
               </table>
             </Card.Body>
           </Card>
+          
         ))}
 
         <FloatingBtn
@@ -221,12 +257,33 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
           icon={IoAddSharp}
           onClick={handleAdd}
         />
-         {isNewPath && (
-        <FloatingBtn
-          alignment={ButtonAlignment.LEFT}
-          icon={FaRegSave}
-          onClick={handleSave}
-        />
+       
+
+        {isNewPath && toDoList.toDoItem.length < 1 && (
+          <div>
+            <div
+              style={{
+                display: "flex",
+                textAlign: "center",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                height: "30vh",
+              }}
+            >
+              <p style={{ fontSize: "8vw" }}>
+                {" "}
+                <br /> {t("editNote_hint")}
+              </p>
+              <FaRegSave
+                style={{
+                  color: "white",
+                  fontSize: "14vw",
+                }}
+              />
+            </div>
+          </div>
         )}
       </Form>
     </div>

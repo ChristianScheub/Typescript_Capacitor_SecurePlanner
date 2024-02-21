@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'de.scheub.securePlaner',
-  appName: 'Secure-Planer',
+  appId: 'de.scheub.securePlanner',
+  appName: 'Secure-Planner',
   webDir: 'build',
   server: {
     androidScheme: 'https'

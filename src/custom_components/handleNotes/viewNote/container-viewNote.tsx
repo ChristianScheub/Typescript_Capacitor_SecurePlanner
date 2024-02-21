@@ -24,7 +24,7 @@ const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, 
   };
 
   const handleNavigateToCreateNew = () => {
-    navigate("/edit/new");
+    navigate(`/edit/${Date.now().toString()}`);
   };
 
   const calculateProgress = (items: ToDoList) => {

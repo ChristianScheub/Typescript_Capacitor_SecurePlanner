@@ -15,6 +15,7 @@ describe("EncryptionKeyModalView", () => {
     render(
       <EncryptionKeyModalView
         showFingerprintBtn={true}
+        showFingerprintHint={true}
         handleKeySubmit={mockHandleKeySubmit}
         activateFingerprint={mockActivateFingerprint}
         navigateToPrivacy={mockNavigateToPrivacy}
@@ -28,6 +29,7 @@ describe("EncryptionKeyModalView", () => {
     const { getByText } = render(
       <EncryptionKeyModalView
         handleKeySubmit={mockHandleKeySubmit}
+        showFingerprintHint={true}
         activateFingerprint={mockActivateFingerprint}
         showFingerprintBtn={true}
         navigateToPrivacy={mockNavigateToPrivacy}
@@ -40,6 +42,7 @@ describe("EncryptionKeyModalView", () => {
     render(
       <EncryptionKeyModalView
         handleKeySubmit={mockHandleKeySubmit}
+        showFingerprintHint={true}
         activateFingerprint={mockActivateFingerprint}
         showFingerprintBtn={true}
         navigateToPrivacy={mockNavigateToPrivacy}
@@ -56,6 +59,7 @@ describe("EncryptionKeyModalView", () => {
     render(
       <EncryptionKeyModalView
         handleKeySubmit={mockHandleKeySubmit}
+        showFingerprintHint={true}
         activateFingerprint={mockActivateFingerprint}
         showFingerprintBtn={true}
         navigateToPrivacy={mockNavigateToPrivacy}

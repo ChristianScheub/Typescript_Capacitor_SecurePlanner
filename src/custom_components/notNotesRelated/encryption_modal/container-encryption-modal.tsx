@@ -19,6 +19,9 @@ Container_EncryptionKeyModalProps
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const [showFingerprintBtn, setShowFingerprintBtn] = useState(false);
+  const [showFingerprintHint, setShowFingerprintHint] = useState<
+    boolean
+  >(showFingerprintBtn&& localStorage.length <= 2);
   const { t } = useTranslation();
 
 
@@ -30,6 +33,10 @@ Container_EncryptionKeyModalProps
     };
     checkBiometrics();
   }, []);
+
+  useEffect(() => {
+    setShowFingerprintHint(showFingerprintBtn && localStorage.length <= 3);
+  }, [showFingerprintBtn, localStorage.length]);
 
   const handleKeySubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -67,6 +74,7 @@ Container_EncryptionKeyModalProps
   return (
     <View_EncryptionKeyModal
       showFingerprintBtn={showFingerprintBtn}
+      showFingerprintHint={showFingerprintHint}
       activateFingerprint={activateFingerprint}
       handleKeySubmit={handleKeySubmit}
       inputRef={inputRef}

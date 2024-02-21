@@ -1,6 +1,6 @@
 {
   "encryption-modal_title": "Passwort eingeben",
-  "encryption-modal_message": "Bitte geben sie ihren (zukünftigen) Verschlüsselungscode ein! Die Todo Listen werden mit AES verschlüsselt und sind dann irreversibel. Merken sie ihn sich gut! Aufgrund von verschiedene Kryptographische Algorithmen kann der Login etwa 10 Sekunden dauern. ",
+  "encryption-modal_message": "Bitte geben sie ihren Verschlüsselungscode ein! Aufgrund von verschiedene Kryptographische Algorithmen kann der Login etwa 10 Sekunden dauern. ",
   "encryption-modal_FastLoginmessage": "Für schnelleren Zugriff empfehlen wir den Biometrie Login.",
   "fingerprint_empty": "Bitte geben Sie das zu speichernde Passwort erst ein und drücken sie dann diesen Button zum speichern.",
   "fingerprint_not_Avaible": "Biometrische Authentifizierung nicht verfügbar.",
@@ -9,7 +9,7 @@
   "encryption-modal_placeholder": "Passwort...",
   "navbar_searchForm": "ToDos suchen...",
   "navbar_deleteBtn": "Sind Sie sicher, dass Sie diese ToDo Liste löschen möchten?",
-  "placeholder_noNotes": "Noch keine ToDo Listen vorhanden!",
+  "placeholder_noNotes": "Noch keine ToDo Listen vorhanden.",
   "editNote_TitlePlaceholder": "Title",
   "editNote_TextPlaceholder": "Beschreibung der Todo Liste...",
   "settings_Title": "Einstellungen",
@@ -50,6 +50,7 @@
   "editNote_progressBar_Priority_Explanation":"Sie haben {{count}}% der ToDos dieser Liste mit Prio Hoch erledigt!",
   "editNote_progressBar_7Days": "ToDos der nächsten 7 Tage erledigt",
   "editNote_progressBar_7Days_Explanation":"Sie haben {{count}}% der ToDos die in den nächsten 7 Tagen fällig sind erledigt!",
+  "editNote_hint": "Die ToDo Liste wird automatisch gespeichert!",
   "viewNote_progressCircle_Total": "Gesamt",
   "viewNote_progressCircle_Today": "Heute",
   "viewNote_progressCircle_7Days": "7 Tage"
