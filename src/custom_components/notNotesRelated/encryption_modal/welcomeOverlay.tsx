@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 interface WelcomeOverlayProps {
   closeOverlay: () => void;
@@ -7,6 +8,7 @@ interface WelcomeOverlayProps {
 
 const WelcomeOverlay: React.FC<WelcomeOverlayProps> = ({ closeOverlay }) => {
   const [firstScreenDone, setFirstScreenDone] = useState<Boolean>(true);
+  const { t } = useTranslation();
 
   const closeWelcomeOverlay = () => {
     localStorage.setItem("welcomeScreenDone", "true");
@@ -17,26 +19,15 @@ const WelcomeOverlay: React.FC<WelcomeOverlayProps> = ({ closeOverlay }) => {
     <div style={overlayStyle}>
       {firstScreenDone ? (
         <div style={congratulationAnimationStyle}>
-          <h1>Wilkommen bei Secure Planner!</h1>
+          <h1>{t("welcomeOverlay.h1")}</h1>
+          <p>{t("welcomeOverlay.p1")}</p>
+          <p>{t("welcomeOverlay.p2")}</p>
           <p>
-            Diese App legt einen besonderen Fokus auf die sichere Verwahrung der
-            ToDo Listen.
+            {t("welcomeOverlay.p3")}
+            <b>{t("welcomeOverlay.p3_bold")}</b>
           </p>
-          <p>
-            Dementsprechend müssen sie gleich ein Passwort eingeben mit welchem
-            die ToDo Listen verschlüsselt werden. Merken sie sich das gut, da
-            wir diese nicht mehr wiederherstellen können.
-          </p>
-          <p>
-            Diese App verwendet eine AES256 Verschlüsselung kombiniert mit einer
-            TripleDES Verschlüsselung, ist Open Source und ist komplett
-            offline.
-            <b> Folglich können sie hier sicher ihre ToDo Listen erstellen.</b>
-          </p>
-          <p>
-            Weitere Informationen zu unseren Sicherheitsmaßnahmen finden sie in
-            unserem GitHub Repo.
-          </p>
+          <p>{t("welcomeOverlay.p4")}</p>
+
           <button
             style={closeButtonStyle}
             onClick={() => setFirstScreenDone(false)}
@@ -46,32 +37,16 @@ const WelcomeOverlay: React.FC<WelcomeOverlayProps> = ({ closeOverlay }) => {
         </div>
       ) : (
         <div style={congratulationAnimationStyle}>
-          <h1>Weitere Funktionen</h1>
-          <li>
-            Mithilfe unseres Biometrischen Logins können sie schnell all ihre
-            ToDos aufrufen.
-          </li>
+          <h1>{t("furtherFeatures.h1")}</h1>
+          <li>{t("furtherFeatures.li1")}</li>
           <br />
-          <li>
-            Für jedes ihrer ToDos können sie eine Priorität sowie eine Deadline
-            einstellen. Darauf basierend werden ihre ToDos auch in den einzelnen
-            Listen sortiert.
-          </li>
+          <li>{t("furtherFeatures.li2")}</li>
           <br />
-          <li>
-            Mithilfe unser Export und Import Funktion können sie ihre ToDo
-            Listen exportieren, teilen und wieder importieren. Diese bleiben
-            verschlüsselt mit ihrem gesetzten Passwort.
-          </li>
+          <li>{t("furtherFeatures.li3")}</li>
           <br />
-          <li>
-            Die Suchfunktion erlaubt es Ihnen, Ihre ToDo-Listen und deren
-            Elemente schnell zu durchsuchen.
-          </li>
+          <li>{t("furtherFeatures.li4")}</li>
           <br />
-          <li>
-            Sie können mit verschiedenen Passwörter verschiedene ToDo Listen Gruppen abspeichern. Aber Achtung, bei einem Export werden alle exportiert! 
-          </li>
+          <li>{t("furtherFeatures.li5")}</li>
           <br />
           <button style={closeButtonStyle} onClick={closeWelcomeOverlay}>
             &times;
@@ -119,4 +94,7 @@ const closeButtonStyle: React.CSSProperties = {
   cursor: "pointer",
   outline: "none",
   transition: "background-color 0.3s",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 };

@@ -167,7 +167,7 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
           </Card.Body>
         </Card>
         <div style={{ display: "flex", textAlign:"center", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", height: "60vh" }}>
-        <p style={{fontSize: "8vw"}}>  <br /> Um eine To Do Liste zu erstellen klicke hier!</p>
+        <p style={{fontSize: "8vw"}}>  <br /> {t("viewNote_hint")}</p>
         <FaArrowDownLong style={{color: "white", fontSize: "14vw"}} />
         </div>
         </div>

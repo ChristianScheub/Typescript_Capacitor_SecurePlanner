@@ -51,7 +51,7 @@ Container_EncryptionKeyModalProps
         storePasswordFromFingerprint(
           inputRef.current?.value || "",
           () => {
-            alert("Passwort gespeichert!");
+            alert(t("encryption-modal_password_stored"));
             const password = getPBKDF2_Password(inputRef.current!.value);
             onSubmit(password);
           },

@@ -127,8 +127,7 @@ const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
           }}
         >
           <p style={{fontSize:"5vw"}}>
-            Geben Sie ihr Passwort ein und klicken sie anschließend auf diesen
-            Button um das Passwort zu speichern.
+            {t("encryption-modal_hint")}
           </p>
           <FaArrowDownLong style={{fontSize: "14vw", transform: "rotate(70deg)" }} />
         </div>
