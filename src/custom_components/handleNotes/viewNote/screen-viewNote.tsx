@@ -59,7 +59,7 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
       }}
     >
       {notes.length > 0 ? (
-        <Row xs={1} md={1} lg={2} style={{ margin: "1vw" }}>
+        <Row xs={1} md={1} lg={1} style={{ margin: "1vw" }}>
           {notes.map((note) => (
             <Col key={note.key} style={{ marginBottom: "5vw" }}>
               <Card

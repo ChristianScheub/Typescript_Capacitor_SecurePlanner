@@ -5,37 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42535abe-a020-475f-9086-dac8ebec9498" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/capacitor.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/debug/capacitor.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/static/js/276.34e88c7f.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/static/js/276.34e88c7f.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/static/js/284.a4fc3ce0.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/static/js/284.a4fc3ce0.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/static/js/64.ac741bfe.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/static/js/64.ac741bfe.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/static/js/732.e51b813d.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/static/js/732.e51b813d.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/capacitor.config.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/capacitor.config.json.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/asset-manifest.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/asset-manifest.json.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/index.html.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/index.html.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/static/js/276.34e88c7f.chunk.js.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/static/js/276.34e88c7f.chunk.js.map.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/static/js/284.a4fc3ce0.chunk.js.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/static/js/284.a4fc3ce0.chunk.js.map.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/static/js/64.ac741bfe.chunk.js.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/static/js/64.ac741bfe.chunk.js.map.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/static/js/732.e51b813d.chunk.js.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/out/assets/public/static/js/732.e51b813d.chunk.js.map.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/screen-viewNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/screen-viewNote.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/de/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/de/translation.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

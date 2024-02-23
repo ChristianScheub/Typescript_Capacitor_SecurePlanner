@@ -1,28 +1,31 @@
 
 # Secure Planner
-(The readme is still being revised, the app is based on the Local notes app ;)
-
 Last Edit: 02.2024 <br>
 Language: Typescript React Capacitor<br>
 
 With this app, it is possible to securely store ToDo Lists locally with AES & Triple DES encryption, edit/delete them and search them.
 It is also possible to decrypt the ToDo Lists using native biometrics (e.g. fingerprint sensor). (More on this under Security)
+In addition to the security factor, the aim of this app is to enable the best possible organization of various ToDo elements. This is implemented through the mini dashboards in the overview etc., prioritization and end dates for the individual ToDos.
 
 <br><br><br>
 
 Deutsche Kurzbeschreibung:
 Mit dieser App ist es möglich To DO Listen mit AES-Verschlüsselung & TripleDES sicher lokal zu speichern, sie zu bearbeiten/löschen und sie zu durchsuchen.
 Zudem ist es möglich mithilfe der Native Biometric (z.B. Fingerabdruck Sensor) die Listen zu entschlüsseln. (Mehr dazu unter Security)
+Neben dem Sicherheitsfaktor ist es das Ziel dieser App, die bestmögliche Organisation der verschiedenen ToDo-Elemente zu ermöglichen. Dies wird durch die Mini-Dashboards in der Übersicht etc., die Priorisierung und Deadlines für die einzelnen ToDos umgesetzt.
 
-| Start Screen | Notes Overview | Note Edit | Settings |
+<img src="images/screens/screen1.jpeg" alt="Start Screen" height="300">
+<img src="images/screens/screens2.jpeg" alt="Start Screen" height="300">
+
+| Start Screen | ToDo List Overview | ToDo List Edit | Settings |
 |--------------|----------------|-----------|-----------|
-| <img src="images/startScreen.jpeg" alt="Start Screen" height="300"> | <img src="images/notesOverview.png" alt="Notes Overview" height="300"> | <img src="images/editScreen.jpeg" alt="Note Edit" height="300"> | <img src="images/settingsScreen.png" alt="Note Edit" height="300"> |
+| <img src="images/screens/screen7.jpeg" alt="Start Screen" height="300"> | <img src="images/screens/screen3_overallList.jpeg" alt="ToDo Lists Overview" height="300"> | <img src="images/screens/screen4_ToDoList.jpeg" alt="ToDo List Edit" height="300"> | <img src="images/settingsScreen.png" alt="Settings" height="300"> |
 
 ## Security
 First of all: All To Do Lists are stored encrypted with AES256. 
 
 - The user's password is first hashed using PBKDF2 with 60,001 iterations and a fixed salt.
-- This hash is then passed through 2,000 iterations using PBKDF2 with a different salt for each note. 
+- This hash is then passed through 2,000 iterations using PBKDF2 with a different salt for each ToDo list. 
 - The resulting hash is then used for AES256 encryption.
 - In addition, the data is encrypted with a SHA256 hash based on the device ID using TripleDES.
 - No data is transferred to a cloud or similar. 
@@ -31,10 +34,10 @@ First of all: All To Do Lists are stored encrypted with AES256.
 
 ### Justification
 - Why is PBKDF2 performed twice? 
-  - So that it is possible to use a different salt for each note. This increases the protection against rainbow table attacks.
+  - So that it is possible to use a different salt for each ToDo list. This increases the protection against rainbow table attacks.
   - In addition, the recommended number of iterations for PBKDF2 can still be carried out without extremely poor performance. This increases protection against Brutal Force Attacks.
-  - Such a high number of iterations in combination with different salts for each note has proven to be very slow and impractical on current devices (e.g. iPhone 14).
-  - Furthermore, if a single note is decrypted, the others are not threatened.
+  - Such a high number of iterations in combination with different salts for each ToDo list has proven to be very slow and impractical on current devices (e.g. iPhone 14).
+  - Furthermore, if a single ToDo list is decrypted, the others are not threatened.
 
 - Why just use SHA256 for the PBKDF2?
   - Quick answer, simply because of the performance. 
@@ -71,14 +74,14 @@ If this is not used, the password is not saved either.
     On Android 8+, __the identifier is a 64-bit number (expressed as a hexadecimal string)__, unique to each combination of app-signing key, user, and device ([read more](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID)).</i>
 
 ### Security Export/Import
-- When the notes are exported, they are no longer encrypted with the SHA256 hash of the DeviceID. However, they are encrypted using AES with a specific word which is hard-coded here.
+- When the ToDo lists are exported, they are no longer encrypted with the SHA256 hash of the DeviceID. However, they are encrypted using AES with a specific word which is hard-coded here.
 
-- As before, the notes are also encrypted with PBKDF2 and should only be decryptable with the user's password. 
+- As before, the ToDo lists are also encrypted with PBKDF2 and should only be decryptable with the user's password. 
 
 - When importing the data, the data must be decrypted with the user's password, otherwise it should not be visible.
 
 ### Note on the security measures
-- The secure encryption of data/notes cannot be guaranteed. 
+- The secure encryption of data/ToDo lists cannot be guaranteed. 
 - The application has been developed to be as secure as possible from the developer's point of view. 
 - It is open to anyone to review the security measures here and report any security vulnerabilities identified here. (This is why the application is open source)
 - The Crypto-JS node package is used for encryption. If this has security gaps or similar, the data here is insecure!
@@ -92,62 +95,100 @@ If this is not used, the password is not saved either.
 The Jest testing framework is used for testing.
 The tests here are always written in Typescript. 
 
-Under modules are modules from other projects of mine for which I have not written further tests.
-
 The goal is actually to have about 80% test coverage. This number appears to be enough as this is a freetime project.
+However, this has not yet been achieved, but will be in the near future.
 
 
-File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------------------|---------|----------|---------|---------|-------------------
-All files             |   86.86 |     60.9 |   88.88 |   86.92 |                   
- src                  |     100 |      100 |     100 |     100 |                   
-  App.tsx             |     100 |      100 |     100 |     100 |                   
-  i18n.ts             |     100 |      100 |     100 |     100 |                   
-  index.tsx           |     100 |      100 |     100 |     100 |                   
- ...nents/handleNotes |      90 |      100 |   85.71 |      90 |                   
-  encryptionEngine.ts |      90 |      100 |   85.71 |      90 | 23-30             
- ...dleNotes/editNote |     100 |       50 |     100 |     100 |                   
-  ...ner-editNote.tsx |     100 |       50 |     100 |     100 | 20-44             
-  screen-editNote.tsx |     100 |      100 |     100 |     100 |                   
- ...dleNotes/viewNote |   95.55 |       70 |     100 |   95.23 |                   
-  ...ner-viewNote.tsx |     100 |      100 |     100 |     100 |                   
-  getNotes.ts         |   96.29 |    66.66 |     100 |      96 | 19                
-  screen-viewNote.tsx |   88.88 |       75 |     100 |    87.5 | 24                
- ...s/notNotesRelated |   97.67 |    92.85 |     100 |   97.67 |                   
-  fingerprintLogic.ts |   97.67 |    92.85 |     100 |   97.67 | 60                
- .../encryption_modal |     100 |      100 |     100 |     100 |                   
-  ...yption-modal.tsx |     100 |      100 |     100 |     100 |                   
-  ...yption-modal.tsx |     100 |      100 |     100 |     100 |                   
- ...tesRelated/navBar |   84.61 |       60 |   85.71 |   84.61 |                   
-  ...ainer-navBar.tsx |   83.33 |    54.54 |   83.33 |   83.33 | 25,44-46          
-  screen-navBar.tsx   |     100 |       75 |     100 |     100 | 59                
- ...sRelated/settings |   64.03 |    28.94 |   63.63 |   64.28 |                   
-  ...ner_settings.tsx |   60.57 |    16.66 |      50 |   60.78 | ...59-175,181-193 
-  screen_settings.tsx |     100 |       75 |     100 |     100 | 44-56             
- ...app_configuration |     100 |      100 |     100 |     100 |                   
-  app_texts.ts        |     100 |      100 |     100 |     100 |                   
- src/modules/legal    |     100 |    71.42 |     100 |     100 |                   
-  ...ToTextParser.tsx |     100 |      100 |     100 |     100 |                   
-  datenschutz.tsx     |     100 |       50 |     100 |     100 | 21-33             
-  impressum.tsx       |     100 |       50 |     100 |     100 | 19-31             
- ...es/legal/usedLibs |     100 |      100 |     100 |     100 |                   
-  ..._usedLibList.tsx |     100 |      100 |     100 |     100 |                   
-  ..._usedLibList.tsx |     100 |      100 |     100 |     100 |                   
- src/modules/ui       |     100 |      100 |     100 |     100 |                   
-  floatingBtn.tsx     |     100 |      100 |     100 |     100 |               
+File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------------------------|---------|----------|---------|---------|-------------------
+All files                            |   47.21 |    32.45 |    42.5 |    47.1 |                   
+ src                                 |     100 |       50 |     100 |     100 |                   
+  App.tsx                            |     100 |       50 |     100 |     100 | 21                
+  i18n.ts                            |     100 |      100 |     100 |     100 |                   
+  index.tsx                          |     100 |      100 |     100 |     100 |                   
+ ..._components/handleNotes/editNote |   39.78 |    36.36 |      20 |   39.78 |                   
+  container-editNote.tsx             |   40.78 |    34.61 |   27.77 |   40.78 | ...56-165,172-183 
+  screen-editNote.tsx                |   35.29 |    42.85 |    8.33 |   35.29 | 58,76-229         
+ ...ents/handleNotes/editToDoElement |     3.7 |        0 |       0 |     3.7 |                   
+  container-editToDo.tsx             |    2.04 |        0 |       0 |    2.04 | 17-141            
+  screen-editToDo.tsx                |      20 |      100 |       0 |      20 | 32-99             
+ ..._components/handleNotes/viewNote |   83.92 |    59.25 |   66.66 |    84.9 |                   
+  container-viewNote.tsx             |   73.33 |      100 |   33.33 |   73.33 | 23,27,31-33       
+  getNotes.ts                        |   84.21 |    36.36 |   85.71 |   88.23 | 25,33             
+  screen-viewNote.tsx                |    90.9 |       75 |      80 |   90.47 | 31,75             
+ ...notNotesRelated/encryption_modal |   62.22 |    66.66 |   38.88 |   62.22 |                   
+  container-encryption-modal.tsx     |   53.57 |     37.5 |   33.33 |   53.57 | 31,42-44,48-68,81 
+  screen-encryption-modal.tsx        |   83.33 |      100 |   66.66 |   83.33 | 47                
+  welcomeOverlay.tsx                 |   72.72 |       50 |   33.33 |   72.72 | 14-15,33          
+ ...omponents/notNotesRelated/navBar |   85.18 |    58.82 |   85.71 |   85.18 |                   
+  container-navBar.tsx               |      84 |    53.84 |   83.33 |      84 | 26,45-47          
+  screen-navBar.tsx                  |     100 |       75 |     100 |     100 | 59                
+ ...ponents/notNotesRelated/settings |    9.64 |    15.78 |   27.27 |    9.82 |                   
+  container_settings.tsx             |    0.96 |        0 |       0 |    0.98 | 17-197            
+  screen_settings.tsx                |     100 |       75 |     100 |     100 | 44-61             
+ ...onents/services/encryptionEngine |   90.47 |      100 |   85.71 |   90.47 |                   
+  encryptionEngine.ts                |   90.47 |      100 |   85.71 |   90.47 | 23-30             
+ ...ustom_components/services/equals |      35 |    28.57 |     100 |   31.57 |                   
+  equals.ts                          |      35 |    28.57 |     100 |   31.57 | ...10,13-14,19-29 
+ ...onents/services/fingerprintLogic |   16.27 |        0 |   16.66 |   16.27 |                   
+  fingerprintLogic.ts                |   16.27 |        0 |   16.66 |   16.27 | 8-9,20-60,72-94   
+ ...services/progressToDoListService |   47.61 |     37.5 |   33.33 |      50 |                   
+  progressToDoListService.ts         |   47.61 |     37.5 |   33.33 |      50 | 16-35,41,44       
+ ...ponents/services/toDoListHandler |   58.13 |     12.5 |   66.66 |   57.14 |                   
+  toDoListHandler.ts                 |   58.13 |     12.5 |   66.66 |   57.14 | ...8,77-85,93-119 
+ src/custom_components/types         |       0 |        0 |       0 |       0 |                   
+  ToDoItem.types.ts                  |       0 |        0 |       0 |       0 |                   
+  ToDoList.types.ts                  |       0 |        0 |       0 |       0 |                   
+  ToDoListKey.types.ts               |       0 |        0 |       0 |       0 |                   
+ src/modules/app_configuration       |     100 |      100 |     100 |     100 |                   
+  app_texts.ts                       |     100 |      100 |     100 |     100 |                   
+ src/modules/legal                   |     100 |    71.42 |     100 |     100 |                   
+  codeToTextParser.tsx               |     100 |      100 |     100 |     100 |                   
+  datenschutz.tsx                    |     100 |       50 |     100 |     100 | 20-37             
+  impressum.tsx                      |     100 |       50 |     100 |     100 | 17-34             
+ src/modules/legal/usedLibs          |     100 |      100 |     100 |     100 |                   
+  container_usedLibList.tsx          |     100 |      100 |     100 |     100 |                   
+  screen_usedLibList.tsx             |     100 |      100 |     100 |     100 |                   
+ src/modules/ui/editToDo/dataPicker  |      40 |        0 |       0 |      40 |                   
+  screen-dataPicker.tsx              |      40 |        0 |       0 |      40 | 15,39-42          
+ ...es/ui/editToDo/priorityIndicator |    12.5 |        0 |       0 |    12.5 |                   
+  priority.enum.ts                   |       0 |        0 |       0 |       0 |                   
+  screen-PriorityIndicator.tsx       |    12.5 |        0 |       0 |    12.5 | 22-53             
+ src/modules/ui/floatingBtn          |     100 |      100 |     100 |     100 |                   
+  floatingBtn.tsx                    |     100 |      100 |     100 |     100 |                   
+ src/modules/ui/progress/progressBar |   68.75 |       30 |     100 |   68.75 |                   
+  screen-progressBar.tsx             |   68.75 |       30 |     100 |   68.75 | 22-27             
+ ...dules/ui/progress/progressCircle |    6.25 |        0 |       0 |    6.25 |                   
+  progressCircle.tsx                 |    6.25 |        0 |       0 |    6.25 | 9-28                
      
 
 
 ## Architecture
-The components used are divided into two categories:
-- `custom_components`: Components which I only use in this project. These are on the left and in the middle of the architecture diagram.
-- `modules`: Components/functions that I also use in other projects, which are therefore kept generic. (Possibly, however, slightly adapted e.g. the colors here)  These components can be seen on the right of the architecture diagram. (Except for the floating button which is left)
+The components used are divided into four categories:
+- `UI-Elements`
+- `View-Componets`
+- `Container-Componets`
+- `ServiceLayer`
 
-As a result of the use from the modules, there is also one configuration file:
+Note: Some of the modules are used from other Web Apps like the Encryption Engine or the Impressum/Imprint Modules.
+As a result of the use from the modules, some files have an the name "note" instead of "todoList" inside and there is also one configuration file:
 - `app_texts`: Contains texts such as the description, imprint text, data protection text etc.
+In addition, the separation is not 100% sharp, partly because of these modules, but also because the final architecture only turned out that way during development.
 
-![Local Notes Architecture](images/LocalNotesArchitecture.png)
-Note: The cookie banner and footer text are already present here as they may be used in the future for the web version.
+`UI-Elements`
+At the topmost level, UI-Elements are the fundamental building blocks of our interface. These are the atomic components that include buttons, input fields, and other basic interactive elements. They are styled and abstracted to be reusable across the application.
+
+`View-Components`
+View-Components are composed of UI-Elements and form parts of the application's screens. They are responsible for presenting data and handling user interactions. These components are often reusable within different parts of the application and can communicate with Container-Components for dynamic data fetching.
+
+`Container-Components`
+Container-Components serve as the data-fetching and state management layer in our architecture. They connect View-Components to the Service Layer, managing the application state and providing data to the components as necessary. They may also handle complex user interactions, form submissions, and communicate with services to send or receive data.
+
+`Service Layer`
+The Service Layer is the foundation of our application's client-side architecture. It abstracts all the handling wth the ToDo Lists (LocalStorage handling included), the fingerprint logic (e.g. password storage in secure storage) and the encryption engine logic.
+
+
+![Secure Banner Architecture](images/SecurePlannerArchitecture_Layers.jpeg)
 
 ## Troubleshooting
 

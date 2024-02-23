@@ -1,4 +1,4 @@
-#Wed Feb 21 02:27:00 CET 2024
+#Fri Feb 23 01:50:00 CET 2024
 base.0=/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/build/intermediates/dex/debug/mergeLibDexDebug/12/classes.dex
 base.2=/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app/build/intermediates/dex/debug/mergeLibDexDebug/2/classes.dex

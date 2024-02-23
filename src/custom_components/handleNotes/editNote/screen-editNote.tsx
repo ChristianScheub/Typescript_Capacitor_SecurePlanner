@@ -176,7 +176,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
             }}
           >
             <Card.Body>
-              <table style={{ width: "80vw" }}>
+              <table style={{ width: "80vw",maxWidth:"80vw" }}>
                 <tbody>
                   <tr>
                     <td onClick={(event) => handleDoneToDo(event, index)}>
@@ -185,6 +185,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                           textDecoration: item.toDoDone
                             ? "line-through"
                             : "none",
+                            width: "50vw"
                         }}
                       >
                         <h4>{item.toDoTitle}</h4>
