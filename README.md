@@ -14,8 +14,9 @@ Mit dieser App ist es möglich To DO Listen mit AES-Verschlüsselung & TripleDES
 Zudem ist es möglich mithilfe der Native Biometric (z.B. Fingerabdruck Sensor) die Listen zu entschlüsseln. (Mehr dazu unter Security)
 Neben dem Sicherheitsfaktor ist es das Ziel dieser App, die bestmögliche Organisation der verschiedenen ToDo-Elemente zu ermöglichen. Dies wird durch die Mini-Dashboards in der Übersicht etc., die Priorisierung und Deadlines für die einzelnen ToDos umgesetzt.
 
-<img src="images/screens/screen1.jpeg" alt="Start Screen" height="300">
-<img src="images/screens/screens2.jpeg" alt="Start Screen" height="300">
+| App Store Screen 1 | App Store Screen 2|
+|--------------|----------------|
+| <img src="images/screens/screen1.jpeg" alt="Start Screen" height="300">| <img src="images/screens/screens2.jpeg" alt="Start Screen" height="300"> |
 
 | Start Screen | ToDo List Overview | ToDo List Edit | Settings |
 |--------------|----------------|-----------|-----------|
@@ -173,6 +174,7 @@ The components used are divided into four categories:
 Note: Some of the modules are used from other Web Apps like the Encryption Engine or the Impressum/Imprint Modules.
 As a result of the use from the modules, some files have an the name "note" instead of "todoList" inside and there is also one configuration file:
 - `app_texts`: Contains texts such as the description, imprint text, data protection text etc.
+
 In addition, the separation is not 100% sharp, partly because of these modules, but also because the final architecture only turned out that way during development.
 
 `UI-Elements`
