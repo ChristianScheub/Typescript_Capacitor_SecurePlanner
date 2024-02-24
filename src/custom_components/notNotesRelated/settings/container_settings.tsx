@@ -114,9 +114,6 @@ const Container_Settings: React.FC = () => {
       const fileName = generateFileName();
       const base64Data = btoa(notes);
 
-      const filePath = `${Directory.Documents}/${fileName}`;
-      let shareUrl = filePath;
-
       await Filesystem.writeFile({
         path: fileName,
         data: base64Data,
@@ -128,7 +125,6 @@ const Container_Settings: React.FC = () => {
           directory: Directory.Documents,
           path: fileName,
         });
-        shareUrl = uriResult.uri;
 
         await Share.share({
           url: uriResult.uri,

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { FaRegSave, FaRegClock, FaTrash } from "react-icons/fa";
-import { FaArrowDownLong } from "react-icons/fa6";
 import FloatingBtn, {
   ButtonAlignment,
 } from "../../../modules/ui/floatingBtn/floatingBtn";

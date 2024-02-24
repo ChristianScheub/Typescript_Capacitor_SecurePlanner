@@ -96,8 +96,7 @@ If this is not used, the password is not saved either.
 The Jest testing framework is used for testing.
 The tests here are always written in Typescript. 
 
-The goal is actually to have about 80% test coverage. This number appears to be enough as this is a freetime project.
-However, this has not yet been achieved, but will be in the near future.
+The goal is actually to have about 80% test coverage of the lines. This number appears to be enough as this is a freetime project.
 
 
 File                                                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
