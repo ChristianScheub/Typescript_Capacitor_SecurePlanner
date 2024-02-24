@@ -1,6 +1,6 @@
 {
   "encryption-modal_title": "Digite sua senha",
-  "encryption-modal_message": "Por favor, digite seu código de criptografia! Devido a diferentes algoritmos criptográficos, o login pode levar cerca de 10 segundos.",
+  "encryption-modal_message": "Por favor, insira o seu código de encriptação (futuro)! Devido a vários algoritmos criptográficos, o login pode levar cerca de 10 segundos.",
   "encryption-modal_FastLoginmessage": "Para acesso mais rápido, recomendamos o login biométrico.",
   "fingerprint_empty": "Por favor, insira a senha a ser salva e então pressione este botão para salvar.",
   "fingerprint_not_Avaible": "Autenticação biométrica não disponível.",

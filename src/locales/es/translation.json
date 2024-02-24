@@ -1,6 +1,6 @@
 {
   "encryption-modal_title": "Ingrese la contraseña",
-  "encryption-modal_message": "¡Por favor ingrese su código de encriptación! Debido a varios algoritmos criptográficos, el inicio de sesión puede tardar unos 10 segundos.",
+  "encryption-modal_message": "Por favor, introduzca su código de cifrado (futuro). Debido a varios algoritmos criptográficos, el inicio de sesión puede tardar unos 10 segundos.",
   "encryption-modal_FastLoginmessage": "Para un acceso más rápido, recomendamos el inicio de sesión biométrico.",
   "fingerprint_empty": "Por favor ingrese primero la contraseña que desea guardar y luego presione este botón para guardarla.",
   "fingerprint_not_Avaible": "Autenticación biométrica no disponible.",

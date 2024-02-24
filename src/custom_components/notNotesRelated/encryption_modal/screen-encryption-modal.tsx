@@ -7,7 +7,7 @@ import FloatingBtn, {
 import { FaInfoCircle } from "react-icons/fa";
 import { PiFingerprintThin } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
-import WelcomeOverlay from "./welcomeOverlay";
+import WelcomeOverlay from "../welcomeOverlay/welcomeOverlay";
 import { FaArrowDownLong } from "react-icons/fa6";
 
 interface View_EncryptionKeyModalProps {

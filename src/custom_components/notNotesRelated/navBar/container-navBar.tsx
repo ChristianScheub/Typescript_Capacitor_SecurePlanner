@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import NavBarView from "./screen-navBar";
 
 interface NavBarContainerProps {
-  setSearchQuery: (query: string) => void
+  setSearchQuery: (query: string) => void;
 }
 
-const NavBarContainer: React.FC<NavBarContainerProps> = ({ setSearchQuery }) => {
+const NavBarContainer: React.FC<NavBarContainerProps> = ({
+  setSearchQuery,
+}) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const pathSegments = location.pathname.split('/');
+  const pathSegments = location.pathname.split("/");
   const [tempSearch, setTempSearch] = useState("");
   const { t } = useTranslation();
 
   const noteID =
     location.pathname.split("/")[location.pathname.split("/").length - 1];
-    const isAlreadyLoggedIn = !location.pathname.includes("Home");
+  const isAlreadyLoggedIn = !location.pathname.includes("Home");
 
-
-  const handleImpressumClick = () => {
+  const handleSettingsClick = () => {
     if (isAlreadyLoggedIn) {
       navigate("/settings");
     } else {
@@ -42,7 +43,7 @@ const NavBarContainer: React.FC<NavBarContainerProps> = ({ setSearchQuery }) => 
   };
 
   const handleDelete = () => {
-    if (noteID && window.confirm(t('navbar_deleteBtn'))) {
+    if (noteID && window.confirm(t("navbar_deleteBtn"))) {
       localStorage.removeItem(noteID!);
       navigate(-1);
     }
@@ -51,15 +52,21 @@ const NavBarContainer: React.FC<NavBarContainerProps> = ({ setSearchQuery }) => 
   return (
     <NavBarView
       tempSearch={tempSearch}
-      showBackButton={location.pathname.includes("/datenschutz") ||
-                      location.pathname.includes("/impressum") ||
-                      location.pathname.includes("/settings") ||
-                      location.pathname.includes("/settingsHome") ||
-                      location.pathname.includes("/edit")}
+      showBackButton={
+        location.pathname.includes("/datenschutz") ||
+        location.pathname.includes("/impressum") ||
+        location.pathname.includes("/settings") ||
+        location.pathname.includes("/settingsHome") ||
+        location.pathname.includes("/edit")
+      }
+      showSettingsButton={
+        !location.pathname.includes("/settings")&&
+        !location.pathname.includes("/settingsHome")
+      }
       showDeleteBtn={pathSegments.length === 3 && pathSegments[1] === "edit"}
       onBackClick={handleBackClick}
       onDeleteClick={handleDelete}
-      onImpressumClick={handleImpressumClick}
+      onSettingsClick={handleSettingsClick}
       onSearchChange={handleSearchChange}
       onSearchSubmit={handleSubmit}
       t={t}

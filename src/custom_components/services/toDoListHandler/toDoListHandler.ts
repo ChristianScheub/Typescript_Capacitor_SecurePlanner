@@ -47,13 +47,13 @@ const toDoListService: ToDoListService = {
               loadedNotes.push([noteData, key]);
             }
           } catch (error) {
-            console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
+            //console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
           }
         }
       }
       return loadedNotes;
     } catch (error) {
-      console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
+      //console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
 
       return [];
     }
@@ -64,7 +64,7 @@ const toDoListService: ToDoListService = {
       const decryptedContent = await decryptFromStorage(encryptionKey, noteId);
       return JSON.parse(decryptedContent) as ToDoList;
     } catch (error) {
-      console.error("Fehler beim Laden und Entschlüsseln der Notiz:", error);
+      //console.error("Fehler beim Laden und Entschlüsseln der Notiz:", error);
       return null;
     }
   },
@@ -82,11 +82,15 @@ const toDoListService: ToDoListService = {
         noteId || Date.now().toString()
       );
     } catch (error) {
-      console.error("Fehler beim Speichern der Notiz:", error);
+      //console.error("Fehler beim Speichern der Notiz:", error);
     }
   },
 
   sortToDoList: (toDoList: ToDoList) => {
+    if (!Array.isArray(toDoList.toDoItem)) {
+      return toDoList;
+    }
+
     return {
       ...toDoList,
       toDoItem: [...toDoList.toDoItem].sort((a, b) => {

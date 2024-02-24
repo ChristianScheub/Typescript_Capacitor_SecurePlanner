@@ -49,8 +49,8 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
           }
         } catch (error) {
           console.error(
-            "Fehler beim Laden und Entschlüsseln der Notiz:",
-            error
+            "Fehler beim Laden und Entschlüsseln der Notiz:"
+            
           );
         }
       }
@@ -91,8 +91,8 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
           await ToDoListService.saveToDoList(updatedToDoList, encryptionKey, noteId || Date.now().toString());
         } catch (error) {
           console.error(
-            "Fehler beim Sichern des ToDos:",
-            error
+            "Fehler beim Sichern des ToDos:"
+            
           );
         }
       }
@@ -117,8 +117,8 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
           }
         } catch (error) {
           console.error(
-            "Fehler beim Laden und Entschlüsseln der Notiz:",
-            error
+            "Fehler beim Laden und Entschlüsseln der Notiz:"
+            
           );
         }
       }

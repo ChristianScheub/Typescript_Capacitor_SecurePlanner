@@ -1,13 +1,9 @@
 import React from "react";
 import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
 import {
-  encryptAndStore,
-  decryptFromStorage,
   getPBKDF2_Password
 } from "./custom_components/services/encryptionEngine/encryptionEngine";
-import { act } from "react-dom/test-utils";
 
 
 const mockEncryptionKey = "some-encryption-key";
@@ -22,47 +18,46 @@ jest.mock("capacitor-native-biometric", () => ({
   },
 }));
 
-jest.mock('./custom_components/handleNotes/encryptionEngine', () => ({
+jest.mock('./custom_components/services/encryptionEngine/encryptionEngine', () => ({
   getPBKDF2_Password: jest.fn().mockImplementation(password => password),
 }));
 
-
 describe("App Component", () => {
   beforeEach(() => {
-    (getPBKDF2_Password as jest.Mock).mockImplementation(password => password);
+    localStorage.setItem("welcomeScreenDone", "true");
+    jest.mocked(getPBKDF2_Password).mockImplementation(password => password);
   });
 
-  test("renders without crashing", () => {
-    const renderResult = () => renderWithRouter(<App />);
-    expect(renderResult).not.toThrow();
-  });
-
-  test("renders encryption key modal on start", () => {
-    const { getByTestId } = renderWithRouter(<App />);
-    expect(getByTestId("password-input")).toBeInTheDocument();
-  });
-
-  test("closes modal not when not submit when data are insert", async () => {
-    render(<App />);
-    await act(() => {
-      const submitButton = screen.getByTestId("password-inputBtn");
-      fireEvent.click(submitButton);
+  test("renders without crashing", async () => {
+    renderWithRouter(<App />);
+    await waitFor(() => {
+      expect(screen.getByTestId("password-input")).toBeInTheDocument();
     });
+  });
+
+  test("renders encryption key modal on start", async () => {
+    renderWithRouter(<App />);
+    await waitFor(() => {
+      expect(screen.getByTestId("password-input")).toBeInTheDocument();
+    });
+  });
+
+  test("modal does not close when submit button is clicked without data insertion", async () => {
+    renderWithRouter(<App />);
+    const submitButton = screen.getByTestId("password-inputBtn");
+    fireEvent.click(submitButton);
 
     await waitFor(() => {
       expect(screen.queryByTestId("password-inputBtn")).toBeInTheDocument();
     });
   });
 
-  test("closes modal on submit when data are insert", async () => {
-    render(<App />);
+  test("closes modal on submit when data are inserted", async () => {
+    renderWithRouter(<App />);
     const input = screen.getByTestId("password-input");
-    await act(() => {
-      fireEvent.change(input, { target: { value: mockEncryptionKey } });
-
-      const submitButton = screen.getByTestId("password-inputBtn");
-      fireEvent.click(submitButton);
-    });
+    fireEvent.change(input, { target: { value: mockEncryptionKey } });
+    const submitButton = screen.getByTestId("password-inputBtn");
+    fireEvent.click(submitButton);
 
     await waitFor(() => {
       expect(screen.queryByTestId("password-inputBtn")).not.toBeInTheDocument();

@@ -5,29 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42535abe-a020-475f-9086-dac8ebec9498" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.9881d3bc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.9881d3bc.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.9881d3bc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ios/App/App/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/screen-viewNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/screen-viewNote.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/locales/de/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/de/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/screen_settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/screen_settings.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R3CR503KVGJ]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../../../../../SecurePlanner_KeyStore/Untitled" />
+    <option name="KEY_ALIAS" value="key0" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -38,14 +48,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ApkExportedModule": "android.app",
+    "BundleExportedModule": "android.app",
+    "ExportApk.ApkPathForandroid.app": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app",
+    "ExportBundle.BundlePathForandroid.app": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/android/app",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true"
+  },
+  "keyToStringList": {
+    "ExportApk.BuildVariants": [
+      "release"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="android.app.main" />

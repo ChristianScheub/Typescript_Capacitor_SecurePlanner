@@ -39,8 +39,6 @@ export const encryptAndStore = async (
   const key = deriveKeyPBKDF2(password, salt);
   const iv = CryptoJS.lib.WordArray.random(128 / 8);
 
-  console.log(text);
-
   const encrypted = CryptoJS.AES.encrypt(text, key, {
     iv: iv,
     mode: CryptoJS.mode.CBC,
@@ -78,7 +76,6 @@ export const decryptFromStorage = async (
     mode: CryptoJS.mode.CBC,
     padding: CryptoJS.pad.Pkcs7,
   }).toString(CryptoJS.enc.Utf8);
-  console.log(decrypted);
 
   return decrypted;
 };

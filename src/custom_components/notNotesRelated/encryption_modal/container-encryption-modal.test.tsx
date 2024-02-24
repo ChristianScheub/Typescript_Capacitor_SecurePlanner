@@ -38,7 +38,7 @@ jest.mock("crypto-js", () => ({
   },
 }));
 
-jest.mock("../fingerprintLogic", () => ({
+jest.mock("../../services/fingerprintLogic/fingerprintLogic", () => ({
   availableBiometric: jest.fn(),
   getPasswordFromFingerprint: jest.fn(),
   storePasswordFromFingerprint: jest.fn(),

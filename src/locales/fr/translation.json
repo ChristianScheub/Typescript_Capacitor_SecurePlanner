@@ -1,6 +1,6 @@
 {
   "encryption-modal_title": "Entrez le mot de passe",
-  "encryption-modal_message": "Veuillez entrer votre code de chiffrement ! En raison de différents algorithmes cryptographiques, la connexion peut prendre environ 10 secondes.",
+  "encryption-modal_message": "Veuillez entrer votre code de chiffrement (futur) ! En raison de divers algorithmes cryptographiques, la connexion peut prendre environ 10 secondes.",
   "encryption-modal_FastLoginmessage": "Pour un accès plus rapide, nous recommandons l'identification biométrique.",
   "fingerprint_empty": "Veuillez d'abord entrer le mot de passe à enregistrer, puis appuyez sur ce bouton pour enregistrer.",
   "fingerprint_not_Avaible": "Authentification biométrique non disponible.",

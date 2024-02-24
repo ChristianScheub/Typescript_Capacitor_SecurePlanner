@@ -6,7 +6,6 @@ import { availableBiometric } from "../../services/fingerprintLogic/fingerprintL
 import { Filesystem, Directory } from "@capacitor/filesystem";
 import { useLocation } from "react-router-dom";
 import { Share } from "@capacitor/share";
-import { Capacitor } from "@capacitor/core";
 import {
   makeReadyForExport,
   makeReadyForImport,

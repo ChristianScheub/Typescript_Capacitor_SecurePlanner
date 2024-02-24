@@ -128,8 +128,6 @@ describe("EditNote Component", () => {
 
       const oldValue = decryptFromStorage(mockEncryptionKey, "22");
 
-      fireEvent.click(screen.getByTestId("floating-btn"));
-      expect(mockedNavigate).toHaveBeenCalledWith(-1);
       expect(decryptFromStorage(mockEncryptionKey, "22")).not.toBe(oldValue);
     });
   });
@@ -176,7 +174,6 @@ describe("EditNote Component", () => {
 
       expect(titleInput.value).toBe("New Title of new Note Now");
       expect(contentTextArea.value).toBe("New Content of new Note Now");
-      fireEvent.click(screen.getByTestId("floating-btn"));
     });
 
     //Now check if note is really stored

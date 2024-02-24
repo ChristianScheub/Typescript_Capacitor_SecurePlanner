@@ -15,7 +15,7 @@ interface Container_ViewNoteProps {
 const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, searchQuery }) => {
   const location = useLocation();
   const notes = getAllNotes(encryptionKey, searchQuery, location);
-  console.log(notes);
+  //console.log(notes);
 
   const navigate = useNavigate();
 

@@ -82,6 +82,7 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
                       width: "82vw"
                     }}
                   >
+                    <tbody>
                     <tr>
                       <td>
                         <Card.Title style={{
@@ -95,6 +96,7 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
                             width: "70vw",
                           }}
                         >
+                          <tbody>
                           <tr>
                             {note.toDoList.content ? (
                               <td style={{ height: "100%" }}>
@@ -137,6 +139,7 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
                               />
                             </td>
                           </tr>
+                          </tbody>
                         </table>
                       </td>
                       <td style={{ paddingLeft: "2vw",textAlign:"right",width: "100%" }}>
@@ -145,6 +148,7 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
                         />
                       </td>
                     </tr>
+                    </tbody>
                   </table>
                 </Card.Body>
               </Card>

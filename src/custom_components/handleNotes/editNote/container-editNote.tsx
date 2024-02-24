@@ -41,8 +41,7 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
           }
         } catch (error) {
           console.error(
-            "Fehler beim Laden und Entschlüsseln der Notiz:",
-            error
+            "Fehler beim Laden und Entschlüsseln der Notiz:"
           );
         }
       }
@@ -66,7 +65,7 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
         try {
           await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
         } catch (error) {
-          console.error("Fehler beim Speichern der Notiz:", error);
+          console.error("Fehler beim Speichern der Notiz");
         }
       }
     };

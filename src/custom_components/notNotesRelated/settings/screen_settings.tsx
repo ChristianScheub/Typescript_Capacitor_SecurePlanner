@@ -111,7 +111,7 @@ const View_Settings: React.FC<View_SettingsProps> = ({
                   data-testid="settings-notes-import2"
                 >
                   <input
-                    accept="*"
+                    accept=".txt"
                     id="file-input"
                     multiple
                     type="file"
@@ -151,7 +151,7 @@ const View_Settings: React.FC<View_SettingsProps> = ({
             <UsedLibsListContainer />
             <hr />
             <a
-              href="https://github.com/ChristianScheub/TypeScript_Capacitor_LocalNotes"
+              href="https://github.com/ChristianScheub/Typescript_Capacitor_SecurePlanner"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "inherit", textDecoration: "none" }}

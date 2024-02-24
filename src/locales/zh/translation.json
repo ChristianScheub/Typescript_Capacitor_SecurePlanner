@@ -1,6 +1,6 @@
 {
   "encryption-modal_title": "请输入密码",
-  "encryption-modal_message": "请输入您的加密代码！由于不同的加密算法，登录可能需要约10秒钟。",
+  "encryption-modal_message": "请输入您的（未来的）加密码！由于各种加密算法，登录可能需要大约10秒钟。",
   "encryption-modal_FastLoginmessage": "为了更快地访问，请使用生物识别登录。",
   "fingerprint_empty": "请输入要保存的密码，然后按此按钮保存。",
   "fingerprint_not_Avaible": "生物识别身份验证不可用。",

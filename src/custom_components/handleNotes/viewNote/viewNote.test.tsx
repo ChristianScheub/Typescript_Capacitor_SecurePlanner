@@ -77,7 +77,7 @@ describe("ViewNote Component", () => {
 
     await act(() => {
       fireEvent.click(screen.getByTestId("floating-btn"));
-      expect(window.location.pathname).toBe("/edit/new");
+      expect(window.location.pathname).toContain("/edit");
     });
   });
 

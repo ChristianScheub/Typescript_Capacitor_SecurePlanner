@@ -1,6 +1,6 @@
 {
   "encryption-modal_title": "Enter Password",
-  "encryption-modal_message": "Please enter your encryption code! Due to various cryptographic algorithms, the login may take about 10 seconds.",
+  "encryption-modal_message": "Please enter your (future) encryption code! Due to various cryptographic algorithms, the login may take about 10 seconds.",
   "encryption-modal_FastLoginmessage": "For faster access, we recommend using biometric login.",
   "fingerprint_empty": "Please enter the password to be saved first and then press this button to save.",
   "fingerprint_not_Avaible": "Biometric authentication not available.",

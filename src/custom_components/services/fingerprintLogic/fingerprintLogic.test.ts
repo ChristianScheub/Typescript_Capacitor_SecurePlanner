@@ -35,7 +35,7 @@ jest.mock("@capacitor/device", () => ({
   },
 }));
 
-jest.mock('../handleNotes/encryptionEngine', () => ({
+jest.mock('../encryptionEngine/encryptionEngine', () => ({
   getPBKDF2_Password: jest.fn().mockImplementation(password => password),
 }));
 

@@ -11,7 +11,6 @@ export interface ProgressToDoListService {
 }
 
 const progressToDoListService: ProgressToDoListService = {
-  
   isNextNDays: (dateInput: Date | string, days: number): boolean => {
     const dateToDo = new Date(dateInput);
     const today = new Date();
@@ -35,23 +34,31 @@ const progressToDoListService: ProgressToDoListService = {
     return dateOfToDo <= nextNDaysWithoutTime && dateOfToDo >= dateOfToday;
   },
 
-
   calculateProgressForNextNDays: (items: ToDoItem[], days: number): number => {
     const isNextNDaysPredicate = (item: ToDoItem): boolean => {
-      return item.toDoDone && progressToDoListService.isNextNDays(item.toDoEndDate, days);
+      return (
+        item.toDoDone &&
+        progressToDoListService.isNextNDays(item.toDoEndDate, days)
+      );
     };
     const isNextNDaysPredicateTotal = (item: ToDoItem): boolean => {
       return progressToDoListService.isNextNDays(item.toDoEndDate, days);
     };
-    return progressToDoListService.calculateProgress(items, isNextNDaysPredicate,isNextNDaysPredicateTotal);
+    return progressToDoListService.calculateProgress(
+      items,
+      isNextNDaysPredicate,
+      isNextNDaysPredicateTotal
+    );
   },
-
 
   calculateProgress: (
     toDoItems: ToDoItem[],
     predicate: (item: ToDoItem) => Boolean,
     totalPredicate?: (item: ToDoItem) => Boolean
   ): number => {
+    if (!Array.isArray(toDoItems)) {
+      return 100;
+    }
     const useTotalPredicate = totalPredicate || (() => true);
     const relevantItems = toDoItems.filter(useTotalPredicate);
     const doneItems = relevantItems.filter(predicate);

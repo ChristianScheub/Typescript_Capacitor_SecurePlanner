@@ -10,7 +10,7 @@ import { Card } from "react-bootstrap";
 import { ToDoList } from "../../types/ToDoList.types";
 import { MdOutlineEdit } from "react-icons/md";
 import { IoAddSharp } from "react-icons/io5";
-import ProgressBar from "../../../modules/ui/progress/progressBar/screen-progressBar";
+import ProgressBar from "../../../modules/ui/progress/progressBar/progressBar";
 import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
 
 interface View_EditNoteViewProps {
@@ -72,6 +72,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
           <Form.Control
             type="text"
             value={toDoList.title}
+            data-testid="noteTitleTest"
             placeholder={t("editNote_TitlePlaceholder")}
             onChange={(e) => updateToDoList("title", e.target.value)}
             className="white-placeholder"
@@ -105,7 +106,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
             }}
           />
           <Form.Text style={{ color: "#CBCBCD", fontSize: "1rem" }}>
-            {formattedDate},  {toDoList.toDoItem.length}
+            {formattedDate}
           </Form.Text>
         </div>
 
@@ -115,6 +116,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
             rows={1}
             value={toDoList.content}
             placeholder={t("editNote_TextPlaceholder")}
+            data-testid="noteTextTest"
             onChange={(e) => updateToDoList("content", e.target.value)}
             style={{
               backgroundColor: "#1D1B20",
@@ -164,101 +166,103 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
           active={activeTooltip === "Priority"}
           onClick={() => handleProgressBarClick("Priority")}
         />
-        
-        {toDoList.toDoItem.map((item, index) => (
-          <Card
-            key={index}
-            style={{
-              backgroundColor: "#49454F",
-              color: "white",
-              margin: "2vw",
-              minHeight: "13vh",
-            }}
-          >
-            <Card.Body>
-              <table style={{ width: "80vw",maxWidth:"80vw" }}>
-                <tbody>
-                  <tr>
-                    <td onClick={(event) => handleDoneToDo(event, index)}>
-                      <div
-                        style={{
-                          textDecoration: item.toDoDone
-                            ? "line-through"
-                            : "none",
-                            width: "50vw"
-                        }}
-                      >
-                        <h4>{item.toDoTitle}</h4>
-                        <b>{t("editToDoElement_EndDate")}: </b>
-                        <i
-                          dangerouslySetInnerHTML={{
-                            __html: formatDate(item.toDoEndDate),
-                          }}
-                        ></i>
-                        <br />
-                        <b>{t("editToDoElement_Priority")}: </b>
-                        <i
-                          dangerouslySetInnerHTML={{
-                            __html: getPriorityText(item.toDoPriority),
-                          }}
-                        ></i>
-                      </div>
-                    </td>
-                    <td
-                      style={{ textAlign: "left", width: "10vw" }}
-                      onClick={(event) => handleDeleteToDo(event, index)}
-                    >
-                      <button
-                        type="button"
-                        style={{
-                          width: "4vw",
-                          height: "4vh",
-                          backgroundColor: "#49454F",
-                          border: "none",
-                        }}
-                      >
-                        <FaTrash
-                          style={{
-                            width: "4vw",
-                            height: "4vw",
-                            color: "#b30000",
-                          }}
-                        />
-                      </button>
-                    </td>
-                    <td onClick={() => handleEdit(index.toString())}>
-                      <button
-                        type="button"
-                        style={{
-                          width: "4vw",
-                          height: "4vh",
-                          backgroundColor: "#49454F",
-                          border: "none",
-                        }}
-                      >
-                        <MdOutlineEdit
-                          style={{
-                            width: "4vw",
-                            height: "4vw",
-                            color: "white",
-                          }}
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </Card.Body>
-          </Card>
-          
-        ))}
+
+        {toDoList && Array.isArray(toDoList.toDoItem) && (
+          <div>
+            {toDoList.toDoItem.map((item, index) => (
+              <Card
+                key={index}
+                style={{
+                  backgroundColor: "#49454F",
+                  color: "white",
+                  margin: "2vw",
+                  minHeight: "13vh",
+                }}
+              >
+                <Card.Body>
+                  <table style={{ width: "80vw", maxWidth: "80vw" }}>
+                    <tbody>
+                      <tr>
+                        <td onClick={(event) => handleDoneToDo(event, index)}>
+                          <div
+                            style={{
+                              textDecoration: item.toDoDone
+                                ? "line-through"
+                                : "none",
+                              width: "50vw",
+                            }}
+                          >
+                            <h4>{item.toDoTitle}</h4>
+                            <b>{t("editToDoElement_EndDate")}: </b>
+                            <i
+                              dangerouslySetInnerHTML={{
+                                __html: formatDate(item.toDoEndDate),
+                              }}
+                            ></i>
+                            <br />
+                            <b>{t("editToDoElement_Priority")}: </b>
+                            <i
+                              dangerouslySetInnerHTML={{
+                                __html: getPriorityText(item.toDoPriority),
+                              }}
+                            ></i>
+                          </div>
+                        </td>
+                        <td
+                          style={{ textAlign: "left", width: "10vw" }}
+                          onClick={(event) => handleDeleteToDo(event, index)}
+                        >
+                          <button
+                            type="button"
+                            style={{
+                              width: "4vw",
+                              height: "4vh",
+                              backgroundColor: "#49454F",
+                              border: "none",
+                            }}
+                          >
+                            <FaTrash
+                              style={{
+                                width: "4vw",
+                                height: "4vw",
+                                color: "#b30000",
+                              }}
+                            />
+                          </button>
+                        </td>
+                        <td onClick={() => handleEdit(index.toString())}>
+                          <button
+                            type="button"
+                            style={{
+                              width: "4vw",
+                              height: "4vh",
+                              backgroundColor: "#49454F",
+                              border: "none",
+                            }}
+                          >
+                            <MdOutlineEdit
+                              style={{
+                                width: "4vw",
+                                height: "4vw",
+                                color: "white",
+                              }}
+                            />
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </Card.Body>
+              </Card>
+            ))}
+          </div>
+        )}
 
         <FloatingBtn
           alignment={ButtonAlignment.RIGHT}
           icon={IoAddSharp}
           onClick={handleAdd}
         />
-       
 
         {isNewPath && toDoList.toDoItem.length < 1 && (
           <div>

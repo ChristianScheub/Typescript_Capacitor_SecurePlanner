@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import PrioritySlider from "../../../modules/ui/editToDo/priorityIndicator/screen-PriorityIndicator";
-import DatePickerComponent from "../../../modules/ui/editToDo/dataPicker/screen-dataPicker";
+import PrioritySlider from "../../../modules/ui/editToDo/priorityIndicator/priorityIndicator";
+import DatePickerComponent from "../../../modules/ui/editToDo/dataPicker/dataPicker";
 import { Card } from "react-bootstrap";
 import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
 import { Form } from "react-bootstrap";
