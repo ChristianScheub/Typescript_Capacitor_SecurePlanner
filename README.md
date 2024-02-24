@@ -189,7 +189,7 @@ Container-Components serve as the data-fetching and state management layer in ou
 The Service Layer is the foundation of our application's client-side architecture. It abstracts all the handling wth the ToDo Lists (LocalStorage handling included), the fingerprint logic (e.g. password storage in secure storage) and the encryption engine logic.
 
 
-![Secure Banner Architecture](images/SecurePlannerArchitecture_Layers.jpeg)
+![Secure Banner Architecture](images/SecurePlannerArchitecture_Layers.png)
 
 ## Troubleshooting
 
