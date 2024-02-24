@@ -3,7 +3,6 @@ import { Card, Row, Col } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { FaPlusCircle } from "react-icons/fa";
 import { FaArrowDownLong } from "react-icons/fa6";
-
 import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn/floatingBtn";
 import { useTranslation } from "react-i18next";
 import ProgressCircle from "../../../modules/ui/progress/progressCircle/progressCircle";

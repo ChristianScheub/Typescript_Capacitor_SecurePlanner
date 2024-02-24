@@ -1,10 +1,7 @@
-import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import {
   MemoryRouter,
-  BrowserRouter as Router,
-  Route,
-  Routes,
+  BrowserRouter as Router
 } from "react-router-dom";
 import NavBar from "./container-navBar";
 import "@testing-library/jest-dom";

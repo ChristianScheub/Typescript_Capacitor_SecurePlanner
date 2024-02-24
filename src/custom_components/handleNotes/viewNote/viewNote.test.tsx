@@ -1,4 +1,3 @@
-import React from "react";
 import { act } from "react-dom/test-utils";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ViewNoteContainer from "./container-viewNote";
