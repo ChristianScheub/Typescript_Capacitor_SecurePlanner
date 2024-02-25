@@ -16,7 +16,7 @@ Neben dem Sicherheitsfaktor ist es das Ziel dieser App, die bestmögliche Organi
 
 | App Store Screen 1 | App Store Screen 2|
 |--------------|----------------|
-| <img src="images/screens/screen1.jpeg" alt="Start Screen" height="300">| <img src="images/screens/screens2.jpeg" alt="Start Screen" height="300"> |
+| <img src="images/screens/screen1.jpeg" alt="Start Screen" height="300">| <img src="images/screens/screens2.png" alt="Start Screen" height="300"> |
 
 | Start Screen | ToDo List Overview | ToDo List Edit | Settings |
 |--------------|----------------|-----------|-----------|

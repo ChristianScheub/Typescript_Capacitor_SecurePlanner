@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
+import Container_EditTodo from "../editToDoElement/container-editToDo";
 
 interface Container_EditNoteProps {
   encryptionKey: string;
@@ -18,6 +19,11 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   let { noteId } = useParams<{ noteId?: string }>();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [toDo_toEdit_id, setToDo_toEdit_id] =
+    useState<string>("");
+    const [showToDoEdit, setShowToDoEdit] =
+    useState<Boolean>(false);
+
 
   const [toDoList, setToDoList] = useState<ToDoList>({
     title: "",
@@ -47,7 +53,7 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
       }
     };
     loadAndDecryptNote();
-  }, [noteId, encryptionKey]);
+  }, [noteId, encryptionKey,showToDoEdit]);
 
   useEffect(() => {
     const sortedToDoList = ToDoListService.sortToDoList(toDoList);
@@ -98,7 +104,8 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   };
 
   const handleEditToDo = (toDoId: string) => {
-    navigate(`/edit/${noteId}/` + toDoId);
+    setToDo_toEdit_id(toDoId);
+    setShowToDoEdit(true)
   };
 
   function formatDate(dateInput: Date | string): string {
@@ -133,7 +140,8 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
 
   function handleAdd() {
     const count = toDoList.toDoItem.length;
-    navigate(`/edit/${noteId}/` + count);
+    setToDo_toEdit_id(count.toString());
+    setShowToDoEdit(true);
   }
 
   const handleDeleteToDo = (event: React.MouseEvent, index: number) => {
@@ -198,6 +206,9 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
       updateToDoList={updateToDoList}
       handleDeleteToDo={handleDeleteToDo}
       handleDoneToDo={handleDoneToDo}
+      CustomComponent={() => <Container_EditTodo encryptionKey={encryptionKey} noteId={noteId} toDoItemId={toDo_toEdit_id} />}
+      showToDoEdit={showToDoEdit}
+      onHandleToDoSave={() => setShowToDoEdit(false)}
     />
   );
 };

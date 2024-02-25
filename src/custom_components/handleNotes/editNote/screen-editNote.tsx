@@ -30,6 +30,9 @@ interface View_EditNoteViewProps {
   ) => void;
   handleDeleteToDo: (event: React.MouseEvent, toDoId: number) => void;
   handleDoneToDo: (event: React.MouseEvent, toDoId: number) => void;
+  CustomComponent: () => React.ReactNode;
+  showToDoEdit: Boolean;
+  onHandleToDoSave: () => void;
 }
 
 const View_EditNote: React.FC<View_EditNoteViewProps> = ({
@@ -47,6 +50,9 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
   updateToDoList,
   handleDeleteToDo,
   handleDoneToDo,
+  CustomComponent,
+  showToDoEdit,
+  onHandleToDoSave,
 }) => {
   const formattedDate = new Date(toDoList.date).toLocaleDateString();
   const { t } = useTranslation();
@@ -66,6 +72,36 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
         marginTop: "env(safe-area-inset-top)",
       }}
     >
+      {showToDoEdit && (
+        <>
+         <div className="edit-todo"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "rgba(0, 0, 0, 0.85)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 20,
+      }}
+      onClick={onHandleToDoSave} 
+    >
+
+    </div>
+          {CustomComponent()}
+          <div style={{ zIndex: 1001 }}>
+            <FloatingBtn
+              alignment={ButtonAlignment.RIGHT}
+              icon={FaRegSave}
+              onClick={onHandleToDoSave}
+            />
+          </div>
+        </>
+      )}
+
       <Form>
         <Form.Group controlId="noteTitle">
           <Form.Control
@@ -257,11 +293,15 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
           </div>
         )}
 
-        <FloatingBtn
-          alignment={ButtonAlignment.RIGHT}
-          icon={IoAddSharp}
-          onClick={handleAdd}
-        />
+        {!showToDoEdit && (
+          <>
+            <FloatingBtn
+              alignment={ButtonAlignment.RIGHT}
+              icon={IoAddSharp}
+              onClick={handleAdd}
+            />
+          </>
+        )}
 
         {isNewPath && toDoList.toDoItem.length < 1 && (
           <div>

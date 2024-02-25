@@ -41,11 +41,4 @@ describe("View_EditTodo Component", () => {
     fireEvent.change(descInput, { target: { value: "New Description" } });
     expect(mockUpdateToDoItem).toHaveBeenCalledWith("toDoText", "New Description");
   });
-
-  it("calls onHandleSave when save button is clicked", () => {
-    render(<View_EditTodo {...testProps} />);
-    const saveButton = screen.getByTestId("floating-btn");
-    fireEvent.click(saveButton);
-    expect(mockOnHandleSave).toHaveBeenCalledTimes(1);
-  });
 });

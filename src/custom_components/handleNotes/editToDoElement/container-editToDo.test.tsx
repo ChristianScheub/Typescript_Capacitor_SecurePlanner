@@ -36,16 +36,13 @@ jest.mock("react-router-dom", () => ({
 const renderContainerEditToDo = () =>
   render(
     <Router>
-      <Container_EditTodo encryptionKey="testKey" />
+      <Container_EditTodo encryptionKey="testKey" noteId="testNoteId" toDoItemId="testToDoItemId" />
     </Router>
   );
 
 describe("Container_EditTodo", () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    jest
-      .mocked(useParams)
-      .mockReturnValue({ noteId: "testNoteId", toDoItemId: "testToDoItemId" });
   });
 
   it("renders without errors", () => {
@@ -55,20 +52,6 @@ describe("Container_EditTodo", () => {
   it("renders the View_EditTodo component", () => {
     renderContainerEditToDo();
     expect(screen.getByTestId("noteTitleTest")).toBeInTheDocument();
-  });
-
-  it("should call navigate when save click", async () => {
-    const mockNavigate = jest.fn();
-    jest.mocked(useNavigate).mockImplementation(() => mockNavigate);
-
-    await act(async () => {
-      renderContainerEditToDo();
-    });
-    expect(screen.getByTestId("noteTitleTest")).toBeInTheDocument();
-    await act(async () => {
-      fireEvent.click(screen.getByTestId("floating-btn"));
-    });
-    expect(mockNavigate).toHaveBeenCalledWith(-1);
   });
 
   beforeEach(() => {

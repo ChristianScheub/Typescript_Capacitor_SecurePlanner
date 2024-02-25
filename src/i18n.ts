@@ -8,47 +8,37 @@ import translationDE from "./locales/de/translation.json";
 import translationES from "./locales/es/translation.json";
 import translationFR from "./locales/fr/translation.json";
 import translationZH from "./locales/zh/translation.json";
-
 import translationAR from "./locales/ar/translation.json";
 import translationHI from "./locales/hi/translation.json";
 import translationJA from "./locales/ja/translation.json";
 import translationKO from "./locales/ko/translation.json";
 import translationPT from "./locales/pt/translation.json";
-
-
-
+import translationNL from "./locales/nl/translation.json";
+import translationIT from "./locales/it/translation.json";
+import translationPL from "./locales/pl/translation.json";
+import translationRU from "./locales/ru/translation.json";
+import translationSV from "./locales/sv/translation.json";
+import translationDA from "./locales/da/translation.json";
+import translationFI from "./locales/fi/translation.json";
 
 const resources = {
-  en: {
-    translation: translationEN,
-  },
-  de: {
-    translation: translationDE,
-  },
-  es: {
-    translation: translationES,
-  },
-  fr: {
-    translation: translationFR,
-  },
-  zh: {
-    translation: translationZH,
-  },
-  ar: {
-    translation: translationAR,
-  },
-  hi: {
-    translation: translationHI,
-  },
-  ja: {
-    translation: translationJA,
-  },
-  ko: {
-    translation: translationKO,
-  },
-  pt: {
-    translation: translationPT,
-  },
+  en: { translation: translationEN },
+  de: { translation: translationDE },
+  es: { translation: translationES },
+  fr: { translation: translationFR },
+  zh: { translation: translationZH },
+  ar: { translation: translationAR },
+  hi: { translation: translationHI },
+  ja: { translation: translationJA },
+  ko: { translation: translationKO },
+  pt: { translation: translationPT },
+  nl: { translation: translationNL },
+  it: { translation: translationIT },
+  pl: { translation: translationPL },
+  ru: { translation: translationRU },
+  sv: { translation: translationSV },
+  da: { translation: translationDA },
+  fi: { translation: translationFI },
 };
 
 i18n
@@ -143,6 +133,40 @@ i18n
       "ar-TN": ["ar"], // Tunesien
       "ar-AE": ["ar"], // Vereinigte Arabische Emirate
       "ar-YE": ["ar"], // Jemen
+
+      // Niederländisch
+      "nl-BE": ["nl"],
+      "nl-NL": ["nl"],
+      "nl-SR": ["nl"],
+
+      // Italienisch
+      "it-CH": ["it"],
+      "it-IT": ["it"],
+      "it-SM": ["it"],
+      "it-VA": ["it"],
+
+      // Polnisch
+      "pl-PL": ["pl"],
+
+      // Russisch
+      "ru-RU": ["ru"],
+      "ru-BY": ["ru"],
+      "ru-KZ": ["ru"],
+      "ru-KG": ["ru"],
+      "ru-MD": ["ru"],
+      "ru-TJ": ["ru"],
+      "ru-TM": ["ru"],
+      "ru-UZ": ["ru"],
+
+      // Schwedisch
+      "sv-FI": ["sv"],
+      "sv-SE": ["sv"],
+
+      // Dänisch
+      "da-DK": ["da"],
+
+      // Finnisch
+      "fi-FI": ["fi"],
 
       default: ["en"], // Allgemeiner Fallback
     },

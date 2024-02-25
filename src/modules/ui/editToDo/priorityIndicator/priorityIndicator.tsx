@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { ToDoItem } from "../../../../custom_components/types/ToDoItem.types";
 
 const priorityColors: Record<Priority, string> = {
-  [Priority.Low]: "#28a745",
-  [Priority.Middle]: "#ffc107",
-  [Priority.High]: "#dc3545",
-  [Priority.Highest]: "#991302",
+  [Priority.Low]: "#9290C3",
+  [Priority.Middle]: "#535C91",
+  [Priority.High]: "#1B1A55",
+  [Priority.Highest]: "#070F2B",
 };
 
 interface PrioritySliderProps {

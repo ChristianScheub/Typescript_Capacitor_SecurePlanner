@@ -9,19 +9,23 @@ import  ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 
 interface Container_EditTodoProps {
   encryptionKey: string;
+  noteId?: string;
+  toDoItemId?: string;
 }
 
 const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
   encryptionKey,
+  noteId,
+  toDoItemId
 }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [translatedPrio, setTranslatedPrio] = useState<string>("");
 
-  const { noteId, toDoItemId } = useParams<{
+  /*const { noteId, toDoItemId } = useParams<{
     noteId?: string;
     toDoItemId?: string;
-  }>();
+  }>();*/
   const toDoItemIdInt = toDoItemId ? parseInt(toDoItemId, 10) : 0;
 
   //ToDoList wird benötigt für den Speichervorgang

@@ -5,8 +5,6 @@ import { Card } from "react-bootstrap";
 import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
 import { Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import FloatingBtn, { ButtonAlignment } from "../../../modules/ui/floatingBtn/floatingBtn";
-import { FaRegSave } from "react-icons/fa";
 import { ToDoItem } from "../../types/ToDoItem.types";
 
 
@@ -34,19 +32,26 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
   return (
     <div className="edit-todo"
       style={{
-        margin: "2vw",
-        color: "white",
-        minHeight: "70vh",
-        marginTop: "env(safe-area-inset-top)",
+        position: "fixed",
+        top: "40vh",
+        left: 0,
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 90,
       }}
     >
-      <Card
+   <Card
         style={{
           backgroundColor: "#49454F",
           color: "white",
-          height: "100%",
           margin: "2vw",
+          marginTop: "25vh",
+          position: "absolute",
           minHeight: "30vh",
+          width: "90vw",
+          zIndex: 99,
         }}
       >
         <Card.Body>
@@ -60,18 +65,17 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
                 className="white-placeholder"
                 onChange={(e) => updateToDoItem("toDoTitle", e.target.value)}
                 style={{
-                  backgroundColor: "transparent",
+                  backgroundColor: "#38373b",
                   border: "none",
                   outline: "none",
                   boxShadow: "none",
                   color: "white",
-                  fontSize: "30px",
+                  fontSize: "20px",
                   fontWeight: "bold",
-                  marginBottom: "8px",
-                  marginTop: "1vh",
                 }}
               />
             </Form.Group>
+            <hr />
             <div>
               <b>{t("editToDoElement_EndDate")}</b>
               <DatePickerComponent
@@ -90,7 +94,7 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
             <Form.Group>
               <Form.Control
                 as="textarea"
-                rows={5}
+                rows={3}
                 value={desc}
                 id="editToDo_Text"
                 data-testid="noteTextTest"
@@ -104,18 +108,14 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
                   fontFamily:
                     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                   padding: "10px",
-                  height: "40vh",
+                  height: "10vh",
                 }}
               />
             </Form.Group>
           </Form>
         </Card.Body>
       </Card>
-      <FloatingBtn
-        alignment={ButtonAlignment.RIGHT}
-        icon={FaRegSave}
-        onClick={onHandleSave}
-      />
+      
     </div>
   );
 };
