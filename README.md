@@ -7,6 +7,10 @@ With this app, it is possible to securely store ToDo Lists locally with AES & Tr
 It is also possible to decrypt the ToDo Lists using native biometrics (e.g. fingerprint sensor). (More on this under Security)
 In addition to the security factor, the aim of this app is to enable the best possible organization of various ToDo elements. This is implemented through the mini dashboards in the overview etc., prioritization and end dates for the individual ToDos.
 
+
+Google Play Store: https://play.google.com/store/apps/details?id=de.scheub.securePlaner
+<br />
+Apple App Store: https://apps.apple.com/de/app/secureplanner/id6478185630
 <br><br><br>
 
 Deutsche Kurzbeschreibung:
