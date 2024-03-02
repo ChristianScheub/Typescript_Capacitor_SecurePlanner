@@ -69,5 +69,6 @@
     "furtherFeatures.li4": "Met de zoekfunctie kunt u snel door uw ToDo-lijsten en hun elementen zoeken.",
     "furtherFeatures.li5": "U kunt verschillende ToDo-lijstgroepen met verschillende wachtwoorden opslaan. Let op, bij export worden alle lijsten geëxporteerd!",
     "encryption-modal_hint": "Voer uw wachtwoord in en klik vervolgens op deze knop om het wachtwoord op te slaan.",
-    "encryption-modal_password_stored": "Wachtwoord opgeslagen!"
+    "encryption-modal_password_stored": "Wachtwoord opgeslagen!",
+    "editToDoElement_Category": "Categorie"
   }  

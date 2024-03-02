@@ -74,23 +74,22 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
     >
       {showToDoEdit && (
         <>
-         <div className="edit-todo"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        backgroundColor: "rgba(0, 0, 0, 0.85)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 20,
-      }}
-      onClick={onHandleToDoSave} 
-    >
-
-    </div>
+          <div
+            className="edit-todo"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              backgroundColor: "rgba(0, 0, 0, 0.85)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 20,
+            }}
+            onClick={onHandleToDoSave}
+          ></div>
           {CustomComponent()}
           <div style={{ zIndex: 1001 }}>
             <FloatingBtn
@@ -227,7 +226,15 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                               width: "50vw",
                             }}
                           >
-                            <h4>{item.toDoTitle}</h4>
+                            <p style={{fontSize: "1.25em"}}>
+                            <b>
+                              {item.toDoCategorie
+                                ? `${item.toDoCategorie}:`
+                                : ""}
+                            </b>{" "}
+                            {item.toDoTitle}
+                            </p>
+
                             <b>{t("editToDoElement_EndDate")}: </b>
                             <i
                               dangerouslySetInnerHTML={{

@@ -69,5 +69,6 @@
   "furtherFeatures.li4": "検索機能を使用して、ToDoリストとその要素を素早く検索できます。",
   "furtherFeatures.li5": "異なるパスワードで異なるToDoリストグループを保存できます。ただし、エクスポートするとすべてがエクスポートされます！",
   "encryption-modal_hint": "パスワードを入力し、その後、このボタンをクリックしてパスワードを保存します。",
-  "encryption-modal_password_stored": "パスワードが保存されました！"
+  "encryption-modal_password_stored": "パスワードが保存されました！",
+  "editToDoElement_Category": "カテゴリー"
 }

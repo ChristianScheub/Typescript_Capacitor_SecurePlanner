@@ -69,5 +69,6 @@
   "furtherFeatures.li4": "搜索功能使您可以快速搜索您的待办事项列表及其元素。",
   "furtherFeatures.li5": "您可以使用不同的密码保存不同的待办事项列表组。但是请注意，导出时将全部导出！",
   "encryption-modal_hint": "请输入您的密码，然后单击此按钮以保存密码。",
-  "encryption-modal_password_stored": "密码已保存！"
+  "encryption-modal_password_stored": "密码已保存！",
+  "editToDoElement_Category": "类别"
 }

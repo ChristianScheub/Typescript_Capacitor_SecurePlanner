@@ -48,6 +48,7 @@ const toDoList: ToDoList = {
       toDoDone: false,
       toDoPriority: Priority.Middle,
       toDoEndDate: new Date("2024-01-02"),
+      toDoCategorie: "",
     },
     {
       toDoTitle: "2",
@@ -55,6 +56,7 @@ const toDoList: ToDoList = {
       toDoDone: true,
       toDoPriority: Priority.Highest,
       toDoEndDate: new Date("2024-01-03"),
+      toDoCategorie: "",
     },
     {
       toDoTitle: "3",
@@ -62,6 +64,7 @@ const toDoList: ToDoList = {
       toDoDone: false,
       toDoPriority: Priority.Middle,
       toDoEndDate: new Date("2024-01-03"),
+      toDoCategorie: "",
     },
     {
       toDoTitle: "4",
@@ -69,6 +72,7 @@ const toDoList: ToDoList = {
       toDoDone: false,
       toDoPriority: Priority.Highest,
       toDoEndDate: new Date("2024-02-03"),
+      toDoCategorie: "",
     },
     {
       toDoTitle: "5",
@@ -76,6 +80,7 @@ const toDoList: ToDoList = {
       toDoDone: false,
       toDoPriority: Priority.Low,
       toDoEndDate: new Date("2024-01-03"),
+      toDoCategorie: "",
     },
     {
       toDoTitle: "6",
@@ -83,6 +88,7 @@ const toDoList: ToDoList = {
       toDoDone: false,
       toDoPriority: Priority.Low,
       toDoEndDate: new Date("2024-02-03"),
+      toDoCategorie: "",
     },
     {
       toDoTitle: "7",
@@ -90,6 +96,7 @@ const toDoList: ToDoList = {
       toDoDone: false,
       toDoPriority: Priority.Low,
       toDoEndDate: new Date("2024-02-03"),
+      toDoCategorie: "",
     },
     {
       toDoTitle: "8",
@@ -97,6 +104,7 @@ const toDoList: ToDoList = {
       toDoDone: true,
       toDoPriority: Priority.Low,
       toDoEndDate: new Date("2024-02-03"),
+      toDoCategorie: "",
     },
     {
       toDoTitle: "9",
@@ -104,6 +112,7 @@ const toDoList: ToDoList = {
       toDoDone: false,
       toDoPriority: Priority.Low,
       toDoEndDate: new Date("2024-02-03"),
+      toDoCategorie: "",
     },
   ],
 };

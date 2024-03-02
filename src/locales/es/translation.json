@@ -69,5 +69,6 @@
   "furtherFeatures.li4": "La función de búsqueda te permite buscar rápidamente tus listas de tareas y sus elementos.",
   "furtherFeatures.li5": "Puedes guardar diferentes grupos de listas de tareas con diferentes contraseñas. ¡Pero ten cuidado, al exportar, todas se exportarán!",
   "encryption-modal_hint": "Ingrese su contraseña y luego haga clic en este botón para guardarla.",
-  "encryption-modal_password_stored": "¡Contraseña guardada!"
+  "encryption-modal_password_stored": "¡Contraseña guardada!",
+  "editToDoElement_Category": "Categoría"
 }

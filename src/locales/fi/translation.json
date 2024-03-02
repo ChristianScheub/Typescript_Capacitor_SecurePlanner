@@ -69,5 +69,6 @@
     "furtherFeatures.li4": "Hakutoiminnon avulla voit nopeasti hakea tehtäväluetteloitasi ja niiden elementtejä.",
     "furtherFeatures.li5": "Voit tallentaa erilaisia tehtäväluetteloryhmiä eri salasanoilla. Mutta ole varovainen, kun viedään, kaikki viedään!",
     "encryption-modal_hint": "Syötä salasanasi ja napsauta sitten tätä painiketta tallentaaksesi salasanan.",
-    "encryption-modal_password_stored": "Salasana tallennettu!"
+    "encryption-modal_password_stored": "Salasana tallennettu!",
+    "editToDoElement_Category": "Luokka"
   }  

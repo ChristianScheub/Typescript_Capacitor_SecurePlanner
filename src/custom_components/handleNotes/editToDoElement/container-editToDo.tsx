@@ -40,6 +40,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
         toDoText: "",
         toDoEndDate: new Date(),
         toDoDone: false,
+        toDoCategorie: ""
       },
     ],
   });
@@ -70,6 +71,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
     toDoText: "",
     toDoEndDate: new Date(),
     toDoDone: false,
+    toDoCategorie: ""
   });
   useEffect(() => {
     const priorityKeyMap: Record<Priority, string> = {
@@ -102,6 +104,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
       }
     };
     loadAndDecryptNote();
+    extractAndSetCategories();
   }, [toDoListItem]);
 
   useEffect(() => {
@@ -129,17 +132,29 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
     };
 
     loadAndDecryptNote();
+    extractAndSetCategories();
   }, [noteId, toDoItemIdInt, encryptionKey]);
-
-  const handleSave = () => {
-    navigate(-1);
-  };
 
   const updateToDoItem = <K extends keyof ToDoItem>(
     key: K,
     value: ToDoItem[K]
   ) => {
     setToDoListItem({ ...toDoListItem, [key]: value });
+  };
+
+
+  const [categoriesList, setCategoriesList] = useState<string[]>([]);
+
+
+  const extractAndSetCategories = () => {
+    const categoriesSet = new Set<string>();
+    toDoList.toDoItem.forEach((item) => {
+      if (item.toDoCategorie && item.toDoCategorie.trim() !== "") {
+        categoriesSet.add(item.toDoCategorie);
+      }
+    });
+  
+    setCategoriesList(Array.from(categoriesSet));
   };
 
   return (
@@ -149,8 +164,9 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
       endDate={toDoListItem.toDoEndDate}
       selectedPriority={toDoListItem.toDoPriority}
       translatedPrio={translatedPrio}
+      categorie={toDoListItem.toDoCategorie}
+      categoriesList={categoriesList || []}
       updateToDoItem={updateToDoItem}
-      onHandleSave={handleSave}
     />
   );
 };

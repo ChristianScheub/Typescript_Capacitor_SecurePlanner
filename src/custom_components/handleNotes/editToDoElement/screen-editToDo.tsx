@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import PrioritySlider from "../../../modules/ui/editToDo/priorityIndicator/priorityIndicator";
 import DatePickerComponent from "../../../modules/ui/editToDo/dataPicker/dataPicker";
-import { Card } from "react-bootstrap";
+import { Card, InputGroup } from "react-bootstrap";
 import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
 import { Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../types/ToDoItem.types";
 
-
 interface View_EditTodoProps {
   title: string;
-  desc: string
+  desc: string;
   endDate: Date;
   selectedPriority: Priority;
   translatedPrio: string;
-  updateToDoItem:  <K extends keyof ToDoItem>(key: K, value: ToDoItem[K]) => void;
-  onHandleSave: () => void;
+  categorie: string;
+  categoriesList: string[];
+  updateToDoItem: <K extends keyof ToDoItem>(
+    key: K,
+    value: ToDoItem[K]
+  ) => void;
 }
 
 const View_EditTodo: React.FC<View_EditTodoProps> = ({
@@ -24,13 +27,16 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
   endDate,
   selectedPriority,
   translatedPrio,
-  updateToDoItem,
-  onHandleSave,
+  categorie,
+  categoriesList,
+  updateToDoItem
 }) => {
   const { t } = useTranslation();
+  console.log(categoriesList);
 
   return (
-    <div className="edit-todo"
+    <div
+      className="edit-todo"
       style={{
         position: "fixed",
         top: "40vh",
@@ -42,7 +48,7 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
         zIndex: 90,
       }}
     >
-   <Card
+      <Card
         style={{
           backgroundColor: "#49454F",
           color: "white",
@@ -90,6 +96,31 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
                 onPriorityChange={updateToDoItem}
               />
             </div>
+            <Form.Group>
+              <b>{t("editToDoElement_Category")}</b>
+              <InputGroup>
+                <Form.Control
+                  type="text"
+                  list="category-options"
+                  value={categorie}
+                  onChange={(e) =>
+                    updateToDoItem("toDoCategorie", e.target.value)
+                  }
+                  style={{
+                    backgroundColor: "#38373b",
+                    border: "none",
+                    color: "white",
+                    boxShadow: "none",
+                  }}
+                />
+                <datalist id="category-options">
+                  {categoriesList.map((category, index) => (
+                    <option key={index} value={category} />
+                  ))}
+                </datalist>
+              </InputGroup>
+            </Form.Group>
+
             <hr />
             <Form.Group>
               <Form.Control
@@ -115,7 +146,6 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
           </Form>
         </Card.Body>
       </Card>
-      
     </div>
   );
 };

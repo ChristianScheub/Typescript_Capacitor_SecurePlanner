@@ -4,11 +4,9 @@ import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priorit
 
 describe("View_EditTodo Component", () => {
   const mockUpdateToDoItem = jest.fn();
-  const mockOnHandleSave = jest.fn();
 
   beforeEach(() => {
     mockUpdateToDoItem.mockClear();
-    mockOnHandleSave.mockClear();
   });
 
   const testProps = {
@@ -17,8 +15,9 @@ describe("View_EditTodo Component", () => {
     endDate: new Date(),
     selectedPriority: Priority.High,
     translatedPrio: "High",
-    updateToDoItem: mockUpdateToDoItem,
-    onHandleSave: mockOnHandleSave,
+    categorie: "",
+    categoriesList: [],
+    updateToDoItem: mockUpdateToDoItem
   };
 
   it("renders the component correctly", () => {

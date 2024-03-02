@@ -69,5 +69,6 @@
     "furtherFeatures.li4": "La funzione di ricerca ti consente di cercare rapidamente nelle tue liste di attività e nei loro elementi.",
     "furtherFeatures.li5": "Puoi salvare gruppi di liste di attività diversi con password diverse. Ma attenzione, con l'esportazione verranno esportati tutti!",
     "encryption-modal_hint": "Inserisci la tua password e poi fai clic su questo pulsante per salvare la password.",
-    "encryption-modal_password_stored": "Password salvata!"
+    "encryption-modal_password_stored": "Password salvata!",
+    "editToDoElement_Category": "Categoria"
   }  

@@ -40,6 +40,7 @@ describe("calculateProgressForNextNDays", () => {
           toDoDone: true,
           toDoEndDate: new Date(),
           toDoPriority: Priority.High,
+          toDoCategorie: "",
         },
         {
           toDoTitle: "Not Done",
@@ -47,6 +48,7 @@ describe("calculateProgressForNextNDays", () => {
           toDoDone: false,
           toDoEndDate: new Date(),
           toDoPriority: Priority.Low,
+          toDoCategorie: "",
         },
       ];
 
@@ -68,6 +70,7 @@ describe("calculateProgress", () => {
           toDoDone: true,
           toDoEndDate: new Date(),
           toDoPriority: Priority.High,
+          toDoCategorie: "",
         },
         {
           toDoTitle: "Not Done",
@@ -75,6 +78,7 @@ describe("calculateProgress", () => {
           toDoDone: false,
           toDoEndDate: new Date(),
           toDoPriority: Priority.Low,
+          toDoCategorie: "",
         },
       ];
 

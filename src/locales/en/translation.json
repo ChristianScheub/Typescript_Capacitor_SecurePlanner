@@ -69,5 +69,6 @@
   "furtherFeatures.li4": "The search function allows you to quickly search through your ToDo lists and their elements.",
   "furtherFeatures.li5": "You can save different ToDo list groups with different passwords. But beware, when exporting, all will be exported!",
   "encryption-modal_hint": "Enter your password and then click on this button to save the password.",
-  "encryption-modal_password_stored": "Password saved!"
+  "encryption-modal_password_stored": "Password saved!",
+  "editToDoElement_Category": "Category"
 }

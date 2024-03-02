@@ -6,4 +6,5 @@ export interface ToDoItem {
     toDoText: string;
     toDoEndDate: Date;
     toDoDone: Boolean;
+    toDoCategorie: string
   }
