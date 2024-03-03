@@ -35,9 +35,10 @@ Container_EncryptionKeyModalProps
   }, []);
 
   useEffect(() => {
-    setShowFingerprintHint(showFingerprintBtn && localStorage.length <= 3);
+    setShowFingerprintHint(showFingerprintBtn && localStorage.getItem("fingerprintSet") != "true" );
   }, [showFingerprintBtn, localStorage.length]);
 
+ 
   const handleKeySubmit = (event: FormEvent) => {
     event.preventDefault();
     const password = getPBKDF2_Password(inputRef.current!.value);
@@ -53,6 +54,7 @@ Container_EncryptionKeyModalProps
           () => {
             alert(t("encryption-modal_password_stored"));
             const password = getPBKDF2_Password(inputRef.current!.value);
+            localStorage.setItem("fingerprintSet", "true");
             onSubmit(password);
           },
           (errorMessage) => {

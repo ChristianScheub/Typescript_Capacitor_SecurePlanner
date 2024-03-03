@@ -8,7 +8,9 @@ import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priorit
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
 import Container_EditTodo from "../editToDoElement/container-editToDo";
-
+import { formatDate } from "../../services/formatDate/formatDate";
+import { getCategories } from "../../services/toDoListHandler/Categories/categories";
+import { ToDoItem } from "../../types/ToDoItem.types";
 interface Container_EditNoteProps {
   encryptionKey: string;
 }
@@ -17,14 +19,25 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   encryptionKey,
 }) => {
   let { noteId } = useParams<{ noteId?: string }>();
-  const navigate = useNavigate();
   const { t } = useTranslation();
-  const [toDo_toEdit_id, setToDo_toEdit_id] =
-    useState<string>("");
-    const [showToDoEdit, setShowToDoEdit] =
-    useState<Boolean>(false);
+  const [toDo_toEdit_id, setToDo_toEdit_id] = useState<string>("");
+  const [showToDoEdit, setShowToDoEdit] = useState<Boolean>(false);
+  const [toDoSetToDone, setToDoSetToDone] = useState<Boolean>(false);
+  //The Keys which should be ignored and maybe set already (i18nextLng, capuid are web only so not smartphone relevant)
+  const ignoredKeys = [
+    "welcomeScreenDone",
+    "i18nextLng",
+    "_capuid",
+    "fingerprintSet",
+  ];
 
+  const relevantItemCount = Object.keys(localStorage).reduce((count, key) => {
+    return ignoredKeys.includes(key) ? count : count + 1;
+  }, 0);
 
+  const isNewPath = relevantItemCount < 1;
+
+  //Whole ToDo List without any filters
   const [toDoList, setToDoList] = useState<ToDoList>({
     title: "",
     date: new Date(),
@@ -32,7 +45,16 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     toDoItem: [],
   });
 
-  const isNewPath = localStorage.length < 3;
+  //ToDo List with filters applied
+  const [shownToDoList, setShownToDoList] = useState<ToDoList>({
+    title: "",
+    date: new Date(),
+    content: "",
+    toDoItem: [],
+  });
+
+  //List of all categories in the ToDo List
+  const [categoriesList, setCategoriesList] = useState<string[]>([]);
 
   useEffect(() => {
     const loadAndDecryptNote = async () => {
@@ -44,24 +66,24 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
           );
           if (noteData) {
             setToDoList(noteData);
+            setCategoriesList(getCategories(toDoList));
+            const sortedToDoList = ToDoListService.sortToDoList(toDoList);
+            if (!isEqual(sortedToDoList.toDoItem, toDoList.toDoItem)) {
+              setToDoList(sortedToDoList);
+            }
+            setShownToDoList(toDoList);
           }
         } catch (error) {
-          console.error(
-            "Fehler beim Laden und Entschlüsseln der Notiz:"
-          );
+          console.error("Fehler beim Laden und Entschlüsseln der Notiz:");
         }
       }
     };
+
     loadAndDecryptNote();
-  }, [noteId, encryptionKey,showToDoEdit]);
+  }, [noteId, encryptionKey, showToDoEdit]);
 
   useEffect(() => {
-    const sortedToDoList = ToDoListService.sortToDoList(toDoList);
-    if (!isEqual(sortedToDoList.toDoItem, toDoList.toDoItem)) {
-      setToDoList(sortedToDoList);
-    }
-
-    const loadAndDecryptNote = async () => {
+    const storeNotes = async () => {
       if (
         noteId &&
         (toDoList.title !== "" ||
@@ -69,14 +91,19 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
           toDoList.toDoItem.length > 0)
       ) {
         try {
+          if (!toDoSetToDone) {
+            setShownToDoList(toDoList);
+          } else {
+            setToDoSetToDone(true);
+          }
+          setCategoriesList(getCategories(toDoList));
           await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
         } catch (error) {
-          console.error("Fehler beim Speichern der Notiz");
+          //console.error("Fehler beim Speichern der Notiz");
         }
       }
     };
-
-    loadAndDecryptNote();
+    storeNotes();
   }, [toDoList]);
 
   const progressOverall = ProgressToDoListService.calculateProgress(
@@ -87,9 +114,10 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     toDoList.toDoItem,
     0
   );
+
   const progressNext7Days =
     ProgressToDoListService.calculateProgressForNextNDays(toDoList.toDoItem, 7);
-    
+
   const progressHighPriority = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
     (item) =>
@@ -98,38 +126,17 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     (item) => [Priority.High, Priority.Highest].includes(item.toDoPriority)
   );
 
-  const handleSave = async () => {
-    await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
-    navigate(-1);
+  const calculateCategoryProgress = (category: string): number => {
+    return ProgressToDoListService.calculateProgressForCategory(
+      toDoList.toDoItem,
+      category
+    );
   };
 
   const handleEditToDo = (toDoId: string) => {
     setToDo_toEdit_id(toDoId);
-    setShowToDoEdit(true)
+    setShowToDoEdit(true);
   };
-
-  function formatDate(dateInput: Date | string): string {
-    const date = new Date(dateInput);
-    if (isNaN(date.getTime())) {
-      console.error(
-        "Das übergebene Argument ist kein gültiges Date-Objekt oder Datum-String:",
-        dateInput
-      );
-      return "";
-    }
-
-    const day = date.getDate().toString().padStart(2, "0");
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const year = date.getFullYear().toString();
-    const toDoEndDate = `${day}.${month}.${year}`;
-    const today: Date = new Date();
-    let formattedDate: string = toDoEndDate;
-
-    if (date.toDateString() === today.toDateString()) {
-      formattedDate = `<span style="color: red;">${toDoEndDate}</span>`;
-    }
-    return formattedDate;
-  }
 
   const updateToDoList = async <K extends keyof ToDoList>(
     key: K,
@@ -159,12 +166,22 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     }
   };
 
-  const handleDoneToDo = (event: React.MouseEvent, index: number) => {
-    event.preventDefault();
-    const updatedToDoItems = toDoList.toDoItem.map((item, itemIndex) => {
-      if (itemIndex === index) {
-        if ({ ...item, toDoDone: true })
-          return { ...item, toDoDone: !item.toDoDone };
+  const handleDoneToDo = (
+    event: React.MouseEvent,
+    itemToToggle: ToDoItem,
+    index: number
+  ) => {
+    setToDoSetToDone(true);
+
+    const updatedToDoItems = toDoList.toDoItem.map((item) => {
+      if (
+        item.toDoPriority === itemToToggle.toDoPriority &&
+        item.toDoTitle === itemToToggle.toDoTitle &&
+        item.toDoText === itemToToggle.toDoText &&
+        item.toDoEndDate === itemToToggle.toDoEndDate &&
+        item.toDoCategorie === itemToToggle.toDoCategorie
+      ) {
+        return { ...item, toDoDone: !item.toDoDone };
       }
       return item;
     });
@@ -172,6 +189,19 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     setToDoList({
       ...toDoList,
       toDoItem: updatedToDoItems,
+    });
+
+    const updatedToDoItems1 = shownToDoList.toDoItem.map((item, itemIndex) => {
+      if (itemIndex === index) {
+        if ({ ...item, toDoDone: true })
+          return { ...item, toDoDone: !item.toDoDone };
+      }
+      return item;
+    });
+
+    setShownToDoList({
+      ...toDoList,
+      toDoItem: updatedToDoItems1,
     });
   };
 
@@ -190,25 +220,58 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     return t(i18nKey);
   };
 
+  const handleFilterList = async (filter: string) => {
+    if (filter === "total") {
+      return setShownToDoList(ToDoListService.sortToDoList(toDoList));
+    } else if (filter === "today") {
+      return setShownToDoList(
+        ToDoListService.filterToDoListByNextXDays(toDoList, 1)
+      );
+    } else if (filter === "7Days") {
+      return setShownToDoList(
+        ToDoListService.filterToDoListByNextXDays(toDoList, 7)
+      );
+    } else if (filter === "Priority") {
+      return setShownToDoList(
+        ToDoListService.filterToDoListByPriority(toDoList, [
+          Priority.High,
+          Priority.Highest,
+        ])
+      );
+    } else {
+      return setShownToDoList(
+        ToDoListService.filterToDoListByCategory(toDoList, filter)
+      );
+    }
+  };
+
   return (
     <EditNoteView
-      toDoList={toDoList}
+      toDoList={shownToDoList}
       isNewPath={isNewPath}
+      categoriesList={categoriesList}
+      getCategoryProgress={calculateCategoryProgress}
       progressOverall={progressOverall}
       progressToday={progressToday}
       progressHighPriority={progressHighPriority}
       progressNext7Days={progressNext7Days}
       getPriorityText={getPriorityText}
-      handleSave={handleSave}
       handleEdit={handleEditToDo}
       handleAdd={handleAdd}
       formatDate={formatDate}
       updateToDoList={updateToDoList}
       handleDeleteToDo={handleDeleteToDo}
       handleDoneToDo={handleDoneToDo}
-      CustomComponent={() => <Container_EditTodo encryptionKey={encryptionKey} noteId={noteId} toDoItemId={toDo_toEdit_id} />}
+      CustomComponent={() => (
+        <Container_EditTodo
+          encryptionKey={encryptionKey}
+          noteId={noteId}
+          toDoItemId={toDo_toEdit_id}
+        />
+      )}
       showToDoEdit={showToDoEdit}
       onHandleToDoSave={() => setShowToDoEdit(false)}
+      handleFilterList={handleFilterList}
     />
   );
 };

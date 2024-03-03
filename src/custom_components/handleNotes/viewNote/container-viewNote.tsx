@@ -38,8 +38,30 @@ const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, 
       return ProgressToDoListService.calculateProgressForNextNDays(items.toDoItem, days)
     };
 
- 
+    const breakText = (text: string, maxLength: number): string => {
+      let brokenText = "";
+      let currentIndex = 0;
+  
+      while (currentIndex < text.length) {
+        let spaceIndex = currentIndex + maxLength;
+        if (spaceIndex < text.length && text[spaceIndex] !== " ") {
+          while (spaceIndex < text.length && text[spaceIndex] !== " ") {
+            spaceIndex++;
+          }
+        }
+        if (spaceIndex === text.length) {
+          spaceIndex = currentIndex + maxLength;
+        }
+        brokenText += text.substring(currentIndex, spaceIndex) + " ";
+        currentIndex = spaceIndex;
+      }
+      return brokenText.trim();
+    };
 
+    const truncateText = (text: string, maxLength: number): string => {
+      if (text.length <= maxLength) return text;
+      return text.substr(0, maxLength) + "...";
+    };
 
   return (
     <View_ViewNote
@@ -48,6 +70,8 @@ const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, 
       onNavigateToCreateNew={handleNavigateToCreateNew}
       calculateProgress={calculateProgress}
       calculateProgressDays={calculateProgressDays}
+      breakText={breakText}
+      truncateText={truncateText}
     />
   );
 };

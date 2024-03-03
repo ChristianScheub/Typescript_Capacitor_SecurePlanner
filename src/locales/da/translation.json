@@ -70,5 +70,6 @@
     "furtherFeatures.li5": "Du kan gemme forskellige Opgaveliste grupper med forskellige adgangskoder. Men pas på, ved eksport bliver alle eksporteret!",
     "encryption-modal_hint": "Indtast din adgangskode, og klik derefter på denne knap for at gemme adgangskoden.",
     "encryption-modal_password_stored": "Adgangskode gemt!",
-    "editToDoElement_Category": "Kategori"
+    "editToDoElement_Category": "Kategori",
+    "viewNote_progressBarsCategories_title": "Fremskridt pr. Kategori"
   }  

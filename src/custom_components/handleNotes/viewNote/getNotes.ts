@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Location } from "react-router-dom";
 import { ToDoListWithKey } from "../../types/ToDoListKey.types";
-import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
+import toDoListService from "../../services/toDoListHandler/toDoListHandler";
 import { ToDoItem } from "../../types/ToDoItem.types";
 
 const useAllNotes = (
@@ -13,7 +13,7 @@ const useAllNotes = (
 
   useEffect(() => {
     const loadAndDecryptNotes = async () => {
-      const loadedNotes = await ToDoListService.loadAllToDoLists(encryptionKey);
+      const loadedNotes = await toDoListService.loadAllToDoLists(encryptionKey);
       if (loadedNotes) {
         const filteredNotes = loadedNotes
           .map(([toDoList, key]) => ({ toDoList, key }))

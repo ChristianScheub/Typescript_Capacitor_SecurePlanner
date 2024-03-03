@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import View_EditTodo from "./screen-editToDo";
 import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
-import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../types/ToDoItem.types";
 import { ToDoList } from "../../types/ToDoList.types";
@@ -18,14 +17,9 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
   noteId,
   toDoItemId
 }) => {
-  const navigate = useNavigate();
   const { t } = useTranslation();
   const [translatedPrio, setTranslatedPrio] = useState<string>("");
 
-  /*const { noteId, toDoItemId } = useParams<{
-    noteId?: string;
-    toDoItemId?: string;
-  }>();*/
   const toDoItemIdInt = toDoItemId ? parseInt(toDoItemId, 10) : 0;
 
   //ToDoList wird benötigt für den Speichervorgang
@@ -35,7 +29,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
     content: "",
     toDoItem: [
       {
-        toDoPriority: Priority.High,
+        toDoPriority: Priority.Middle,
         toDoTitle: "",
         toDoText: "",
         toDoEndDate: new Date(),
@@ -144,7 +138,6 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
 
 
   const [categoriesList, setCategoriesList] = useState<string[]>([]);
-
 
   const extractAndSetCategories = () => {
     const categoriesSet = new Set<string>();

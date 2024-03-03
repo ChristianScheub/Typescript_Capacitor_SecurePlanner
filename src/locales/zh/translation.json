@@ -70,5 +70,6 @@
   "furtherFeatures.li5": "您可以使用不同的密码保存不同的待办事项列表组。但是请注意，导出时将全部导出！",
   "encryption-modal_hint": "请输入您的密码，然后单击此按钮以保存密码。",
   "encryption-modal_password_stored": "密码已保存！",
-  "editToDoElement_Category": "类别"
+  "editToDoElement_Category": "类别",
+  "viewNote_progressBarsCategories_title": "按类别查看进度"
 }

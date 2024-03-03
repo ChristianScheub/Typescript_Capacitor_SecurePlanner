@@ -32,7 +32,6 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
   updateToDoItem
 }) => {
   const { t } = useTranslation();
-  console.log(categoriesList);
 
   return (
     <div

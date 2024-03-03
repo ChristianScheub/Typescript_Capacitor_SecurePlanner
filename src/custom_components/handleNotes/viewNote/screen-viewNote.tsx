@@ -16,6 +16,8 @@ interface View_ViewNoteProps {
   onNavigateToCreateNew: () => void;
   calculateProgress: (items: ToDoList) => number;
   calculateProgressDays: (items: ToDoList, days: number) => number;
+  breakText: (text: string, maxLength: number) => string;
+  truncateText: (text: string, maxLength: number) => string;
 }
 
 const View_ViewNote: React.FC<View_ViewNoteProps> = ({
@@ -24,31 +26,9 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
   onNavigateToCreateNew,
   calculateProgress,
   calculateProgressDays,
+  breakText,
+  truncateText
 }) => {
-  const truncateText = (text: string, maxLength: number): string => {
-    if (text.length <= maxLength) return text;
-    return text.substr(0, maxLength) + "...";
-  };
-  const breakText = (text: string, maxLength: number): string => {
-    let brokenText = "";
-    let currentIndex = 0;
-
-    while (currentIndex < text.length) {
-      let spaceIndex = currentIndex + maxLength;
-      if (spaceIndex < text.length && text[spaceIndex] !== " ") {
-        while (spaceIndex < text.length && text[spaceIndex] !== " ") {
-          spaceIndex++;
-        }
-      }
-      if (spaceIndex === text.length) {
-        spaceIndex = currentIndex + maxLength;
-      }
-      brokenText += text.substring(currentIndex, spaceIndex) + " ";
-      currentIndex = spaceIndex;
-    }
-    return brokenText.trim();
-  };
-
   const { t } = useTranslation();
 
   return (

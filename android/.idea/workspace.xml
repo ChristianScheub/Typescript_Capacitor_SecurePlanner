@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42535abe-a020-475f-9086-dac8ebec9498" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -12,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/debug/public/asset-manifest.json" afterDir="false" />
@@ -34,19 +36,40 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/main.5b10f161.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/main.5b10f161.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/static/js/main.5b10f161.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.7674ba67.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.7674ba67.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.7674ba67.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../capacitor.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../capacitor.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ios/App/App/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/App/Pods/Pods.xcodeproj/xcuserdata/christianscheub.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/Pods/Pods.xcodeproj/xcuserdata/christianscheub.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/container-editNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/container-editNote.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/container-editToDo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/container-editToDo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/progressToDoListService/progressToDoListService.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/progressToDoListService/progressToDoListService.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/toDoListHandler.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/toDoListHandler.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/custom_components/types/ToDoItem.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/types/ToDoItem.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/getNotes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/getNotes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/progressToDoListService/progressToDoListService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/progressToDoListService/progressToDoListService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/toDoListHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/toDoListHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/ar/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/ar/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/da/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/da/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/de/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/de/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/en/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/es/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/es/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/fi/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/fi/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/fr/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/fr/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/hi/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/hi/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/it/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/it/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/ja/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/ja/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/ko/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/ko/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/nl/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/nl/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/pl/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/pl/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/pt/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/pt/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/ru/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/ru/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/sv/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/sv/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/zh/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/zh/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/progress/progressBar/progressBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/modules/ui/progress/progressBar/progressBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +87,6 @@
     <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../../../../../SecurePlanner_KeyStore/Untitled" />
     <option name="KEY_ALIAS" value="key0" />
     <option name="REMEMBER_PASSWORDS" value="true" />
-    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />

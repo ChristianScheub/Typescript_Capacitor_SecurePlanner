@@ -70,5 +70,6 @@
     "furtherFeatures.li5": "Вы можете сохранить разные группы списков задач с разными паролями. Но будьте осторожны, при экспорте все они будут экспортированы!",
     "encryption-modal_hint": "Введите свой пароль, а затем нажмите эту кнопку, чтобы сохранить пароль.",
     "encryption-modal_password_stored": "Пароль сохранен!",
-    "editToDoElement_Category": "Категория"
+    "editToDoElement_Category": "Категория",
+    "viewNote_progressBarsCategories_title": "Прогресс по категориям"
   }  

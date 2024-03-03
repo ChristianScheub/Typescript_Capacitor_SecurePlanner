@@ -8,6 +8,7 @@ export interface ProgressToDoListService {
     predicate: (item: ToDoItem) => Boolean,
     totalPredicate?: (item: ToDoItem) => Boolean
   ) => number;
+  calculateProgressForCategory: (items: ToDoItem[], category: string) => number;
 }
 
 const progressToDoListService: ProgressToDoListService = {
@@ -69,6 +70,26 @@ const progressToDoListService: ProgressToDoListService = {
       ? Math.round((totalDoneItems / totalItemsLength) * 1000) / 10
       : 100;
   },
+
+  calculateProgressForCategory: (
+    items: ToDoItem[],
+    category: string
+  ): number => {
+    // Filtert alle ToDoItems, die zur spezifischen Kategorie gehören
+    const itemsInCategory = items.filter(item => item.toDoCategorie === category);
+  
+    // Berechnet den Fortschritt basierend auf den erledigten Aufgaben in der Kategorie
+    const doneItemsInCategory = itemsInCategory.filter(item => item.toDoDone);
+  
+    // Berechnet den Prozentsatz der erledigten Aufgaben
+    const totalItemsInCategory = itemsInCategory.length;
+    const totalDoneItemsInCategory = doneItemsInCategory.length;
+  
+    return totalItemsInCategory > 0
+      ? Math.round((totalDoneItemsInCategory / totalItemsInCategory) * 1000) / 10
+      : 100; // Gibt 100 zurück, wenn es keine Aufgaben in der Kategorie gibt, als Indikator für "keine offenen Aufgaben"
+  },
 };
+
 
 export default progressToDoListService;

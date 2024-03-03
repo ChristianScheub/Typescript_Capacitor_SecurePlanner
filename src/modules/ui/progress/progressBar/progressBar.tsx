@@ -6,6 +6,7 @@ interface ProgressBarProps {
   infoText: string;
   active: boolean;
   onClick: () => void; 
+  highlighted?: boolean;
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({
@@ -13,7 +14,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   progress,
   infoText,
   active,
-  onClick
+  onClick,
+  highlighted = false,
 }) => {
 
   const getProgressColor = (progress: number): string => {
@@ -36,6 +38,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
     backgroundColor: "#333",
     borderRadius: "15px",
     position: "relative" as "relative",
+    border: highlighted ? "3px solid #3498db" : "none", 
   };
 
   const progressBarStyle: React.CSSProperties = {
@@ -93,7 +96,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
       style={progressBarContainerStyle}
       onClick={onClick}
     >
-      {active && <div style={tooltipStyle}>{infoText}</div>}
+      {active && infoText!="NO" && <div style={tooltipStyle}>{infoText}</div>}
       <div style={progressBarStyle}>
         <div style={progressTextStyle}>
           {title}: {progress}%

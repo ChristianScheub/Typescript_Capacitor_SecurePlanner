@@ -70,5 +70,6 @@
     "furtherFeatures.li5": "Voit tallentaa erilaisia tehtäväluetteloryhmiä eri salasanoilla. Mutta ole varovainen, kun viedään, kaikki viedään!",
     "encryption-modal_hint": "Syötä salasanasi ja napsauta sitten tätä painiketta tallentaaksesi salasanan.",
     "encryption-modal_password_stored": "Salasana tallennettu!",
-    "editToDoElement_Category": "Luokka"
+    "editToDoElement_Category": "Luokka",
+    "viewNote_progressBarsCategories_title": "Edistyminen kategoriaa kohden"
   }  

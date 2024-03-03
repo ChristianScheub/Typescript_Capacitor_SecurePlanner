@@ -70,5 +70,6 @@
   "furtherFeatures.li5": "Você pode salvar grupos de listas de tarefas diferentes com senhas diferentes. Mas atenção, ao exportar, todas serão exportadas!",
   "encryption-modal_hint": "Digite sua senha e depois clique neste botão para salvar a senha.",
   "encryption-modal_password_stored": "Senha salva!",
-  "editToDoElement_Category": "Categoria"
+  "editToDoElement_Category": "Categoria",
+  "viewNote_progressBarsCategories_title": "Progresso por Categoria"
 }

@@ -70,5 +70,6 @@
   "furtherFeatures.li5": "You can save different ToDo list groups with different passwords. But beware, when exporting, all will be exported!",
   "encryption-modal_hint": "Enter your password and then click on this button to save the password.",
   "encryption-modal_password_stored": "Password saved!",
-  "editToDoElement_Category": "Category"
+  "editToDoElement_Category": "Category",
+  "viewNote_progressBarsCategories_title": "Progress per Category"
 }

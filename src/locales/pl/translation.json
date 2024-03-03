@@ -70,5 +70,6 @@
     "furtherFeatures.li5": "Możesz zapisać różne grupy list zadań za pomocą różnych haseł. Uwaga: podczas eksportu wszystkie listy zostaną wyeksportowane!",
     "encryption-modal_hint": "Wprowadź swoje hasło, a następnie kliknij ten przycisk, aby zapisać hasło.",
     "encryption-modal_password_stored": "Hasło zostało zapisane!",
-    "editToDoElement_Category": "Kategoria"
+    "editToDoElement_Category": "Kategoria",
+    "viewNote_progressBarsCategories_title": "Postęp według kategorii"
   }  

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { FaRegSave, FaRegClock, FaTrash } from "react-icons/fa";
+import { FaRegSave, FaTrash } from "react-icons/fa";
 import FloatingBtn, {
   ButtonAlignment,
 } from "../../../modules/ui/floatingBtn/floatingBtn";
@@ -9,18 +9,21 @@ import { Card } from "react-bootstrap";
 import { ToDoList } from "../../types/ToDoList.types";
 import { MdOutlineEdit } from "react-icons/md";
 import { IoAddSharp } from "react-icons/io5";
-import ProgressBar from "../../../modules/ui/progress/progressBar/progressBar";
 import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
+import DateDisplayWithClock from "../../../modules/ui/dateWithClock/dateWithClock";
+import { ToDoItem } from "../../types/ToDoItem.types";
+import ProgressBarScreen from "../../../modules/ui/progress/progressBarMenu/progressBarScreen";
 
 interface View_EditNoteViewProps {
   toDoList: ToDoList;
   isNewPath: Boolean;
+  categoriesList: string[];
+  getCategoryProgress: (category: string) => number;
   progressOverall: number;
   progressToday: number;
   progressHighPriority: number;
   progressNext7Days: number;
   getPriorityText: (priority: Priority) => string;
-  handleSave: () => void;
   handleEdit: (toDoId: string) => void;
   handleAdd: () => void;
   formatDate: (dateInput: Date | string) => string;
@@ -29,21 +32,27 @@ interface View_EditNoteViewProps {
     value: ToDoList[K]
   ) => void;
   handleDeleteToDo: (event: React.MouseEvent, toDoId: number) => void;
-  handleDoneToDo: (event: React.MouseEvent, toDoId: number) => void;
+  handleDoneToDo: (
+    event: React.MouseEvent,
+    toDoItem: ToDoItem,
+    index: number
+  ) => void;
   CustomComponent: () => React.ReactNode;
   showToDoEdit: Boolean;
   onHandleToDoSave: () => void;
+  handleFilterList: (filterArgument: string) => void;
 }
 
 const View_EditNote: React.FC<View_EditNoteViewProps> = ({
   toDoList,
   isNewPath,
+  categoriesList,
+  getCategoryProgress,
   progressOverall,
   progressToday,
   progressHighPriority,
   progressNext7Days,
   getPriorityText,
-  handleSave,
   handleEdit,
   handleAdd,
   formatDate,
@@ -53,15 +62,10 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
   CustomComponent,
   showToDoEdit,
   onHandleToDoSave,
+  handleFilterList,
 }) => {
-  const formattedDate = new Date(toDoList.date).toLocaleDateString();
   const { t } = useTranslation();
 
-  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
-
-  const handleProgressBarClick = (id: string) => {
-    setActiveTooltip(activeTooltip === id ? null : id);
-  };
 
   return (
     <div
@@ -123,26 +127,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
             }}
           />
         </Form.Group>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "1rem",
-            paddingBottom: "2rem",
-            borderBottom: "1px solid #ffffff50",
-          }}
-        >
-          <FaRegClock
-            style={{
-              color: "#CBCBCD",
-              marginRight: "0.5rem",
-              marginLeft: "1rem",
-            }}
-          />
-          <Form.Text style={{ color: "#CBCBCD", fontSize: "1rem" }}>
-            {formattedDate}
-          </Form.Text>
-        </div>
+        <DateDisplayWithClock date={new Date(toDoList.date).toLocaleDateString()} />
 
         <Form.Group>
           <Form.Control
@@ -164,41 +149,14 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
           />
         </Form.Group>
 
-        <ProgressBar
-          title={t("editNote_progressBar_Total")}
-          progress={progressOverall}
-          infoText={t("editNote_progressBar_Total_Explanation", {
-            count: progressOverall,
-          })}
-          active={activeTooltip === "total"}
-          onClick={() => handleProgressBarClick("total")}
-        />
-        <ProgressBar
-          title={t("editNote_progressBar_Today")}
-          progress={progressToday}
-          infoText={t("editNote_progressBar_Today_Explanation", {
-            count: progressToday,
-          })}
-          active={activeTooltip === "today"}
-          onClick={() => handleProgressBarClick("today")}
-        />
-        <ProgressBar
-          title={t("editNote_progressBar_7Days")}
-          progress={progressNext7Days}
-          infoText={t("editNote_progressBar_7Days_Explanation", {
-            count: progressNext7Days,
-          })}
-          active={activeTooltip === "7Days"}
-          onClick={() => handleProgressBarClick("7Days")}
-        />
-        <ProgressBar
-          title={t("editNote_progressBar_Priority")}
-          progress={progressHighPriority}
-          infoText={t("editNote_progressBar_Priority_Explanation", {
-            count: progressHighPriority,
-          })}
-          active={activeTooltip === "Priority"}
-          onClick={() => handleProgressBarClick("Priority")}
+        <ProgressBarScreen
+          progressOverall={progressOverall}
+          progressToday={progressToday}
+          progressNext7Days={progressNext7Days}
+          progressHighPriority={progressHighPriority}
+          categoriesList={categoriesList}
+          getCategoryProgress={getCategoryProgress}
+          handleFilterList={handleFilterList}
         />
 
         {toDoList && Array.isArray(toDoList.toDoItem) && (
@@ -217,7 +175,11 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                   <table style={{ width: "80vw", maxWidth: "80vw" }}>
                     <tbody>
                       <tr>
-                        <td onClick={(event) => handleDoneToDo(event, index)}>
+                        <td
+                          onClick={(event) =>
+                            handleDoneToDo(event, item, index)
+                          }
+                        >
                           <div
                             style={{
                               textDecoration: item.toDoDone
@@ -226,13 +188,13 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                               width: "50vw",
                             }}
                           >
-                            <p style={{fontSize: "1.25em"}}>
-                            <b>
-                              {item.toDoCategorie
-                                ? `${item.toDoCategorie}:`
-                                : ""}
-                            </b>{" "}
-                            {item.toDoTitle}
+                            <p style={{ fontSize: "1.25em" }}>
+                              <b style={{ color: "#00a0b2" }}>
+                                {item.toDoCategorie
+                                  ? `${item.toDoCategorie}:`
+                                  : ""}
+                              </b>{" "}
+                              {item.toDoTitle}
                             </p>
 
                             <b>{t("editToDoElement_EndDate")}: </b>

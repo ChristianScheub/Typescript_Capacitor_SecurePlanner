@@ -70,5 +70,6 @@
   "furtherFeatures.li5": "يمكنك حفظ مجموعات مختلفة من قوائم المهام باستخدام كلمات مرور مختلفة. ولكن تنبيه، عند التصدير، ستتم مشاركة الكل!",
   "encryption-modal_hint": "أدخل كلمة المرور الخاصة بك وانقر على هذا الزر لحفظ كلمة المرور.",
   "encryption-modal_password_stored": "تم حفظ كلمة المرور!",
-  "editToDoElement_Category": "الفئة"
+  "editToDoElement_Category": "الفئة",
+  "viewNote_progressBarsCategories_title": "التقدم حسب الفئات"
 }

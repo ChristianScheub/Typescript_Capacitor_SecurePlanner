@@ -70,5 +70,6 @@
   "furtherFeatures.li5": "Vous pouvez enregistrer différents groupes de listes de tâches avec des mots de passe différents. Mais attention, lors de l'exportation, tout sera exporté !",
   "encryption-modal_hint": "Entrez votre mot de passe, puis cliquez sur ce bouton pour le sauvegarder.",
   "encryption-modal_password_stored": "Mot de passe enregistré !",
-  "editToDoElement_Category": "Catégorie"
+  "editToDoElement_Category": "Catégorie",
+  "viewNote_progressBarsCategories_title": "Progression par catégorie"
 }
