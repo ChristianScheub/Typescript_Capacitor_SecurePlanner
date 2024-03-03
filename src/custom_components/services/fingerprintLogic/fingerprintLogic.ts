@@ -50,6 +50,7 @@ export const getPasswordFromFingerprint = async (
       credentials.password,
       hashedDeviceId
     ).toString(CryptoJS.enc.Utf8);
+    localStorage.setItem("fingerprintSet", "true");
 
     onPasswordRetrieved(decryptedPassword);
   } catch (e) {

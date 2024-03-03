@@ -24,7 +24,7 @@ interface View_EditNoteViewProps {
   progressHighPriority: number;
   progressNext7Days: number;
   getPriorityText: (priority: Priority) => string;
-  handleEdit: (toDoId: string) => void;
+  handleEdit: (toDoId: number) => void;
   handleAdd: () => void;
   formatDate: (dateInput: Date | string) => string;
   updateToDoList: <K extends keyof ToDoList>(
@@ -34,8 +34,7 @@ interface View_EditNoteViewProps {
   handleDeleteToDo: (event: React.MouseEvent, toDoId: number) => void;
   handleDoneToDo: (
     event: React.MouseEvent,
-    toDoItem: ToDoItem,
-    index: number
+    toDoId: number
   ) => void;
   CustomComponent: () => React.ReactNode;
   showToDoEdit: Boolean;
@@ -177,7 +176,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                       <tr>
                         <td
                           onClick={(event) =>
-                            handleDoneToDo(event, item, index)
+                            handleDoneToDo(event, item.toDoId!)
                           }
                         >
                           <div
@@ -214,7 +213,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                         </td>
                         <td
                           style={{ textAlign: "left", width: "10vw" }}
-                          onClick={(event) => handleDeleteToDo(event, index)}
+                          onClick={(event) => handleDeleteToDo(event, item.toDoId!)}
                         >
                           <button
                             type="button"
@@ -234,7 +233,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                             />
                           </button>
                         </td>
-                        <td onClick={() => handleEdit(index.toString())}>
+                        <td onClick={() => handleEdit(item.toDoId!)}>
                           <button
                             type="button"
                             style={{

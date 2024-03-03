@@ -4,23 +4,22 @@ import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priorit
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../types/ToDoItem.types";
 import { ToDoList } from "../../types/ToDoList.types";
-import  ToDoListService from "../../services/toDoListHandler/toDoListHandler";
+import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 
 interface Container_EditTodoProps {
   encryptionKey: string;
   noteId?: string;
-  toDoItemId?: string;
+  toDoItemId?: number;
 }
 
 const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
   encryptionKey,
   noteId,
-  toDoItemId
+  toDoItemId,
 }) => {
   const { t } = useTranslation();
   const [translatedPrio, setTranslatedPrio] = useState<string>("");
-
-  const toDoItemIdInt = toDoItemId ? parseInt(toDoItemId, 10) : 0;
+  const toDoItemIdInt = toDoItemId ? toDoItemId : 1;
 
   //ToDoList wird benötigt für den Speichervorgang
   const [toDoList, setToDoList] = useState<ToDoList>({
@@ -34,7 +33,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
         toDoText: "",
         toDoEndDate: new Date(),
         toDoDone: false,
-        toDoCategorie: ""
+        toDoCategorie: "",
       },
     ],
   });
@@ -42,15 +41,15 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
     const loadAndDecryptNote = async () => {
       if (noteId) {
         try {
-          const noteData = await ToDoListService.loadToDoList(noteId, encryptionKey);
-          if(noteData){
+          const noteData = await ToDoListService.loadToDoList(
+            noteId,
+            encryptionKey
+          );
+          if (noteData) {
             setToDoList(noteData);
           }
         } catch (error) {
-          console.error(
-            "Fehler beim Laden und Entschlüsseln der Notiz:"
-            
-          );
+          console.error("Fehler beim Laden und Entschlüsseln der Notiz:");
         }
       }
     };
@@ -65,7 +64,8 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
     toDoText: "",
     toDoEndDate: new Date(),
     toDoDone: false,
-    toDoCategorie: ""
+    toDoCategorie: "",
+    toDoId: toDoItemIdInt,
   });
   useEffect(() => {
     const priorityKeyMap: Record<Priority, string> = {
@@ -83,17 +83,21 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
       if (noteId) {
         try {
           let updatedToDoList = { ...toDoList };
-          if (toDoItemIdInt >= updatedToDoList.toDoItem.length) {
+          const existingIndex = updatedToDoList.toDoItem.findIndex(
+            (item) => item.toDoId === toDoListItem.toDoId
+          );
+          if (existingIndex === -1) {
             updatedToDoList.toDoItem.push(toDoListItem);
           } else {
-            updatedToDoList.toDoItem[toDoItemIdInt] = toDoListItem;
+            updatedToDoList.toDoItem[existingIndex] = toDoListItem;
           }
-          await ToDoListService.saveToDoList(updatedToDoList, encryptionKey, noteId || Date.now().toString());
-        } catch (error) {
-          console.error(
-            "Fehler beim Sichern des ToDos:"
-            
+          await ToDoListService.saveToDoList(
+            updatedToDoList,
+            encryptionKey,
+            noteId || Date.now().toString()
           );
+        } catch (error) {
+          console.error("Fehler beim Sichern des ToDos:");
         }
       }
     };
@@ -105,11 +109,19 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
     const loadAndDecryptNote = async () => {
       if (noteId && toDoItemIdInt !== null && !isNaN(toDoItemIdInt)) {
         try {
-          const noteData = await ToDoListService.loadToDoList(noteId, encryptionKey);
-          if(noteData){
+          const noteData = await ToDoListService.loadToDoList(
+            noteId,
+            encryptionKey
+          );
+          if (noteData) {
             const listData: ToDoList = noteData;
-            if (listData.toDoItem && toDoItemIdInt < listData.toDoItem.length) {
-              setToDoListItem(listData.toDoItem[toDoItemIdInt]);
+            if (listData.toDoItem) {
+              const toDoItem = listData.toDoItem.find(
+                (item) => item.toDoId === toDoItemId
+              );
+              if (toDoItem) {
+                setToDoListItem(toDoItem);
+              }
             } else {
               console.error(
                 "ToDoItem-Index liegt außerhalb der Grenzen des Arrays"
@@ -117,10 +129,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
             }
           }
         } catch (error) {
-          console.error(
-            "Fehler beim Laden und Entschlüsseln der Notiz:"
-            
-          );
+          console.error("Fehler beim Laden und Entschlüsseln der Notiz:");
         }
       }
     };
@@ -136,7 +145,6 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
     setToDoListItem({ ...toDoListItem, [key]: value });
   };
 
-
   const [categoriesList, setCategoriesList] = useState<string[]>([]);
 
   const extractAndSetCategories = () => {
@@ -146,7 +154,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
         categoriesSet.add(item.toDoCategorie);
       }
     });
-  
+
     setCategoriesList(Array.from(categoriesSet));
   };
 

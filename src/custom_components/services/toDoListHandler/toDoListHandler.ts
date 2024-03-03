@@ -8,6 +8,7 @@ const toDoListService: IToDoListService = {
   loadAllToDoLists: Persistence.loadAllToDoLists,
   loadToDoList: Persistence.loadToDoList,
   saveToDoList: Persistence.saveToDoList,
+  generateUniqueToDoId: Persistence.generateUniqueToDoId,
   sortToDoList: Sorter.sortToDoList,
   filterToDoListByNextXDays: Filter.filterToDoListByNextXDays,
   filterToDoListByPriority: Filter.filterToDoListByPriority,

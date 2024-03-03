@@ -20,9 +20,10 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
 }) => {
   let { noteId } = useParams<{ noteId?: string }>();
   const { t } = useTranslation();
-  const [toDo_toEdit_id, setToDo_toEdit_id] = useState<string>("");
+  const [toDo_toEdit_id, setToDo_toEdit_id] = useState<number>();
   const [showToDoEdit, setShowToDoEdit] = useState<Boolean>(false);
-  const [toDoSetToDone, setToDoSetToDone] = useState<Boolean>(false);
+  const [currentFilter, setCurrentFilter] = useState<string>("total");
+
   //The Keys which should be ignored and maybe set already (i18nextLng, capuid are web only so not smartphone relevant)
   const ignoredKeys = [
     "welcomeScreenDone",
@@ -78,7 +79,7 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
         }
       }
     };
-
+    
     loadAndDecryptNote();
   }, [noteId, encryptionKey, showToDoEdit]);
 
@@ -91,11 +92,7 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
           toDoList.toDoItem.length > 0)
       ) {
         try {
-          if (!toDoSetToDone) {
-            setShownToDoList(toDoList);
-          } else {
-            setToDoSetToDone(true);
-          }
+          handleFilterList(currentFilter);
           setCategoriesList(getCategories(toDoList));
           await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
         } catch (error) {
@@ -133,8 +130,8 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     );
   };
 
-  const handleEditToDo = (toDoId: string) => {
-    setToDo_toEdit_id(toDoId);
+  const handleEditToDo = (toEdit_toDoId: number) => {
+    setToDo_toEdit_id(toEdit_toDoId);
     setShowToDoEdit(true);
   };
 
@@ -146,64 +143,45 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   };
 
   function handleAdd() {
-    const count = toDoList.toDoItem.length;
-    setToDo_toEdit_id(count.toString());
+    let count = ToDoListService.generateUniqueToDoId(toDoList.toDoItem);
+    setToDo_toEdit_id(count);
     setShowToDoEdit(true);
   }
 
-  const handleDeleteToDo = (event: React.MouseEvent, index: number) => {
+  const handleDeleteToDo = (event: React.MouseEvent, toDoId: number) => {
     event.preventDefault();
     if (window.confirm(t("editNote_ToDoDeleteConfirm"))) {
-      event.preventDefault();
       const updatedToDoItems = toDoList.toDoItem.filter(
-        (item, itemIndex) => itemIndex !== index
+        (item) => item.toDoId !== toDoId
       );
-
+  
       setToDoList({
         ...toDoList,
         toDoItem: updatedToDoItems,
       });
     }
   };
+  
 
   const handleDoneToDo = (
     event: React.MouseEvent,
-    itemToToggle: ToDoItem,
-    index: number
+    toDoId: number
   ) => {
-    setToDoSetToDone(true);
-
+    event.preventDefault();
+  
     const updatedToDoItems = toDoList.toDoItem.map((item) => {
-      if (
-        item.toDoPriority === itemToToggle.toDoPriority &&
-        item.toDoTitle === itemToToggle.toDoTitle &&
-        item.toDoText === itemToToggle.toDoText &&
-        item.toDoEndDate === itemToToggle.toDoEndDate &&
-        item.toDoCategorie === itemToToggle.toDoCategorie
-      ) {
+      if (item.toDoId === toDoId) {
         return { ...item, toDoDone: !item.toDoDone };
       }
       return item;
     });
-
+  
     setToDoList({
       ...toDoList,
       toDoItem: updatedToDoItems,
     });
-
-    const updatedToDoItems1 = shownToDoList.toDoItem.map((item, itemIndex) => {
-      if (itemIndex === index) {
-        if ({ ...item, toDoDone: true })
-          return { ...item, toDoDone: !item.toDoDone };
-      }
-      return item;
-    });
-
-    setShownToDoList({
-      ...toDoList,
-      toDoItem: updatedToDoItems1,
-    });
   };
+  
 
   const getPriorityText = (priority: Priority): string => {
     const priorityKeyMap: Record<Priority, string> = {
@@ -221,22 +199,25 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   };
 
   const handleFilterList = async (filter: string) => {
+
+    await setCurrentFilter(filter);
+
     if (filter === "total") {
       return setShownToDoList(ToDoListService.sortToDoList(toDoList));
     } else if (filter === "today") {
-      return setShownToDoList(
-        ToDoListService.filterToDoListByNextXDays(toDoList, 1)
-      );
+      return setShownToDoList(ToDoListService.sortToDoList(
+        ToDoListService.filterToDoListByNextXDays(toDoList, 0)
+      ));
     } else if (filter === "7Days") {
-      return setShownToDoList(
-        ToDoListService.filterToDoListByNextXDays(toDoList, 7)
+      return setShownToDoList(ToDoListService.sortToDoList(
+        ToDoListService.filterToDoListByNextXDays(toDoList, 7))
       );
     } else if (filter === "Priority") {
-      return setShownToDoList(
+      return setShownToDoList(ToDoListService.sortToDoList(
         ToDoListService.filterToDoListByPriority(toDoList, [
           Priority.High,
           Priority.Highest,
-        ])
+        ]))
       );
     } else {
       return setShownToDoList(

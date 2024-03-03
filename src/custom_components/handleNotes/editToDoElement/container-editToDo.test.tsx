@@ -36,7 +36,7 @@ jest.mock("react-router-dom", () => ({
 const renderContainerEditToDo = () =>
   render(
     <Router>
-      <Container_EditTodo encryptionKey="testKey" noteId="testNoteId" toDoItemId="testToDoItemId" />
+      <Container_EditTodo encryptionKey="testKey" noteId="testNoteId" toDoItemId={3} />
     </Router>
   );
 
@@ -56,9 +56,7 @@ describe("Container_EditTodo", () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    jest
-      .mocked(useParams)
-      .mockReturnValue({ noteId: "testNoteId", toDoItemId: "testToDoItemId" });
+    jest.fn().mockReturnValue({ noteId: "testNoteId", toDoItemId: 3 });
   });
 
   it("should load and decrypt note on mount", async () => {

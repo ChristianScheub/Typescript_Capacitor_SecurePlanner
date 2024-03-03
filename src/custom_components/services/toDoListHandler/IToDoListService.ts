@@ -1,5 +1,6 @@
 import { ToDoList } from "../../types/ToDoList.types";
 import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
+import { ToDoItem } from "../../types/ToDoItem.types";
 
 export interface IToDoListService {
   loadAllToDoLists: (
@@ -14,6 +15,7 @@ export interface IToDoListService {
     encryptionKey: string,
     noteId?: string
   ) => Promise<void>;
+  generateUniqueToDoId: (toDoList: ToDoItem[]) => number;
   sortToDoList: (toDoList: ToDoList) => ToDoList;
   filterToDoListByNextXDays: (toDoList: ToDoList,numOfDays: number) => ToDoList;
   filterToDoListByPriority: (toDoList: ToDoList, priorities: Priority[]) => ToDoList;
