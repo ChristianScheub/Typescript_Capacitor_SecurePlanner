@@ -22,6 +22,7 @@ export const loadAllToDoLists = async (
     const loadedNotes: [ToDoList, string][] = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
+      if(key === "securityLevel" || key === "welcomeScreenDone") continue;
       if (key) {
         try {
           const originalText = await decryptFromStorage(encryptionKey, key);

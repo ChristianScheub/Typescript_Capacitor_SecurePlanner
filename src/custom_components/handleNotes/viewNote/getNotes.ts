@@ -18,6 +18,7 @@ const useAllNotes = (
         const filteredNotes = loadedNotes
           .map(([toDoList, key]) => ({ toDoList, key }))
           .filter(({ toDoList }) => {
+            console.log(loadedNotes);
             return (
               toDoList.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
               toDoList.content.toLowerCase().includes(searchQuery.toLowerCase()) ||

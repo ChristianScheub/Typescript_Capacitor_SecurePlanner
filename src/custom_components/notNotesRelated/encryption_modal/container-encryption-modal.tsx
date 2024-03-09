@@ -8,6 +8,8 @@ import {
 } from "../../services/fingerprintLogic/fingerprintLogic";
 import { getPBKDF2_Password } from "../../services/encryptionEngine/encryptionEngine";
 import { useTranslation } from 'react-i18next';
+import WelcomeContainer from "../welcomeScreen/container/container-welcomeScreen";
+import SecurityLevel from "../../enums/SecurityLevel.enum";
 
 interface Container_EncryptionKeyModalProps {
   onSubmit: (encryptionKey: string) => void;
@@ -73,15 +75,32 @@ Container_EncryptionKeyModalProps
     );
   };
 
+  const [showWelcomeOverlay, setShowWelcomeOverlay] = useState<boolean | null>(
+    localStorage.getItem("welcomeScreenDone") !== "true"
+  );
+
+  useEffect(() => {
+    const noPasswordNeeded = (localStorage.getItem("securityLevel")===SecurityLevel.Low);
+    if(noPasswordNeeded){
+      onSubmit(" ");
+    }
+  }, [showWelcomeOverlay, localStorage.length]);
+
   return (
-    <View_EncryptionKeyModal
-      showFingerprintBtn={showFingerprintBtn}
-      showFingerprintHint={showFingerprintHint}
-      activateFingerprint={activateFingerprint}
-      handleKeySubmit={handleKeySubmit}
-      inputRef={inputRef}
-      navigateToPrivacy={() => navigate("/settingsHome")}
-    />
+    <>
+      {showWelcomeOverlay ? (
+        <WelcomeContainer closeOverlay={() => setShowWelcomeOverlay(false)} />
+      ) : (
+        <View_EncryptionKeyModal
+          showFingerprintBtn={showFingerprintBtn}
+          showFingerprintHint={showFingerprintHint}
+          activateFingerprint={activateFingerprint}
+          handleKeySubmit={handleKeySubmit}
+          inputRef={inputRef}
+          navigateToPrivacy={() => navigate("/settingsHome")}
+        />
+      )}
+    </>
   );
 };
 

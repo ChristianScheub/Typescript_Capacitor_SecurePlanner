@@ -7,7 +7,6 @@ import FloatingBtn, {
 import { FaInfoCircle } from "react-icons/fa";
 import { PiFingerprintThin } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
-import WelcomeOverlay from "../welcomeOverlay/welcomeOverlay";
 import { FaArrowDownLong } from "react-icons/fa6";
 
 interface View_EncryptionKeyModalProps {
@@ -28,11 +27,9 @@ const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
   inputRef,
 }) => {
   const { t } = useTranslation();
-  const [showWelcomeOverlay, setShowWelcomeOverlay] = useState<boolean | null>(
-    localStorage.getItem("welcomeScreenDone") !== "true"
-  );
 
   return (
+    
     <div
       style={{
         display: "flex",
@@ -43,9 +40,6 @@ const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
         backgroundColor: "#1E1E1E",
       }}
     >
-      {showWelcomeOverlay && (
-        <WelcomeOverlay closeOverlay={() => setShowWelcomeOverlay(false)} />
-      )}
 
       <div
         style={{

@@ -9,16 +9,20 @@ import NavBarContainer from "./custom_components/notNotesRelated/navBar/containe
 import Container_ViewNote from "./custom_components/handleNotes/viewNote/container-viewNote";
 import Container_EditNote from "./custom_components/handleNotes/editNote/container-editNote";
 import Container_EditTodo from "./custom_components/handleNotes/editToDoElement/container-editToDo";
-
+import WelcomeScreen from "./custom_components/notNotesRelated/welcomeScreen/container/container-welcomeScreen";
 import "./i18n";
+import SecurityLevel from "./custom_components/enums/SecurityLevel.enum";
 
 const App: React.FC = () => {
   const [encryptionKey, setEncryptionKey] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
+  const noPasswordNeeded = (localStorage.getItem("securityLevel")===SecurityLevel.Low);
+
+  
   return (
     <div>
-      {!encryptionKey ? (
+      {!encryptionKey&&!noPasswordNeeded ? (
         <div>
           <Router>
             <Routes>
@@ -31,6 +35,7 @@ const App: React.FC = () => {
               />
               <Route path="/settingsHome" element={<Container_Settings />} />
               <Route path="/impressumHome" element={<Impressum />} />
+
             </Routes>
           </Router>
         </div>
@@ -60,12 +65,12 @@ const App: React.FC = () => {
 
                 <Route
                   path="/edit/:noteId/NOICE"
-                  element={<Container_EditTodo encryptionKey={encryptionKey}/>}
+                  element={<Container_EditTodo encryptionKey={encryptionKey} />}
                 />
 
                 <Route
                   path="/edit/:noteId/:toDoItemId"
-                  element={<Container_EditTodo encryptionKey={encryptionKey}/>}
+                  element={<Container_EditTodo encryptionKey={encryptionKey} />}
                 />
 
                 <Route
