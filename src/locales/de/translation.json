@@ -71,6 +71,26 @@
   "encryption-modal_hint": "Geben Sie ihr Passwort ein und klicken sie anschließend auf diesen Button um das Passwort zu speichern.",
   "encryption-modal_password_stored": "Passwort gespeichert!",
   "editToDoElement_Category" : "Kategorie",
-  "viewNote_progressBarsCategories_title" : "Fortschritt pro Kategorie"
+  "viewNote_progressBarsCategories_title" : "Fortschritt pro Kategorie",
 
+  "encryption-modal_PasswordShort": "Das Passwort muss mehr als 4 Zeichen enthalten!",
+  "encryption-modal_password_wrong": "Falsches Passwort!",
+  "error_DataStoringCorrupted": "Alarm! Jemand hat die Daten von außerhalb der Anwendung manipuliert und möchte, dass Ihre Eingabe im Klartext gespeichert wird! Die Aktion wird daher verweigert. Sie können jetzt keine neuen Daten speichern!",
+  "welcomeScreen_Continue": "Weiter",
+  "welcomeScreen_Complete": "Abschließen",
+  "welcomeScreen1_Btn": "Lass uns beginnen",
+  "welcomeScreen1_Headline": "Großartig, dass Sie uns gewählt haben!",
+  "welcomeScreen2_Headline": "State of the art Verschlüsselung",
+  "welcomeScreen2_Text": "Dank einer Kombination verschiedener kryptografischer Algorithmen sind alle Ihre Daten so sicher wie möglich",
+  "welcomeScreen3_Headline": "Priorisieren und verfolgen",
+  "welcomeScreen3_Text": "Entdecken Sie die Möglichkeiten der Priorisierung und Fristen sowie der Kategorisierung einzelner Aufgaben!",
+  "welcomeScreen4_Headline": "Bitte wählen Sie zuerst Ihre Sicherheitsbewertung",
+  "welcomeScreen4_Option1": "Niedrigste - Kein Passwort & Keine Verschlüsselung",
+  "welcomeScreen4_Option2": "Mittel - Passwort oder biometrisch (nur wenige PBKDF2-Iterationen)",
+  "welcomeScreen4_Option3": "Hoch - Passwort oder biometrisch (Empfohlen, PBKDF2 600k Iterationen)",
+  "welcomeScreen4_Option4": "Höchste - Passwort und biometrische Daten erforderlich (Import- und Exportfunktion verschwindet)",
+  "welcomeScreen5_Headline": "Weitere Sicherheitsoptionen",
+  "welcomeScreen5_Option1": "Ein Passwort für alles",
+  "welcomeScreen5_Option2": "Verschiedene Passwörter für verschiedene ToDo-Listen",
+  "welcomeScreen5_Headline2": "Ihr neues Passwort"
 }

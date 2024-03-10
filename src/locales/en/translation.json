@@ -71,5 +71,26 @@
   "encryption-modal_hint": "Enter your password and then click on this button to save the password.",
   "encryption-modal_password_stored": "Password saved!",
   "editToDoElement_Category": "Category",
-  "viewNote_progressBarsCategories_title": "Progress per Category"
+  "viewNote_progressBarsCategories_title": "Progress per Category",
+
+  "encryption-modal_PasswordShort": "The password must have more than 4 characters!",
+  "encryption-modal_password_wrong": "Wrong Password!",
+  "welcomeScreen_Continue": "Continue",
+  "welcomeScreen_Complete": "Complete",
+  "welcomeScreen1_Btn": "Lets get started",
+  "welcomeScreen1_Headline": "Great that you have chosen us!",
+  "welcomeScreen2_Headline": "State of the art Encryption",
+  "welcomeScreen2_Text": "Thanks to a combination of different cryptographic algorithms, all your data are as secure as possible",
+  "welcomeScreen3_Headline": "Prioritize and track",
+  "welcomeScreen3_Text": "Discover the possibilities of prioritization and deadlines and the categorization of individual to-do items!",
+  "welcomeScreen4_Headline": "But please choose your security rating first",
+  "welcomeScreen4_Option1": "Lowest - No Password & No Encryption",
+  "welcomeScreen4_Option2": "Medium - Password or Biometric (Only a few PBKDF2 Iterations)",
+  "welcomeScreen4_Option3": "High - Password or Biometric (Recommended, PBKDF2 600k Iterations)",
+  "welcomeScreen4_Option4": "Highest - Password and Biometric needed (Import & Export function disappears)",
+  "welcomeScreen5_Headline": "Further security options",
+  "welcomeScreen5_Option1": "One Password for everything",
+  "welcomeScreen5_Option2": "Different Passwords for different ToDo lists",
+  "welcomeScreen5_Headline2": "Your new Password"
+
 }

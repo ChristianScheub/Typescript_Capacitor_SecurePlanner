@@ -1,31 +1,36 @@
 import React, { FormEvent, useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import View_EncryptionKeyModal from "./screen-encryption-modal";
+import ViewEncryptionKeyModal from "./screen-encryption-modal";
 import {
   getPasswordFromFingerprint,
   storePasswordFromFingerprint,
   availableBiometric,
 } from "../../services/fingerprintLogic/fingerprintLogic";
-import { getPBKDF2_Password } from "../../services/encryptionEngine/encryptionEngine";
-import { useTranslation } from 'react-i18next';
+import {
+  getPBKDF2_Password,
+  encryptAndStore,
+  decryptFromStorage,
+} from "../../services/encryptionEngine/encryptionEngine";
+import { useTranslation } from "react-i18next";
 import WelcomeContainer from "../welcomeScreen/container/container-welcomeScreen";
 import SecurityLevel from "../../enums/SecurityLevel.enum";
+import { featureFlag_newWelcomeScreen } from "../../featureFlags/featureFlags";
 
 interface Container_EncryptionKeyModalProps {
   onSubmit: (encryptionKey: string) => void;
 }
 
 const Container_EncryptionKeyModal: React.FC<
-Container_EncryptionKeyModalProps
+  Container_EncryptionKeyModalProps
 > = ({ onSubmit }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const [showFingerprintBtn, setShowFingerprintBtn] = useState(false);
-  const [showFingerprintHint, setShowFingerprintHint] = useState<
-    boolean
-  >(showFingerprintBtn&& localStorage.length <= 2);
+  const [showFingerprintHint, setShowFingerprintHint] = useState<boolean>(
+    showFingerprintBtn && localStorage.length <= 2
+  );
+  const [passwordShortError, setPasswordShortError] = useState<boolean>(false);
   const { t } = useTranslation();
-
 
   useEffect(() => {
     const checkBiometrics = async () => {
@@ -37,14 +42,38 @@ Container_EncryptionKeyModalProps
   }, []);
 
   useEffect(() => {
-    setShowFingerprintHint(showFingerprintBtn && localStorage.getItem("fingerprintSet") != "true" );
+    setShowFingerprintHint(
+      showFingerprintBtn && localStorage.getItem("fingerprintSet") !== "true"
+    );
   }, [showFingerprintBtn, localStorage.length]);
 
- 
-  const handleKeySubmit = (event: FormEvent) => {
+  const handleKeySubmit = async (event: FormEvent) => {
     event.preventDefault();
-    const password = getPBKDF2_Password(inputRef.current!.value);
-    onSubmit(password);
+    if (inputRef.current!.value.length < 4) {
+      if (passwordShortError) {
+        //That the user sees the error message is new
+        setPasswordShortError(false);
+        setTimeout(() => {
+          setPasswordShortError(true);
+        }, 200);
+      } else {
+        setPasswordShortError(true);
+      }
+    } else {
+      const password = getPBKDF2_Password(inputRef.current!.value);
+      if (localStorage.getItem("justOnePassword") === "true") {
+        if (
+          (await decryptFromStorage(password, "justOnePassword2")) ===
+          "onlyOnePass"
+        ) {
+          onSubmit(password);
+        } else {
+          alert(t("encryption-modal_password_wrong"));
+        }
+      } else {
+        onSubmit(password);
+      }
+    }
   };
 
   const activateFingerprint = async () => {
@@ -65,7 +94,7 @@ Container_EncryptionKeyModalProps
           t
         );
       },
-      (password) => {        
+      (password) => {
         onSubmit(password);
       },
       (errorMessage) => {
@@ -80,24 +109,41 @@ Container_EncryptionKeyModalProps
   );
 
   useEffect(() => {
-    const noPasswordNeeded = (localStorage.getItem("securityLevel")===SecurityLevel.Low);
-    if(noPasswordNeeded){
+    const noPasswordNeeded =
+      localStorage.getItem("securityLevel") === SecurityLevel.Low;
+    if (noPasswordNeeded) {
       onSubmit(" ");
     }
   }, [showWelcomeOverlay, localStorage.length]);
 
+  function closeWelcomeOverlay(password: string) {
+    setShowWelcomeOverlay(false);
+    if (localStorage.getItem("securityLevel") === SecurityLevel.Low && (password === "" || password === "")) {
+
+    } else {
+      localStorage.setItem("justOnePassword", "true");
+      password = getPBKDF2_Password(password);
+      if (localStorage.getItem("justOnePassword") === "true") {
+        encryptAndStore("onlyOnePass", password, "justOnePassword2");
+      }
+    }
+
+    onSubmit(password);
+  }
+
   return (
     <>
-      {showWelcomeOverlay ? (
-        <WelcomeContainer closeOverlay={() => setShowWelcomeOverlay(false)} />
+      {showWelcomeOverlay && featureFlag_newWelcomeScreen? (
+        <WelcomeContainer closeOverlay={closeWelcomeOverlay} />
       ) : (
-        <View_EncryptionKeyModal
+        <ViewEncryptionKeyModal
           showFingerprintBtn={showFingerprintBtn}
           showFingerprintHint={showFingerprintHint}
+          showPasswordShortError={passwordShortError}
           activateFingerprint={activateFingerprint}
           handleKeySubmit={handleKeySubmit}
-          inputRef={inputRef}
           navigateToPrivacy={() => navigate("/settingsHome")}
+          inputRef={inputRef}
         />
       )}
     </>

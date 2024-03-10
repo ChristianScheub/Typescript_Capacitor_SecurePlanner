@@ -4,6 +4,7 @@ import {
 } from "../../encryptionEngine/encryptionEngine";
 import { ToDoList } from "../../../types/ToDoList.types";
 import { ToDoItem } from "../../../types/ToDoItem.types";
+import { featureFlag_Debug_AllLogs,featureFlag_Debug_Errors } from "../../../featureFlags/featureFlags";
 
 const isJsonString = (str: string): boolean => {
   try {
@@ -11,6 +12,9 @@ const isJsonString = (str: string): boolean => {
     const test = data.content + data.title;
     return true;
   } catch (e) {
+    if(featureFlag_Debug_Errors){
+      console.error("fehler beim isJsonString Check", e);
+    }
     return false;
   }
 };
@@ -22,7 +26,7 @@ export const loadAllToDoLists = async (
     const loadedNotes: [ToDoList, string][] = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
-      if(key === "securityLevel" || key === "welcomeScreenDone") continue;
+      if (key === "securityLevel" || key === "welcomeScreenDone") continue;
       if (key) {
         try {
           const originalText = await decryptFromStorage(encryptionKey, key);
@@ -31,14 +35,20 @@ export const loadAllToDoLists = async (
             loadedNotes.push([noteData, key]);
           }
         } catch (error) {
-          //console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
+          if (featureFlag_Debug_Errors) {
+            console.error(
+              "Fehler beim Laden und Entschlüsseln der Liste:",
+              error
+            );
+          }
         }
       }
     }
     return loadedNotes;
   } catch (error) {
-    //console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
-
+    if (featureFlag_Debug_Errors) {
+      console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
+    }
     return [];
   }
 };
@@ -48,6 +58,9 @@ export const loadToDoList = async (
   encryptionKey: string
 ): Promise<ToDoList | null> => {
   try {
+    if(featureFlag_Debug_AllLogs){
+      console.log("trigger load One List");
+    }
     const decryptedContent = await decryptFromStorage(encryptionKey, noteId);
     const parsedToDoList: ToDoList = JSON.parse(decryptedContent);
 
@@ -59,7 +72,9 @@ export const loadToDoList = async (
 
     return parsedToDoList;
   } catch (error) {
-    //console.error("Fehler beim Laden und Entschlüsseln der Notiz:", error);
+    if (featureFlag_Debug_Errors) {
+      console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
+    }
     return null;
   }
 };
@@ -80,6 +95,9 @@ export const saveToDoList = async (
   noteId?: string
 ): Promise<void> => {
   try {
+    if(featureFlag_Debug_AllLogs){
+      console.log("trigger save One List");
+    }
     const noteDataString = JSON.stringify(note);
     await encryptAndStore(
       noteDataString,
@@ -87,6 +105,8 @@ export const saveToDoList = async (
       noteId || Date.now().toString()
     );
   } catch (error) {
-    //console.error("Fehler beim Speichern der Notiz:", error);
+    if(featureFlag_Debug_Errors){
+      console.error("Fehler speichern der Liste:", error);
+    }
   }
 };

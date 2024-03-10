@@ -1,16 +1,12 @@
 import { Card } from "react-bootstrap";
 import { datenschutz_text } from "../app_configuration/app_texts";
 import CodeToTextParser from "./codeToTextParser";
-import { useNavigate } from "react-router-dom";
-import { MdArrowBack } from "react-icons/md";
 import NavBarContainer from "../../custom_components/notNotesRelated/navBar/container-navBar";
 import { useLocation } from "react-router-dom";
 import React, { useState } from "react";
 
 const Datenschutz: React.FC = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const isAlreadyLoggedIn = !location.pathname.includes("Home");
+  const isAlreadyLoggedIn = !useLocation().pathname.includes("Home");
   const [searchQueryPlaceholder, setSearchQueryPlaceholder] =
     useState<string>("");
 
@@ -41,11 +37,9 @@ const Datenschutz: React.FC = () => {
         )}
         <div className="after-login-container">
           <Card
-            className="mb-3"
+            className="mb-3 backgroundColorHighlight"
             style={{
-              margin: "2vw",
-              backgroundColor: "#49454F",
-              color: "white",
+              margin: "2vw"
             }}
           >
             <Card.Header as="h2">Infos</Card.Header>

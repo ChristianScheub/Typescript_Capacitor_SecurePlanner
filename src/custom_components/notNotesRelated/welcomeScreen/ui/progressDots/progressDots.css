@@ -1,0 +1,29 @@
+.progress-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .dot {
+    width: 6vw;
+    height: 10px;
+    background-color: #FFFFFF66;
+    border-radius: 5px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .dot.active {
+    width: 14vw;
+    background-color: #FFFFFF;
+  }
+  
+  .dot:last-child {
+    margin-right: 0;
+  }
+  footer {
+    margin-top: auto;
+    padding: 1rem;
+    margin-bottom: 2vh;
+  }

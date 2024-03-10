@@ -5,8 +5,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42535abe-a020-475f-9086-dac8ebec9498" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/css/main.4f397963.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/css/main.4f397963.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.b8875882.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.b8875882.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/static/js/main.b8875882.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App.xcworkspace/xcuserdata/christianscheub.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/App/App/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/App/App/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/featureFlags/featureFlags.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/featureFlags/featureFlags.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/container-editNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/container-editNote.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editNote/screen-editNote.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/container-editToDo.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/container-editToDo.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/container-editToDo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/container-editToDo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/editToDoElement/screen-editToDo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/container-viewNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/container-viewNote.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/getNotes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/getNotes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/screen-viewNote.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/handleNotes/viewNote/screen-viewNote.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/container-encryption-modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/container-encryption-modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/screen-encryption-modal.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/screen-encryption-modal.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/screen-encryption-modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/encryption_modal/screen-encryption-modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/navBar/screen-navBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/navBar/screen-navBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/container_settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/container_settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/screen_settings.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/screen_settings.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/screen_settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/settings/screen_settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/container/container-welcomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/container/container-welcomeScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/continueBtn/continue-button.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/continueBtn/continue-button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/progressDots/progressDots.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/progressDots/progressDots.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/screens/screen-welcome1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/screens/screen-welcome1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/screens/screen-welcome2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/screens/screen-welcome2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/screens/screen-welcome3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/screens/screen-welcome3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/screens/screen-welcome4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/screens/screen-welcome4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/notNotesRelated/welcomeScreen/security-radioBtn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/encryptionEngine/encryptionEngine.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/encryptionEngine/encryptionEngine.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/fingerprintLogic/fingerprintLogic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/fingerprintLogic/fingerprintLogic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/progressToDoListService/progressToDoListService.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/progressToDoListService/progressToDoListService.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Categories/categories.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Categories/categories.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Filter/toDoListFilter.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Filter/toDoListFilter.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Filter/toDoListFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Filter/toDoListFilter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/IToDoListService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/IToDoListService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Persistence/toDoListPersistence.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Persistence/toDoListPersistence.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Sorter/toDoListSort.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/Sorter/toDoListSort.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/toDoListHandler.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/services/toDoListHandler/toDoListHandler.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/custom_components/types/ToDoItem.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/custom_components/types/ToDoItem.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/de/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/de/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/locales/en/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/legal/datenschutz.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/modules/legal/datenschutz.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/legal/impressum.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/modules/legal/impressum.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/legal/usedLibs/container_usedLibList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/modules/legal/usedLibs/container_usedLibList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/legal/usedLibs/licenses.json" beforeDir="false" afterPath="$PROJECT_DIR$/../src/modules/legal/usedLibs/licenses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/dateWithClock/dateWithClock.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/editToDo/dataPicker/dataPicker.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/editToDo/dataPicker/dataPicker.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/editToDo/priorityIndicator/PriorityIndicator.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/editToDo/priorityIndicator/priority.enum.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/editToDo/priorityIndicator/priorityIndicator.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/floatingBtn/floatingBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../src/modules/ui/floatingBtn/floatingBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/progress/progressBar/progressBar.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/progress/progressBar/progressBar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/progress/progressBarMenu/progressBarMenu.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/modules/ui/progress/progressBarMenu/progressBarScreen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/setupTests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

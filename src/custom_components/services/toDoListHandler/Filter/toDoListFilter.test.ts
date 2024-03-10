@@ -1,6 +1,6 @@
 
 import { ToDoList } from "../../../types/ToDoList.types";
-import { Priority } from "../../../../modules/ui/editToDo/priorityIndicator/priority.enum";
+import { Priority } from "../../../enums/priority.enum";
 import {
   filterToDoListByNextXDays,
   filterToDoListByPriority,

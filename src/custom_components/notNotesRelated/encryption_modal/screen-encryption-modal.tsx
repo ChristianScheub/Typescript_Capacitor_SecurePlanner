@@ -1,4 +1,4 @@
-import React, { FormEvent, RefObject, useState } from "react";
+import React, { FormEvent, RefObject } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FloatingBtn, {
@@ -8,12 +8,14 @@ import { FaInfoCircle } from "react-icons/fa";
 import { PiFingerprintThin } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
 import { FaArrowDownLong } from "react-icons/fa6";
+import Alert from "react-bootstrap/Alert";
 
 interface View_EncryptionKeyModalProps {
-  handleKeySubmit: (event: FormEvent) => void;
-  activateFingerprint: () => void;
   showFingerprintBtn: boolean;
   showFingerprintHint: boolean;
+  showPasswordShortError: boolean;
+  activateFingerprint: () => void;
+  handleKeySubmit: (event: FormEvent) => void;
   navigateToPrivacy: () => void;
   inputRef: RefObject<HTMLInputElement>;
 }
@@ -23,6 +25,7 @@ const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
   activateFingerprint,
   showFingerprintBtn,
   showFingerprintHint,
+  showPasswordShortError,
   navigateToPrivacy,
   inputRef,
 }) => {
@@ -31,27 +34,26 @@ const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
   return (
     
     <div
+    className="backgroundColor"
       style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         minHeight: "100vh",
-        backgroundColor: "#1E1E1E",
       }}
     >
 
       <div
+      className="backgroundColorHighlight"
         style={{
           width: "100%",
           maxWidth: "90vw",
-          backgroundColor: "#49454F",
           borderRadius: "10px",
           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           padding: "4vw",
           boxSizing: "border-box",
           bottom: "35vh",
-          color: "white",
           position: "fixed",
         }}
       >
@@ -92,7 +94,9 @@ const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
           >
             {t("encryption-modal_btn")}
           </Button>
-          <br />
+          <br /> <br />
+          {showPasswordShortError && <Alert variant="danger">{t("encryption-modal_PasswordShort")}</Alert>}
+
         </Form>
 
         {showFingerprintBtn && (
@@ -117,7 +121,6 @@ const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
             alignItems: "center",
             width: "100%",
             paddingTop:"60vh",
-            color: "white"
           }}
         >
           <p style={{fontSize:"5vw"}}>

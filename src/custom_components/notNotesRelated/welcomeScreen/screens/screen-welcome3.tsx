@@ -1,45 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../WelcomeScreen.css";
-import ProgressDots from "../progressDots/progressDots";
-import illustration from "../secureIcon.webp";
-import ContinueButton from "../continueBtn/continue-button";
+import ProgressDots from "../ui/progressDots/progressDots";
+import ContinueButton from "../ui/continueBtn/continue-button";
 import ProgressCircle from "../../../../modules/ui/progress/progressCircle/progressCircle";
-import { useTranslation } from "react-i18next";
+import { TFunction } from "i18next";
 
-const WelcomeScreen3 = ({
-  onNext,
-  isActivate,
-}: {
+interface View_WelcomeScreen3Props {
   onNext: () => void;
-  isActivate: Boolean;
+  availableScreens: number;
+  progress1: number;
+  progress2: number;
+  progress3: number;
+  t: TFunction;
+}
+
+const View_WelcomeScreen3: React.FC<View_WelcomeScreen3Props> = ({
+  onNext,
+  availableScreens,
+  progress1,
+  progress2,
+  progress3,
+  t
 }) => {
-  const { t } = useTranslation();
-  const [progress1, setProgress1] = useState(0);
-  const [progress2, setProgress2] = useState(0);
-  const [progress3, setProgress3] = useState(0);
-
-  const updateProgress = (
-    setter: React.Dispatch<React.SetStateAction<number>>,
-    max: number
-  ) => {
-    setter((prev) => (prev < max ? prev + 1 : prev));
-  };
-
-  useEffect(() => {
-    if (isActivate) {
-      const interval = setInterval(() => {
-        updateProgress(setProgress1, 100);
-        updateProgress(setProgress2, 50);
-        updateProgress(setProgress3, 30);
-      }, 30);
-      return () => clearInterval(interval);
-    }
-    else{
-      setProgress1(0);
-      setProgress2(0);
-      setProgress3(0);
-    }
-  }, [isActivate]);
 
   return (
     <div className="welcome-screen">
@@ -79,17 +61,16 @@ const WelcomeScreen3 = ({
         <br />
         <br />
         <b id="infoTitle2" className="infoTextWelcome2">
-          Prioritize and track
+        {t("welcomeScreen3_Headline")}
         </b>
         <p id="infoText2" className="infoTextWelcome2">
-          Discover the possibilities of prioritization and deadlines and the
-          categorization of individual to-do items!
+        {t("welcomeScreen3_Text")}
         </p>
       </div>
-      <ContinueButton onClick={onNext} textBtn={"  Continue  "} />
-      <ProgressDots steps={4} currentStep={2} />
+      <ContinueButton onClick={onNext} textBtn={t("welcomeScreen_Continue")} />
+      <ProgressDots steps={availableScreens} currentStep={2} />
     </div>
   );
 };
 
-export default WelcomeScreen3;
+export default View_WelcomeScreen3;

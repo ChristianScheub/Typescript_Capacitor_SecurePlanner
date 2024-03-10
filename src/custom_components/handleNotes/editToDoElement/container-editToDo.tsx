@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import View_EditTodo from "./screen-editToDo";
-import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
+import ViewEditTodo from "./screen-editToDo";
+import { Priority } from "../../enums/priority.enum";
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../types/ToDoItem.types";
 import { ToDoList } from "../../types/ToDoList.types";
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
+import { featureFlag_Debug_Errors } from "../../featureFlags/featureFlags";
 
 interface Container_EditTodoProps {
   encryptionKey: string;
@@ -49,7 +50,9 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
             setToDoList(noteData);
           }
         } catch (error) {
-          console.error("Fehler beim Laden und Entschlüsseln der Notiz:");
+          if(featureFlag_Debug_Errors){
+            console.error("Fehler beim Laden und Entschlüsseln der Notiz:", error);
+          }
         }
       }
     };
@@ -97,7 +100,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
             noteId || Date.now().toString()
           );
         } catch (error) {
-          console.error("Fehler beim Sichern des ToDos:");
+          console.error("Fehler beim Sichern des ToDos:",error);
         }
       }
     };
@@ -129,7 +132,9 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
             }
           }
         } catch (error) {
-          console.error("Fehler beim Laden und Entschlüsseln der Notiz:");
+          if(featureFlag_Debug_Errors){
+            console.error("Fehler beim Laden und Entschlüsseln der Notiz:",error);
+          }
         }
       }
     };
@@ -159,7 +164,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
   };
 
   return (
-    <View_EditTodo
+    <ViewEditTodo
       title={toDoListItem.toDoTitle}
       desc={toDoListItem.toDoText}
       endDate={toDoListItem.toDoEndDate}

@@ -3,6 +3,7 @@ import { Location } from "react-router-dom";
 import { ToDoListWithKey } from "../../types/ToDoListKey.types";
 import toDoListService from "../../services/toDoListHandler/toDoListHandler";
 import { ToDoItem } from "../../types/ToDoItem.types";
+import { featureFlag_Debug_AllLogs } from "../../featureFlags/featureFlags";
 
 const useAllNotes = (
   encryptionKey: string,
@@ -18,7 +19,10 @@ const useAllNotes = (
         const filteredNotes = loadedNotes
           .map(([toDoList, key]) => ({ toDoList, key }))
           .filter(({ toDoList }) => {
-            console.log(loadedNotes);
+            if (featureFlag_Debug_AllLogs) {
+              console.log("loadingNotes");
+              console.log(loadedNotes);
+            }
             return (
               toDoList.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
               toDoList.content.toLowerCase().includes(searchQuery.toLowerCase()) ||

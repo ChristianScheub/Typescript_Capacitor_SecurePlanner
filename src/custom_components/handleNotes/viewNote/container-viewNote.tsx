@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import getAllNotes from './getNotes';
-import View_ViewNote from './screen-viewNote';
+import ViewViewNote from './screen-viewNote';
 import { useLocation } from 'react-router-dom';
 import { ToDoList } from "../../types/ToDoList.types";
 import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
@@ -64,7 +64,7 @@ const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, 
     };
 
   return (
-    <View_ViewNote
+    <ViewViewNote
       notes={notes}
       onNavigateToEdit={handleNavigateToEdit}
       onNavigateToCreateNew={handleNavigateToCreateNew}

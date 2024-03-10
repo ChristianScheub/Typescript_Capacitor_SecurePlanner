@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
 import { FaRegSave, FaTrash } from "react-icons/fa";
 import FloatingBtn, {
@@ -9,10 +9,9 @@ import { Card } from "react-bootstrap";
 import { ToDoList } from "../../types/ToDoList.types";
 import { MdOutlineEdit } from "react-icons/md";
 import { IoAddSharp } from "react-icons/io5";
-import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
-import DateDisplayWithClock from "../../../modules/ui/dateWithClock/dateWithClock";
-import { ToDoItem } from "../../types/ToDoItem.types";
-import ProgressBarScreen from "../../../modules/ui/progress/progressBarMenu/progressBarScreen";
+import { Priority } from "../../enums/priority.enum";
+import DateDisplayWithClock from "./ui/dateWithClock/dateWithClock";
+import ProgressBarScreen from "./ui/progressBarMenu/progressBarScreen";
 
 interface View_EditNoteViewProps {
   toDoList: ToDoList;
@@ -70,7 +69,6 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
     <div
       style={{
         margin: "2vw",
-        color: "white",
         minHeight: "70vh",
         marginTop: "env(safe-area-inset-top)",
       }}
@@ -112,13 +110,11 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
             data-testid="noteTitleTest"
             placeholder={t("editNote_TitlePlaceholder")}
             onChange={(e) => updateToDoList("title", e.target.value)}
-            className="white-placeholder"
+            className="backgroundColor placeHolderColor"
             style={{
-              backgroundColor: "transparent",
               border: "none",
               outline: "none",
               boxShadow: "none",
-              color: "white",
               fontSize: "30px",
               fontWeight: "bold",
               marginBottom: "8px",
@@ -136,9 +132,8 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
             placeholder={t("editNote_TextPlaceholder")}
             data-testid="noteTextTest"
             onChange={(e) => updateToDoList("content", e.target.value)}
+            className="backgroundColorOnGrey placeHolderColor"
             style={{
-              backgroundColor: "#1D1B20",
-              color: "white",
               border: "0",
               fontFamily:
                 '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
@@ -163,9 +158,8 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
             {toDoList.toDoItem.map((item, index) => (
               <Card
                 key={index}
+                className="backgroundColorHighlight"
                 style={{
-                  backgroundColor: "#49454F",
-                  color: "white",
                   margin: "2vw",
                   minHeight: "13vh",
                 }}
@@ -217,10 +211,10 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                         >
                           <button
                             type="button"
+                            className="backgroundColorHighlight"
                             style={{
                               width: "4vw",
                               height: "4vh",
-                              backgroundColor: "#49454F",
                               border: "none",
                             }}
                           >
@@ -236,10 +230,10 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
                         <td onClick={() => handleEdit(item.toDoId!)}>
                           <button
                             type="button"
+                            className="backgroundColorHighlight"
                             style={{
                               width: "4vw",
                               height: "4vh",
-                              backgroundColor: "#49454F",
                               border: "none",
                             }}
                           >
@@ -290,7 +284,6 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
               </p>
               <FaRegSave
                 style={{
-                  color: "white",
                   fontSize: "14vw",
                 }}
               />

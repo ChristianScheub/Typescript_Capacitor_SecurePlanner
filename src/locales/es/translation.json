@@ -71,5 +71,26 @@
   "encryption-modal_hint": "Ingrese su contraseña y luego haga clic en este botón para guardarla.",
   "encryption-modal_password_stored": "¡Contraseña guardada!",
   "editToDoElement_Category": "Categoría",
-  "viewNote_progressBarsCategories_title": "Progreso por Categoría"
+  "viewNote_progressBarsCategories_title": "Progreso por Categoría",
+  
+  "encryption-modal_PasswordShort": "¡La contraseña debe tener más de 4 caracteres!",
+  "encryption-modal_password_wrong": "¡Contraseña incorrecta!",
+  "error_DataStoringCorrupted": "¡Alarma! ¡Alguien ha manipulado los datos desde fuera de la aplicación y quiere que su entrada se guarde en texto plano! Por lo tanto, se deniega la acción. ¡Ahora no puede guardar nuevos datos!",
+  "welcomeScreen_Continue": "Continuar",
+  "welcomeScreen_Complete": "Completar",
+  "welcomeScreen1_Btn": "Empecemos",
+  "welcomeScreen1_Headline": "¡Genial que nos hayas elegido!",
+  "welcomeScreen2_Headline": "Cifrado de última generación",
+  "welcomeScreen2_Text": "Gracias a una combinación de diferentes algoritmos criptográficos, todos sus datos son lo más seguros posible",
+  "welcomeScreen3_Headline": "Priorice y rastree",
+  "welcomeScreen3_Text": "¡Descubra las posibilidades de priorización y plazos, y la categorización de elementos individuales de la lista de tareas!",
+  "welcomeScreen4_Headline": "Pero primero elija su calificación de seguridad",
+  "welcomeScreen4_Option1": "Más baja - Sin contraseña y sin cifrado",
+  "welcomeScreen4_Option2": "Media - Contraseña o biométrica (solo unas pocas iteraciones PBKDF2)",
+  "welcomeScreen4_Option3": "Alta - Contraseña o biométrica (recomendado, 600k iteraciones PBKDF2)",
+  "welcomeScreen4_Option4": "Más alta - Se requiere contraseña y biométrica (desaparece la función de importación y exportación)",
+  "welcomeScreen5_Headline": "Más opciones de seguridad",
+  "welcomeScreen5_Option1": "Una contraseña para todo",
+  "welcomeScreen5_Option2": "Diferentes contraseñas para diferentes listas de tareas pendientes",
+  "welcomeScreen5_Headline2": "Su nueva contraseña"
 }

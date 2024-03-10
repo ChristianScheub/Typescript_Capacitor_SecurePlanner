@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import "./screen-welcome4.css";
-import ProgressDots from "../progressDots/progressDots";
-import ContinueButton from "../continueBtn/continue-button";
-import SecurityOption from "../security-radioBtn";
+import ProgressDots from "../ui/progressDots/progressDots";
+import ContinueButton from "../ui/continueBtn/continue-button";
+import SecurityOption from "../ui/radioBtns/security-radioBtn";
 import SecurityLevel from "../../../enums/SecurityLevel.enum";
-import {featureFlag_HighestSec} from "../../../featureFlags/featureFlags";
-const WelcomeScreen4 = ({ closeOverlay }: { closeOverlay: () => void }) => {
-  const [securityLevelSelected, setSecurityLevel] = useState<SecurityLevel>(SecurityLevel.High);
+import { TFunction } from "i18next";
 
-  const handleSubmit = () => {
-    console.log(`Selected security level: ${securityLevelSelected}`);
-    localStorage.setItem("welcomeScreenDone", "true");
-    localStorage.setItem("securityLevel", securityLevelSelected);
-    closeOverlay();
-  };
+interface View_WelcomeScreen4Props {
+  t: TFunction;
+  securityLevelSelected: SecurityLevel;
+  setSecurityLevel: React.Dispatch<React.SetStateAction<SecurityLevel>>;
+  handleSubmit: () => Promise<void>;
+  featureFlag_HighestSec: boolean;
+  availableScreens: number;
+}
+
+const View_WelcomeScreen4: React.FC<View_WelcomeScreen4Props> = ({
+  t,
+  securityLevelSelected,
+  setSecurityLevel,
+  handleSubmit,
+  featureFlag_HighestSec,
+  availableScreens
+}) => {
 
   return (
     <div className="welcome-screen">
@@ -22,46 +31,56 @@ const WelcomeScreen4 = ({ closeOverlay }: { closeOverlay: () => void }) => {
           top: "10vh",
           width: "100vw",
           position: "absolute",
-          zIndex:5
+          zIndex: 5,
         }}
       >
-        <h1 id="infoTitle4">But please choose your security rating first</h1>
+        <h1 id="infoTitle4">{t("welcomeScreen4_Headline")}</h1>
         <br />
         <div style={{ marginLeft: "10vw", marginTop: "2vh" }}>
           <SecurityOption
-            label="Lowest - No Password & No Encryption"
+            label={t("welcomeScreen4_Option1")}
             value={SecurityLevel.Low}
             selectedValue={securityLevelSelected}
             onChange={setSecurityLevel}
           />
           <SecurityOption
-            label="Medium - Password or Biometric (Only a few PBKDF2 Iterations)"
+            label={t("welcomeScreen4_Option2")}
             value={SecurityLevel.Medium}
             selectedValue={securityLevelSelected}
             onChange={setSecurityLevel}
           />
           <SecurityOption
-            label="High - Password or Biometric (Recommended, PBKDF2 600k Iterations)"
+            label={t("welcomeScreen4_Option3")}
             value={SecurityLevel.High}
             selectedValue={securityLevelSelected}
             onChange={setSecurityLevel}
           />
           {featureFlag_HighestSec && (
-          <SecurityOption
-            label="Highest - Password and Biometric needed (Import & Export function disappears)"
-            value={SecurityLevel.Highest}
-            selectedValue={securityLevelSelected}
-            onChange={setSecurityLevel}
-          />
+            <SecurityOption
+              label={t("welcomeScreen4_Option4")}
+              value={SecurityLevel.Highest}
+              selectedValue={securityLevelSelected}
+              onChange={setSecurityLevel}
+            />
           )}
         </div>
       </div>
       <div style={{ zIndex: 0 }}>
-        <ContinueButton onClick={handleSubmit} textBtn={"  Complete  "} />
+        <ContinueButton
+          onClick={handleSubmit}
+          textBtn={
+            securityLevelSelected === SecurityLevel.Low
+              ? t("welcomeScreen_Complete")
+              : t("welcomeScreen_Continue")
+          }
+        />
       </div>
-      <ProgressDots steps={4} currentStep={3} />
+      <ProgressDots
+        steps={availableScreens}
+        currentStep={3}
+      />
     </div>
   );
 };
 
-export default WelcomeScreen4;
+export default View_WelcomeScreen4;

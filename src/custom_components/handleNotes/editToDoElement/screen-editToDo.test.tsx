@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import View_EditTodo from "./screen-editToDo";
-import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
+import { Priority } from "../../enums/priority.enum";
 
 describe("View_EditTodo Component", () => {
   const mockUpdateToDoItem = jest.fn();

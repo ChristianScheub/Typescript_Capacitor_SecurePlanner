@@ -32,12 +32,11 @@ const NavBarView: React.FC<NavBarViewProps> = ({
   return (
     <Navbar
       variant="dark"
-      className="justify-content-between"
+      className="justify-content-between backgroundColorNotFocused"
       style={{
         position: "fixed",
         top: 0,
         width: "100%",
-        backgroundColor: "#161616",
         borderBottom: "1px solid #6c757d",
         paddingTop: "env(safe-area-inset-top)",
       }}
@@ -84,6 +83,7 @@ const NavBarView: React.FC<NavBarViewProps> = ({
               onChange={onSearchChange}
               data-testid="navbar_searchForm"
               value={tempSearch}
+              className="backgroundColorOnGrey"
               style={{
                 flex: 1,
                 border: "none",
@@ -91,7 +91,6 @@ const NavBarView: React.FC<NavBarViewProps> = ({
                 marginLeft: "10vw",
                 borderRadius: "30px",
                 color: "#fff",
-                backgroundColor: "#25262B",
                 width: "70vw",
                 marginTop: "1vh",
               }}
@@ -104,7 +103,7 @@ const NavBarView: React.FC<NavBarViewProps> = ({
               onClick={onSettingsClick}
               style={{ height: "2em" }}
             >
-              <MdOutlineSettings size="1.5em" />
+              <MdOutlineSettings className="iconColor" size="1.5em" />
             </Button>
           )}
       </Container>

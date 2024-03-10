@@ -1,6 +1,7 @@
 import CryptoJS from "crypto-js";
 import { Device } from "@capacitor/device";
 import SecurityLevel from "../../enums/SecurityLevel.enum";
+import { t } from "i18next";
 
 const deriveKeyPBKDF2 = (
   password: string,
@@ -10,17 +11,12 @@ const deriveKeyPBKDF2 = (
   const modifiedSalt = CryptoJS.enc.Hex.parse(modifiedSaltString);
   const mediumPassword =
     localStorage.getItem("securityLevel") === SecurityLevel.Medium;
-  if (mediumPassword) {
-    return CryptoJS.PBKDF2(password, modifiedSalt, {
-      keySize: 256 / 32,
-      iterations: 500,
-    });
-  } else {
-    return CryptoJS.PBKDF2(password, modifiedSalt, {
-      keySize: 256 / 32,
-      iterations: 2000,
-    });
-  }
+  const iterationsToDo = mediumPassword ? 500 : 2000;
+
+  return CryptoJS.PBKDF2(password, modifiedSalt, {
+    keySize: 256 / 32,
+    iterations: iterationsToDo,
+  });
 };
 
 export const getPBKDF2_Password = (password: string): string => {
@@ -28,21 +24,14 @@ export const getPBKDF2_Password = (password: string): string => {
   const salt = CryptoJS.enc.Hex.parse(saltHex);
   const mediumPassword =
     localStorage.getItem("securityLevel") === SecurityLevel.Medium;
-  if (mediumPassword) {
-    const hash = CryptoJS.PBKDF2(password, salt, {
-      keySize: 256 / 32,
-      iterations: 20000,
-      hasher: CryptoJS.algo.SHA256,
-    });
-    return hash.toString(CryptoJS.enc.Hex);
-  } else {
-    const hash = CryptoJS.PBKDF2(password, salt, {
-      keySize: 256 / 32,
-      iterations: 600001,
-      hasher: CryptoJS.algo.SHA256,
-    });
-    return hash.toString(CryptoJS.enc.Hex);
-  }
+  const iterationsToDo = mediumPassword ? 20000 : 600001;
+
+  const hash = CryptoJS.PBKDF2(password, salt, {
+    keySize: 256 / 32,
+    iterations: iterationsToDo,
+    hasher: CryptoJS.algo.SHA256,
+  });
+  return hash.toString(CryptoJS.enc.Hex);
 };
 
 export const encryptAndStore = async (
@@ -54,26 +43,60 @@ export const encryptAndStore = async (
     localStorage.getItem("securityLevel") === SecurityLevel.Low;
   let encryptedData = "";
   if (noPasswordNeeded) {
-    encryptedData = text;
+    if (password === " " || password === "") {
+      const securityLevelLowValue = localStorage.getItem(
+        "securityLevelReallyLow"
+      );
+      //Now we have to check whether the security level is really low or whether someone has manipulated the LocalStorage externally so that the data is stored raw
+      //Yes, that doesn't give us 100% security, but at least it gives us something.
+      if (securityLevelLowValue === null) {
+        alert(t("error_DataStoringCorrupted"));
+      } else {
+        const expectedValueSecurityLevelPlain = "securePlänner";
+        const securityLevelLowValueEncrypted = await decrypt(
+          await getDeviceIdHash(),
+          securityLevelLowValue
+        );
+        if (
+          securityLevelLowValueEncrypted !== expectedValueSecurityLevelPlain
+        ) {
+          alert(t("error_DataStoringCorrupted"));
+        } else {
+          encryptedData = text;
+        }
+      }
+    } else {
+      alert(t("error_DataStoringCorrupted"));
+    }
   } else {
-    const salt = CryptoJS.lib.WordArray.random(128 / 8);
-    const key = deriveKeyPBKDF2(password, salt);
-    const iv = CryptoJS.lib.WordArray.random(128 / 8);
-
-    const encrypted = CryptoJS.AES.encrypt(text, key, {
-      iv: iv,
-      mode: CryptoJS.mode.CBC,
-      padding: CryptoJS.pad.Pkcs7,
-    });
-
-    const encryptedDataPBKDF2 = `${encrypted.toString()}::${iv.toString()}::${salt.toString()}`;
-    encryptedData = CryptoJS.TripleDES.encrypt(
-      encryptedDataPBKDF2,
-      await getDeviceIdHash()
-    ).toString();
+    encryptedData = await encrypt(text, password);
   }
-
   localStorage.setItem(storageKey, encryptedData);
+};
+
+export const storeLowSecurity = async (): Promise<void> => {};
+
+export const encrypt = async (
+  text: string,
+  password: string
+): Promise<string> => {
+  const salt = CryptoJS.lib.WordArray.random(128 / 8);
+  const key = deriveKeyPBKDF2(password, salt);
+  const iv = CryptoJS.lib.WordArray.random(128 / 8);
+
+  const encrypted = CryptoJS.AES.encrypt(text, key, {
+    iv: iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7,
+  });
+
+  const encryptedDataPBKDF2 = `${encrypted.toString()}::${iv.toString()}::${salt.toString()}`;
+  const encryptedData = CryptoJS.TripleDES.encrypt(
+    encryptedDataPBKDF2,
+    await getDeviceIdHash()
+  ).toString();
+
+  return encryptedData;
 };
 
 export const decryptFromStorage = async (
@@ -89,6 +112,17 @@ export const decryptFromStorage = async (
     localStorage.getItem("securityLevel") === SecurityLevel.Low;
   if (noPasswordNeeded) {
     return encryptedData;
+  } else {
+    return decrypt(password, encryptedData);
+  }
+};
+
+export const decrypt = async (
+  password: string,
+  encryptedData: string
+): Promise<string> => {
+  if (!encryptedData) {
+    return "";
   }
 
   const decryptedDateWithDeviceId = CryptoJS.TripleDES.decrypt(
@@ -116,7 +150,7 @@ export const makeReadyForExport = async (
   encryptedData: string
 ): Promise<string> => {
   const noPasswordNeeded =
-  localStorage.getItem("securityLevel") === SecurityLevel.Low;
+    localStorage.getItem("securityLevel") === SecurityLevel.Low;
   if (noPasswordNeeded) {
     return CryptoJS.AES.encrypt(
       encryptedData,
@@ -149,7 +183,7 @@ export const makeReadyForImport = async (
   } catch (e) {}
 
   const noPasswordNeeded =
-  localStorage.getItem("securityLevel") === SecurityLevel.Low;
+    localStorage.getItem("securityLevel") === SecurityLevel.Low;
   if (noPasswordNeeded) {
     return decrypted;
   }

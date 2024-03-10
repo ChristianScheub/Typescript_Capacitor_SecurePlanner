@@ -11,6 +11,7 @@ import {
   makeReadyForImport,
 } from "../../services/encryptionEngine/encryptionEngine";
 import { useTranslation } from "react-i18next";
+import { featureFlag_Debug_Errors } from "../../featureFlags/featureFlags";
 
 const Container_Settings: React.FC = () => {
   const { t } = useTranslation();
@@ -55,7 +56,9 @@ const Container_Settings: React.FC = () => {
             server: "www.securePlaner.com",
           });
         } catch (error) {
-          //console.log("Fehler beim Löschen der Credentials", error);
+          if (featureFlag_Debug_Errors) {
+            console.error("Error at delete Credentials", error);
+          }
         }
       }
       navigate("/");
@@ -79,7 +82,9 @@ const Container_Settings: React.FC = () => {
         });
         alert(t("settings_Dialog_DeleteBioSuccessful"));
       } catch (error) {
-        console.error("Error at delete Credentials", error);
+        if (featureFlag_Debug_Errors) {
+          console.error("Error at delete Credentials", error);
+        }
         alert(t("settings_Dialog_DeleteBioError"));
       }
     }
@@ -189,6 +194,19 @@ const Container_Settings: React.FC = () => {
     });
   };
 
+  function deleteKeysFromLocalStorage(keysToDelete: string[]): void {
+    keysToDelete.forEach((key) => {
+      localStorage.removeItem(key);
+    });
+  }
+
+  const ignoredKeys: string[] = [
+    "securityLevelReallyLow",
+    "securityLevel",
+    "justOnePassword2",
+    "justOnePassword",
+  ];
+
   return (
     <SettingsView
       showFingerprintBtn={showFingerprintBtn}
@@ -199,6 +217,7 @@ const Container_Settings: React.FC = () => {
       onExportAllClick={handleExportAllClick}
       onFileChange={handleFileChange}
       onDeleteNotesClick={handleDeleteNotesClick}
+      onDeleteTechnicalDataClick={() => deleteKeysFromLocalStorage(ignoredKeys)}
       isAlreadyLoggedIn={isAlreadyLoggedIn}
     />
   );

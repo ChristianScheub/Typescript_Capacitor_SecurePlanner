@@ -42,9 +42,8 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
           {notes.map((note) => (
             <Col key={note.key} style={{ marginBottom: "5vw" }}>
               <Card
+              className="backgroundColorHighlight"
                 style={{
-                  backgroundColor: "#49454F",
-                  color: "white",
                   margin: "2vw",
                   minHeight: "20vh",
                   display: "flex",
@@ -137,10 +136,9 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
       ) : (
         <div>
         <Card
+        className="backgroundColorHighlight"
           style={{
             margin: "2vw",
-            backgroundColor: "#49454F",
-            color: "white",
             minHeight: "20vh",
             fontSize: "4vw"
           }}
@@ -151,7 +149,7 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
         </Card>
         <div style={{ display: "flex", textAlign:"center", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", height: "60vh" }}>
         <p style={{fontSize: "8vw"}}>  <br /> {t("viewNote_hint")}</p>
-        <FaArrowDownLong style={{color: "white", fontSize: "14vw"}} />
+        <FaArrowDownLong style={{fontSize: "14vw"}} />
         </div>
         </div>
       )}

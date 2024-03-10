@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import PrioritySlider from "../../../modules/ui/editToDo/priorityIndicator/priorityIndicator";
-import DatePickerComponent from "../../../modules/ui/editToDo/dataPicker/dataPicker";
+import PrioritySlider from "./ui/priorityIndicator/priorityIndicator";
+import DatePickerComponent from "./ui/dataPicker/dataPicker";
 import { Card, InputGroup } from "react-bootstrap";
-import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
+import { Priority } from "../../enums/priority.enum";
 import { Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../types/ToDoItem.types";
@@ -48,9 +48,8 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
       }}
     >
       <Card
+      className="backgroundColorHighlight"
         style={{
-          backgroundColor: "#49454F",
-          color: "white",
           margin: "2vw",
           marginTop: "25vh",
           position: "absolute",
@@ -67,14 +66,12 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
                 value={title}
                 data-testid="noteTitleTest"
                 placeholder={t("editNote_TitlePlaceholder")}
-                className="white-placeholder"
+                className="backgroundColorNotFocused placeHolderColor"
                 onChange={(e) => updateToDoItem("toDoTitle", e.target.value)}
                 style={{
-                  backgroundColor: "#38373b",
                   border: "none",
                   outline: "none",
                   boxShadow: "none",
-                  color: "white",
                   fontSize: "20px",
                   fontWeight: "bold",
                 }}
@@ -102,13 +99,12 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
                   type="text"
                   list="category-options"
                   value={categorie}
+                  className="backgroundColorNotFocused placeHolderColor"
                   onChange={(e) =>
                     updateToDoItem("toDoCategorie", e.target.value)
                   }
                   style={{
-                    backgroundColor: "#38373b",
                     border: "none",
-                    color: "white",
                     boxShadow: "none",
                   }}
                 />
@@ -128,12 +124,10 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
                 value={desc}
                 id="editToDo_Text"
                 data-testid="noteTextTest"
-                className="white-placeholder"
+                className="backgroundColorNotFocused placeHolderColor"
                 placeholder={t("editToDoElement_DetailText")}
                 onChange={(e) => updateToDoItem("toDoText", e.target.value)}
                 style={{
-                  backgroundColor: "#1D1B20",
-                  color: "white",
                   border: "0",
                   fontFamily:
                     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',

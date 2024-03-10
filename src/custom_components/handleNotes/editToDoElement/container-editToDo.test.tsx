@@ -13,7 +13,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import { ToDoList } from "../../types/ToDoList.types";
 import { ToDoItem } from "../../types/ToDoItem.types";
-import { Priority as PriorityEnum } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
+import { Priority as PriorityEnum } from "../../enums/priority.enum";
 
 jest.mock("../../services/toDoListHandler/toDoListHandler", () => ({
   loadToDoList: jest.fn(),

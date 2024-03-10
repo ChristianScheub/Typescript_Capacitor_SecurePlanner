@@ -1,0 +1,16 @@
+.welcome-screen button {
+    background-color: #3D6868;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    outline: none;
+    margin-right: 15vw;
+  }
+  
+  .welcome-screen button:hover {
+    background-color: #2C3E50;
+  }

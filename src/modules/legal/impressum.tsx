@@ -6,8 +6,7 @@ import { useLocation } from "react-router-dom";
 import React, { useState } from "react";
 
 const Impressum: React.FC = () => {
-  const location = useLocation();
-  const isAlreadyLoggedIn = !location.pathname.includes("Home");
+  const isAlreadyLoggedIn = !useLocation().pathname.includes("Home");
   const [searchQueryPlaceholder, setSearchQueryPlaceholder] =
     useState<string>("");
 
@@ -38,11 +37,9 @@ const Impressum: React.FC = () => {
         )}
         <div className="after-login-container">
           <Card
-            className="mb-3"
+            className="mb-3 backgroundColorHighlight"
             style={{
-              margin: "2vw",
-              backgroundColor: "#49454F",
-              color: "white",
+              margin: "2vw"
             }}
           >
             <Card.Header as="h2">Impressum / Legal Notice</Card.Header>

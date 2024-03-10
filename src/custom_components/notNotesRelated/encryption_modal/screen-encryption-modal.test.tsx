@@ -18,6 +18,7 @@ describe("EncryptionKeyModalView", () => {
         handleKeySubmit={mockHandleKeySubmit}
         activateFingerprint={mockActivateFingerprint}
         navigateToPrivacy={mockNavigateToPrivacy}
+        showPasswordShortError={false}
         inputRef={mockInputRef}
       />
     );
@@ -31,6 +32,7 @@ describe("EncryptionKeyModalView", () => {
         showFingerprintHint={true}
         activateFingerprint={mockActivateFingerprint}
         showFingerprintBtn={true}
+        showPasswordShortError={false}
         navigateToPrivacy={mockNavigateToPrivacy}
         inputRef={mockInputRef}
       />
@@ -44,6 +46,7 @@ describe("EncryptionKeyModalView", () => {
         showFingerprintHint={true}
         activateFingerprint={mockActivateFingerprint}
         showFingerprintBtn={true}
+        showPasswordShortError={false}
         navigateToPrivacy={mockNavigateToPrivacy}
         inputRef={mockInputRef}
       />
@@ -61,6 +64,7 @@ describe("EncryptionKeyModalView", () => {
         showFingerprintHint={true}
         activateFingerprint={mockActivateFingerprint}
         showFingerprintBtn={true}
+        showPasswordShortError={false}
         navigateToPrivacy={mockNavigateToPrivacy}
         inputRef={mockInputRef}
       />

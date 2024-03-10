@@ -1,4 +1,4 @@
-import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
+import { Priority } from "../../enums/priority.enum";
 import { ToDoItem } from "../../types/ToDoItem.types";
 import progressToDoListService from "./progressToDoListService";
 

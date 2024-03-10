@@ -14,6 +14,7 @@ describe('SettingsView Component', () => {
   const mockOnExportAllClick = jest.fn();
   const mockOnFileChange = jest.fn();
   const mockOnDeleteNotesClick = jest.fn();
+  const mockOnDeleteTechnicalDataClick = jest.fn();
 
   const defaultProps = {
     showFingerprintBtn: true,
@@ -24,7 +25,9 @@ describe('SettingsView Component', () => {
     onExportAllClick: mockOnExportAllClick,
     onFileChange: mockOnFileChange,
     onDeleteNotesClick: mockOnDeleteNotesClick,
+    onDeleteTechnicalDataClick: mockOnDeleteTechnicalDataClick,
     isAlreadyLoggedIn: true,
+    
   };
 
   beforeEach(() => {

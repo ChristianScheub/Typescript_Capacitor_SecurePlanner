@@ -54,12 +54,12 @@ const FloatingBtn: React.FC<FloatingBtnProps> = ({ alignment, icon, onClick }) =
     <div style={positionStyle} data-testid="floating-btnDiv">
       <Button
         style={{
-          backgroundColor: "#49454F",
           height: "4rem",
           width: "4rem",
           borderColor: "#0a58ca",
           borderRadius: '50%',
         }}
+        className="backgroundColorHighlight"
         onClick={onClick}
         data-testid="floating-btn" 
       >

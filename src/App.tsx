@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import Datenschutz from "./modules/legal/datenschutz";
 import Impressum from "./modules/legal/impressum";
-import Container_Settings from "./custom_components/notNotesRelated/settings/container_settings";
-import Container_EncryptionKeyModal from "./custom_components/notNotesRelated/encryption_modal/container-encryption-modal";
+import ContainerSettings from "./custom_components/notNotesRelated/settings/container_settings";
+import ContainerEncryptionKeyModal from "./custom_components/notNotesRelated/encryption_modal/container-encryption-modal";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBarContainer from "./custom_components/notNotesRelated/navBar/container-navBar";
-import Container_ViewNote from "./custom_components/handleNotes/viewNote/container-viewNote";
-import Container_EditNote from "./custom_components/handleNotes/editNote/container-editNote";
-import Container_EditTodo from "./custom_components/handleNotes/editToDoElement/container-editToDo";
-import WelcomeScreen from "./custom_components/notNotesRelated/welcomeScreen/container/container-welcomeScreen";
+import ContainerViewNote from "./custom_components/handleNotes/viewNote/container-viewNote";
+import ContainerEditNote from "./custom_components/handleNotes/editNote/container-editNote";
+import ContainerEditTodo from "./custom_components/handleNotes/editToDoElement/container-editToDo";
 import "./i18n";
 import SecurityLevel from "./custom_components/enums/SecurityLevel.enum";
+import useDarkMode from "./darkModeDetector";
 
 const App: React.FC = () => {
   const [encryptionKey, setEncryptionKey] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const noPasswordNeeded = (localStorage.getItem("securityLevel")===SecurityLevel.Low);
-
+  const theme = useDarkMode();
   
   return (
-    <div>
+    <div className={theme}>
       {!encryptionKey&&!noPasswordNeeded ? (
         <div>
           <Router>
@@ -30,10 +31,10 @@ const App: React.FC = () => {
               <Route
                 path="/"
                 element={
-                  <Container_EncryptionKeyModal onSubmit={setEncryptionKey} />
+                  <ContainerEncryptionKeyModal onSubmit={setEncryptionKey} />
                 }
               />
-              <Route path="/settingsHome" element={<Container_Settings />} />
+              <Route path="/settingsHome" element={<ContainerSettings />} />
               <Route path="/impressumHome" element={<Impressum />} />
 
             </Routes>
@@ -41,13 +42,11 @@ const App: React.FC = () => {
         </div>
       ) : (
         <div
-          className="App"
+          className="App backgroundColor"
           style={{
             display: "flex",
             flexDirection: "column",
-            minHeight: "100vh",
-            backgroundColor: "#1E1E1E",
-            color: "white",
+            minHeight: "100vh"
           }}
         >
           <div style={{ marginTop: "8vh" }}>
@@ -56,27 +55,27 @@ const App: React.FC = () => {
                 <Route path="/datenschutz" element={<Datenschutz />} />
                 <Route path="/impressum" element={<Impressum />} />
 
-                <Route path="/settings" element={<Container_Settings />} />
+                <Route path="/settings" element={<ContainerSettings />} />
 
                 <Route
                   path="/edit/:noteId"
-                  element={<Container_EditNote encryptionKey={encryptionKey} />}
+                  element={<ContainerEditNote encryptionKey={encryptionKey} />}
                 />
 
                 <Route
                   path="/edit/:noteId/NOICE"
-                  element={<Container_EditTodo encryptionKey={encryptionKey} />}
+                  element={<ContainerEditTodo encryptionKey={encryptionKey} />}
                 />
 
                 <Route
                   path="/edit/:noteId/:toDoItemId"
-                  element={<Container_EditTodo encryptionKey={encryptionKey} />}
+                  element={<ContainerEditTodo encryptionKey={encryptionKey} />}
                 />
 
                 <Route
                   path="/"
                   element={
-                    <Container_ViewNote
+                    <ContainerViewNote
                       encryptionKey={encryptionKey}
                       searchQuery={searchQuery}
                     />
@@ -84,7 +83,7 @@ const App: React.FC = () => {
                 />
                 <Route
                   path="/edit/new"
-                  element={<Container_EditNote encryptionKey={encryptionKey} />}
+                  element={<ContainerEditNote encryptionKey={encryptionKey} />}
                 />
               </Routes>
               <NavBarContainer setSearchQuery={setSearchQuery} />

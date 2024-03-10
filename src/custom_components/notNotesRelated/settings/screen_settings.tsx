@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
 import UsedLibsListContainer from "../../../modules/legal/usedLibs/container_usedLibList";
 import NavBarContainer from "../navBar/container-navBar";
+import { featureFlag_DebugShowAllSettings } from "../../featureFlags/featureFlags";
 
 interface View_SettingsProps {
   showFingerprintBtn: boolean;
@@ -18,6 +19,7 @@ interface View_SettingsProps {
   onExportAllClick: () => void;
   onFileChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onDeleteNotesClick: () => void;
+  onDeleteTechnicalDataClick: () => void;
   isAlreadyLoggedIn: boolean;
 }
 
@@ -30,7 +32,8 @@ const View_Settings: React.FC<View_SettingsProps> = ({
   onExportAllClick,
   onFileChange,
   onDeleteNotesClick,
-  isAlreadyLoggedIn,
+  onDeleteTechnicalDataClick,
+  isAlreadyLoggedIn
 }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -39,7 +42,8 @@ const View_Settings: React.FC<View_SettingsProps> = ({
     useState<string>("");
 
   return (
-    <div
+    <div className="backgroundColor"
+
       style={{
         ...(isAlreadyLoggedIn
           ? {}
@@ -47,10 +51,8 @@ const View_Settings: React.FC<View_SettingsProps> = ({
               display: "flex",
               flexDirection: "column",
               minHeight: "100vh",
-              backgroundColor: "#1E1E1E",
-              color: "white",
               paddingTop: "15vw",
-            }),
+            } ),
       }}
     >
       <div
@@ -65,8 +67,8 @@ const View_Settings: React.FC<View_SettingsProps> = ({
         )}
 
         <div className="after-login-container">
-          <div className="mb-3" style={{ margin: "2vw", color: "white" }}>
-            {isAlreadyLoggedIn && (
+          <div className="mb-3" style={{ margin: "2vw" }}>
+            {(!isAlreadyLoggedIn || featureFlag_DebugShowAllSettings)&& (
               <>
                 <h1>{t("settings_Title")}</h1>
                 <hr />
@@ -77,6 +79,18 @@ const View_Settings: React.FC<View_SettingsProps> = ({
                       onClick={onDeleteBiometryClick}
                     >
                       {t("settings_Deletebiometry")}
+                    </p>
+                    <hr />
+                  </>
+                )}
+
+                {featureFlag_DebugShowAllSettings && (
+                  <>
+                    <p
+                      data-testid="settings-delete-technial-data"
+                      onClick={onDeleteTechnicalDataClick}
+                    >
+                      Delete WelcomeScreen v2 Data
                     </p>
                     <hr />
                   </>
@@ -123,6 +137,7 @@ const View_Settings: React.FC<View_SettingsProps> = ({
                     color="primary"
                     component="span"
                     data-testid="settings-notes-import"
+                    className="backgroundColorNotFocused"
                   >
                     {t("settings_ImportNotesBtn")}
                   </Button>

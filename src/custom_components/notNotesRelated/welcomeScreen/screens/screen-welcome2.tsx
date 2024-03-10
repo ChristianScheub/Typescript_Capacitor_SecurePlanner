@@ -1,33 +1,45 @@
 import React from "react";
 import "../WelcomeScreen.css";
-import ProgressDots from "../progressDots/progressDots";
+import ProgressDots from "../ui/progressDots/progressDots";
 import illustration from "../secureIcon.webp";
-import ContinueButton from "../continueBtn/continue-button";
+import ContinueButton from "../ui/continueBtn/continue-button";
+import { TFunction } from "i18next";
 
-const WelcomeScreen2 = ({ onNext }: { onNext: () => void }) => {
+const View_WelcomeScreen2 = ({
+  onNext,
+  availableScreens,
+  t
+}: {
+  onNext: () => void;
+  availableScreens: number;
+  t: TFunction;
+}) => {
+
   return (
     <div className="welcome-screen">
-      <div style={{ top: "20vh",width:"100vw", position: "absolute", textAlign: "center" }}>
-        <img
-          src={illustration}
-          alt="Illustration"
-          style={{ height: "30vh" }}
-        />
+      <div
+        style={{
+          top: "20vh",
+          width: "100vw",
+          position: "absolute",
+          textAlign: "center",
+        }}
+      >
+        <img src={illustration} alt="Illustration" style={{ height: "30vh" }} />
         <br />
         <br />
         <br />
         <b id="infoTitle2" className="infoTextWelcome2">
-          State of the art Encryption
+        {t("welcomeScreen2_Headline")}
         </b>
         <p id="infoText2" className="infoTextWelcome2">
-          Thanks to a combination of different cryptographic algorithms, all
-          your data are as secure as possible
+        {t("welcomeScreen2_Text")}
         </p>
       </div>
-      <ContinueButton onClick={onNext} textBtn={"  Continue  "} />
-      <ProgressDots steps={4} currentStep={1} />
+      <ContinueButton onClick={onNext} textBtn={t("welcomeScreen_Continue")} />
+      <ProgressDots steps={availableScreens} currentStep={1} />
     </div>
   );
 };
 
-export default WelcomeScreen2;
+export default View_WelcomeScreen2;

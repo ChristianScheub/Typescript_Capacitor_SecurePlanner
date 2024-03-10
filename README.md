@@ -103,40 +103,67 @@ The tests here are always written in Typescript.
 The goal is actually to have about 80% test coverage of the lines. This number appears to be enough as this is a freetime project.
 
 
-File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line 
 -------------------------------------|---------|----------|---------|---------|-------------------
-All files                            |    81.2 |    65.73 |   74.59 |    81.6 |                   
- src                                 |     100 |      100 |     100 |     100 |                   
-  App.tsx                            |     100 |      100 |     100 |     100 |                   
+All files                            |   71.19 |    55.92 |   66.23 |   72.04 |                   
+ src                                 |   66.66 |       50 |      50 |   66.66 |                   
+  App.tsx                            |   57.14 |       50 |      50 |   57.14 | 28-40             
   i18n.ts                            |     100 |      100 |     100 |     100 |                   
   index.tsx                          |     100 |      100 |     100 |     100 |                   
- ..._components/handleNotes/editNote |   49.49 |    37.73 |   32.14 |   49.49 |                   
-  container-editNote.tsx             |   48.88 |     28.2 |   28.57 |   48.88 | ...11-229,253-260 
-  screen-editNote.tsx                |   55.55 |    64.28 |   42.85 |   55.55 | 165-237           
- ...ents/handleNotes/editToDoElement |    75.4 |    44.82 |    87.5 |    75.4 |                   
-  container-editToDo.tsx             |   75.92 |    44.82 |     100 |   75.92 | ...93,107-120,146 
-  screen-editToDo.tsx                |   71.42 |      100 |      60 |   71.42 | 106-117           
- ..._components/handleNotes/viewNote |    90.9 |    62.96 |   88.88 |    92.3 |                   
-  container-viewNote.tsx             |   92.85 |      100 |   83.33 |   92.85 | 33                
-  getNotes.ts                        |   84.21 |    36.36 |   85.71 |   88.23 | 25,33             
-  screen-viewNote.tsx                |   95.45 |    81.25 |     100 |   95.23 | 30                
- ...notNotesRelated/encryption_modal |   97.05 |      100 |   93.33 |   97.05 |                   
-  container-encryption-modal.tsx     |     100 |      100 |     100 |     100 |                   
-  screen-encryption-modal.tsx        |   83.33 |      100 |   66.66 |   83.33 | 47                
+ src/custom_components/enums         |       0 |        0 |       0 |       0 |                   
+  SecurityLevel.enum.ts              |       0 |        0 |       0 |       0 |                   
+ src/custom_components/featureFlags  |     100 |      100 |     100 |     100 |                   
+  featureFlags.ts                    |     100 |      100 |     100 |     100 |                   
+ ..._components/handleNotes/editNote |   49.53 |    44.44 |   39.28 |   49.53 |                   
+  container-editNote.tsx             |   48.97 |     37.5 |   38.09 |   48.97 | ...19-241,265-272 
+  screen-editNote.tsx                |   55.55 |    64.28 |   42.85 |   55.55 | 159-230           
+ ...ents/handleNotes/editToDoElement |   76.47 |    45.45 |   83.33 |   76.47 |                   
+  container-editToDo.tsx             |   77.04 |    45.45 |    92.3 |   77.04 | ...03,120-136,159 
+  screen-editToDo.tsx                |   71.42 |      100 |      60 |   71.42 | 104-113           
+ ..._components/handleNotes/viewNote |   87.93 |    62.06 |   88.88 |   89.09 |                   
+  container-viewNote.tsx             |   93.54 |       90 |    87.5 |   93.33 | 33,63             
+  getNotes.ts                        |   77.27 |    38.46 |   85.71 |      80 | 23-24,30,38       
+  screen-viewNote.tsx                |     100 |    66.66 |     100 |     100 | 67-79             
+ ...notNotesRelated/encryption_modal |   71.42 |    56.75 |   88.23 |   71.42 |                   
+  container-encryption-modal.tsx     |   69.23 |    48.27 |   86.66 |   69.23 | ...,65-71,115-131 
+  screen-encryption-modal.tsx        |     100 |     87.5 |     100 |     100 | 98                
  ...omponents/notNotesRelated/navBar |   85.18 |    66.66 |   85.71 |   85.18 |                   
   container-navBar.tsx               |      84 |       60 |   83.33 |      84 | 27,46-48          
-  screen-navBar.tsx                  |     100 |    83.33 |     100 |     100 | 61                
- ...ponents/notNotesRelated/settings |   63.96 |    28.94 |   63.63 |   64.22 |                   
-  container_settings.tsx             |   60.39 |    16.66 |      50 |    60.6 | ...54-170,176-188 
-  screen_settings.tsx                |     100 |       75 |     100 |     100 | 44-61             
+  screen-navBar.tsx                  |     100 |    83.33 |     100 |     100 | 60                
+ ...ponents/notNotesRelated/settings |   62.28 |     27.9 |   63.63 |    62.5 |                   
+  container_settings.tsx             |   58.65 |     14.7 |      50 |   58.82 | ...59-175,181-193 
+  screen_settings.tsx                |     100 |    77.77 |     100 |     100 | 46-61             
  ...s/notNotesRelated/welcomeOverlay |     100 |      100 |     100 |     100 |                   
   welcomeOverlay.tsx                 |     100 |      100 |     100 |     100 |                   
- ...onents/services/encryptionEngine |      90 |      100 |   85.71 |      90 |                   
-  encryptionEngine.ts                |      90 |      100 |   85.71 |      90 | 23-30             
+ ...sRelated/welcomeScreen/container |    6.66 |        0 |       0 |    9.09 |                   
+  container-welcomeScreen.tsx        |    6.66 |        0 |       0 |    9.09 | 16-34             
+ ...omeScreen/container/SubContainer |    8.62 |        0 |       0 |    9.09 |                   
+  container-welcome1.tsx             |   33.33 |      100 |       0 |   33.33 | 14-16             
+  container-welcome2.tsx             |   33.33 |      100 |       0 |   33.33 | 14-16             
+  container-welcome3.tsx             |       5 |        0 |       0 |    5.55 | 16-45             
+  container-welcome4.tsx             |    6.25 |        0 |       0 |    6.25 | 21-50             
+  container-welcome5.tsx             |    6.25 |        0 |       0 |    6.66 | 10-34             
+ ...tesRelated/welcomeScreen/screens |   45.45 |        0 |       0 |   45.45 |                   
+  screen-welcome1.tsx                |      50 |      100 |       0 |      50 | 17                
+  screen-welcome2.tsx                |      50 |      100 |       0 |      50 | 18                
+  screen-welcome3.tsx                |      50 |      100 |       0 |      50 | 26                
+  screen-welcome4.tsx                |      50 |        0 |       0 |      50 | 27                
+  screen-welcome5.tsx                |   33.33 |        0 |       0 |   33.33 | 28-56             
+ ...ted/welcomeScreen/ui/continueBtn |     100 |      100 |     100 |     100 |                   
+  continue-button.tsx                |     100 |      100 |     100 |     100 |                   
+ ...comeScreen/ui/passwordInputField |     100 |      100 |     100 |     100 |                   
+  passwordInputField.tsx             |     100 |      100 |     100 |     100 |                   
+ ...ed/welcomeScreen/ui/progressDots |     100 |      100 |     100 |     100 |                   
+  progressDots.tsx                   |     100 |      100 |     100 |     100 |                   
+ ...lated/welcomeScreen/ui/radioBtns |     100 |      100 |     100 |     100 |                   
+  security-radioBtn.tsx              |     100 |      100 |     100 |     100 |                   
+  string-radioBtn.tsx                |     100 |      100 |     100 |     100 |                   
+ ...onents/services/encryptionEngine |   69.73 |    33.33 |      80 |   69.73 |                   
+  encryptionEngine.ts                |   69.73 |    33.33 |      80 |   69.73 | ...24,137,167,200 
  ...ustom_components/services/equals |     100 |      100 |     100 |     100 |                   
   equals.ts                          |     100 |      100 |     100 |     100 |                   
- ...onents/services/fingerprintLogic |   97.67 |    92.85 |     100 |   97.67 |                   
-  fingerprintLogic.ts                |   97.67 |    92.85 |     100 |   97.67 | 60                
+ ...onents/services/fingerprintLogic |      92 |       80 |     100 |      92 |                   
+  fingerprintLogic.ts                |      92 |       80 |     100 |      92 | 58,63,98,109      
  ...m_components/services/formatDate |     100 |      100 |     100 |     100 |                   
   formatDate.ts                      |     100 |      100 |     100 |     100 |                   
  ...services/progressToDoListService |   73.33 |    83.33 |   55.55 |   81.48 |                   
@@ -148,8 +175,8 @@ All files                            |    81.2 |    65.73 |   74.59 |    81.6 |
   categories.ts                      |     100 |      100 |     100 |     100 |                   
  .../services/toDoListHandler/Filter |     100 |      100 |     100 |     100 |                   
   toDoListFilter.ts                  |     100 |      100 |     100 |     100 |                   
- ...ices/toDoListHandler/Persistence |    93.1 |       75 |     100 |   92.85 |                   
-  toDoListPersistence.ts             |    93.1 |       75 |     100 |   92.85 | 10,36             
+ ...ices/toDoListHandler/Persistence |    62.5 |       50 |   57.14 |   64.15 |                   
+  toDoListPersistence.ts             |    62.5 |       50 |   57.14 |   64.15 | ...6,83-89,99,109 
  .../services/toDoListHandler/Sorter |   86.66 |    88.46 |     100 |   86.66 |                   
   toDoListSort.ts                    |   86.66 |    88.46 |     100 |   86.66 | 6,29              
  src/custom_components/types         |       0 |        0 |       0 |       0 |                   
@@ -160,8 +187,8 @@ All files                            |    81.2 |    65.73 |   74.59 |    81.6 |
   app_texts.ts                       |     100 |      100 |     100 |     100 |                   
  src/modules/legal                   |     100 |    71.42 |     100 |     100 |                   
   codeToTextParser.tsx               |     100 |      100 |     100 |     100 |                   
-  datenschutz.tsx                    |     100 |       50 |     100 |     100 | 20-37             
-  impressum.tsx                      |     100 |       50 |     100 |     100 | 17-34             
+  datenschutz.tsx                    |     100 |       50 |     100 |     100 | 16-33             
+  impressum.tsx                      |     100 |       50 |     100 |     100 | 16-33             
  src/modules/legal/usedLibs          |     100 |      100 |     100 |     100 |                   
   container_usedLibList.tsx          |     100 |      100 |     100 |     100 |                   
   screen_usedLibList.tsx             |     100 |      100 |     100 |     100 |                   
@@ -176,11 +203,11 @@ All files                            |    81.2 |    65.73 |   74.59 |    81.6 |
   floatingBtn.tsx                    |     100 |      100 |     100 |     100 |                   
  src/modules/ui/progress/progressBar |     100 |      100 |     100 |     100 |                   
   progressBar.tsx                    |     100 |      100 |     100 |     100 |                   
- ...ules/ui/progress/progressBarMenu |   52.38 |    33.33 |      20 |   52.38 |                   
-  progressBarMenu.tsx                |    62.5 |       50 |      25 |    62.5 | 55-68             
-  progressBarScreen.tsx              |   46.15 |        0 |   16.66 |   46.15 | 31-33,45-75       
+ ...ules/ui/progress/progressBarMenu |   71.42 |       50 |      40 |   71.42 |                   
+  progressBarMenu.tsx                |      75 |       50 |      50 |      75 | 52,65             
+  progressBarScreen.tsx              |   69.23 |       50 |   33.33 |   69.23 | 45-75             
  ...dules/ui/progress/progressCircle |     100 |      100 |     100 |     100 |                   
-  progressCircle.tsx                 |     100 |      100 |     100 |     100 |
+  progressCircle.tsx                 |     100 |      100 |     100 |     100 |                   
 
 
 ## Architecture
@@ -270,6 +297,10 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
+
+### `./node_modules/.bin/license-checker --json --production --out licenses.json`
+Generate the JSON with the licenses of the NPM packages used. 
+This can then replace the existing license json under modules/legal/usedLibs.
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 

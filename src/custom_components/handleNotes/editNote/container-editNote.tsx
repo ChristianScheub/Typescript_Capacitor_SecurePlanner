@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { isEqual } from "../../services/equals/equals";
 import EditNoteView from "./screen-editNote";
 import { ToDoList } from "../../types/ToDoList.types";
 import { useTranslation } from "react-i18next";
-import { Priority } from "../../../modules/ui/editToDo/priorityIndicator/priority.enum";
+import { Priority } from "../../enums/priority.enum";
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
-import Container_EditTodo from "../editToDoElement/container-editToDo";
+import ContainerEditTodo from "../editToDoElement/container-editToDo";
 import { formatDate } from "../../services/formatDate/formatDate";
 import { getCategories } from "../../services/toDoListHandler/Categories/categories";
-import { ToDoItem } from "../../types/ToDoItem.types";
+import { featureFlag_Debug_AllLogs,featureFlag_Debug_Errors } from "../../featureFlags/featureFlags";
+
 interface Container_EditNoteProps {
   encryptionKey: string;
 }
@@ -30,6 +31,10 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     "i18nextLng",
     "_capuid",
     "fingerprintSet",
+    "securityLevelReallyLow",
+    "securityLevel",
+    "justOnePassword2",
+    "justOnePassword"
   ];
 
   const relevantItemCount = Object.keys(localStorage).reduce((count, key) => {
@@ -75,16 +80,20 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
             setShownToDoList(toDoList);
           }
         } catch (error) {
-          console.error("Fehler beim Laden und Entschlüsseln der Notiz:");
+          console.error("Fehler beim Laden und Entschlüsseln der Notiz:",error);
         }
       }
     };
-    
+
     loadAndDecryptNote();
   }, [noteId, encryptionKey, showToDoEdit]);
 
   useEffect(() => {
     const storeNotes = async () => {
+      if (featureFlag_Debug_AllLogs) {
+        console.log("triggerStore");
+        console.log(toDoList);
+      }
       if (
         noteId &&
         (toDoList.title !== "" ||
@@ -92,11 +101,13 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
           toDoList.toDoItem.length > 0)
       ) {
         try {
+          await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
           handleFilterList(currentFilter);
           setCategoriesList(getCategories(toDoList));
-          await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
         } catch (error) {
-          //console.error("Fehler beim Speichern der Notiz");
+          if (featureFlag_Debug_Errors) {
+            console.error("Fehler beim Speichern der Notiz",error);
+          }
         }
       }
     };
@@ -139,7 +150,14 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
     key: K,
     value: ToDoList[K]
   ) => {
+    if (featureFlag_Debug_AllLogs) {
+      console.log("updateToDoList");
+      console.log(value);
+    }
     await setToDoList({ ...toDoList, [key]: value });
+    if (featureFlag_Debug_AllLogs) {
+      console.log(toDoList);
+    }
   };
 
   function handleAdd() {
@@ -154,34 +172,29 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
       const updatedToDoItems = toDoList.toDoItem.filter(
         (item) => item.toDoId !== toDoId
       );
-  
+
       setToDoList({
         ...toDoList,
         toDoItem: updatedToDoItems,
       });
     }
   };
-  
 
-  const handleDoneToDo = (
-    event: React.MouseEvent,
-    toDoId: number
-  ) => {
+  const handleDoneToDo = (event: React.MouseEvent, toDoId: number) => {
     event.preventDefault();
-  
+
     const updatedToDoItems = toDoList.toDoItem.map((item) => {
       if (item.toDoId === toDoId) {
         return { ...item, toDoDone: !item.toDoDone };
       }
       return item;
     });
-  
+
     setToDoList({
       ...toDoList,
       toDoItem: updatedToDoItems,
     });
   };
-  
 
   const getPriorityText = (priority: Priority): string => {
     const priorityKeyMap: Record<Priority, string> = {
@@ -199,25 +212,33 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   };
 
   const handleFilterList = async (filter: string) => {
-
+    if (featureFlag_Debug_AllLogs) {
+      console.log("TRIGGER FILTER with"+filter);
+    }
     await setCurrentFilter(filter);
 
     if (filter === "total") {
       return setShownToDoList(ToDoListService.sortToDoList(toDoList));
     } else if (filter === "today") {
-      return setShownToDoList(ToDoListService.sortToDoList(
-        ToDoListService.filterToDoListByNextXDays(toDoList, 0)
-      ));
+      return setShownToDoList(
+        ToDoListService.sortToDoList(
+          ToDoListService.filterToDoListByNextXDays(toDoList, 0)
+        )
+      );
     } else if (filter === "7Days") {
-      return setShownToDoList(ToDoListService.sortToDoList(
-        ToDoListService.filterToDoListByNextXDays(toDoList, 7))
+      return setShownToDoList(
+        ToDoListService.sortToDoList(
+          ToDoListService.filterToDoListByNextXDays(toDoList, 7)
+        )
       );
     } else if (filter === "Priority") {
-      return setShownToDoList(ToDoListService.sortToDoList(
-        ToDoListService.filterToDoListByPriority(toDoList, [
-          Priority.High,
-          Priority.Highest,
-        ]))
+      return setShownToDoList(
+        ToDoListService.sortToDoList(
+          ToDoListService.filterToDoListByPriority(toDoList, [
+            Priority.High,
+            Priority.Highest,
+          ])
+        )
       );
     } else {
       return setShownToDoList(
@@ -244,7 +265,7 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
       handleDeleteToDo={handleDeleteToDo}
       handleDoneToDo={handleDoneToDo}
       CustomComponent={() => (
-        <Container_EditTodo
+        <ContainerEditTodo
           encryptionKey={encryptionKey}
           noteId={noteId}
           toDoItemId={toDo_toEdit_id}
