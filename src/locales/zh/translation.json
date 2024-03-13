@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "其他安全选项",
   "welcomeScreen5_Option1": "一口气通行",
   "welcomeScreen5_Option2": "不同待办事项列表的不同密码",
-  "welcomeScreen5_Headline2": "您的新密码"
+  "welcomeScreen5_Headline2": "您的新密码",
+  "trial_welcomeScreen1_Headline": "很高兴您选择了我们！这是我们的试用版。您只能创建2个待办事项列表+ 4个待办事项",
+  "trial_editToDoElement_Title": "抱歉！",
+  "trial_editToDoElement_Text": "在试用版中，您只能创建4个待办事项！要编辑某事，您首先需要删除一个待办事项",
+  "trial_viewNote_TrialAlert": "这是试用版！您只能创建2个待办事项列表！"
 }

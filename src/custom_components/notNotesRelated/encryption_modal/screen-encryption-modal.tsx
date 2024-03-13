@@ -79,6 +79,7 @@ const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
             />
           </Form.Group>
           <br />
+          
           <Button
             onClick={handleKeySubmit}
             data-testid="password-inputBtn"

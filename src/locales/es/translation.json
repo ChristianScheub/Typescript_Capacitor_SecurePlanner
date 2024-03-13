@@ -92,5 +92,9 @@
   "welcomeScreen5_Headline": "Más opciones de seguridad",
   "welcomeScreen5_Option1": "Una contraseña para todo",
   "welcomeScreen5_Option2": "Diferentes contraseñas para diferentes listas de tareas pendientes",
-  "welcomeScreen5_Headline2": "Su nueva contraseña"
+  "welcomeScreen5_Headline2": "Su nueva contraseña",
+  "trial_welcomeScreen1_Headline": "¡Genial que nos hayas elegido! Esta es nuestra versión de prueba. Solo puedes crear 2 listas de tareas pendientes + 4 elementos de lista de tareas pendientes",
+  "trial_editToDoElement_Title": "¡Lo siento!",
+  "trial_editToDoElement_Text": "¡Solo puedes crear 4 elementos de lista de tareas pendientes en la versión de prueba! Para editar algo, primero debes eliminar un elemento de lista de tareas pendientes",
+  "trial_viewNote_TrialAlert": "¡Esta es una versión de prueba! ¡Solo puedes crear 2 listas de tareas pendientes!"
 }

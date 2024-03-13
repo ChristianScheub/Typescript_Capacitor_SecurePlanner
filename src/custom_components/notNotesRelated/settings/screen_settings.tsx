@@ -68,7 +68,7 @@ const View_Settings: React.FC<View_SettingsProps> = ({
 
         <div className="after-login-container">
           <div className="mb-3" style={{ margin: "2vw" }}>
-            {(!isAlreadyLoggedIn || featureFlag_DebugShowAllSettings)&& (
+            {(isAlreadyLoggedIn || featureFlag_DebugShowAllSettings)&& (
               <>
                 <h1>{t("settings_Title")}</h1>
                 <hr />

@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { Priority } from "../../enums/priority.enum";
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
-import ContainerEditTodo from "../editToDoElement/container-editToDo";
+import ContainerEditTodo from "../editToDoElement/container/container-editToDo";
 import { formatDate } from "../../services/formatDate/formatDate";
 import { getCategories } from "../../services/toDoListHandler/Categories/categories";
 import { featureFlag_Debug_AllLogs,featureFlag_Debug_Errors } from "../../featureFlags/featureFlags";

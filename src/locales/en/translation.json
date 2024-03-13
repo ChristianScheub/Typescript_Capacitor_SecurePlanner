@@ -91,6 +91,9 @@
   "welcomeScreen5_Headline": "Further security options",
   "welcomeScreen5_Option1": "One Password for everything",
   "welcomeScreen5_Option2": "Different Passwords for different ToDo lists",
-  "welcomeScreen5_Headline2": "Your new Password"
-
+  "welcomeScreen5_Headline2": "Your new Password",
+  "trial_welcomeScreen1_Headline": "This is our trial Version! You can just create 2 ToDo Lists + 4 ToDo Items",
+  "trial_editToDoElement_Title": "Sorry!",
+  "trial_editToDoElement_Text": "You can just create 4 ToDo Items in the trial version! To edit the other delete one ToDo Item!",
+  "trial_viewNote_TrialAlert": "This is a trial version! You can just create 2 ToDo Lists!"
 }

@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "Ulteriori opzioni di sicurezza",
   "welcomeScreen5_Option1": "Una password per tutto",
   "welcomeScreen5_Option2": "Password diverse per liste di cose da fare diverse",
-  "welcomeScreen5_Headline2": "La tua nuova password"
+  "welcomeScreen5_Headline2": "La tua nuova password",
+  "trial_welcomeScreen1_Headline": "Fantastico che ci hai scelto! Questa è la nostra versione di prova. Puoi creare solo 2 elenchi di cose da fare + 4 elementi di cose da fare",
+  "trial_editToDoElement_Title": "Spiacenti!",
+  "trial_editToDoElement_Text": "Puoi creare solo 4 elementi di cose da fare nella versione di prova! Per modificare qualcosa, devi prima eliminare un elemento di cose da fare",
+  "trial_viewNote_TrialAlert": "Questa è una versione di prova! Puoi creare solo 2 elenchi di cose da fare!"
 }

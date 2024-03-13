@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "Opções de segurança adicionais",
   "welcomeScreen5_Option1": "Uma senha para tudo",
   "welcomeScreen5_Option2": "Senhas diferentes para listas de tarefas diferentes",
-  "welcomeScreen5_Headline2": "Sua nova senha"
+  "welcomeScreen5_Headline2": "Sua nova senha",
+  "trial_welcomeScreen1_Headline": "Que bom que nos escolheu! Esta é a nossa versão de teste. Você só pode criar 2 listas de tarefas + 4 itens de lista de tarefas",
+  "trial_editToDoElement_Title": "Desculpe!",
+  "trial_editToDoElement_Text": "Na versão de teste, você só pode criar 4 itens de lista de tarefas! Para editar algo, primeiro é necessário excluir um item de lista de tarefas",
+  "trial_viewNote_TrialAlert": "Esta é uma versão de teste! Você só pode criar 2 listas de tarefas!"
 }

@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "추가 보안 옵션",
   "welcomeScreen5_Option1": "모든 것을 위한 하나의 비밀번호",
   "welcomeScreen5_Option2": "다른 할 일 목록에 대한 다른 비밀번호",
-  "welcomeScreen5_Headline2": "새로운 비밀번호"
+  "welcomeScreen5_Headline2": "새로운 비밀번호",
+  "trial_welcomeScreen1_Headline": "저희를 선택해 주셔서 좋아요! 이것은 우리의 체험판입니다. 할 일 목록 2개 + 할 일 항목 4개만 생성할 수 있습니다",
+  "trial_editToDoElement_Title": "죄송합니다!",
+  "trial_editToDoElement_Text": "체험판에서는 할 일 항목을 4개만 생성할 수 있습니다! 무언가를 편집하려면 먼저 할 일 항목을 하나 삭제해야 합니다",
+  "trial_viewNote_TrialAlert": "이것은 체험판입니다! 할 일 목록을 2개만 생성할 수 있습니다!"
 }

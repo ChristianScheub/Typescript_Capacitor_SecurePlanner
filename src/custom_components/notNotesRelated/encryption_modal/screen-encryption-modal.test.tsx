@@ -22,7 +22,7 @@ describe("EncryptionKeyModalView", () => {
         inputRef={mockInputRef}
       />
     );
-    expect( screen.getByTestId("password-inputBtn")).toBeInTheDocument();
+    expect(screen.getByTestId("password-inputBtn")).toBeInTheDocument();
   });
 
   it("calls handleKeySubmit on form submit", () => {

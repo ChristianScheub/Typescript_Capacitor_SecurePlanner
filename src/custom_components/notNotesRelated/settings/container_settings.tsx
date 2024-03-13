@@ -198,6 +198,7 @@ const Container_Settings: React.FC = () => {
     keysToDelete.forEach((key) => {
       localStorage.removeItem(key);
     });
+    alert("Deleted");
   }
 
   const ignoredKeys: string[] = [

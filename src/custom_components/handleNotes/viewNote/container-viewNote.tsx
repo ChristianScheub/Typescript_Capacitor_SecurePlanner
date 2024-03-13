@@ -5,7 +5,8 @@ import ViewViewNote from './screen-viewNote';
 import { useLocation } from 'react-router-dom';
 import { ToDoList } from "../../types/ToDoList.types";
 import ProgressToDoListService from "../../services/progressToDoListService/progressToDoListService";
-
+import { featureFlag_IsTrialVersion } from "../../featureFlags/featureFlags";
+import { useTranslation } from 'react-i18next';
 
 interface Container_ViewNoteProps {
   encryptionKey: string;
@@ -13,6 +14,7 @@ interface Container_ViewNoteProps {
 }
 
 const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, searchQuery }) => {
+  const { t } = useTranslation();
   const location = useLocation();
   const notes = getAllNotes(encryptionKey, searchQuery, location);
   //console.log(notes);
@@ -24,7 +26,12 @@ const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, 
   };
 
   const handleNavigateToCreateNew = () => {
-    navigate(`/edit/${Date.now().toString()}`);
+    if(notes.length>=2 && featureFlag_IsTrialVersion){
+      alert(t("trial_viewNote_TrialAlert"));
+    }
+    else{
+      navigate(`/edit/${Date.now().toString()}`);
+    }
   };
 
   const calculateProgress = (items: ToDoList) => {

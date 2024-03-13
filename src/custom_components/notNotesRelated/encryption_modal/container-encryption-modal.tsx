@@ -30,6 +30,7 @@ const Container_EncryptionKeyModal: React.FC<
     showFingerprintBtn && localStorage.length <= 2
   );
   const [passwordShortError, setPasswordShortError] = useState<boolean>(false);
+
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -47,9 +48,8 @@ const Container_EncryptionKeyModal: React.FC<
     );
   }, [showFingerprintBtn, localStorage.length]);
 
-  const handleKeySubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    if (inputRef.current!.value.length < 4) {
+  function checkPasswordLength(password: string) {
+    if (password.length < 4) {
       if (passwordShortError) {
         //That the user sees the error message is new
         setPasswordShortError(false);
@@ -59,7 +59,15 @@ const Container_EncryptionKeyModal: React.FC<
       } else {
         setPasswordShortError(true);
       }
+      return false;
     } else {
+      return true;
+    }
+  }
+
+  const handleKeySubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    if (checkPasswordLength(inputRef.current!.value)) {
       const password = getPBKDF2_Password(inputRef.current!.value);
       if (localStorage.getItem("justOnePassword") === "true") {
         if (
@@ -118,8 +126,10 @@ const Container_EncryptionKeyModal: React.FC<
 
   function closeWelcomeOverlay(password: string) {
     setShowWelcomeOverlay(false);
-    if (localStorage.getItem("securityLevel") === SecurityLevel.Low && (password === "" || password === "")) {
-
+    if (
+      localStorage.getItem("securityLevel") === SecurityLevel.Low &&
+      (password === "" || password === "")
+    ) {
     } else {
       localStorage.setItem("justOnePassword", "true");
       password = getPBKDF2_Password(password);
@@ -133,7 +143,7 @@ const Container_EncryptionKeyModal: React.FC<
 
   return (
     <>
-      {showWelcomeOverlay && featureFlag_newWelcomeScreen? (
+      {showWelcomeOverlay && featureFlag_newWelcomeScreen ? (
         <WelcomeContainer closeOverlay={closeWelcomeOverlay} />
       ) : (
         <ViewEncryptionKeyModal

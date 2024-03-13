@@ -91,5 +91,9 @@
     "welcomeScreen5_Headline": "Ytterligare säkerhetsalternativ",
     "welcomeScreen5_Option1": "Ett lösenord för allt",
     "welcomeScreen5_Option2": "Olika lösenord för olika att-göra-listor",
-    "welcomeScreen5_Headline2": "Ditt nya lösenord"
+    "welcomeScreen5_Headline2": "Ditt nya lösenord",
+    "trial_welcomeScreen1_Headline": "Fantastiskt att du har valt oss! Detta är vår provversion. Du kan bara skapa 2 att-göra-listor + 4 att-göra-objekt",
+    "trial_editToDoElement_Title": "Förlåt!",
+    "trial_editToDoElement_Text": "Du kan bara skapa 4 att-göra-objekt i provversionen! För att redigera något måste du först ta bort ett att-göra-objekt",
+    "trial_viewNote_TrialAlert": "Detta är en provversion! Du kan bara skapa 2 att-göra-listor!"  
   }  

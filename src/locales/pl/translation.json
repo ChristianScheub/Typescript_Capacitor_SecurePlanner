@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "Dodatkowe opcje zabezpieczeń",
   "welcomeScreen5_Option1": "Jedno hasło na wszystko",
   "welcomeScreen5_Option2": "Różne hasła dla różnych list zadań",
-  "welcomeScreen5_Headline2": "Twoje nowe hasło"
+  "welcomeScreen5_Headline2": "Twoje nowe hasło",
+  "trial_welcomeScreen1_Headline": "Świetnie, że nas wybrałeś! To nasza wersja próbna. Możesz utworzyć tylko 2 listy zadań + 4 elementy listy zadań",
+  "trial_editToDoElement_Title": "Przepraszamy!",
+  "trial_editToDoElement_Text": "W wersji próbnej możesz utworzyć tylko 4 elementy listy zadań! Aby coś edytować, musisz najpierw usunąć jedno zadanie!",
+  "trial_viewNote_TrialAlert": "To wersja próbna! Możesz utworzyć tylko 2 listy zadań!"
 }

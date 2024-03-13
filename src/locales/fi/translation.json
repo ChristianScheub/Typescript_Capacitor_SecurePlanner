@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "Lisäturvavaihtoehdot",
   "welcomeScreen5_Option1": "Yksi salasana kaikelle",
   "welcomeScreen5_Option2": "Eri salasanat eri tehtävälistoille",
-  "welcomeScreen5_Headline2": "Uusi salasanasi"
+  "welcomeScreen5_Headline2": "Uusi salasanasi",
+  "trial_welcomeScreen1_Headline": "Hienoa, että valitsit meidät! Tämä on kokeiluversiomme. Voit luoda vain 2 tehtävälistaa + 4 tehtäväkohdetta",
+  "trial_editToDoElement_Title": "Pahoittelut!",
+  "trial_editToDoElement_Text": "Kokeiluversiossa voit luoda vain 4 tehtäväkohdetta! Jotta voit muokata jotain, sinun on ensin poistettava yksi tehtäväkohde",
+  "trial_viewNote_TrialAlert": "Tämä on kokeiluversio! Voit luoda vain 2 tehtävälistaa!"
 }

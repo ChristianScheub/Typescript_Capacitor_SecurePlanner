@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "خيارات أمان إضافية",
   "welcomeScreen5_Option1": "كلمة مرور واحدة لكل شيء",
   "welcomeScreen5_Option2": "كلمات مرور مختلفة لقوائم المهام المختلفة",
-  "welcomeScreen5_Headline2": "كلمة المرور الجديدة الخاصة بك"
+  "welcomeScreen5_Headline2": "كلمة المرور الجديدة الخاصة بك",
+  "trial_welcomeScreen1_Headline": "!رائع أنك اخترتنا، هذه نسختنا التجريبية. يمكنك إنشاء قائمتي مهام فقط + 4 عناصر مهمة",
+  "trial_editToDoElement_Title": "آسف!",
+  "trial_editToDoElement_Text": "!يمكنك إنشاء 4 عناصر مهمة فقط في النسخة التجريبية! لتحرير شيء ما، تحتاج أولاً إلى حذف عنصر مهمة واحد",
+  "trial_viewNote_TrialAlert": "!هذه نسخة تجريبية! يمكنك إنشاء قائمتي مهام فقط"
 }

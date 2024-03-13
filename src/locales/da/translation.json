@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "Yderligere sikkerhedsmuligheder",
   "welcomeScreen5_Option1": "Én adgangskode til alt",
   "welcomeScreen5_Option2": "Forskellige adgangskoder til forskellige opgavelister",
-  "welcomeScreen5_Headline2": "Din nye adgangskode"
+  "welcomeScreen5_Headline2": "Din nye adgangskode",
+  "trial_welcomeScreen1_Headline": "Fantastiskt at du har valgt os! Dette er vores prøveversion. Du kan bare oprette 2 opgavelister + 4 opgaveelementer",
+  "trial_editToDoElement_Title": "Beklager!",
+  "trial_editToDoElement_Text": "Du kan kun oprette 4 opgaveelementer i prøveversionen! For at redigere noget skal du først slette et opgaveelement!",
+  "trial_viewNote_TrialAlert": "Dette er en prøveversion! Du kan kun oprette 2 opgavelister!"
 }

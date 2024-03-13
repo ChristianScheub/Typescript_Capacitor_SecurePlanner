@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "अतिरिक्त सुरक्षा विकल्प",
   "welcomeScreen5_Option1": "सब कुछ के लिए एक पासवर्ड",
   "welcomeScreen5_Option2": "विभिन्न टू-डू सूचियों के लिए विभिन्न पासवर्ड",
-  "welcomeScreen5_Headline2": "आपका नया पासवर्ड"
+  "welcomeScreen5_Headline2": "आपका नया पासवर्ड",
+  "trial_welcomeScreen1_Headline": "शानदार कि आपने हमें चुना है! यह हमारी परीक्षण संस्करण है। आप केवल 2 टू-डू सूचियाँ + 4 टू-डू आइटम बना सकते हैं",
+  "trial_editToDoElement_Title": "माफ़ कीजिए!",
+  "trial_editToDoElement_Text": "परीक्षण संस्करण में आप केवल 4 टू-डू आइटम बना सकते हैं! कुछ संपादित करने के लिए, पहले आपको एक टू-डू आइटम हटाना होगा",
+  "trial_viewNote_TrialAlert": "यह एक परीक्षण संस्करण है! आप केवल 2 टू-डू सूचियाँ बना सकते हैं!"
 }

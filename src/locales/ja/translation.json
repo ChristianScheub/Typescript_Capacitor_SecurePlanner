@@ -91,5 +91,9 @@
   "welcomeScreen5_Headline": "追加のセキュリティオプション",
   "welcomeScreen5_Option1": "すべてのための1つのパスワード",
   "welcomeScreen5_Option2": "異なるToDoリスト用の異なるパスワード",
-  "welcomeScreen5_Headline2": "新しいパスワード"
+  "welcomeScreen5_Headline2": "新しいパスワード",
+  "trial_welcomeScreen1_Headline": "選んでくれてありがとう！これは私たちのトライアルバージョンです。ToDoリストを2つ作成できます+ToDoアイテム4つ",
+  "trial_editToDoElement_Title": "申し訳ありません！",
+  "trial_editToDoElement_Text": "トライアルバージョンではToDoアイテムを4つしか作成できません！何かを編集するには、まずToDoアイテムを1つ削除する必要があります",
+  "trial_viewNote_TrialAlert": "これはトライアルバージョンです！ToDoリストを2つしか作成できません！"
 }

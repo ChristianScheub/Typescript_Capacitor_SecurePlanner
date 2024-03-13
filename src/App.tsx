@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBarContainer from "./custom_components/notNotesRelated/navBar/container-navBar";
 import ContainerViewNote from "./custom_components/handleNotes/viewNote/container-viewNote";
 import ContainerEditNote from "./custom_components/handleNotes/editNote/container-editNote";
-import ContainerEditTodo from "./custom_components/handleNotes/editToDoElement/container-editToDo";
+import ContainerEditTodo from "./custom_components/handleNotes/editToDoElement/container/container-editToDo";
 import "./i18n";
 import SecurityLevel from "./custom_components/enums/SecurityLevel.enum";
 import useDarkMode from "./darkModeDetector";
