@@ -35,7 +35,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   const progressBarContainerStyle: React.CSSProperties = {
     margin: "10px 0",
     padding: "5px",
-    backgroundColor: "#333",
+   
     borderRadius: "15px",
     position: "relative" as "relative",
     border: highlighted ? "3px solid #3498db" : "none", 
@@ -92,6 +92,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   return (
     <div
       style={progressBarContainerStyle}
+      className="progressBarContainerStyle"
       onClick={onClick}
     >
       {active && infoText!=="NO" && <div className="backgroundColorOnGrey" style={tooltipStyle}>{infoText}</div>}

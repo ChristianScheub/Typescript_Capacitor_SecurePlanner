@@ -17,7 +17,7 @@ const View_WelcomeScreen1 = ({
   return (
     <div className="welcome-screen">
       {featureFlag_IsTrialVersion ? (
-        <p id="infoText1">{t("trial_welcomeScreen1_Headline")}</p>
+        <p id="infoText1_Trial">{t("trial_welcomeScreen1_Headline")}</p>
       ) : (
         <p id="infoText1">{t("welcomeScreen1_Headline")}</p>
       )}

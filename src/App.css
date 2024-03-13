@@ -23,6 +23,14 @@
   color: white;
 }
 
+.darkMode .progressBarContainerStyle{
+  background-color: "#333"
+}
+
+.lightMode .progressBarContainerStyle{
+  background-color: #E0E0E0
+}
+
 .lightMode .backgroundColor {
   background-color: #F5F5F5;
   color: #212121;
