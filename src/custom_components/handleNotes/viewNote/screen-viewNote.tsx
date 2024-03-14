@@ -42,7 +42,7 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
           {notes.map((note) => (
             <Col key={note.key} style={{ marginBottom: "5vw" }}>
               <Card
-              className="backgroundColorHighlight"
+              className="backgroundColorHighlight shadow"
                 style={{
                   margin: "2vw",
                   minHeight: "20vh",

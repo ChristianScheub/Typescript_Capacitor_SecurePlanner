@@ -32,7 +32,7 @@ const NavBarView: React.FC<NavBarViewProps> = ({
   return (
     <Navbar
       variant="dark"
-      className="justify-content-between backgroundColorNotFocused"
+      className="justify-content-between backgroundColorNotFocused shadow"
       style={{
         position: "fixed",
         top: 0,

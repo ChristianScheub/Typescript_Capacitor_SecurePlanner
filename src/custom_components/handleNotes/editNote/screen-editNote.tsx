@@ -158,7 +158,7 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
             {toDoList.toDoItem.map((item, index) => (
               <Card
                 key={index}
-                className="backgroundColorHighlight"
+                className="backgroundColorHighlight shadow"
                 style={{
                   margin: "2vw",
                   minHeight: "13vh",

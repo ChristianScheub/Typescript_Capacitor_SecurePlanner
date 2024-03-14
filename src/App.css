@@ -44,7 +44,10 @@
 .lightMode .backgroundColorHighlight {
   background-color: #66B0B0;
   color: #212121;
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lightMode .shadow {
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
 }
 
 .lightMode .backgroundColorNotFocused {

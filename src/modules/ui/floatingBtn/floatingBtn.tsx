@@ -59,7 +59,7 @@ const FloatingBtn: React.FC<FloatingBtnProps> = ({ alignment, icon, onClick }) =
           borderColor: "#0a58ca",
           borderRadius: '50%',
         }}
-        className="backgroundColorHighlight"
+        className="backgroundColorHighlight shadow"
         onClick={onClick}
         data-testid="floating-btn" 
       >
