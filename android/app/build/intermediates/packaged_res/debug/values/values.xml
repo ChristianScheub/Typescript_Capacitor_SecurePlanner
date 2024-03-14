@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="ic_launcher_background">#FFFFFF</color>
-    <string name="app_name">Secure-Planer</string>
+    <string name="app_name">Secure-Planner</string>
     <string name="custom_url_scheme">de.scheub.securePlaner</string>
     <string name="package_name">de.scheub.securePlaner</string>
-    <string name="title_activity_main">Secure-Planer</string>
+    <string name="title_activity_main">Secure-Planner</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
