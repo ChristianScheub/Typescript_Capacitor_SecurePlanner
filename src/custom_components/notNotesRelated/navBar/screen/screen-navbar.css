@@ -1,0 +1,53 @@
+.navbarElement {
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #6c757d;
+  padding-top: "env(safe-area-inset-top)";
+}
+
+.navbarElement .navbarBackBtn {
+  left: 0vw;
+  background-color: transparent;
+  border: none;
+  height: 6vh;
+  width: 10vw;
+}
+
+.navbarElement .navbarDeleteNoteBtn {
+  height: 2em;
+  width: 2em;
+  z-index: 101;
+  padding-left: 50vw;
+  background-color: transparent;
+  border: none;
+  color: #DA5353;
+}
+
+.navbarElement .navbar_trashIcon{
+  color: #DA5353;
+}
+
+.navbarElement .navbarContainer{
+  width: 90vw;
+  max-width: 90vw;
+  height: 3em;
+}
+
+.navbarElement .navbarSearchInput{
+  flex: 1;
+  border: none;
+  padding: 0.75rem 1rem;
+  margin-left: 10vw;
+  border-radius: 30px;
+  color: #fff;
+  width: 70vw;
+  margin-top: 1vh;
+}
+
+.navbarElement .backBtnDiv{
+  width: 80vw 
+}
+
+.navbarElement .navbarSettingsBtn{
+  height: 2em;
+}

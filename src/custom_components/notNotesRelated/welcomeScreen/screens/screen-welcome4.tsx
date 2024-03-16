@@ -1,8 +1,8 @@
 import React from "react";
 import "./screen-welcome4.css";
-import ProgressDots from "../ui/progressDots/progressDots";
-import ContinueButton from "../ui/continueBtn/continue-button";
-import SecurityOption from "../ui/radioBtns/security-radioBtn";
+import ProgressDots from "./ui/progressDots/progressDots";
+import ContinueButton from "./ui/continueBtn/continue-button";
+import SecurityOption from "./ui/radioBtns/security-radioBtn";
 import SecurityLevel from "../../../enums/SecurityLevel.enum";
 import { TFunction } from "i18next";
 
@@ -25,7 +25,7 @@ const View_WelcomeScreen4: React.FC<View_WelcomeScreen4Props> = ({
 }) => {
 
   return (
-    <div className="welcome-screen">
+    <div className="welcome-screen colorWhite">
       <div
         style={{
           top: "10vh",

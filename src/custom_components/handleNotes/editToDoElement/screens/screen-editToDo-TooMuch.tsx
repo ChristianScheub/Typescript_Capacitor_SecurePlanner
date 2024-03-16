@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Card, InputGroup } from "react-bootstrap";
+import React from "react";
+import { Card } from "react-bootstrap";
 import { Priority } from "../../../enums/priority.enum";
-import { Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../../types/ToDoItem.types";
+import "./screen-editToDo.css";
 
 interface View_EditTodo_TooMuchProps {
   title: string;
@@ -33,28 +33,10 @@ const View_EditTodo_TooMuch: React.FC<View_EditTodo_TooMuchProps> = ({
 
   return (
     <div
-      className="edit-todo"
-      style={{
-        position: "fixed",
-        top: "40vh",
-        left: 0,
-        width: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 90,
-      }}
+      className="edit-todo-screen"
     >
       <Card
-      className="backgroundColorHighlight"
-        style={{
-          margin: "2vw",
-          marginTop: "25vh",
-          position: "absolute",
-          minHeight: "15vh",
-          width: "90vw",
-          zIndex: 99,
-        }}
+      className="backgroundColorHighlight edit-todo-card margin2vw"
       >
         <Card.Body>
         <h1>{t("trial_editToDoElement_Title")}</h1>

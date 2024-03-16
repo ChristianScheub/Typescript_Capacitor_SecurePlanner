@@ -1,9 +1,9 @@
 import React from "react";
 import "./screen-welcome4.css";
-import ProgressDots from "../ui/progressDots/progressDots";
-import ContinueButton from "../ui/continueBtn/continue-button";
-import StringRadioBtn from "../ui/radioBtns/string-radioBtn";
-import PasswordInput from "../ui/passwordInputField/passwordInputField";
+import ProgressDots from "./ui/progressDots/progressDots";
+import ContinueButton from "./ui/continueBtn/continue-button";
+import StringRadioBtn from "./ui/radioBtns/string-radioBtn";
+import PasswordInput from "./ui/passwordInputField/passwordInputField";
 import Alert from "react-bootstrap/Alert";
 import { TFunction } from "i18next";
 
@@ -26,7 +26,7 @@ const View_WelcomeScreen5: React.FC<View_WelcomeScreen5Props> = ({
 }) => {
 
   return (
-    <div className="welcome-screen">
+    <div className="welcome-screen colorWhite">
       <div
         style={{
           top: "10vh",

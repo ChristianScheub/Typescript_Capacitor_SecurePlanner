@@ -1,7 +1,7 @@
 import React from "react";
 import "../WelcomeScreen.css";
-import ProgressDots from "../ui/progressDots/progressDots";
-import ContinueButton from "../ui/continueBtn/continue-button";
+import ProgressDots from "./ui/progressDots/progressDots";
+import ContinueButton from "./ui/continueBtn/continue-button";
 import ProgressCircle from "../../../../modules/ui/progress/progressCircle/progressCircle";
 import { TFunction } from "i18next";
 
@@ -24,7 +24,7 @@ const View_WelcomeScreen3: React.FC<View_WelcomeScreen3Props> = ({
 }) => {
 
   return (
-    <div className="welcome-screen">
+    <div className="welcome-screen colorWhite">
       <div
         style={{
           display: "flex",
@@ -60,10 +60,10 @@ const View_WelcomeScreen3: React.FC<View_WelcomeScreen3Props> = ({
         <br />
         <br />
         <br />
-        <b id="infoTitle2" className="infoTextWelcome2">
+        <b id="infoTitle2" className="infoTextWelcome2 makeItCenter">
         {t("welcomeScreen3_Headline")}
         </b>
-        <p id="infoText2" className="infoTextWelcome2">
+        <p id="infoText2" className="infoTextWelcome2 makeItCenter">
         {t("welcomeScreen3_Text")}
         </p>
       </div>

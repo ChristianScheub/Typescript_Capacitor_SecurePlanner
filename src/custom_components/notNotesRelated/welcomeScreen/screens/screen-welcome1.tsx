@@ -1,7 +1,7 @@
 import "../WelcomeScreen.css";
-import ProgressDots from "../ui/progressDots/progressDots";
+import ProgressDots from "./ui/progressDots/progressDots";
 import illustration from "../welcomeIllustration.webp";
-import ContinueButton from "../ui/continueBtn/continue-button";
+import ContinueButton from "./ui/continueBtn/continue-button";
 import { TFunction } from "i18next";
 import { featureFlag_IsTrialVersion } from "../../../featureFlags/featureFlags";
 
@@ -15,7 +15,7 @@ const View_WelcomeScreen1 = ({
   t: TFunction;
 }) => {
   return (
-    <div className="welcome-screen">
+    <div className="welcome-screen colorWhite">
       {featureFlag_IsTrialVersion ? (
         <p id="infoText1_Trial">{t("trial_welcomeScreen1_Headline")}</p>
       ) : (

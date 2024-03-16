@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
 import { impressum_text } from "../app_configuration/app_texts";
 import CodeToTextParser from "./codeToTextParser";
-import NavBarContainer from "../../custom_components/notNotesRelated/navBar/container-navBar";
+import NavBarContainer from "../../custom_components/notNotesRelated/navBar/container/container-navBar";
 import { useLocation } from "react-router-dom";
 import React, { useState } from "react";
 
@@ -20,7 +20,6 @@ const Impressum: React.FC = () => {
               flexDirection: "column",
               minHeight: "100vh",
               backgroundColor: "#1E1E1E",
-              color: "white",
               paddingTop: "15vw",
             }),
       }}
@@ -37,10 +36,7 @@ const Impressum: React.FC = () => {
         )}
         <div className="after-login-container">
           <Card
-            className="mb-3 backgroundColorHighlight"
-            style={{
-              margin: "2vw"
-            }}
+            className="mb-3 backgroundColorHighlight margin2vw"
           >
             <Card.Header as="h2">Impressum / Legal Notice</Card.Header>
             <Card.Body>

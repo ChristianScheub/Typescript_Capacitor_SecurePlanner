@@ -1,0 +1,48 @@
+.encryption-modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.encryption-modal-container .modal-content {
+  max-width: 90vw;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 4vw;
+  box-sizing: border-box;
+  bottom: 35vh;
+  position: fixed;
+}
+
+.encryption-modal-container .password-input {
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  border: 1px solid #ddd;
+}
+
+.encryption-modal-container .password-submit-btn {
+  padding: 10px;
+  background-color: #2bccbd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.encryption-modal-container .fingerprint-hint-container {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60vh;
+}
+
+.encryption-modal-container .fingerprint-hint-text {
+  font-size: 5vw;
+}
+
+.encryption-modal-container .fingerprint-hint-icon {
+  font-size: 14vw;
+  transform: rotate(70deg);
+}

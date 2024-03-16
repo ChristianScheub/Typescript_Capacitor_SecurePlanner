@@ -18,7 +18,7 @@ const WelcomeOverlay: React.FC<WelcomeOverlayProps> = ({ closeOverlay }) => {
   return (
     <div style={overlayStyle}>
       {firstScreenDone ? (
-        <div style={congratulationAnimationStyle}>
+        <div style={congratulationAnimationStyle} className="colorWhite">
           <h1>{t("welcomeOverlay.h1")}</h1>
           <p>{t("welcomeOverlay.p1")}</p>
           <p>{t("welcomeOverlay.p2")}</p>
@@ -37,7 +37,7 @@ const WelcomeOverlay: React.FC<WelcomeOverlayProps> = ({ closeOverlay }) => {
           </button>
         </div>
       ) : (
-        <div style={congratulationAnimationStyle}>
+        <div style={congratulationAnimationStyle} className="colorWhite">
           <h1>{t("furtherFeatures.h1")}</h1>
           <li>{t("furtherFeatures.li1")}</li>
           <br />

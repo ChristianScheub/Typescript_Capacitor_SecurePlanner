@@ -1,0 +1,37 @@
+.viewNoteContainer{
+    margin-top: env(safe-area-inset-top);
+}
+
+.viewNoteContainer .viewNoteTable{
+    padding-top: "1vh";
+    margin-left: "4vw";
+    width: "82vw";
+}
+
+.viewNoteContainer .viewNoteCard{
+    min-height: 20vh;
+}
+
+.viewNoteCard .multipleCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewNoteContainer .singleCard{
+    font-size: "4vw";
+}
+
+.viewNoteContainer .viewNoteHintContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+.viewNoteContainer .arrowLeftColum{
+    padding-left: 2vw;
+    text-align: right;
+}

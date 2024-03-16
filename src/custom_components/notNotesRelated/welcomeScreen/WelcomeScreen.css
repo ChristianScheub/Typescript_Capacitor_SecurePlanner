@@ -3,7 +3,6 @@
   flex-direction: column;
   height: 100vh;
   background-color: #66b0b0;
-  color: white;
   font-family: "Arial", sans-serif;
   transition: opacity 0.5s ease-in-out;
 }
@@ -26,14 +25,8 @@
   position:absolute;
 }
 
-.welcome-screen .infoTextCenter{
-    text-align: center;
-    font-size: 1.4em;
-}
-
 .welcome-screen .infoTextWelcome2{
     font-size: 1.6em;
-    text-align: center;
 }
 
 .illustration {

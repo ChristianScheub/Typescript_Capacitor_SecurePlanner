@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import PrioritySlider from "../ui/priorityIndicator/priorityIndicator";
-import DatePickerComponent from "../ui/dataPicker/dataPicker";
+import React from "react";
+import PrioritySlider from "./ui/priorityIndicator/priorityIndicator";
+import DatePickerComponent from "./ui/dataPicker/dataPicker";
 import { Card, InputGroup } from "react-bootstrap";
 import { Priority } from "../../../enums/priority.enum";
 import { Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../../types/ToDoItem.types";
+import "./screen-editToDo.css";
 
 interface View_EditTodoProps {
   title: string;
@@ -35,28 +36,10 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
 
   return (
     <div
-      className="edit-todo"
-      style={{
-        position: "fixed",
-        top: "40vh",
-        left: 0,
-        width: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 90,
-      }}
+      className="edit-todo-screen"
     >
       <Card
-      className="backgroundColorHighlight"
-        style={{
-          margin: "2vw",
-          marginTop: "25vh",
-          position: "absolute",
-          minHeight: "30vh",
-          width: "90vw",
-          zIndex: 99,
-        }}
+      className="backgroundColorHighlight edit-todo-card margin2vw"
       >
         <Card.Body>
           <Form>
@@ -66,15 +49,8 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
                 value={title}
                 data-testid="noteTitleTest"
                 placeholder={t("editNote_TitlePlaceholder")}
-                className="backgroundColorNotFocused placeHolderColor"
+                className="backgroundColorNotFocused placeHolderColor note-title-input"
                 onChange={(e) => updateToDoItem("toDoTitle", e.target.value)}
-                style={{
-                  border: "none",
-                  outline: "none",
-                  boxShadow: "none",
-                  fontSize: "20px",
-                  fontWeight: "bold",
-                }}
               />
             </Form.Group>
             <hr />
@@ -99,14 +75,10 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
                   type="text"
                   list="category-options"
                   value={categorie}
-                  className="backgroundColorNotFocused placeHolderColor"
+                  className="backgroundColorNotFocused placeHolderColor category-input-group"
                   onChange={(e) =>
                     updateToDoItem("toDoCategorie", e.target.value)
                   }
-                  style={{
-                    border: "none",
-                    boxShadow: "none",
-                  }}
                 />
                 <datalist id="category-options">
                   {categoriesList.map((category, index) => (
@@ -124,16 +96,9 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
                 value={desc}
                 id="editToDo_Text"
                 data-testid="noteTextTest"
-                className="backgroundColorNotFocused placeHolderColor"
+                className="backgroundColorNotFocused placeHolderColor note-detail-textarea"
                 placeholder={t("editToDoElement_DetailText")}
                 onChange={(e) => updateToDoItem("toDoText", e.target.value)}
-                style={{
-                  border: "0",
-                  fontFamily:
-                    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-                  padding: "10px",
-                  height: "10vh",
-                }}
               />
             </Form.Group>
           </Form>

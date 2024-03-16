@@ -1,8 +1,8 @@
 import React from "react";
 import "../WelcomeScreen.css";
-import ProgressDots from "../ui/progressDots/progressDots";
+import ProgressDots from "./ui/progressDots/progressDots";
 import illustration from "../secureIcon.webp";
-import ContinueButton from "../ui/continueBtn/continue-button";
+import ContinueButton from "./ui/continueBtn/continue-button";
 import { TFunction } from "i18next";
 
 const View_WelcomeScreen2 = ({
@@ -16,7 +16,7 @@ const View_WelcomeScreen2 = ({
 }) => {
 
   return (
-    <div className="welcome-screen">
+    <div className="welcome-screen colorWhite">
       <div
         style={{
           top: "20vh",
@@ -29,10 +29,10 @@ const View_WelcomeScreen2 = ({
         <br />
         <br />
         <br />
-        <b id="infoTitle2" className="infoTextWelcome2">
+        <b id="infoTitle2" className="infoTextWelcome2 makeItCenter">
         {t("welcomeScreen2_Headline")}
         </b>
-        <p id="infoText2" className="infoTextWelcome2">
+        <p id="infoText2" className="infoTextWelcome2 makeItCenter">
         {t("welcomeScreen2_Text")}
         </p>
       </div>

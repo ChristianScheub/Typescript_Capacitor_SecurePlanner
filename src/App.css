@@ -1,65 +1,18 @@
-.darkMode .backgroundColor {
-  background-color: #1E1E1E;
+.makeItCenter {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.colorWhite{
   color: white;
 }
 
-.darkMode .placeHolderColor::placeholder {
-  color: white;
-  opacity: 1;
+.width100{
+  width: 100%;
 }
 
-.darkMode .backgroundColorHighlight {
-  background-color: #49454F;
-  color: white;
-}
-
-.darkMode .backgroundColorNotFocused {
-  background-color: #161616;
-  color: white;
-}
-
-.darkMode .backgroundColorOnGrey{
-  background-color: #25262B;
-  color: white;
-}
-
-.darkMode .progressBarContainerStyle{
-  background-color: "#333"
-}
-
-.lightMode .progressBarContainerStyle{
-  background-color: #E0E0E0
-}
-
-.lightMode .backgroundColor {
-  background-color: #F5F5F5;
-  color: #212121;
-}
-
-.lightMode .placeHolderColor::placeholder {
-  color: #212121;
-  opacity: 1;
-}
-
-.lightMode .backgroundColorHighlight {
-  background-color: #66B0B0;
-  color: #212121;
-}
-
-.lightMode .shadow {
-  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
-}
-
-.lightMode .backgroundColorNotFocused {
-  background-color: #3D6868;
-  color: #E0E0E0;
-}
-
-.lightMode .backgroundColorOnGrey{
-  background-color: #E0E0E0;
-  color: #212121;
-}
-
-.lightMode .iconColor {
-  color: #E0E0E0;
+.margin2vw{
+  margin: 2vw;
 }
