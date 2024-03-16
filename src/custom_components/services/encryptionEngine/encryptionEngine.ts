@@ -74,8 +74,6 @@ export const encryptAndStore = async (
   localStorage.setItem(storageKey, encryptedData);
 };
 
-export const storeLowSecurity = async (): Promise<void> => {};
-
 export const encrypt = async (
   text: string,
   password: string

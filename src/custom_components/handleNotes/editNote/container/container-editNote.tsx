@@ -9,7 +9,6 @@ import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../../services/progressToDoListService/progressToDoListService";
 import ContainerEditTodo from "../../editToDoElement/container/container-editToDo";
 import { formatDate } from "../../../services/formatDate/formatDate";
-import { getCategories } from "../../../services/toDoListHandler/Categories/categories";
 import { featureFlag_Debug_AllLogs,featureFlag_Debug_Errors } from "../../../featureFlags/featureFlags";
 
 interface Container_EditNoteProps {
@@ -72,7 +71,7 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
           );
           if (noteData) {
             setToDoList(noteData);
-            setCategoriesList(getCategories(toDoList));
+            setCategoriesList(ToDoListService.getCategories(toDoList));
             const sortedToDoList = ToDoListService.sortToDoList(toDoList);
             if (!isEqual(sortedToDoList.toDoItem, toDoList.toDoItem)) {
               setToDoList(sortedToDoList);
@@ -103,7 +102,7 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
         try {
           await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
           handleFilterList(currentFilter);
-          setCategoriesList(getCategories(toDoList));
+          setCategoriesList(ToDoListService.getCategories(toDoList));
         } catch (error) {
           if (featureFlag_Debug_Errors) {
             console.error("Fehler beim Speichern der Notiz",error);

@@ -2,6 +2,7 @@
 import * as Filter from './Filter/toDoListFilter';
 import * as Persistence from './Persistence/toDoListPersistence';
 import * as Sorter from "./Sorter/toDoListSort";
+import * as Categories from './Categories/categories';
 import { IToDoListService } from './IToDoListService';
 
 const toDoListService: IToDoListService = {
@@ -13,6 +14,7 @@ const toDoListService: IToDoListService = {
   filterToDoListByNextXDays: Filter.filterToDoListByNextXDays,
   filterToDoListByPriority: Filter.filterToDoListByPriority,
   filterToDoListByCategory: Filter.filterToDoListByCategory,
+  getCategories: Categories.getCategories,
 };
 
 export default toDoListService;

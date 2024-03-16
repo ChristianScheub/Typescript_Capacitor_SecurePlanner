@@ -20,4 +20,5 @@ export interface IToDoListService {
   filterToDoListByNextXDays: (toDoList: ToDoList,numOfDays: number) => ToDoList;
   filterToDoListByPriority: (toDoList: ToDoList, priorities: Priority[]) => ToDoList;
   filterToDoListByCategory: (toDoList: ToDoList, category: string) => ToDoList;
+  getCategories: (toDoList: ToDoList) => string[];
 }
