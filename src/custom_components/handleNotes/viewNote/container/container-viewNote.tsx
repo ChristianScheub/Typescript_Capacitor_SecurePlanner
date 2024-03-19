@@ -17,7 +17,6 @@ const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, 
   const { t } = useTranslation();
   const location = useLocation();
   const notes = getAllNotes(encryptionKey, searchQuery, location);
-  //console.log(notes);
 
   const navigate = useNavigate();
 

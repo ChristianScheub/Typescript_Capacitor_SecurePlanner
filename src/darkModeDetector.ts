@@ -5,10 +5,13 @@ function useDarkMode() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = () => setTheme(mediaQuery.matches ? 'darkMode' : 'lightMode');
-    handleChange();
-    mediaQuery.addListener(handleChange);
-    return () => mediaQuery.removeListener(handleChange);
+    const handleChange = (event: MediaQueryListEvent) => setTheme(event.matches ? 'darkMode' : 'lightMode');
+
+    mediaQuery.addEventListener('change', handleChange);
+    
+    setTheme(mediaQuery.matches ? 'darkMode' : 'lightMode');
+
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   return theme;

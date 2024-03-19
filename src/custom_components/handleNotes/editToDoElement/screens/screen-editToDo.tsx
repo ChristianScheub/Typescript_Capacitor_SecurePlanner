@@ -1,9 +1,8 @@
 import React from "react";
 import PrioritySlider from "./ui/priorityIndicator/priorityIndicator";
 import DatePickerComponent from "./ui/dataPicker/dataPicker";
-import { Card, InputGroup } from "react-bootstrap";
+import { Card, InputGroup,Form } from "react-bootstrap";
 import { Priority } from "../../../enums/priority.enum";
-import { Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../../types/ToDoItem.types";
 import "./screen-editToDo.css";

@@ -101,7 +101,7 @@ export const storePasswordFromFingerprint = async (
   }
 };
 
-export const availableBiometric = async (): Promise<Boolean> => {
+export const availableBiometric = async (): Promise<boolean> => {
   try {
     return ((await NativeBiometric.isAvailable()).isAvailable);
   } catch (error) {

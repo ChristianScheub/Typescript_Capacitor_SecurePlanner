@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ProgressBarCategoryMenu from './progressBarMenu';
 import '@testing-library/jest-dom';
-import ProgressBar from '../progressBar/progressBar';
 
 jest.mock('../progressBar/progressBar', () => ({
   __esModule: true,

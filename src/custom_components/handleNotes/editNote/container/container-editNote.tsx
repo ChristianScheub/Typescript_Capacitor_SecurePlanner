@@ -21,7 +21,7 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   let { noteId } = useParams<{ noteId?: string }>();
   const { t } = useTranslation();
   const [toDo_toEdit_id, setToDo_toEdit_id] = useState<number>();
-  const [showToDoEdit, setShowToDoEdit] = useState<Boolean>(false);
+  const [showToDoEdit, setShowToDoEdit] = useState<boolean>(false);
   const [currentFilter, setCurrentFilter] = useState<string>("total");
 
   //The Keys which should be ignored and maybe set already (i18nextLng, capuid are web only so not smartphone relevant)

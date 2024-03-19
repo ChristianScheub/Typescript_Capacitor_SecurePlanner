@@ -33,7 +33,7 @@ interface Note {
   content: string;
   title: string;
   date: Date;
-  additionalInfo: String;
+  additionalInfo: string;
 }
 
 describe("EditNote Component", () => {
@@ -190,7 +190,6 @@ describe("EditNote Component", () => {
               });
             }
           } catch (error) {
-            //console.log("Decryption or JSON parsing failed", error);
           }
         }
       }

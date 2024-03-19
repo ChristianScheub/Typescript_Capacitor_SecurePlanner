@@ -1,6 +1,9 @@
-/* WelcomeContainer.css */
 .welcome-container {
   background-color: #66b0b0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
 }
 .screen {
   position: absolute;
@@ -21,10 +24,4 @@
 
 .hide {
   display: none; /* Versteckt die Komponente, die nicht animiert wird */
-}
-.welcome-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
 }

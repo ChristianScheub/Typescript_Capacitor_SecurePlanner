@@ -4,16 +4,11 @@ import {
   render,
   screen,
   fireEvent,
-  act,
   waitFor,
 } from "@testing-library/react";
 import React from "react";
-
-import { useNavigate, useParams } from "react-router-dom";
 import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
 import { ToDoList } from "../../../types/ToDoList.types";
-import { ToDoItem } from "../../../types/ToDoItem.types";
-import { Priority as PriorityEnum } from "../../../enums/priority.enum";
 
 jest.mock("../../services/toDoListHandler/toDoListHandler", () => ({
   loadToDoList: jest.fn(),

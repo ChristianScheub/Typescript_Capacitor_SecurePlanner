@@ -1,6 +1,5 @@
 import * as CryptoJS from 'crypto-js';
 import { makeReadyForExport, makeReadyForImport,getDeviceIdHash } from './encryptionEngine'; // Adjust this import path to your actual file
-import { Device } from "@capacitor/device";
 
 describe('Encryption Tests', () => {
 

@@ -5,8 +5,8 @@ export interface ProgressToDoListService {
   isNextNDays: (dateInput: Date | string, days: number) => boolean;
   calculateProgress: (
     toDoItems: ToDoItem[],
-    predicate: (item: ToDoItem) => Boolean,
-    totalPredicate?: (item: ToDoItem) => Boolean
+    predicate: (item: ToDoItem) => boolean,
+    totalPredicate?: (item: ToDoItem) => boolean
   ) => number;
   calculateProgressForCategory: (items: ToDoItem[], category: string) => number;
 }
@@ -54,8 +54,8 @@ const progressToDoListService: ProgressToDoListService = {
 
   calculateProgress: (
     toDoItems: ToDoItem[],
-    predicate: (item: ToDoItem) => Boolean,
-    totalPredicate?: (item: ToDoItem) => Boolean
+    predicate: (item: ToDoItem) => boolean,
+    totalPredicate?: (item: ToDoItem) => boolean
   ): number => {
     if (!Array.isArray(toDoItems)) {
       return 100;

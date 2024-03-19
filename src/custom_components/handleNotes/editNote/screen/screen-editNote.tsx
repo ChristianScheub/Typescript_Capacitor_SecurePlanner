@@ -16,7 +16,7 @@ import "./screen-editNote.css";
 
 interface View_EditNoteViewProps {
   toDoList: ToDoList;
-  isNewPath: Boolean;
+  isNewPath: boolean;
   categoriesList: string[];
   getCategoryProgress: (category: string) => number;
   progressOverall: number;
@@ -37,7 +37,7 @@ interface View_EditNoteViewProps {
     toDoId: number
   ) => void;
   CustomComponent: () => React.ReactNode;
-  showToDoEdit: Boolean;
+  showToDoEdit: boolean;
   onHandleToDoSave: () => void;
   handleFilterList: (filterArgument: string) => void;
 }

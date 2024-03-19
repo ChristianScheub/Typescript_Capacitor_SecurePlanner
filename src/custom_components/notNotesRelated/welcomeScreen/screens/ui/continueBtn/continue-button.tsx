@@ -3,7 +3,7 @@ import './continue-button.css';
 
 interface ContinueButtonProps {
   onClick: () => void;
-  textBtn: String;
+  textBtn: string;
 }
 
 const ContinueButton: React.FC<ContinueButtonProps> = ({ onClick, textBtn }) => {
