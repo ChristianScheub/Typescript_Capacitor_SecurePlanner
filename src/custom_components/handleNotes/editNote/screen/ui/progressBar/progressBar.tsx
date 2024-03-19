@@ -48,8 +48,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-start",
-    position: "relative" as "relative",
-    whiteSpace: "nowrap" as "nowrap",
+    position: "relative",
+    whiteSpace: "nowrap",
   };
 
   const progressStyle: React.CSSProperties = {
@@ -65,7 +65,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   };
 
   const progressTextStyle: React.CSSProperties = {
-    position: "absolute" as "absolute",
+    position: "absolute",
     top: "50%",
     transform: "translateY(-50%)",
     fontWeight: "bold",
@@ -73,7 +73,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   };
 
   const tooltipStyle: React.CSSProperties = {
-    position: "absolute" as "absolute",
+    position: "absolute",
     bottom: "100%",
     left: "50%",
     transform: "translateX(-50%)",
@@ -81,7 +81,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
     borderRadius: "6px",
     textAlign: "center",
     width: "80vw",
-    whiteSpace: "normal" as "normal",
+    whiteSpace: "normal",
     zIndex: 3,
     display: active ? "block" : "none",
   };

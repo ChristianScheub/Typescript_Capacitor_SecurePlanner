@@ -45,7 +45,7 @@ const WelcomeScreen4Container: React.FC<WelcomeScreen4ContainerProps> = ({
         await getDeviceIdHash()
       );
 
-      await localStorage.setItem(
+      localStorage.setItem(
         "securityLevelReallyLow",
         expectedValueSecurityLevelLowValue
       );

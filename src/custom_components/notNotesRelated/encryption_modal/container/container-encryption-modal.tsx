@@ -128,7 +128,7 @@ const Container_EncryptionKeyModal: React.FC<
     setShowWelcomeOverlay(false);
     if (
       localStorage.getItem("securityLevel") === SecurityLevel.Low &&
-      (password === "" || password === "")
+      password === ""
     ) {
     } else {
       localStorage.setItem("justOnePassword", "true");

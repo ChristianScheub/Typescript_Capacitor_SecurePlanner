@@ -57,6 +57,6 @@ describe('CodeToTextParser Component', () => {
         expect(screen.getByText(/Hello,/i)).toBeInTheDocument();
         expect(screen.getByText(/world/i)).toBeInTheDocument();
         expect(screen.getByText(/world/i)).toHaveStyle('font-weight: bold');
-        expect(screen.getByText(/React\!/i)).toBeInTheDocument();
+        expect(screen.getByText("React")).toBeInTheDocument();
     });
 });
