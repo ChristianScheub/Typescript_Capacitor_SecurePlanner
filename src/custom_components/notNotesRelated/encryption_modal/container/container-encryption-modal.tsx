@@ -16,12 +16,12 @@ import WelcomeContainer from "../../welcomeScreen/container/container-welcomeScr
 import SecurityLevel from "../../../enums/SecurityLevel.enum";
 import { featureFlag_newWelcomeScreen } from "../../../featureFlags/featureFlags";
 
-interface Container_EncryptionKeyModalProps {
+interface ContainerEncryptionKeyModalProps {
   onSubmit: (encryptionKey: string) => void;
 }
 
-const Container_EncryptionKeyModal: React.FC<
-  Container_EncryptionKeyModalProps
+const ContainerEncryptionKeyModal: React.FC<
+  ContainerEncryptionKeyModalProps
 > = ({ onSubmit }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -160,4 +160,4 @@ const Container_EncryptionKeyModal: React.FC<
   );
 };
 
-export default Container_EncryptionKeyModal;
+export default ContainerEncryptionKeyModal;

@@ -50,9 +50,9 @@ const UsedLibsListContainer: React.FC = () => {
 
   return (
     <div>
-      <div onClick={handleClickOpen} data-testid="usedLib_Open_Btn">
+      <p onClick={handleClickOpen} data-testid="usedLib_Open_Btn">
         {t("setting_Menu_OpenSourceModulList")}
-      </div>
+      </p>
       <UsedLibListScreen
         open={open}
         handleClose={handleClose}

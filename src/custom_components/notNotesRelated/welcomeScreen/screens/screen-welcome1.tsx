@@ -5,7 +5,7 @@ import ContinueButton from "./ui/continueBtn/continue-button";
 import { TFunction } from "i18next";
 import { featureFlag_IsTrialVersion } from "../../../featureFlags/featureFlags";
 
-const View_WelcomeScreen1 = ({
+const ViewWelcomeScreen1 = ({
   onNext,
   availableScreens,
   t,
@@ -28,4 +28,4 @@ const View_WelcomeScreen1 = ({
   );
 };
 
-export default View_WelcomeScreen1;
+export default ViewWelcomeScreen1;

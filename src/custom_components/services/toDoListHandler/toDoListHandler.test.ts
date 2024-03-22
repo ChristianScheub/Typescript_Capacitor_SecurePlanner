@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import { ToDoList } from "../../types/ToDoList.types";
 import {
@@ -145,7 +144,7 @@ describe("saveToDoList", () => {
     expect(encryptAndStore).toHaveBeenCalled();
     const callArg = mockedEncryptAndStore.mock.calls[0][2];
     expect(callArg).not.toBeUndefined();
-    expect(callArg).not.toBe("todo_1"); // Assuming 'todo_1' is a known ID, ensure a new one is generated
+    expect(callArg).not.toBe("todo_1");
   });
 
   it("handles encryption failures gracefully", async () => {

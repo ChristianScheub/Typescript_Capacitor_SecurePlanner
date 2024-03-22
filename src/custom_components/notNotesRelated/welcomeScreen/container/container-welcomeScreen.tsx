@@ -31,19 +31,25 @@ const WelcomeContainer: React.FC<WelcomeContainerProps> = ({ closeOverlay }) => 
     trackTouch: true,
   });
 
+  const getScreenClassName = (screenNumber: number): string => {
+    if (currentScreen === screenNumber) return "slide-in";
+    else if (currentScreen === screenNumber + 1) return "slide-out";
+    return "hide";
+  };
+
   return (
     <div {...handlers} className="welcome-container">
-      <div className={`screen ${currentScreen === 4 ? "slide-in" : currentScreen === 5 ? "slide-out" : "hide"}`}>
+       <div className={`screen ${getScreenClassName(4)}`}>
         <WelcomeScreen5Container closeOverlay={closeOverlay}/>
       </div>
 
-      <div className={`screen ${currentScreen === 3 ? "slide-in" : currentScreen === 4 ? "slide-out" : "hide"}`}>
+      <div className={`screen ${getScreenClassName(3)}`}>
         <WelcomeScreen4Container closeOverlay={closeOverlay} setAvailableScreens={setAvailableScreens} availableScreens={availableScreens} setCurrentScreen={setCurrentScreen}/>
       </div>
-      <div className={`screen ${currentScreen === 2 ? "slide-in" : currentScreen === 3 ? "slide-out" : "hide"}`}>
+      <div className={`screen ${getScreenClassName(2)}`}>
         <WelcomeScreen3Container onNext={nextScreen} isActivate={currentScreen===2} availableScreens={availableScreens} />
       </div>
-      <div className={`screen ${currentScreen === 1 ? "slide-in" : currentScreen === 2 ? "slide-out" : "hide"}`}>
+      <div className={`screen ${getScreenClassName(1)}`}>
         <WelcomeScreen2Container onNext={nextScreen} availableScreens={availableScreens} />
       </div>
       <div className={`screen ${currentScreen === 0 ? "slide-in" : "slide-out"}`}>

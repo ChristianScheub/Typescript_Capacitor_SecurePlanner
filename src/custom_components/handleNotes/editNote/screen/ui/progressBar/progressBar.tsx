@@ -36,7 +36,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
     margin: "10px 0",
     padding: "5px",
     borderRadius: "15px",
-    position: "relative" as "relative",
+    position: "relative",
     border: highlighted ? "3px solid #3498db" : "none", 
   };
 

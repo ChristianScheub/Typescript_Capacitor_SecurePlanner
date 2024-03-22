@@ -1,11 +1,10 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Form,Card } from "react-bootstrap";
 import { FaRegSave, FaTrash } from "react-icons/fa";
 import FloatingBtn, {
   ButtonAlignment,
 } from "../../../../modules/ui/floatingBtn/floatingBtn";
 import { useTranslation } from "react-i18next";
-import { Card } from "react-bootstrap";
 import { ToDoList } from "../../../types/ToDoList.types";
 import { MdOutlineEdit } from "react-icons/md";
 import { IoAddSharp } from "react-icons/io5";
@@ -14,7 +13,7 @@ import DateDisplayWithClock from "./ui/dateWithClock/dateWithClock";
 import ProgressBarScreen from "./ui/progressBarMenu/progressBarScreen";
 import "./screen-editNote.css";
 
-interface View_EditNoteViewProps {
+interface ViewEditNoteViewProps {
   toDoList: ToDoList;
   isNewPath: boolean;
   categoriesList: string[];
@@ -42,7 +41,7 @@ interface View_EditNoteViewProps {
   handleFilterList: (filterArgument: string) => void;
 }
 
-const View_EditNote: React.FC<View_EditNoteViewProps> = ({
+const ViewEditNote: React.FC<ViewEditNoteViewProps> = ({
   toDoList,
   isNewPath,
   categoriesList,
@@ -215,13 +214,11 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
         )}
 
         {!showToDoEdit && (
-          <>
             <FloatingBtn
               alignment={ButtonAlignment.RIGHT}
               icon={IoAddSharp}
               onClick={handleAdd}
             />
-          </>
         )}
 
         {isNewPath && toDoList.toDoItem.length < 1 && (
@@ -246,4 +243,4 @@ const View_EditNote: React.FC<View_EditNoteViewProps> = ({
   );
 };
 
-export default View_EditNote;
+export default ViewEditNote;

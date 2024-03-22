@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ViewEditTodo from "../screens/screen-editToDo";
-import View_EditTodo_TooMuch from "../screens/screen-editToDo-TooMuch";
+import ViewEditTodoTooMuch from "../screens/screen-editToDo-TooMuch";
 import { Priority } from "../../../enums/priority.enum";
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../../types/ToDoItem.types";
@@ -11,20 +11,20 @@ import {
   featureFlag_IsTrialVersion,
 } from "../../../featureFlags/featureFlags";
 
-interface Container_EditTodoProps {
+interface ContainerEditTodoProps {
   encryptionKey: string;
   noteId?: string;
   toDoItemId?: number;
 }
 
-const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
+const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
   encryptionKey,
   noteId,
   toDoItemId,
 }) => {
   const { t } = useTranslation();
   const [translatedPrio, setTranslatedPrio] = useState<string>("");
-  const toDoItemIdInt = toDoItemId ? toDoItemId : 1;
+  const toDoItemIdInt = toDoItemId || 1;
   const [trialAndToMuch, setTrialAndToMuch] = useState<boolean>(false);
 
   //ToDoList wird benötigt für den Speichervorgang
@@ -182,7 +182,7 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
 
   if (trialAndToMuch) {
     return (
-      <View_EditTodo_TooMuch
+      <ViewEditTodoTooMuch
         title={toDoListItem.toDoTitle}
         desc={toDoListItem.toDoText}
         endDate={toDoListItem.toDoEndDate}
@@ -210,4 +210,4 @@ const Container_EditTodo: React.FC<Container_EditTodoProps> = ({
   );
 };
 
-export default Container_EditTodo;
+export default ContainerEditTodo;

@@ -2,12 +2,12 @@ import React from "react";
 import WelcomeScreen2View from "../../screens/screen-welcome2";
 import { useTranslation } from "react-i18next";
 
-interface Container_WelcomeScreen2Props {
+interface ContainerWelcomeScreen2Props {
   onNext: () => void;
   availableScreens: number;
 }
 
-const Container_WelcomeScreen2: React.FC<Container_WelcomeScreen2Props> = ({
+const ContainerWelcomeScreen2: React.FC<ContainerWelcomeScreen2Props> = ({
   onNext,
   availableScreens,
 }) => {
@@ -18,4 +18,4 @@ const Container_WelcomeScreen2: React.FC<Container_WelcomeScreen2Props> = ({
   );
 };
 
-export default Container_WelcomeScreen2;
+export default ContainerWelcomeScreen2;

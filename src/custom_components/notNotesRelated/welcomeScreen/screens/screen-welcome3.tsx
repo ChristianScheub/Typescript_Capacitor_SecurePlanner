@@ -5,7 +5,7 @@ import ContinueButton from "./ui/continueBtn/continue-button";
 import ProgressCircle from "../../../../modules/ui/progress/progressCircle/progressCircle";
 import { TFunction } from "i18next";
 
-interface View_WelcomeScreen3Props {
+interface ViewWelcomeScreen3Props {
   onNext: () => void;
   availableScreens: number;
   progress1: number;
@@ -14,7 +14,7 @@ interface View_WelcomeScreen3Props {
   t: TFunction;
 }
 
-const View_WelcomeScreen3: React.FC<View_WelcomeScreen3Props> = ({
+const ViewWelcomeScreen3: React.FC<ViewWelcomeScreen3Props> = ({
   onNext,
   availableScreens,
   progress1,
@@ -73,4 +73,4 @@ const View_WelcomeScreen3: React.FC<View_WelcomeScreen3Props> = ({
   );
 };
 
-export default View_WelcomeScreen3;
+export default ViewWelcomeScreen3;

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../../types/ToDoItem.types";
 import "./screen-editToDo.css";
 
-interface View_EditTodo_TooMuchProps {
+interface ViewEditTodo_TooMuchProps {
   title: string;
   desc: string;
   endDate: Date;
@@ -19,7 +19,7 @@ interface View_EditTodo_TooMuchProps {
   ) => void;
 }
 
-const View_EditTodo_TooMuch: React.FC<View_EditTodo_TooMuchProps> = ({
+const ViewEditTodo_TooMuch: React.FC<ViewEditTodo_TooMuchProps> = ({
   title,
   desc,
   endDate,
@@ -47,4 +47,4 @@ const View_EditTodo_TooMuch: React.FC<View_EditTodo_TooMuchProps> = ({
   );
 };
 
-export default View_EditTodo_TooMuch;
+export default ViewEditTodo_TooMuch;

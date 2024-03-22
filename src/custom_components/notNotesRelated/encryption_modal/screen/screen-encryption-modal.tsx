@@ -11,7 +11,7 @@ import { FaArrowDownLong } from "react-icons/fa6";
 import Alert from "react-bootstrap/Alert";
 import "./screen-encryption-modal.css";
 
-interface View_EncryptionKeyModalProps {
+interface ViewEncryptionKeyModalProps {
   showFingerprintBtn: boolean;
   showFingerprintHint: boolean;
   showPasswordShortError: boolean;
@@ -21,7 +21,7 @@ interface View_EncryptionKeyModalProps {
   inputRef: RefObject<HTMLInputElement>;
 }
 
-const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
+const ViewEncryptionKeyModal: React.FC<ViewEncryptionKeyModalProps> = ({
   handleKeySubmit,
   activateFingerprint,
   showFingerprintBtn,
@@ -89,4 +89,4 @@ const View_EncryptionKeyModal: React.FC<View_EncryptionKeyModalProps> = ({
   );
 };
 
-export default View_EncryptionKeyModal;
+export default ViewEncryptionKeyModal;

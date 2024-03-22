@@ -7,7 +7,7 @@ import UsedLibsListContainer from "../../../../modules/legal/usedLibs/container_
 import NavBarContainer from "../../navBar/container/container-navBar";
 import { featureFlag_DebugShowAllSettings } from "../../../featureFlags/featureFlags";
 
-interface View_SettingsProps {
+interface ViewSettingsProps {
   showFingerprintBtn: boolean;
   onDeleteAllClick: (
     showFingerprintBtn: boolean,
@@ -23,7 +23,7 @@ interface View_SettingsProps {
   isAlreadyLoggedIn: boolean;
 }
 
-const View_Settings: React.FC<View_SettingsProps> = ({
+const ViewSettings: React.FC<ViewSettingsProps> = ({
   showFingerprintBtn,
   onDeleteAllClick,
   onDeleteBiometryClick,
@@ -33,7 +33,7 @@ const View_Settings: React.FC<View_SettingsProps> = ({
   onFileChange,
   onDeleteNotesClick,
   onDeleteTechnicalDataClick,
-  isAlreadyLoggedIn
+  isAlreadyLoggedIn,
 }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -42,8 +42,8 @@ const View_Settings: React.FC<View_SettingsProps> = ({
     useState<string>("");
 
   return (
-    <div className="backgroundColor"
-
+    <div
+      className="backgroundColor"
       style={{
         ...(isAlreadyLoggedIn
           ? {}
@@ -52,7 +52,7 @@ const View_Settings: React.FC<View_SettingsProps> = ({
               flexDirection: "column",
               minHeight: "100vh",
               paddingTop: "15vw",
-            } ),
+            }),
       }}
     >
       <div
@@ -61,14 +61,12 @@ const View_Settings: React.FC<View_SettingsProps> = ({
         }}
       >
         {!isAlreadyLoggedIn && (
-          <>
-            <NavBarContainer setSearchQuery={setSearchQueryPlaceholder} />
-          </>
+          <NavBarContainer setSearchQuery={setSearchQueryPlaceholder} />
         )}
 
         <div className="after-login-container">
           <div className="mb-3 margin2vw">
-            {(isAlreadyLoggedIn || featureFlag_DebugShowAllSettings)&& (
+            {(isAlreadyLoggedIn || featureFlag_DebugShowAllSettings) && (
               <>
                 <h1>{t("settings_Title")}</h1>
                 <hr />
@@ -181,4 +179,4 @@ const View_Settings: React.FC<View_SettingsProps> = ({
   );
 };
 
-export default View_Settings;
+export default ViewSettings;

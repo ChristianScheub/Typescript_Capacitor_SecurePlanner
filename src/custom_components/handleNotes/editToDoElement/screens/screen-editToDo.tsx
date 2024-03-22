@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../../types/ToDoItem.types";
 import "./screen-editToDo.css";
 
-interface View_EditTodoProps {
+interface ViewEditTodoProps {
   title: string;
   desc: string;
   endDate: Date;
@@ -21,7 +21,7 @@ interface View_EditTodoProps {
   ) => void;
 }
 
-const View_EditTodo: React.FC<View_EditTodoProps> = ({
+const ViewEditTodo: React.FC<ViewEditTodoProps> = ({
   title,
   desc,
   endDate,
@@ -107,4 +107,4 @@ const View_EditTodo: React.FC<View_EditTodoProps> = ({
   );
 };
 
-export default View_EditTodo;
+export default ViewEditTodo;

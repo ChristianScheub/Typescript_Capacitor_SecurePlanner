@@ -22,6 +22,8 @@ const StringRadioOption: React.FC<RadioOptionProps> = ({
     <div
       className={`option ${isSelected ? "selected" : ""}`}
       onClick={handleClick}
+      role="button"
+      tabIndex={0}
     >
       <table>
         <tbody>

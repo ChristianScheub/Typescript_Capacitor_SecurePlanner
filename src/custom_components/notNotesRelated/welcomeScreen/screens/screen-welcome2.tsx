@@ -5,7 +5,7 @@ import illustration from "../secureIcon.webp";
 import ContinueButton from "./ui/continueBtn/continue-button";
 import { TFunction } from "i18next";
 
-const View_WelcomeScreen2 = ({
+const ViewWelcomeScreen2 = ({
   onNext,
   availableScreens,
   t
@@ -42,4 +42,4 @@ const View_WelcomeScreen2 = ({
   );
 };
 
-export default View_WelcomeScreen2;
+export default ViewWelcomeScreen2;

@@ -13,7 +13,7 @@ import { ToDoList } from "../../../types/ToDoList.types";
 import { MdArrowForwardIos } from "react-icons/md";
 import "./screen-viewNote.css";
 
-interface View_ViewNoteProps {
+interface ViewViewNoteProps {
   notes: ToDoListWithKey[];
   onNavigateToEdit: (noteId: string) => void;
   onNavigateToCreateNew: () => void;
@@ -23,7 +23,7 @@ interface View_ViewNoteProps {
   truncateText: (text: string, maxLength: number) => string;
 }
 
-const View_ViewNote: React.FC<View_ViewNoteProps> = ({
+const ViewViewNote: React.FC<ViewViewNoteProps> = ({
   notes,
   onNavigateToEdit,
   onNavigateToCreateNew,
@@ -150,4 +150,4 @@ const View_ViewNote: React.FC<View_ViewNoteProps> = ({
   );
 };
 
-export default View_ViewNote;
+export default ViewViewNote;

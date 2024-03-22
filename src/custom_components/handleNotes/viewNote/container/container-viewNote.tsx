@@ -8,12 +8,12 @@ import ProgressToDoListService from "../../../services/progressToDoListService/p
 import { featureFlag_IsTrialVersion } from "../../../featureFlags/featureFlags";
 import { useTranslation } from 'react-i18next';
 
-interface Container_ViewNoteProps {
+interface ContainerViewNoteProps {
   encryptionKey: string;
   searchQuery: string;
 }
 
-const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, searchQuery }) => {
+const ContainerViewNote: React.FC<ContainerViewNoteProps> = ({ encryptionKey, searchQuery }) => {
   const { t } = useTranslation();
   const location = useLocation();
   const notes = getAllNotes(encryptionKey, searchQuery, location);
@@ -82,4 +82,4 @@ const Container_ViewNote: React.FC<Container_ViewNoteProps> = ({ encryptionKey, 
   );
 };
 
-export default Container_ViewNote;
+export default ContainerViewNote;

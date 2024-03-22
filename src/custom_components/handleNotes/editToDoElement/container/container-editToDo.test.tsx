@@ -1,4 +1,4 @@
-import Container_EditTodo from "./container-editToDo";
+import ContainerEditTodo from "./container-editToDo";
 import { BrowserRouter as Router } from "react-router-dom";
 import {
   render,
@@ -31,11 +31,11 @@ jest.mock("react-router-dom", () => ({
 const renderContainerEditToDo = () =>
   render(
     <Router>
-      <Container_EditTodo encryptionKey="testKey" noteId="testNoteId" toDoItemId={3} />
+      <ContainerEditTodo encryptionKey="testKey" noteId="testNoteId" toDoItemId={3} />
     </Router>
   );
 
-describe("Container_EditTodo", () => {
+describe("ContainerEditTodo", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -44,7 +44,7 @@ describe("Container_EditTodo", () => {
     renderContainerEditToDo();
   });
 
-  it("renders the View_EditTodo component", () => {
+  it("renders the ViewEditTodo component", () => {
     renderContainerEditToDo();
     expect(screen.getByTestId("noteTitleTest")).toBeInTheDocument();
   });

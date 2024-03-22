@@ -6,7 +6,7 @@ import SecurityOption from "./ui/radioBtns/security-radioBtn";
 import SecurityLevel from "../../../enums/SecurityLevel.enum";
 import { TFunction } from "i18next";
 
-interface View_WelcomeScreen4Props {
+interface ViewWelcomeScreen4Props {
   t: TFunction;
   securityLevelSelected: SecurityLevel;
   setSecurityLevel: React.Dispatch<React.SetStateAction<SecurityLevel>>;
@@ -15,7 +15,7 @@ interface View_WelcomeScreen4Props {
   availableScreens: number;
 }
 
-const View_WelcomeScreen4: React.FC<View_WelcomeScreen4Props> = ({
+const ViewWelcomeScreen4: React.FC<ViewWelcomeScreen4Props> = ({
   t,
   securityLevelSelected,
   setSecurityLevel,
@@ -83,4 +83,4 @@ const View_WelcomeScreen4: React.FC<View_WelcomeScreen4Props> = ({
   );
 };
 
-export default View_WelcomeScreen4;
+export default ViewWelcomeScreen4;

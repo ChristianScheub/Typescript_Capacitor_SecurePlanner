@@ -7,7 +7,7 @@ import PasswordInput from "./ui/passwordInputField/passwordInputField";
 import Alert from "react-bootstrap/Alert";
 import { TFunction } from "i18next";
 
-interface View_WelcomeScreen5Props {
+interface ViewWelcomeScreen5Props {
   justOnePassword: string;
   setJustOnePassword: React.Dispatch<React.SetStateAction<string>>;
   passwordShortError: boolean;
@@ -16,7 +16,7 @@ interface View_WelcomeScreen5Props {
   t: TFunction;
 }
 
-const View_WelcomeScreen5: React.FC<View_WelcomeScreen5Props> = ({
+const ViewWelcomeScreen5: React.FC<ViewWelcomeScreen5Props> = ({
   justOnePassword,
   setJustOnePassword,
   passwordShortError,
@@ -69,4 +69,4 @@ const View_WelcomeScreen5: React.FC<View_WelcomeScreen5Props> = ({
   );
 };
 
-export default View_WelcomeScreen5;
+export default ViewWelcomeScreen5;

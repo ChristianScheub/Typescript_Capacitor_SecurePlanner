@@ -56,7 +56,6 @@ const ProgressBarCategoryMenu: React.FC<ProgressBarCategoryMenuProps> = ({
       <div style={menuStyles.content} className="backgroundColorHighlight">
         {categoriesList.map((category, index) => (
           <ProgressBar
-            key={index}
             title={category}
             progress={getCategoryProgress(category)}
             infoText={`NO`}

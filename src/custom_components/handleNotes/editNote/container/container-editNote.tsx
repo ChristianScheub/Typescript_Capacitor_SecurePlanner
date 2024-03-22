@@ -11,11 +11,11 @@ import ContainerEditTodo from "../../editToDoElement/container/container-editToD
 import { formatDate } from "../../../services/formatDate/formatDate";
 import { featureFlag_Debug_AllLogs,featureFlag_Debug_Errors } from "../../../featureFlags/featureFlags";
 
-interface Container_EditNoteProps {
+interface ContainerEditNoteProps {
   encryptionKey: string;
 }
 
-const Container_EditNote: React.FC<Container_EditNoteProps> = ({
+const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   encryptionKey,
 }) => {
   let { noteId } = useParams<{ noteId?: string }>();
@@ -277,4 +277,4 @@ const Container_EditNote: React.FC<Container_EditNoteProps> = ({
   );
 };
 
-export default Container_EditNote;
+export default ContainerEditNote;

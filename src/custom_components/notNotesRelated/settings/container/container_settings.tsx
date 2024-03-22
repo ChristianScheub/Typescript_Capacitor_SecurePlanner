@@ -13,7 +13,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { featureFlag_Debug_Errors } from "../../../featureFlags/featureFlags";
 
-const Container_Settings: React.FC = () => {
+const ContainerSettings: React.FC = () => {
   const { t } = useTranslation();
 
   const handleImpressumClick = (navigate: NavigateFunction) => {
@@ -224,4 +224,4 @@ const Container_Settings: React.FC = () => {
   );
 };
 
-export default Container_Settings;
+export default ContainerSettings;
