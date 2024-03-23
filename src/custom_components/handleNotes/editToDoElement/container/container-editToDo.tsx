@@ -94,7 +94,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
     const loadAndDecryptNote = async () => {
       if (noteId) {
         try {
-          let updatedToDoList = { ...toDoList };
+          const updatedToDoList = { ...toDoList };
           const existingIndex = updatedToDoList.toDoItem.findIndex(
             (item) => item.toDoId === toDoListItem.toDoId
           );

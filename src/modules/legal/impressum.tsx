@@ -30,14 +30,10 @@ const Impressum: React.FC = () => {
         }}
       >
         {!isAlreadyLoggedIn && (
-          <>
-            <NavBarContainer setSearchQuery={setSearchQueryPlaceholder} />
-          </>
+          <NavBarContainer setSearchQuery={setSearchQueryPlaceholder} />
         )}
         <div className="after-login-container">
-          <Card
-            className="mb-3 backgroundColorHighlight margin2vw"
-          >
+          <Card className="mb-3 backgroundColorHighlight margin2vw">
             <Card.Header as="h2">Impressum / Legal Notice</Card.Header>
             <Card.Body>
               <CodeToTextParser code={impressum_text} />

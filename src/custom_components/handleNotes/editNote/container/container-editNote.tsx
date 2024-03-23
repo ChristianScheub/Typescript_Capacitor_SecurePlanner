@@ -18,11 +18,10 @@ interface ContainerEditNoteProps {
 const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   encryptionKey,
 }) => {
-  let { noteId } = useParams<{ noteId?: string }>();
+  const { noteId } = useParams<{ noteId?: string }>();
   const { t } = useTranslation();
   const [toDo_toEdit_id, setToDo_toEdit_id] = useState<number>();
   const [showToDoEdit, setShowToDoEdit] = useState<boolean>(false);
-  const [currentFilter, setCurrentFilter] = useState<string>("total");
 
   //The Keys which should be ignored and maybe set already (i18nextLng, capuid are web only so not smartphone relevant)
   const ignoredKeys = [
@@ -138,7 +137,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   };
 
   function handleAdd() {
-    let count = ToDoListService.generateUniqueToDoId(toDoList.toDoItem);
+    const count = ToDoListService.generateUniqueToDoId(toDoList.toDoItem);
     setToDo_toEdit_id(count);
     setShowToDoEdit(true);
   }
@@ -190,7 +189,6 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
 
   const handleFilterList = async (filter: string) => {
     logAllDebugMessages("TRIGGER FILTER with"+filter);
-    await setCurrentFilter(filter);
 
     if (filter === "total") {
       return setShownToDoList(ToDoListService.sortToDoList(toDoList));
