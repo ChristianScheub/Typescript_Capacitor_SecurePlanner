@@ -7,9 +7,9 @@ import { ToDoItem } from "../../../types/ToDoItem.types";
 import { ToDoList } from "../../../types/ToDoList.types";
 import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
 import {
-  featureFlag_Debug_Errors,
   featureFlag_IsTrialVersion,
 } from "../../../featureFlags/featureFlags";
+import { logError } from "../../../services/logger/loggerFeatureFlags";
 
 interface ContainerEditTodoProps {
   encryptionKey: string;
@@ -61,12 +61,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
             }
           }
         } catch (error) {
-          if (featureFlag_Debug_Errors) {
-            console.error(
-              "Fehler beim Laden und Entschlüsseln der Notiz:",
-              error
-            );
-          }
+          logError("Fehler beim Laden und Entschlüsseln der Notiz:", error);
         }
       }
     };
@@ -146,12 +141,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
             }
           }
         } catch (error) {
-          if (featureFlag_Debug_Errors) {
-            console.error(
-              "Fehler beim Laden und Entschlüsseln der Notiz:",
-              error
-            );
-          }
+          logError("Fehler beim Laden und Entschlüsseln der Notiz:", error);
         }
       }
     };

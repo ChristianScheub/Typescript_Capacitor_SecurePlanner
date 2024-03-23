@@ -2,7 +2,7 @@ import { NativeBiometric } from "capacitor-native-biometric";
 import CryptoJS from "crypto-js";
 import { Device } from "@capacitor/device";
 import { getPBKDF2_Password } from "../encryptionEngine/encryptionEngine";
-import { featureFlag_Debug_Errors } from "../../featureFlags/featureFlags";
+import { logError } from "../logger/loggerFeatureFlags";
 
 const getDeviceIdHash = async (): Promise<string> => {
   const info = await Device.getId();
@@ -54,9 +54,7 @@ export const getPasswordFromFingerprint = async (
 
     onPasswordRetrieved(decryptedPassword);
   } catch (e) {
-    if(featureFlag_Debug_Errors){
-      console.error(e);
-    }
+    logError("Error at get Password from Fingerprint", e);
     if (e) {
       onEmptyPassword();
     } else {
@@ -94,9 +92,7 @@ export const storePasswordFromFingerprint = async (
     
     onSuccess();
   } catch (e) {
-    if(featureFlag_Debug_Errors){
-      console.error(e);
-    }
+    logError("Error at store Password from Fingerprint", e);
     onError(t('fingerprint_error'));
   }
 };
@@ -105,9 +101,7 @@ export const availableBiometric = async (): Promise<boolean> => {
   try {
     return ((await NativeBiometric.isAvailable()).isAvailable);
   } catch (error) {
-    if(featureFlag_Debug_Errors){
-      console.error("Error at delete Credentials", error);
-    }
+    logError("Error at available Biometric", error);
     return false;
   }
 }

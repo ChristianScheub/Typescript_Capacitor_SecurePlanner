@@ -9,7 +9,7 @@ import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../../services/progressToDoListService/progressToDoListService";
 import ContainerEditTodo from "../../editToDoElement/container/container-editToDo";
 import { formatDate } from "../../../services/formatDate/formatDate";
-import { featureFlag_Debug_AllLogs,featureFlag_Debug_Errors } from "../../../featureFlags/featureFlags";
+import { logError,logAllDebugMessages } from "../../../services/logger/loggerFeatureFlags";
 
 interface ContainerEditNoteProps {
   encryptionKey: string;
@@ -79,7 +79,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
             setShownToDoList(toDoList);
           }
         } catch (error) {
-          console.error("Fehler beim Laden und Entschlüsseln der Notiz:",error);
+          logError("Fehler beim Laden und Entschlüsseln der Notiz:",error);
         }
       }
     };
@@ -89,26 +89,8 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
 
   useEffect(() => {
     const storeNotes = async () => {
-      if (featureFlag_Debug_AllLogs) {
-        console.log("triggerStore");
-        console.log(toDoList);
-      }
-      if (
-        noteId &&
-        (toDoList.title !== "" ||
-          toDoList.content !== "" ||
-          toDoList.toDoItem.length > 0)
-      ) {
-        try {
-          await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
-          handleFilterList(currentFilter);
-          setCategoriesList(ToDoListService.getCategories(toDoList));
-        } catch (error) {
-          if (featureFlag_Debug_Errors) {
-            console.error("Fehler beim Speichern der Notiz",error);
-          }
-        }
-      }
+      logAllDebugMessages("triggerStore");
+      logAllDebugMessages(JSON.stringify(toDoList));
     };
     storeNotes();
   }, [toDoList]);
@@ -149,14 +131,10 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
     key: K,
     value: ToDoList[K]
   ) => {
-    if (featureFlag_Debug_AllLogs) {
-      console.log("updateToDoList");
-      console.log(value);
-    }
+    logAllDebugMessages("updateToDoList");
+    logAllDebugMessages(value.toString());
     await setToDoList({ ...toDoList, [key]: value });
-    if (featureFlag_Debug_AllLogs) {
-      console.log(toDoList);
-    }
+    logAllDebugMessages(toDoList.toString());
   };
 
   function handleAdd() {
@@ -211,9 +189,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   };
 
   const handleFilterList = async (filter: string) => {
-    if (featureFlag_Debug_AllLogs) {
-      console.log("TRIGGER FILTER with"+filter);
-    }
+    logAllDebugMessages("TRIGGER FILTER with"+filter);
     await setCurrentFilter(filter);
 
     if (filter === "total") {

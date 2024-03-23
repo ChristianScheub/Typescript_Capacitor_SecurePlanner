@@ -11,7 +11,7 @@ import {
   makeReadyForImport,
 } from "../../../services/encryptionEngine/encryptionEngine";
 import { useTranslation } from "react-i18next";
-import { featureFlag_Debug_Errors } from "../../../featureFlags/featureFlags";
+import { logError } from "../../../services/logger/loggerFeatureFlags";
 
 const ContainerSettings: React.FC = () => {
   const { t } = useTranslation();
@@ -56,9 +56,7 @@ const ContainerSettings: React.FC = () => {
             server: "www.securePlaner.com",
           });
         } catch (error) {
-          if (featureFlag_Debug_Errors) {
-            console.error("Error at delete Credentials", error);
-          }
+          logError("Error at delete Credentials", error);
         }
       }
       navigate("/");
@@ -82,9 +80,7 @@ const ContainerSettings: React.FC = () => {
         });
         alert(t("settings_Dialog_DeleteBioSuccessful"));
       } catch (error) {
-        if (featureFlag_Debug_Errors) {
-          console.error("Error at delete Credentials", error);
-        }
+        logError("Error at delete Credentials", error);
         alert(t("settings_Dialog_DeleteBioError"));
       }
     }

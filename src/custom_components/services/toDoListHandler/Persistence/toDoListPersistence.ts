@@ -4,7 +4,7 @@ import {
 } from "../../encryptionEngine/encryptionEngine";
 import { ToDoList } from "../../../types/ToDoList.types";
 import { ToDoItem } from "../../../types/ToDoItem.types";
-import { featureFlag_Debug_AllLogs,featureFlag_Debug_Errors } from "../../../featureFlags/featureFlags";
+import { logAllDebugMessages, logError } from "../../logger/loggerFeatureFlags";
 
 const isJsonString = (str: string): boolean => {
   try {
@@ -12,9 +12,7 @@ const isJsonString = (str: string): boolean => {
     const test = data.content + data.title;
     return true;
   } catch (e) {
-    if(featureFlag_Debug_Errors){
-      console.error("fehler beim isJsonString Check", e);
-    }
+    logError("fehler beim isJsonString Check", e);
     return false;
   }
 };
@@ -35,20 +33,13 @@ export const loadAllToDoLists = async (
             loadedNotes.push([noteData, key]);
           }
         } catch (error) {
-          if (featureFlag_Debug_Errors) {
-            console.error(
-              "Fehler beim Laden und Entschlüsseln der Liste:",
-              error
-            );
-          }
+          logError("Fehler beim Laden und Entschlüsseln der Liste:", error);
         }
       }
     }
     return loadedNotes;
   } catch (error) {
-    if (featureFlag_Debug_Errors) {
-      console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
-    }
+    logError("Fehler beim Laden und Entschlüsseln der Liste:", error);
     return [];
   }
 };
@@ -58,9 +49,7 @@ export const loadToDoList = async (
   encryptionKey: string
 ): Promise<ToDoList | null> => {
   try {
-    if(featureFlag_Debug_AllLogs){
-      console.log("trigger load One List");
-    }
+    logAllDebugMessages("trigger load One List");
     const decryptedContent = await decryptFromStorage(encryptionKey, noteId);
     const parsedToDoList: ToDoList = JSON.parse(decryptedContent);
 
@@ -72,9 +61,7 @@ export const loadToDoList = async (
 
     return parsedToDoList;
   } catch (error) {
-    if (featureFlag_Debug_Errors) {
-      console.error("Fehler beim Laden und Entschlüsseln der Liste:", error);
-    }
+    logError("Fehler beim Laden und Entschlüsseln der Liste:", error);
     return null;
   }
 };
@@ -95,9 +82,7 @@ export const saveToDoList = async (
   noteId?: string
 ): Promise<void> => {
   try {
-    if(featureFlag_Debug_AllLogs){
-      console.log("trigger save One List");
-    }
+    logAllDebugMessages("trigger save One List");
     const noteDataString = JSON.stringify(note);
     await encryptAndStore(
       noteDataString,
@@ -105,8 +90,6 @@ export const saveToDoList = async (
       noteId || Date.now().toString()
     );
   } catch (error) {
-    if(featureFlag_Debug_Errors){
-      console.error("Fehler speichern der Liste:", error);
-    }
+    logError("Fehler speichern der Liste:", error);
   }
 };

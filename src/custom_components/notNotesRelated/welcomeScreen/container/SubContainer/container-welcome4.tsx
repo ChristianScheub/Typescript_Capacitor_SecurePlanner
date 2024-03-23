@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import WelcomeScreen4View from "../../screens/screen-welcome4";
 import SecurityLevel from "../../../../enums/SecurityLevel.enum";
 import { encrypt, getDeviceIdHash } from "../../../../services/encryptionEngine/encryptionEngine";
-import { featureFlag_Debug_AllLogs, featureFlag_HighestSec } from "../../../../featureFlags/featureFlags";
+import { featureFlag_HighestSec } from "../../../../featureFlags/featureFlags";
 import { useTranslation } from "react-i18next";
+import { logAllDebugMessages } from "../../../../services/logger/loggerFeatureFlags";
 
 interface WelcomeScreen4ContainerProps {
   closeOverlay: (password: string) => void;
@@ -24,18 +25,14 @@ const WelcomeScreen4Container: React.FC<WelcomeScreen4ContainerProps> = ({
   useEffect(() => {
     const screenCount = securityLevelSelected === SecurityLevel.Low ? 4 : 5;
     setAvailableScreens(screenCount);
-    if (featureFlag_Debug_AllLogs) {
-      console.log("selectedSecurity:"+securityLevelSelected);
-      console.log("screenCount:" + screenCount);
-    }
+    logAllDebugMessages("selectedSecurity:"+securityLevelSelected);
+    logAllDebugMessages("screenCount:" + screenCount);
   }, [securityLevelSelected, setAvailableScreens]);
 
   const handleSubmit = async () => {
     localStorage.setItem("securityLevel", securityLevelSelected);
-    if (featureFlag_Debug_AllLogs) {
-      console.log("submit security");
-      console.log("selectedSecurity:"+securityLevelSelected);
-    }
+    logAllDebugMessages("submit security");
+    logAllDebugMessages("selectedSecurity:"+securityLevelSelected);
     if (securityLevelSelected === SecurityLevel.Low) {
       localStorage.setItem("welcomeScreenDone", "true");
       //securityLevelReallyLow will be used later to authenticate that we really have the low level
