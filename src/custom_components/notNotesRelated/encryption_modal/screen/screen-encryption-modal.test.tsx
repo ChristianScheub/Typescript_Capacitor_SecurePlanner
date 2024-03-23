@@ -26,7 +26,7 @@ describe("EncryptionKeyModalView", () => {
   });
 
   it("calls handleKeySubmit on form submit", () => {
-    const { getByText } = render(
+    render(
       <EncryptionKeyModalView
         handleKeySubmit={mockHandleKeySubmit}
         showFingerprintHint={true}

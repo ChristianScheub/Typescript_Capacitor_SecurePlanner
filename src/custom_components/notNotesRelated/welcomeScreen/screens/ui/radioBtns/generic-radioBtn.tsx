@@ -1,22 +1,22 @@
 import React from "react";
+import SecurityLevel from "../../../../../enums/SecurityLevel.enum";
 
-interface RadioOptionProps {
+interface GenericRadioOptionProps<T, U = T> {
   label: string;
-  value: string;
-  selectedValue: string;
-  onChange: (value: string) => void;
+  value: T;
+  selectedValue: T;
+  onChange: (value: U) => void;
 }
 
-const StringRadioOption: React.FC<RadioOptionProps> = ({
+const GenericRadioOption: React.FC<GenericRadioOptionProps<string | any | SecurityLevel>> = ({
   label,
   value,
   selectedValue,
   onChange,
 }) => {
   const isSelected = value === selectedValue;
-  const handleClick = () => {
-    onChange(value);
-  };
+  const handleClick = () => onChange(value);
+
 
   return (
     <div
@@ -26,7 +26,7 @@ const StringRadioOption: React.FC<RadioOptionProps> = ({
       tabIndex={0}
     >
       <table>
-        <tbody>
+      <tbody>
         <tr>
           <td>
             <div className={`radio ${isSelected ? "selected" : ""}`} />
@@ -43,4 +43,4 @@ const StringRadioOption: React.FC<RadioOptionProps> = ({
   );
 };
 
-export default StringRadioOption;
+export default GenericRadioOption;

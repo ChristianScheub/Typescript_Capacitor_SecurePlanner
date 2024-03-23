@@ -127,10 +127,11 @@ const ContainerEncryptionKeyModal: React.FC<
   function closeWelcomeOverlay(password: string) {
     setShowWelcomeOverlay(false);
     if (
-      localStorage.getItem("securityLevel") === SecurityLevel.Low &&
-      password === ""
+      !(
+        localStorage.getItem("securityLevel") === SecurityLevel.Low &&
+        password === ""
+      )
     ) {
-    } else {
       localStorage.setItem("justOnePassword", "true");
       password = getPBKDF2_Password(password);
       if (localStorage.getItem("justOnePassword") === "true") {

@@ -6,7 +6,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 
 describe('SettingsView Component', () => {
-  const mockNavigate = jest.fn();
   const mockOnDeleteAllClick = jest.fn();
   const mockOnDeleteBiometryClick = jest.fn();
   const mockOnDatenschutzClick = jest.fn();

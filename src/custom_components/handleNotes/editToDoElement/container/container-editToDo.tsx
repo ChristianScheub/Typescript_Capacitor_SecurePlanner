@@ -111,7 +111,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
           await ToDoListService.saveToDoList(
             updatedToDoList,
             encryptionKey,
-            noteId || Date.now().toString()
+            noteId
           );
         } catch (error) {
           console.error("Fehler beim Sichern des ToDos:", error);
@@ -194,7 +194,6 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
       />
     );
   }
-  console.log(trialAndToMuch);
 
   return (
     <ViewEditTodo

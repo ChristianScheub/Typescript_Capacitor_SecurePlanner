@@ -2,7 +2,7 @@ import React from "react";
 import "./screen-welcome4.css";
 import ProgressDots from "./ui/progressDots/progressDots";
 import ContinueButton from "./ui/continueBtn/continue-button";
-import SecurityOption from "./ui/radioBtns/security-radioBtn";
+import GenericRadioOption from "./ui/radioBtns/generic-radioBtn";
 import SecurityLevel from "../../../enums/SecurityLevel.enum";
 import { TFunction } from "i18next";
 
@@ -37,26 +37,26 @@ const ViewWelcomeScreen4: React.FC<ViewWelcomeScreen4Props> = ({
         <h1 id="infoTitle4">{t("welcomeScreen4_Headline")}</h1>
         <br />
         <div style={{ marginLeft: "10vw", marginTop: "2vh" }}>
-          <SecurityOption
+          <GenericRadioOption
             label={t("welcomeScreen4_Option1")}
             value={SecurityLevel.Low}
             selectedValue={securityLevelSelected}
             onChange={setSecurityLevel}
           />
-          <SecurityOption
+          <GenericRadioOption
             label={t("welcomeScreen4_Option2")}
             value={SecurityLevel.Medium}
             selectedValue={securityLevelSelected}
             onChange={setSecurityLevel}
           />
-          <SecurityOption
+          <GenericRadioOption
             label={t("welcomeScreen4_Option3")}
             value={SecurityLevel.High}
             selectedValue={securityLevelSelected}
             onChange={setSecurityLevel}
           />
           {featureFlag_HighestSec && (
-            <SecurityOption
+            <GenericRadioOption
               label={t("welcomeScreen4_Option4")}
               value={SecurityLevel.Highest}
               selectedValue={securityLevelSelected}

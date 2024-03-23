@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import SecurityOption from './security-radioBtn';
+import SecurityOption from './generic-radioBtn';
 import SecurityLevel from '../../../../../enums/SecurityLevel.enum';
 
 describe('SecurityOption', () => {
