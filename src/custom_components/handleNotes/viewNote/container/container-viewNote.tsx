@@ -66,7 +66,7 @@ const ContainerViewNote: React.FC<ContainerViewNoteProps> = ({ encryptionKey, se
 
     const truncateText = (text: string, maxLength: number): string => {
       if (text.length <= maxLength) return text;
-      return text.substr(0, maxLength) + "...";
+      return text.slice(0, maxLength) + "...";
     };
 
   return (

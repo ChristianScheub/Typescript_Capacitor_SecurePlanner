@@ -44,7 +44,7 @@ const NavBarContainer: React.FC<NavBarContainerProps> = ({
 
   const handleDelete = () => {
     if (noteID && window.confirm(t("navbar_deleteBtn"))) {
-      localStorage.removeItem(noteID!);
+      localStorage.removeItem(noteID);
       navigate(-1);
     }
   };

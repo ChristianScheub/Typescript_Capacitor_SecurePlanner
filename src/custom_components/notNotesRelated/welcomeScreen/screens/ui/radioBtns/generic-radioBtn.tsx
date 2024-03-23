@@ -22,8 +22,6 @@ const GenericRadioOption: React.FC<GenericRadioOptionProps<string | any | Securi
     <div
       className={`option ${isSelected ? "selected" : ""}`}
       onClick={handleClick}
-      role="button"
-      tabIndex={0}
     >
       <table>
       <tbody>

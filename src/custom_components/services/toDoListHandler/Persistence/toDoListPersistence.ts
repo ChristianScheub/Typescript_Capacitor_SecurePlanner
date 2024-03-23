@@ -87,7 +87,7 @@ export const saveToDoList = async (
     await encryptAndStore(
       noteDataString,
       encryptionKey,
-      noteId || Date.now().toString()
+      noteId ?? Date.now().toString()
     );
   } catch (error) {
     logError("Fehler speichern der Liste:", error);

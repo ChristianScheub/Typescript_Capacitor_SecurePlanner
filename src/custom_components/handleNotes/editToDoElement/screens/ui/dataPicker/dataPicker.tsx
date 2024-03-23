@@ -26,7 +26,6 @@ const CustomInput = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElem
         textDecoration: 'underline',
       }}
     >
-      {value ? value : 'Datum wählen'}
       <SlCalender style={{marginLeft:'2vw'}}/>
 
     </div>

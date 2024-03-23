@@ -20,7 +20,7 @@ const WelcomeScreen4Container: React.FC<WelcomeScreen4ContainerProps> = ({
   availableScreens,
 }) => {
   const { t } = useTranslation();
-  const [securityLevelSelected, setSecurityLevel] = useState<SecurityLevel>(SecurityLevel.High);
+  const [securityLevelSelected, setSecurityLevelSelected] = useState<SecurityLevel>(SecurityLevel.High);
 
   useEffect(() => {
     const screenCount = securityLevelSelected === SecurityLevel.Low ? 4 : 5;
@@ -56,7 +56,7 @@ const WelcomeScreen4Container: React.FC<WelcomeScreen4ContainerProps> = ({
     <WelcomeScreen4View
       t={t}
       securityLevelSelected={securityLevelSelected}
-      setSecurityLevel={setSecurityLevel}
+      setSecurityLevel={setSecurityLevelSelected}
       handleSubmit={handleSubmit}
       featureFlag_HighestSec={featureFlag_HighestSec}
       availableScreens={availableScreens}
