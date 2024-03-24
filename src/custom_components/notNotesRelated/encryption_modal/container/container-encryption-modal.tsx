@@ -81,7 +81,7 @@ const ContainerEncryptionKeyModal: React.FC<
       "www.securePlaner.com",
       () => {
         storePasswordFromFingerprint(
-          inputRef.current?.value || "",
+          inputRef.current?.value ?? "",
           () => {
             alert(t("encryption-modal_password_stored"));
             const password = getPBKDF2_Password(inputRef.current!.value);

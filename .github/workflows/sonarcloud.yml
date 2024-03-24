@@ -53,7 +53,8 @@ jobs:
           -Dsonar.tests=src
           -Dsonar.test.inclusions="**/*.test.ts,**/*.test.tsx"
           -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
-          -Dsonar.exclusions=**/*.test.*,**/*.java,**/*.swift
+          -Dsonar.coverage.exclusions=**/*.test.*
+          -Dsonar.exclusions=**/*.java,**/*.swift
           -Dsonar.c.file.suffixes=-
           -Dsonar.cpp.file.suffixes=-
           -Dsonar.objc.file.suffixes=-

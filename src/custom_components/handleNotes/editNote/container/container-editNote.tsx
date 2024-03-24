@@ -66,7 +66,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
 
   const handleFilterList = useCallback(async (filter: string) => {
     logAllDebugMessages("TRIGGER FILTER with" + filter);
-    await setCurrentFilter(filter);
+    setCurrentFilter(filter);
   
     if (filter === "total") {
       return setShownToDoList(ToDoListService.sortToDoList(toDoList));
@@ -186,8 +186,8 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   ) => {
     logAllDebugMessages("updateToDoList");
     logAllDebugMessages(value.toString());
-    await setToDoList({ ...toDoList, [key]: value });
-    logAllDebugMessages(toDoList.toString());
+    setToDoList({ ...toDoList, [key]: value });
+    logAllDebugMessages(JSON.stringify(toDoList, null, 2));
   };
 
   function handleAdd() {

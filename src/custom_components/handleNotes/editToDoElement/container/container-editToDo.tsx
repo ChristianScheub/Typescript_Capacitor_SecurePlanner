@@ -24,7 +24,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
 }) => {
   const { t } = useTranslation();
   const [translatedPrio, setTranslatedPrio] = useState<string>("");
-  const toDoItemIdInt = toDoItemId || 1;
+  const toDoItemIdInt = toDoItemId ?? 1;
   const [trialAndToMuch, setTrialAndToMuch] = useState<boolean>(false);
 
   //ToDoList wird benötigt für den Speichervorgang
