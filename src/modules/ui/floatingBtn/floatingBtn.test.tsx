@@ -3,96 +3,42 @@ import { render } from "@testing-library/react";
 import FloatingBtn, { ButtonAlignment } from "./floatingBtn";
 
 describe("FloatingBtn Component", () => {
-  it("renders", () => {
-    const { getByTestId } = render(
+  // Gemeinsame Setup-Funktion
+  const setup = (alignment: ButtonAlignment) => {
+    const utils = render(
       <FloatingBtn
-        alignment={ButtonAlignment.CENTER}
+        alignment={alignment}
         icon={() => <div data-testid="icon" />}
         onClick={() => {}}
       />
     );
-
-    const button = getByTestId("floating-btn");
-
-    expect(button).toBeInTheDocument();
-  });
+    const button = utils.getByTestId("floating-btn");
+    const icon = utils.getByTestId("icon");
+    const buttonStyles = window.getComputedStyle(utils.getByTestId("floating-btnDiv"));
+    return { button, icon, buttonStyles, ...utils };
+  };
 
   it("renders with centered position", () => {
-    const { getByTestId } = render(
-      <FloatingBtn
-        alignment={ButtonAlignment.CENTER}
-        icon={() => <div data-testid="icon" />}
-        onClick={() => {}}
-      />
-    );
-
-    const button = getByTestId("floating-btn");
-    expect(button).toBeInTheDocument();
-
-    const icon = getByTestId("icon");
-    expect(icon).toBeInTheDocument();
-
-    const buttonStyles = window.getComputedStyle(
-      getByTestId("floating-btnDiv")
-    );
+    const { buttonStyles } = setup(ButtonAlignment.CENTER);
+    expect(buttonStyles.getPropertyValue("left")).toBe("50%");
+    expect(buttonStyles.getPropertyValue("transform")).toBe("translate(-50%, -50%)");
     expect(buttonStyles.getPropertyValue("position")).toBe("fixed");
     expect(buttonStyles.getPropertyValue("bottom")).toBe("10vw");
-    expect(buttonStyles.getPropertyValue("left")).toBe("50%");
-    expect(buttonStyles.getPropertyValue("transform")).toBe(
-      "translate(-50%, -50%)"
-    );
   });
 
   it("renders correct with right-aligned position", () => {
-    const { getByTestId } = render(
-      <FloatingBtn
-      alignment={ButtonAlignment.RIGHT}
-        icon={() => <div data-testid="icon" />}
-        onClick={() => {}}
-      />
-    );
-
-    const button = getByTestId("floating-btn");
-    expect(button).toBeInTheDocument();
-
-    const icon = getByTestId("icon");
-    expect(icon).toBeInTheDocument();
-
-    const buttonStyles = window.getComputedStyle(
-      getByTestId("floating-btnDiv")
-    );
+    const { buttonStyles } = setup(ButtonAlignment.RIGHT);
+    expect(buttonStyles.getPropertyValue("transform")).toBe("translate(-50%, -50%)");
+    expect(buttonStyles.getPropertyValue("right")).toBe("0rem");
     expect(buttonStyles.getPropertyValue("position")).toBe("fixed");
     expect(buttonStyles.getPropertyValue("bottom")).toBe("10vw");
-    expect(buttonStyles.getPropertyValue("transform")).toBe(
-      "translate(-50%, -50%)"
-    );
-    expect(buttonStyles.getPropertyValue("right")).toBe("0rem");
   });
 
   it("renders correct with left-aligned position", () => {
-    const { getByTestId } = render(
-      <FloatingBtn
-      alignment={ButtonAlignment.LEFT}
-        icon={() => <div data-testid="icon" />}
-        onClick={() => {}}
-      />
-    );
-
-    const button = getByTestId("floating-btn");
-    expect(button).toBeInTheDocument();
-
-    const icon = getByTestId("icon");
-    expect(icon).toBeInTheDocument();
-
-    const buttonStyles = window.getComputedStyle(
-      getByTestId("floating-btnDiv")
-    );
+    const { buttonStyles } = setup(ButtonAlignment.LEFT);
+    expect(buttonStyles.getPropertyValue("transform")).toBe("translate(50%, -50%)");
+    expect(buttonStyles.getPropertyValue("left")).toBe("0rem");
     expect(buttonStyles.getPropertyValue("position")).toBe("fixed");
     expect(buttonStyles.getPropertyValue("bottom")).toBe("10vw");
-    expect(buttonStyles.getPropertyValue("transform")).toBe(
-      "translate(50%, -50%)"
-    );
-    expect(buttonStyles.getPropertyValue("left")).toBe("0rem");
-
   });
 });

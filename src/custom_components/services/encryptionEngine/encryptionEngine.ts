@@ -39,7 +39,6 @@ export const encryptAndStore = async (
   password: string,
   storageKey: string
 ): Promise<void> => {
-  console.log(text);
   const noPasswordNeeded =
     localStorage.getItem("securityLevel") === SecurityLevel.Low;
   let encryptedData = "";
@@ -71,7 +70,6 @@ export const encryptAndStore = async (
     }
   } else {
     encryptedData = await encrypt(text, password);
-    console.log("encryptedData", encryptedData);
   }
   localStorage.setItem(storageKey, encryptedData);
 };

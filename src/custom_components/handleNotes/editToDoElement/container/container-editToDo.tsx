@@ -109,7 +109,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
             noteId
           );
         } catch (error) {
-          console.error("Fehler beim Sichern des ToDos:", error);
+          logError("Fehler beim Sichern des ToDos:", error);
         }
       }
     };
@@ -135,9 +135,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
                 setToDoListItem(toDoItem);
               }
             } else {
-              console.error(
-                "ToDoItem-Index liegt außerhalb der Grenzen des Arrays"
-              );
+              logError("ToDoItem-Array nicht vorhanden", new Error());
             }
           }
         } catch (error) {
