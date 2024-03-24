@@ -1,5 +1,4 @@
 import { logError, logAllDebugMessages } from './loggerFeatureFlags';
-import * as featureFlags from '../../featureFlags/featureFlags';
 
 jest.mock('../../featureFlags/featureFlags', () => ({
     featureFlag_Debug_Errors: true,

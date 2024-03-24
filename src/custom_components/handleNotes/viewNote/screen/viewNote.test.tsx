@@ -21,7 +21,7 @@ describe("ViewNote Component", () => {
       "2"
     );
 
-    await act(() => {
+    act(() => {
       render(
         <Router>
           <ViewNoteContainer
