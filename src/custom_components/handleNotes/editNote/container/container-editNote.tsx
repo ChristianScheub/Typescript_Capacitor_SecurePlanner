@@ -247,6 +247,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
     />
   );
 
+
   return (
     <EditNoteView
       toDoList={shownToDoList}
@@ -264,7 +265,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
       updateToDoList={updateToDoList}
       handleDeleteToDo={handleDeleteToDo}
       handleDoneToDo={handleDoneToDo}
-      CustomComponent={() => ContainerEditToDoWithValue}
+      CustomComponent={ContainerEditToDoWithValue}
       showToDoEdit={showToDoEdit}
       onHandleToDoSave={() => setShowToDoEdit(false)}
       handleFilterList={handleFilterList}

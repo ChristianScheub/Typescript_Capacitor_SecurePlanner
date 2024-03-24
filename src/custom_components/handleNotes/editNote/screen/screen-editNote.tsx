@@ -35,7 +35,7 @@ interface ViewEditNoteViewProps {
     event: React.MouseEvent,
     toDoId: number
   ) => void;
-  CustomComponent: () => React.ReactNode;
+  CustomComponent: JSX.Element;
   showToDoEdit: boolean;
   onHandleToDoSave: () => void;
   handleFilterList: (filterArgument: string) => void;
@@ -75,7 +75,7 @@ const ViewEditNote: React.FC<ViewEditNoteViewProps> = ({
             className="edit-todo-background"
             onClick={onHandleToDoSave}
           ></div>
-          {CustomComponent()}
+          {CustomComponent}
           <div style={{ zIndex: 1001 }}>
             <FloatingBtn
               alignment={ButtonAlignment.RIGHT}
