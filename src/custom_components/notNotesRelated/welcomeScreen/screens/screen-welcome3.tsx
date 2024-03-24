@@ -20,9 +20,8 @@ const ViewWelcomeScreen3: React.FC<ViewWelcomeScreen3Props> = ({
   progress1,
   progress2,
   progress3,
-  t
+  t,
 }) => {
-
   return (
     <div className="welcome-screen colorWhite">
       <div
@@ -36,35 +35,37 @@ const ViewWelcomeScreen3: React.FC<ViewWelcomeScreen3Props> = ({
         }}
       >
         <table style={{ backgroundColor: "rgb(30, 30, 30)" }}>
-          <tr>
-            <td style={{ paddingLeft: "2vw", paddingRight: "2vw" }}>
-              <ProgressCircle
-                title={t("viewNote_progressCircle_7Days")}
-                progress={progress1}
-              />
-            </td>
-            <td>
-              <ProgressCircle
-                title={t("viewNote_progressCircle_Today")}
-                progress={progress2}
-              />
-            </td>
-            <td style={{ paddingLeft: "2vw" }}>
-              <ProgressCircle
-                title={t("viewNote_progressCircle_Total")}
-                progress={progress3}
-              />
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td style={{ paddingLeft: "2vw", paddingRight: "2vw" }}>
+                <ProgressCircle
+                  title={t("viewNote_progressCircle_7Days")}
+                  progress={progress1}
+                />
+              </td>
+              <td>
+                <ProgressCircle
+                  title={t("viewNote_progressCircle_Today")}
+                  progress={progress2}
+                />
+              </td>
+              <td style={{ paddingLeft: "2vw" }}>
+                <ProgressCircle
+                  title={t("viewNote_progressCircle_Total")}
+                  progress={progress3}
+                />
+              </td>
+            </tr>
+          </tbody>
         </table>
         <br />
         <br />
         <br />
         <b id="infoTitle2" className="infoTextWelcome2 makeItCenter">
-        {t("welcomeScreen3_Headline")}
+          {t("welcomeScreen3_Headline")}
         </b>
         <p id="infoText2" className="infoTextWelcome2 makeItCenter">
-        {t("welcomeScreen3_Text")}
+          {t("welcomeScreen3_Text")}
         </p>
       </div>
       <ContinueButton onClick={onNext} textBtn={t("welcomeScreen_Continue")} />
