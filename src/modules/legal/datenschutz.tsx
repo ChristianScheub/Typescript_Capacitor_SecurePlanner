@@ -3,12 +3,10 @@ import { datenschutz_text } from "../app_configuration/app_texts";
 import CodeToTextParser from "./codeToTextParser";
 import NavBarContainer from "../../custom_components/notNotesRelated/navBar/container/container-navBar";
 import { useLocation } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 
 const Datenschutz: React.FC = () => {
   const isAlreadyLoggedIn = !useLocation().pathname.includes("Home");
-  const [searchQueryPlaceholder, setSearchQueryPlaceholder] =
-    useState<string>("");
 
   return (
     <div
@@ -30,7 +28,7 @@ const Datenschutz: React.FC = () => {
         }}
       >
         {!isAlreadyLoggedIn && (
-          <NavBarContainer setSearchQuery={setSearchQueryPlaceholder} />
+          <NavBarContainer />
         )}
         <div className="after-login-container">
           <Card className="mb-3 backgroundColorHighlight margin2vw">

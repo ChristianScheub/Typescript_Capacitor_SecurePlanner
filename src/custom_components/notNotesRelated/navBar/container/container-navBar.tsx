@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import NavBarView from "../screen/screen-navBar";
 
 interface NavBarContainerProps {
-  setSearchQuery: (query: string) => void;
+  setSearchQuery?: (query: string) => void;
 }
 
 const NavBarContainer: React.FC<NavBarContainerProps> = ({
-  setSearchQuery,
+  setSearchQuery = () => {}
 }) => {
   const navigate = useNavigate();
   const location = useLocation();

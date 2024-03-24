@@ -125,7 +125,7 @@ const ViewEditNote: React.FC<ViewEditNoteViewProps> = ({
           <div>
             {toDoList.toDoItem.map((item, index) => (
               <Card
-                key={index}
+                key={item.toDoId}
                 className="backgroundColorHighlight shadow margin2vw"
                 style={{
                   minHeight: "13vh",

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import ProgressBar from '../progressBar/progressBar';
-import { useTranslation } from 'react-i18next';
+import React, { useState } from "react";
+import ProgressBar from "../progressBar/progressBar";
+import { useTranslation } from "react-i18next";
 
 export interface ProgressBarCategoryMenuProps {
   categoriesList: string[];
@@ -15,7 +15,7 @@ const ProgressBarCategoryMenu: React.FC<ProgressBarCategoryMenuProps> = ({
   getCategoryProgress,
   handleProgressBarClick,
   activeTooltip,
-  highlightedId
+  highlightedId,
 }) => {
   const { t } = useTranslation();
   const [isListVisible, setIsListVisible] = useState(false);
@@ -45,24 +45,29 @@ const ProgressBarCategoryMenu: React.FC<ProgressBarCategoryMenuProps> = ({
   };
 
   return (
-    <div style={menuStyles.container} className="backgroundColorHighlight margin2vw">
+    <div
+      style={menuStyles.container}
+      className="backgroundColorHighlight margin2vw"
+    >
       <div
         style={menuStyles.header}
         onClick={() => setIsListVisible(!isListVisible)}
       >
         {t("viewNote_progressBarsCategories_title")}
-        <span style={menuStyles.arrowIcon} className="backgroundColorHighlight">▼</span>
+        <span style={menuStyles.arrowIcon} className="backgroundColorHighlight">
+          ▼
+        </span>
       </div>
       <div style={menuStyles.content} className="backgroundColorHighlight">
         {categoriesList.map((category, index) => (
           <ProgressBar
+            key={category}
             title={category}
             progress={getCategoryProgress(category)}
             infoText={`NO`}
             active={activeTooltip === category}
             onClick={() => handleProgressBarClick(category)}
             highlighted={highlightedId === category}
-
           />
         ))}
       </div>

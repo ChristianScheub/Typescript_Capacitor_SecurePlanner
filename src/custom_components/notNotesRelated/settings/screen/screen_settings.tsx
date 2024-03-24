@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 import { NavigateFunction } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
@@ -38,9 +38,6 @@ const ViewSettings: React.FC<ViewSettingsProps> = ({
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const [searchQueryPlaceholder, setSearchQueryPlaceholder] =
-    useState<string>("");
-
   return (
     <div
       className="backgroundColor"
@@ -61,7 +58,7 @@ const ViewSettings: React.FC<ViewSettingsProps> = ({
         }}
       >
         {!isAlreadyLoggedIn && (
-          <NavBarContainer setSearchQuery={setSearchQueryPlaceholder} />
+          <NavBarContainer />
         )}
 
         <div className="after-login-container">

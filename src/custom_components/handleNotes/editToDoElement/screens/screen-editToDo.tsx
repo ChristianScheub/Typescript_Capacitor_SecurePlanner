@@ -81,7 +81,7 @@ const ViewEditTodo: React.FC<ViewEditTodoProps> = ({
                 />
                 <datalist id="category-options">
                   {categoriesList.map((category, index) => (
-                    <option value={category} />
+                    <option key={category} value={category} />
                   ))}
                 </datalist>
               </InputGroup>
