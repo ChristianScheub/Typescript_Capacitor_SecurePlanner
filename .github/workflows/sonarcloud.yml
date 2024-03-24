@@ -54,5 +54,8 @@ jobs:
           -Dsonar.test.inclusions="**/*.test.ts,**/*.test.tsx"
           -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
           -Dsonar.exclusions=**/*.java,**/*.swift
+          -Dsonar.c.file.suffixes=-
+          -Dsonar.cpp.file.suffixes=-
+          -Dsonar.objc.file.suffixes=-
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
