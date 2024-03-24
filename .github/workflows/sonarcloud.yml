@@ -49,8 +49,8 @@ jobs:
         args: >
           -Dsonar.projectKey=ChristianScheub_Typescript_Capacitor_SecurePlanner
           -Dsonar.organization=christianscheub
-          -Dsonar.sources=.
-          -Dsonar.tests=.
+          -Dsonar.sources=src
+          -Dsonar.tests=src
           -Dsonar.test.inclusions="**/*.test.ts,**/*.test.tsx"
           -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
           -Dsonar.exclusions=**/*.java,**/*.swift
