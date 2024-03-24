@@ -35,7 +35,7 @@ jest.mock("@capacitor/filesystem", () => ({
   },
 }));
 
-jest.mock("../../services/fingerprintLogic/fingerprintLogic", () => ({
+jest.mock("../../../services/fingerprintLogic/fingerprintLogic", () => ({
   availableBiometric: jest.fn(),
   getPasswordFromFingerprint: jest.fn(),
   storePasswordFromFingerprint: jest.fn(),

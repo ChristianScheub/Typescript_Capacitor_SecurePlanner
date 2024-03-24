@@ -148,29 +148,34 @@ const ContainerSettings: React.FC = () => {
     URL.revokeObjectURL(link.href);
   };
 
-  const handleFileChange = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files ? event.target.files[0] : null;
-    if (window.confirm(t("settings_Dialog_Import"))) {
-      if (file) {
-        const fileContent = await readFileContent(file);
-        if (fileContent) {
-          const lines = fileContent.trim().split("*_*_*");
-          for (let i = 0; i < lines.length; i += 2) {
-            const key = lines[i].slice(1);
-            let value = lines[i + 1] ?? "";
-            value = value.substring(1);
-            value = await makeReadyForImport(value);
-            if (key) {
-              localStorage.setItem(key, value);
-            }
-          }
-        }
+    if (!window.confirm(t("settings_Dialog_Import")) || !file) return;
+  
+    try {
+      const fileContent = await readFileContent(file);
+      if (fileContent) {
+        await processFileContent(fileContent);
         alert(t("settings_Dialog_ImportSuccessful"));
       }
+    } catch (error) {
+      console.error("Error processing file:", error);
+      // Handle the error appropriately
     }
   };
+  
+  const processFileContent = async (content: string) => {
+    const lines = content.trim().split("*_*_*");
+    for (let i = 0; i < lines.length; i += 2) {
+      const key = lines[i].slice(1);
+      let value = lines[i + 1] ?? "";
+      value = value.substring(1);
+      value = await makeReadyForImport(value);
+      if (key) {
+        localStorage.setItem(key, value);
+      }
+    }
+  };  
 
   const readFileContent = (file: File): Promise<string | null> => {
     return new Promise((resolve, reject) => {

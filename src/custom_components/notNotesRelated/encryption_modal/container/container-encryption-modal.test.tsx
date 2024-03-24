@@ -37,13 +37,13 @@ jest.mock("crypto-js", () => ({
   },
 }));
 
-jest.mock("../../services/fingerprintLogic/fingerprintLogic", () => ({
+jest.mock("../../../services/fingerprintLogic/fingerprintLogic", () => ({
   availableBiometric: jest.fn(),
   getPasswordFromFingerprint: jest.fn(),
   storePasswordFromFingerprint: jest.fn(),
 }));
 
-jest.mock('../../services/encryptionEngine/encryptionEngine', () => ({
+jest.mock('../../../services/encryptionEngine/encryptionEngine', () => ({
   getPBKDF2_Password: jest.fn().mockImplementation(password => password),
 }));
 
@@ -51,6 +51,7 @@ jest.mock('../../services/encryptionEngine/encryptionEngine', () => ({
 beforeEach(() => {
   (fingerprintLogic.availableBiometric as jest.Mock).mockResolvedValue(true);
   (getPBKDF2_Password as jest.Mock).mockImplementation(password => password);
+  localStorage.setItem("welcomeScreenDone", "true");
 });
 
 describe("<EncryptionKeyModal />", () => {

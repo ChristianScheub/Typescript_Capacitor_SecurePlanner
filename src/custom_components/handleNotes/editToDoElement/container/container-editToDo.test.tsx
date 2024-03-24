@@ -10,7 +10,7 @@ import React from "react";
 import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
 import { ToDoList } from "../../../types/ToDoList.types";
 
-jest.mock("../../services/toDoListHandler/toDoListHandler", () => ({
+jest.mock("../../../services/toDoListHandler/toDoListHandler", () => ({
   loadToDoList: jest.fn(),
   saveToDoList: jest.fn() as jest.Mock<
     Promise<void>,

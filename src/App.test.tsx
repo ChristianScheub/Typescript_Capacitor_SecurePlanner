@@ -26,6 +26,11 @@ describe("App Component", () => {
   beforeEach(() => {
     localStorage.setItem("welcomeScreenDone", "true");
     jest.mocked(getPBKDF2_Password).mockImplementation(password => password);
+    window.matchMedia = jest.fn().mockImplementation(query => ({
+      matches: query === '(prefers-color-scheme: dark)',
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+    }));
   });
 
   test("renders without crashing", async () => {

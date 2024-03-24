@@ -115,7 +115,6 @@ describe("EditNote Component", () => {
       const contentTextArea = screen.getByTestId(
         "noteTextTest"
       ) as HTMLTextAreaElement;
-
       fireEvent.change(titleInput, { target: { value: "New Title" } });
       fireEvent.change(contentTextArea, { target: { value: "New Content" } });
 

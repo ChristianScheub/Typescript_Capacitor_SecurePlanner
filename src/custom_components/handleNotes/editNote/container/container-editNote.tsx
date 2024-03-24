@@ -22,6 +22,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   const { t } = useTranslation();
   const [toDo_toEdit_id, setToDo_toEdit_id] = useState<number>();
   const [showToDoEdit, setShowToDoEdit] = useState<boolean>(false);
+  const [currentFilter, setCurrentFilter] = useState<string>("total");
 
   //The Keys which should be ignored and maybe set already (i18nextLng, capuid are web only so not smartphone relevant)
   const ignoredKeys = [
@@ -78,7 +79,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
             setShownToDoList(toDoList);
           }
         } catch (error) {
-          logError("Fehler beim Laden und Entschlüsseln der Notiz:",error);
+          logError("Fehler beim Laden und Entschlüsseln der Notiz",error)
         }
       }
     };
@@ -89,7 +90,21 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   useEffect(() => {
     const storeNotes = async () => {
       logAllDebugMessages("triggerStore");
-      logAllDebugMessages(JSON.stringify(toDoList));
+      logAllDebugMessages(toDoList.toString());
+      if (
+        noteId &&
+        (toDoList.title !== "" ||
+          toDoList.content !== "" ||
+          toDoList.toDoItem.length > 0)
+      ) {
+        try {
+          await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
+          handleFilterList(currentFilter);
+          setCategoriesList(ToDoListService.getCategories(toDoList));
+        } catch (error) {
+          logError("Fehler beim Speichern der Notiz",error)
+        }
+      }
     };
     storeNotes();
   }, [toDoList]);
@@ -188,7 +203,8 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   };
 
   const handleFilterList = async (filter: string) => {
-    logAllDebugMessages("TRIGGER FILTER with"+filter);
+    logAllDebugMessages("TRIGGER FILTER with"+filter)
+    await setCurrentFilter(filter);
 
     if (filter === "total") {
       return setShownToDoList(ToDoListService.sortToDoList(toDoList));

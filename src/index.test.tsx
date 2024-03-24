@@ -10,6 +10,15 @@ jest.mock('capacitor-native-biometric', () => ({
 
 
 describe('App Component Tests', () => {
+  beforeEach(() => {
+    localStorage.setItem("welcomeScreenDone", "true");
+    window.matchMedia = jest.fn().mockImplementation(query => ({
+      matches: query === '(prefers-color-scheme: dark)',
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+    }));
+  });
+
   test('renders App component', () => {
     render(<App />);
     expect(screen.getByTestId("password-input")).toBeInTheDocument();
