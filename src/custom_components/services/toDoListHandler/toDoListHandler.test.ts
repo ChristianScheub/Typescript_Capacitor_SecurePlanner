@@ -5,6 +5,7 @@ import {
   decryptFromStorage,
 } from "../encryptionEngine/encryptionEngine";
 import { Priority } from "../../enums/priority.enum";
+import { ToDoItem } from "../../types/ToDoItem.types";
 
 jest.mock("../encryptionEngine/encryptionEngine");
 
@@ -36,84 +37,76 @@ describe("loadAllToDoLists", () => {
   });
 });
 
+const defaultToDoItem: Omit<
+  ToDoItem,
+  "toDoTitle" | "toDoEndDate" | "toDoDone" | "toDoPriority"
+> = {
+  toDoText: "",
+  toDoCategorie: "",
+};
+
+const toDoListData = [
+  {
+    toDoTitle: "1",
+    toDoDone: false,
+    toDoPriority: Priority.Middle,
+    toDoEndDate: new Date("2024-01-02"),
+  },
+  {
+    toDoTitle: "2",
+    toDoDone: true,
+    toDoPriority: Priority.Highest,
+    toDoEndDate: new Date("2024-01-03"),
+  },
+  {
+    toDoTitle: "3",
+    toDoDone: false,
+    toDoPriority: Priority.Middle,
+    toDoEndDate: new Date("2024-01-03"),
+  },
+  {
+    toDoTitle: "4",
+    toDoDone: false,
+    toDoPriority: Priority.Highest,
+    toDoEndDate: new Date("2024-02-03"),
+  },
+  {
+    toDoTitle: "5",
+    toDoDone: false,
+    toDoPriority: Priority.Low,
+    toDoEndDate: new Date("2024-01-03"),
+  },
+  {
+    toDoTitle: "6",
+    toDoDone: false,
+    toDoPriority: Priority.Low,
+    toDoEndDate: new Date("2024-02-03"),
+  },
+  {
+    toDoTitle: "7",
+    toDoDone: false,
+    toDoPriority: Priority.Low,
+    toDoEndDate: new Date("2024-02-03"),
+  },
+  {
+    toDoTitle: "8",
+    toDoDone: true,
+    toDoPriority: Priority.Low,
+    toDoEndDate: new Date("2024-02-03"),
+  },
+  {
+    toDoTitle: "9",
+    toDoDone: false,
+    toDoPriority: Priority.Low,
+    toDoEndDate: new Date("2024-02-03"),
+  },
+];
+
 const toDoList: ToDoList = {
   title: "testTitle",
   date: new Date(),
   content: "Helloooo",
-  toDoItem: [
-    {
-      toDoTitle: "1",
-      toDoText: "",
-      toDoDone: false,
-      toDoPriority: Priority.Middle,
-      toDoEndDate: new Date("2024-01-02"),
-      toDoCategorie: "",
-    },
-    {
-      toDoTitle: "2",
-      toDoText: "",
-      toDoDone: true,
-      toDoPriority: Priority.Highest,
-      toDoEndDate: new Date("2024-01-03"),
-      toDoCategorie: "",
-    },
-    {
-      toDoTitle: "3",
-      toDoText: "",
-      toDoDone: false,
-      toDoPriority: Priority.Middle,
-      toDoEndDate: new Date("2024-01-03"),
-      toDoCategorie: "",
-    },
-    {
-      toDoTitle: "4",
-      toDoText: "",
-      toDoDone: false,
-      toDoPriority: Priority.Highest,
-      toDoEndDate: new Date("2024-02-03"),
-      toDoCategorie: "",
-    },
-    {
-      toDoTitle: "5",
-      toDoText: "",
-      toDoDone: false,
-      toDoPriority: Priority.Low,
-      toDoEndDate: new Date("2024-01-03"),
-      toDoCategorie: "",
-    },
-    {
-      toDoTitle: "6",
-      toDoText: "",
-      toDoDone: false,
-      toDoPriority: Priority.Low,
-      toDoEndDate: new Date("2024-02-03"),
-      toDoCategorie: "",
-    },
-    {
-      toDoTitle: "7",
-      toDoText: "",
-      toDoDone: false,
-      toDoPriority: Priority.Low,
-      toDoEndDate: new Date("2024-02-03"),
-      toDoCategorie: "",
-    },
-    {
-      toDoTitle: "8",
-      toDoText: "",
-      toDoDone: true,
-      toDoPriority: Priority.Low,
-      toDoEndDate: new Date("2024-02-03"),
-      toDoCategorie: "",
-    },
-    {
-      toDoTitle: "9",
-      toDoText: "",
-      toDoDone: false,
-      toDoPriority: Priority.Low,
-      toDoEndDate: new Date("2024-02-03"),
-      toDoCategorie: "",
-    },
-  ],
+  toDoItem: toDoListData.map((item) => ({ ...defaultToDoItem, ...item })),
 };
 
 describe("saveToDoList", () => {

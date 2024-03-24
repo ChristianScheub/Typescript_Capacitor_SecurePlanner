@@ -8,45 +8,27 @@ import {
 } from "./toDoListFilter";
 
 describe("toDoListFilter", () => {
+  const toDoItemsData = [
+    { title: "1", endDate: "2024-01-02", categorie: "Work", done: false, priority: Priority.Middle },
+    { title: "2", endDate: "2024-01-03", categorie: "Home", done: true, priority: Priority.Highest },
+    { title: "3", endDate: "2024-01-03", categorie: "Work", done: false, priority: Priority.Middle },
+    { title: "4", endDate: "2024-03-30", categorie: "", done: false, priority: Priority.Highest },
+  ];
+  
   const mockToDoList: ToDoList = {
     title: "testTitle",
     date: new Date(),
     content: "Helloooo",
-    toDoItem: [
-      {
-        toDoTitle: "1",
-        toDoText: "",
-        toDoDone: false,
-        toDoPriority: Priority.Middle,
-        toDoEndDate: new Date("2024-01-02"),
-        toDoCategorie: "Work",
-      },
-      {
-        toDoTitle: "2",
-        toDoText: "",
-        toDoDone: true,
-        toDoPriority: Priority.Highest,
-        toDoEndDate: new Date("2024-01-03"),
-        toDoCategorie: "Home",
-      },
-      {
-        toDoTitle: "3",
-        toDoText: "",
-        toDoDone: false,
-        toDoPriority: Priority.Middle,
-        toDoEndDate: new Date("2024-01-03"),
-        toDoCategorie: "Work",
-      },
-      {
-        toDoTitle: "4",
-        toDoText: "",
-        toDoDone: false,
-        toDoPriority: Priority.Highest,
-        toDoEndDate: new Date("2024-03-30"),
-        toDoCategorie: "",
-      }
-    ],
+    toDoItem: toDoItemsData.map(({ title, endDate, categorie, done, priority }) => ({
+      toDoTitle: title,
+      toDoText: "",
+      toDoDone: done,
+      toDoPriority: priority,
+      toDoEndDate: new Date(endDate),
+      toDoCategorie: categorie,
+    })),
   };
+  
 
   const mockEmptyToDoList: ToDoList = {
     title: "testTitle",

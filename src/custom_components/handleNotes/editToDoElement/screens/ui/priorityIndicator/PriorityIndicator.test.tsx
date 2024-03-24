@@ -1,32 +1,38 @@
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, fireEvent, screen, RenderResult } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import PrioritySlider from "./priorityIndicator";
 import { Priority } from "../../../../../enums/priority.enum";
 
+const mockOnPriorityChange = jest.fn();
+
+interface RenderPrioritySliderProps {
+  selectedPriority: Priority;
+}
+
+const renderPrioritySlider = ({ selectedPriority }: RenderPrioritySliderProps): RenderResult => {
+  return render(
+    <PrioritySlider
+      selectedPriority={selectedPriority}
+      onPriorityChange={mockOnPriorityChange}
+    />
+  );
+};
+
 describe("PrioritySlider Component", () => {
-  const mockOnPriorityChange = jest.fn();
+  
 
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
+
   test("initializes slider value based on selectedPriority", () => {
-    render(
-      <PrioritySlider
-        selectedPriority={Priority.High}
-        onPriorityChange={mockOnPriorityChange}
-      />
-    );
+    renderPrioritySlider({ selectedPriority: Priority.High });
     expect(screen.getByRole("slider")).toHaveValue("50");
   });
 
   test("calls onPriorityChange with correct value when slider changes", () => {
-    render(
-      <PrioritySlider
-        selectedPriority={Priority.Low}
-        onPriorityChange={mockOnPriorityChange}
-      />
-    );
+    renderPrioritySlider({ selectedPriority: Priority.Low });
     fireEvent.change(screen.getByRole("slider"), { target: { value: "70" } });
     expect(mockOnPriorityChange).toHaveBeenCalledWith(
       "toDoPriority",
@@ -35,12 +41,7 @@ describe("PrioritySlider Component", () => {
   });
 
   test("updates slider value when selectedPriority prop changes", () => {
-    const { rerender } = render(
-      <PrioritySlider
-        selectedPriority={Priority.Low}
-        onPriorityChange={mockOnPriorityChange}
-      />
-    );
+    const { rerender } = renderPrioritySlider({ selectedPriority: Priority.Low });
     rerender(
       <PrioritySlider
         selectedPriority={Priority.Middle}
@@ -51,12 +52,7 @@ describe("PrioritySlider Component", () => {
   });
 
   test("calls onPriorityChange with correct value when slider changes to a valid priority value", () => {
-    render(
-      <PrioritySlider
-        selectedPriority={Priority.Low}
-        onPriorityChange={mockOnPriorityChange}
-      />
-    );
+    renderPrioritySlider({ selectedPriority: Priority.Low });
     fireEvent.change(screen.getByRole("slider"), { target: { value: "70" } });
     expect(mockOnPriorityChange).toHaveBeenCalledWith(
       "toDoPriority",
@@ -65,12 +61,7 @@ describe("PrioritySlider Component", () => {
   });
 
   test("does not call onPriorityChange for invalid slider values not mapped to priorities", () => {
-    render(
-      <PrioritySlider
-        selectedPriority={Priority.Low}
-        onPriorityChange={mockOnPriorityChange}
-      />
-    );
+    renderPrioritySlider({ selectedPriority: Priority.Low });
     fireEvent.change(screen.getByRole("slider"), { target: { value: "999" } });
     expect(mockOnPriorityChange).not.toHaveBeenCalled();
   });
