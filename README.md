@@ -11,6 +11,9 @@ Language: Typescript React Capacitor<br>
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ChristianScheub_Typescript_Capacitor_SecurePlanner&metric=bugs)](https://sonarcloud.io/summary/new_code?id=ChristianScheub_Typescript_Capacitor_SecurePlanner)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ChristianScheub_Typescript_Capacitor_SecurePlanner&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=ChristianScheub_Typescript_Capacitor_SecurePlanner) 
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=ChristianScheub_Typescript_Capacitor_SecurePlanner&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=ChristianScheub_Typescript_Capacitor_SecurePlanner)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ChristianScheub_Typescript_Capacitor_SecurePlanner&metric=coverage)](https://sonarcloud.io/dashboard?id=ChristianScheub_Typescript_Capacitor_SecurePlanner)
+
+
 
 
 With this app, it is possible to securely store ToDo Lists locally with AES & Triple DES encryption, edit/delete them and search them.
