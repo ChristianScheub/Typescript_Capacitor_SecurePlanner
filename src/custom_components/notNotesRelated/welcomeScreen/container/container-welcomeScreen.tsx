@@ -33,12 +33,11 @@ const WelcomeContainer: React.FC<WelcomeContainerProps> = ({ closeOverlay }) => 
 
   const getScreenClassName = (screenNumber: number): string => {
     if (currentScreen === screenNumber) return "slide-in";
-    else if (currentScreen === screenNumber + 1) return "slide-out";
     return "hide";
   };
 
   return (
-    <div {...handlers} className="welcome-container">
+    <div {...handlers} className="welcome-container" data-testid="welcome-container">
        <div className={`screen ${getScreenClassName(4)}`}>
         <WelcomeScreen5Container closeOverlay={closeOverlay}/>
       </div>
@@ -49,10 +48,10 @@ const WelcomeContainer: React.FC<WelcomeContainerProps> = ({ closeOverlay }) => 
       <div className={`screen ${getScreenClassName(2)}`}>
         <WelcomeScreen3Container onNext={nextScreen} isActivate={currentScreen===2} availableScreens={availableScreens} />
       </div>
-      <div className={`screen ${getScreenClassName(1)}`}>
+      <div className={`screen ${getScreenClassName(1)}`} data-testid="welcome-container2">
         <WelcomeScreen2Container onNext={nextScreen} availableScreens={availableScreens} />
       </div>
-      <div className={`screen ${currentScreen === 0 ? "slide-in" : "slide-out"}`}>
+      <div className={`screen ${currentScreen === 0 ? "slide-in" : "slide-out"}`} data-testid="welcome-container1">
         <WelcomeScreen1Container onNext={nextScreen} availableScreens={availableScreens} />
       </div>
       

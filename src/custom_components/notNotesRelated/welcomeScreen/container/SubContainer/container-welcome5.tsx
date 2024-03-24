@@ -12,10 +12,6 @@ const WelcomeScreen5Container = ({
   const [password, setPassword] = useState("");
   const [passwordShortError, setPasswordShortError] = useState(false);
 
-  const handlePasswordChange = (value: string) => {
-    setPassword(value);
-  };
-
   const handleSubmit = () => {
     if (password.length < 4) {
       //That the user sees the error message is new
@@ -36,7 +32,7 @@ const WelcomeScreen5Container = ({
       justOnePassword={justOnePassword}
       setJustOnePassword={setJustOnePassword}
       passwordShortError={passwordShortError}
-      handlePasswordChange={handlePasswordChange}
+      handlePasswordChange={setPassword}
       handleSubmit={handleSubmit}
       t={t}
     />
