@@ -2,12 +2,15 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import PasswordInput from './passwordInputField';
 
-describe('PasswordInput', () => {
-  it('renders and can change value', () => {
-    const onChangeMock = jest.fn();
-    render(<PasswordInput onChange={onChangeMock} />);
+it('renders and can change value', () => {
+  const onChangeMock = jest.fn();
+  render(<PasswordInput onChange={onChangeMock} />);
 
-    fireEvent.change(screen.getByLabelText(/Enter your new Password/i), { target: { value: 'password123' } });
+  const inputElement = screen.getByTestId("welcome-screen-password-input").querySelector('input');
+  if(inputElement) {
+    fireEvent.change(inputElement, { target: { value: 'password123' } });
     expect(onChangeMock).toHaveBeenCalledTimes(1);
-  });
+  } else {
+    throw new Error('input element not found');
+  }
 });

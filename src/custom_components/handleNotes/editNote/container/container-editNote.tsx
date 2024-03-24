@@ -9,7 +9,10 @@ import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
 import ProgressToDoListService from "../../../services/progressToDoListService/progressToDoListService";
 import ContainerEditTodo from "../../editToDoElement/container/container-editToDo";
 import { formatDate } from "../../../services/formatDate/formatDate";
-import { logError,logAllDebugMessages } from "../../../services/logger/loggerFeatureFlags";
+import {
+  logError,
+  logAllDebugMessages,
+} from "../../../services/logger/loggerFeatureFlags";
 
 interface ContainerEditNoteProps {
   encryptionKey: string;
@@ -33,7 +36,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
     "securityLevelReallyLow",
     "securityLevel",
     "justOnePassword2",
-    "justOnePassword"
+    "justOnePassword",
   ];
 
   const relevantItemCount = Object.keys(localStorage).reduce((count, key) => {
@@ -79,7 +82,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
             setShownToDoList(toDoList);
           }
         } catch (error) {
-          logError("Fehler beim Laden und Entschlüsseln der Notiz",error)
+          logError("Fehler beim Laden und Entschlüsseln der Notiz", error);
         }
       }
     };
@@ -102,7 +105,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
           handleFilterList(currentFilter);
           setCategoriesList(ToDoListService.getCategories(toDoList));
         } catch (error) {
-          logError("Fehler beim Speichern der Notiz",error)
+          logError("Fehler beim Speichern der Notiz", error);
         }
       }
     };
@@ -203,7 +206,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   };
 
   const handleFilterList = async (filter: string) => {
-    logAllDebugMessages("TRIGGER FILTER with"+filter)
+    logAllDebugMessages("TRIGGER FILTER with" + filter);
     await setCurrentFilter(filter);
 
     if (filter === "total") {
@@ -236,6 +239,14 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
     }
   };
 
+  const ContainerEditToDoWithValue = (
+    <ContainerEditTodo
+      encryptionKey={encryptionKey}
+      noteId={noteId}
+      toDoItemId={toDo_toEdit_id}
+    />
+  );
+
   return (
     <EditNoteView
       toDoList={shownToDoList}
@@ -253,13 +264,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
       updateToDoList={updateToDoList}
       handleDeleteToDo={handleDeleteToDo}
       handleDoneToDo={handleDoneToDo}
-      CustomComponent={() => (
-        <ContainerEditTodo
-          encryptionKey={encryptionKey}
-          noteId={noteId}
-          toDoItemId={toDo_toEdit_id}
-        />
-      )}
+      CustomComponent={() => ContainerEditToDoWithValue}
       showToDoEdit={showToDoEdit}
       onHandleToDoSave={() => setShowToDoEdit(false)}
       handleFilterList={handleFilterList}

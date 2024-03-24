@@ -9,13 +9,13 @@ import { logAllDebugMessages, logError } from "../../logger/loggerFeatureFlags";
 const isJsonString = (str: string): boolean => {
   try {
     const data = JSON.parse(str);
-    const test = data.content + data.title;
-    return true;
+    return "content" in data && "title" in data;
   } catch (e) {
-    logError("fehler beim isJsonString Check", e);
+    logError("Fehler beim isJsonString Check", e);
     return false;
   }
 };
+
 
 export const loadAllToDoLists = async (
   encryptionKey: string

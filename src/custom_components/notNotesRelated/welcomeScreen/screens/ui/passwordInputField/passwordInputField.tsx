@@ -17,6 +17,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ onChange }) => {
       type="password"
       autoComplete="current-password"
       variant="outlined"
+      data-testid="welcome-screen-password-input"
       fullWidth
       margin="normal"
       onChange={onChange}

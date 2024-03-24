@@ -54,7 +54,7 @@ const UsedLibListScreen: React.FC<UsedLibListScreenProps> = ({
             {npmModules.map((module, index) => (
               <ListItem
                 button
-                key={module.name+module.version}
+                key={module.name+module.version+index}
                 onClick={() => handleModuleClick(module.repository)}
               >
                 <ListItemText

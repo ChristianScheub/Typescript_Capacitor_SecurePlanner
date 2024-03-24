@@ -2,7 +2,10 @@ import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { BrowserRouter as Router } from "react-router-dom";
 import EditNoteContainer from "./container-editNote";
-import { encryptAndStore, decryptFromStorage } from "../../../services/encryptionEngine/encryptionEngine";
+import {
+  encryptAndStore,
+  decryptFromStorage,
+} from "../../../services/encryptionEngine/encryptionEngine";
 import { act } from "react-dom/test-utils";
 
 const mockEncryptionKey = "some-encryption-key";
@@ -16,13 +19,15 @@ jest.mock("react-router-dom", () => ({
 
 beforeEach(async () => {
   localStorage.clear();
+  console.log("localStorage cleared");
   await encryptAndStore(
-    '{"title":"TestTitel","date":"2023-12-09T20:10:56.534Z","content":"Tescht"}',
+    '{"title":"TestTitel","date":"2024-03-24T01:23:59.851Z","content":"Tescht","toDoItem":[]}',
     mockEncryptionKey,
     "22"
   );
+ 
   await encryptAndStore(
-    '{"title":"second","date":"2023-12-09T20:10:56.534Z","content":"zwei"}',
+    '{"title":"second","date":"2023-12-09T20:10:56.534Z","content":"zwei","toDoItem":[]}',
     mockEncryptionKey,
     "2"
   );
@@ -41,7 +46,7 @@ describe("EditNote Component", () => {
     act(() => {
       render(
         <Router>
-          <EditNoteContainer encryptionKey="some-encryption-key" />
+          <EditNoteContainer encryptionKey={mockEncryptionKey} />
         </Router>
       );
     });
@@ -51,7 +56,9 @@ describe("EditNote Component", () => {
       expect(screen.getByDisplayValue("Tescht")).toBeInTheDocument();
     });
   });
+  
 
+  
   it("renders with empty fields when no noteId is provided", async () => {
     jest.mock("react-router-dom", () => ({
       ...jest.requireActual("react-router-dom"),
@@ -131,9 +138,9 @@ describe("EditNote Component", () => {
   const isJsonString = (str: string): boolean => {
     try {
       const data = JSON.parse(str);
-      const test = data.content + data.title;
-      return true;
+      return "content" in data && "title" in data;
     } catch (e) {
+      console.log("Fehler beim isJsonString Check", e);
       return false;
     }
   };
@@ -213,4 +220,5 @@ describe("EditNote Component", () => {
       
     });
   });
+  
 });

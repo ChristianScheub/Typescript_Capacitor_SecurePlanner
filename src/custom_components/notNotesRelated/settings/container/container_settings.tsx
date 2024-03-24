@@ -133,7 +133,7 @@ const ContainerSettings: React.FC = () => {
         downloadFile(notes, fileName);
       }
     } catch (e) {
-      console.error("Error during export or sharing", e);
+      logError("Error during export or sharing", e);
     }
   };
 
@@ -159,8 +159,7 @@ const ContainerSettings: React.FC = () => {
         alert(t("settings_Dialog_ImportSuccessful"));
       }
     } catch (error) {
-      console.error("Error processing file:", error);
-      // Handle the error appropriately
+      logError("Error processing file", error);
     }
   };
   

@@ -27,7 +27,7 @@ const CustomInput = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElem
       }}
     >
       <SlCalender style={{marginLeft:'2vw'}}/>
-
+      {value ? value : ''}
     </div>
   )
 );
