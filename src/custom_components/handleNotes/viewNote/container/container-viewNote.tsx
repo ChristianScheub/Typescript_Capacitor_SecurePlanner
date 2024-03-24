@@ -1,8 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import getAllNotes from './getNotes';
 import ViewViewNote from '../screen/screen-viewNote';
-import { useLocation } from 'react-router-dom';
 import { ToDoList } from "../../../types/ToDoList.types";
 import ProgressToDoListService from "../../../services/progressToDoListService/progressToDoListService";
 import { featureFlag_IsTrialVersion } from "../../../featureFlags/featureFlags";

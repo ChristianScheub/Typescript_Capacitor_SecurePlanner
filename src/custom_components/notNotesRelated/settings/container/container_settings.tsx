@@ -1,10 +1,9 @@
-import { NavigateFunction } from "react-router-dom";
+import { NavigateFunction,useLocation } from "react-router-dom";
 import { NativeBiometric } from "capacitor-native-biometric";
 import SettingsView from "../screen/screen_settings";
 import React, { useState, useEffect } from "react";
 import { availableBiometric } from "../../../services/fingerprintLogic/fingerprintLogic";
 import { Filesystem, Directory } from "@capacitor/filesystem";
-import { useLocation } from "react-router-dom";
 import { Share } from "@capacitor/share";
 import {
   makeReadyForExport,

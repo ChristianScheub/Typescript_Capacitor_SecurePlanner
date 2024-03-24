@@ -41,7 +41,7 @@ const filterNotes2 = (
   loadedNotes: [ToDoList, string][],
   searchQuery: string
 ) => {
-  let filteredNotes = loadedNotes
+  const filteredNotes = loadedNotes
     .map(([toDoList, key]) => ({ toDoList, key }))
     .filter(({ toDoList }) => {
       logAllDebugMessages("loadingNotes");

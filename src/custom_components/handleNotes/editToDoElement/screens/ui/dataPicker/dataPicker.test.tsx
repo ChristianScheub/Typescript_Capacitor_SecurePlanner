@@ -1,8 +1,7 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import DatePickerComponent from "./dataPicker";
-import { Priority } from "../../../../../enums/priority.enum";
 
 describe("DatePickerComponent", () => {
   it("should render correctly with given date", () => {

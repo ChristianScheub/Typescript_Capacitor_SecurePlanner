@@ -1,6 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate,NavigateFunction } from "react-router-dom";
 import React from "react";
-import { NavigateFunction } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
 import UsedLibsListContainer from "../../../../modules/legal/usedLibs/container_usedLibList";
