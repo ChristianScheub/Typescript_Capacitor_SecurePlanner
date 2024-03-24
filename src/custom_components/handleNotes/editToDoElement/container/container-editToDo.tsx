@@ -171,14 +171,6 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
   if (trialAndToMuch) {
     return (
       <ViewEditTodoTooMuch
-        title={toDoListItem.toDoTitle}
-        desc={toDoListItem.toDoText}
-        endDate={toDoListItem.toDoEndDate}
-        selectedPriority={toDoListItem.toDoPriority}
-        translatedPrio={translatedPrio}
-        categorie={toDoListItem.toDoCategorie}
-        categoriesList={categoriesList || []}
-        updateToDoItem={updateToDoItem}
       />
     );
   }
