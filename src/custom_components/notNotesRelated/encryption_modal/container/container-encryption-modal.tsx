@@ -26,9 +26,7 @@ const ContainerEncryptionKeyModal: React.FC<
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const [showFingerprintBtn, setShowFingerprintBtn] = useState(false);
-  const [showFingerprintHint, setShowFingerprintHint] = useState<boolean>(
-    showFingerprintBtn && localStorage.length <= 2
-  );
+  const showFingerprintHint = showFingerprintBtn && localStorage.getItem("fingerprintSet") !== "true";
   const [passwordShortError, setPasswordShortError] = useState<boolean>(false);
 
   const { t } = useTranslation();
@@ -41,12 +39,6 @@ const ContainerEncryptionKeyModal: React.FC<
     };
     checkBiometrics();
   }, []);
-
-  useEffect(() => {
-    setShowFingerprintHint(
-      showFingerprintBtn && localStorage.getItem("fingerprintSet") !== "true"
-    );
-  }, [showFingerprintBtn, localStorage.length]);
 
   function checkPasswordLength(password: string) {
     if (password.length < 4) {
@@ -122,7 +114,7 @@ const ContainerEncryptionKeyModal: React.FC<
     if (noPasswordNeeded) {
       onSubmit(" ");
     }
-  }, [showWelcomeOverlay, localStorage.length]);
+  }, [showWelcomeOverlay, onSubmit]);
 
   function closeWelcomeOverlay(password: string) {
     setShowWelcomeOverlay(false);

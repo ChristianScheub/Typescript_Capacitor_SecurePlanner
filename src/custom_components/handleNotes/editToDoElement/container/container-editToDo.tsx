@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ViewEditTodo from "../screens/screen-editToDo";
 import ViewEditTodoTooMuch from "../screens/screen-editToDo-TooMuch";
 import { Priority } from "../../../enums/priority.enum";
@@ -69,6 +69,17 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
     loadAndDecryptNote();
   }, [noteId, encryptionKey]);
 
+  const extractAndSetCategories = useCallback(() => {
+    const categoriesSet = new Set<string>();
+    toDoList.toDoItem.forEach((item) => {
+      if (item.toDoCategorie && item.toDoCategorie.trim() !== "") {
+        categoriesSet.add(item.toDoCategorie);
+      }
+    });
+  
+    setCategoriesList(Array.from(categoriesSet));
+  }, [toDoList]);
+
   //An dem toDoListItem wird eigentlich gearbeitet
   const [toDoListItem, setToDoListItem] = useState<ToDoItem>({
     toDoPriority: Priority.High,
@@ -115,7 +126,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
     };
     loadAndDecryptNote();
     extractAndSetCategories();
-  }, [toDoListItem]);
+  }, [toDoListItem, noteId, encryptionKey,toDoList,extractAndSetCategories]);
 
   useEffect(() => {
     const loadAndDecryptNote = async () => {
@@ -146,7 +157,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
 
     loadAndDecryptNote();
     extractAndSetCategories();
-  }, [noteId, toDoItemIdInt, encryptionKey]);
+  }, [noteId, toDoItemIdInt, encryptionKey,toDoItemId,extractAndSetCategories]);
 
   const updateToDoItem = <K extends keyof ToDoItem>(
     key: K,
@@ -156,17 +167,6 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
   };
 
   const [categoriesList, setCategoriesList] = useState<string[]>([]);
-
-  const extractAndSetCategories = () => {
-    const categoriesSet = new Set<string>();
-    toDoList.toDoItem.forEach((item) => {
-      if (item.toDoCategorie && item.toDoCategorie.trim() !== "") {
-        categoriesSet.add(item.toDoCategorie);
-      }
-    });
-
-    setCategoriesList(Array.from(categoriesSet));
-  };
 
   if (trialAndToMuch) {
     return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Priority } from "../../../../../enums/priority.enum";
 import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../../../../types/ToDoItem.types";
@@ -22,12 +22,12 @@ const PrioritySlider: React.FC<PrioritySliderProps> = ({
   selectedPriority,
   onPriorityChange,
 }) => {
-  const priorityToValue: Record<Priority, number> = {
+  const priorityToValue = useMemo(() => ({
     [Priority.Low]: 10,
     [Priority.Middle]: 30,
     [Priority.High]: 50,
     [Priority.Highest]: 70,
-  };
+  }), []);
   const [sliderValue, setSliderValue] = useState(
     priorityToValue[selectedPriority]
   );
@@ -46,7 +46,7 @@ const PrioritySlider: React.FC<PrioritySliderProps> = ({
 
   useEffect(() => {
     setSliderValue(priorityToValue[selectedPriority]);
-  }, [selectedPriority]);
+  }, [selectedPriority,priorityToValue]);
 
   const widthEachLabel = 80 / Object.keys(priorityColors).length + 2;
   const { t } = useTranslation();

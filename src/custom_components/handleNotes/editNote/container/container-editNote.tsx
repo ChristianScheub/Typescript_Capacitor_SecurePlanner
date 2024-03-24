@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { isEqual } from "../../../services/equals/equals";
 import EditNoteView from "../screen/screen-editNote";
@@ -64,53 +64,89 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   //List of all categories in the ToDo List
   const [categoriesList, setCategoriesList] = useState<string[]>([]);
 
-  useEffect(() => {
-    const loadAndDecryptNote = async () => {
-      if (noteId) {
-        try {
-          const noteData = await ToDoListService.loadToDoList(
-            noteId,
-            encryptionKey
-          );
-          if (noteData) {
-            setToDoList(noteData);
-            setCategoriesList(ToDoListService.getCategories(toDoList));
-            const sortedToDoList = ToDoListService.sortToDoList(toDoList);
-            if (!isEqual(sortedToDoList.toDoItem, toDoList.toDoItem)) {
-              setToDoList(sortedToDoList);
-            }
-            setShownToDoList(toDoList);
+  const handleFilterList = useCallback(async (filter: string) => {
+    logAllDebugMessages("TRIGGER FILTER with" + filter);
+    await setCurrentFilter(filter);
+  
+    if (filter === "total") {
+      return setShownToDoList(ToDoListService.sortToDoList(toDoList));
+    } else if (filter === "today") {
+      return setShownToDoList(
+        ToDoListService.sortToDoList(
+          ToDoListService.filterToDoListByNextXDays(toDoList, 0)
+        )
+      );
+    } else if (filter === "7Days") {
+      return setShownToDoList(
+        ToDoListService.sortToDoList(
+          ToDoListService.filterToDoListByNextXDays(toDoList, 7)
+        )
+      );
+    } else if (filter === "Priority") {
+      return setShownToDoList(
+        ToDoListService.sortToDoList(
+          ToDoListService.filterToDoListByPriority(toDoList, [
+            Priority.High,
+            Priority.Highest,
+          ])
+        )
+      );
+    } else {
+      return setShownToDoList(
+        ToDoListService.filterToDoListByCategory(toDoList, filter)
+      );
+    }
+  }, [setCurrentFilter, setShownToDoList, toDoList]);
+
+
+  const loadAndDecryptNote = useCallback(async () => {
+    if (noteId) {
+      try {
+        const noteData = await ToDoListService.loadToDoList(noteId, encryptionKey);
+        if (noteData) {
+          setToDoList(noteData);
+          // Since toDoList is set here, you must pay attention to how you handle these dependencies.
+          // The following lines could cause an infinite loop if they are executed directly after setToDoList,
+          // as toDoList may not have been updated yet.
+          setCategoriesList(ToDoListService.getCategories(noteData));
+          const sortedToDoList = ToDoListService.sortToDoList(noteData);
+          if (!isEqual(sortedToDoList.toDoItem, noteData.toDoItem)) {
+            setToDoList(sortedToDoList);
           }
-        } catch (error) {
-          logError("Fehler beim Laden und Entschlüsseln der Notiz", error);
+          setShownToDoList(noteData);
         }
+      } catch (error) {
+        logError("Fehler beim Laden und Entschlüsseln der Notiz", error);
       }
-    };
-
-    loadAndDecryptNote();
-  }, [noteId, encryptionKey, showToDoEdit]);
+    }
+  }, [noteId, encryptionKey]);
 
   useEffect(() => {
-    const storeNotes = async () => {
-      logAllDebugMessages("triggerStore");
-      logAllDebugMessages(toDoList.toString());
-      if (
-        noteId &&
-        (toDoList.title !== "" ||
-          toDoList.content !== "" ||
-          toDoList.toDoItem.length > 0)
-      ) {
-        try {
-          await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
-          handleFilterList(currentFilter);
-          setCategoriesList(ToDoListService.getCategories(toDoList));
-        } catch (error) {
-          logError("Fehler beim Speichern der Notiz", error);
-        }
+    loadAndDecryptNote();
+  }, [noteId, encryptionKey, showToDoEdit,loadAndDecryptNote]);
+
+  const storeNotes = useCallback(async () => {
+    logAllDebugMessages("triggerStore");
+    logAllDebugMessages(JSON.stringify(toDoList, null, 2));
+    if (
+      noteId &&
+      (toDoList.title !== "" ||
+        toDoList.content !== "" ||
+        toDoList.toDoItem.length > 0)
+    ) {
+      try {
+        await ToDoListService.saveToDoList(toDoList, encryptionKey, noteId);
+        handleFilterList(currentFilter);
+        setCategoriesList(ToDoListService.getCategories(toDoList));
+      } catch (error) {
+        logError("Fehler beim Speichern der Notiz", error);
       }
-    };
+    }
+  }, [toDoList, encryptionKey, currentFilter, noteId, handleFilterList]);  
+
+  useEffect(() => {
     storeNotes();
-  }, [toDoList]);
+  }, [toDoList, encryptionKey, currentFilter,noteId,handleFilterList,storeNotes]);
 
   const progressOverall = ProgressToDoListService.calculateProgress(
     toDoList.toDoItem,
@@ -204,40 +240,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
     }
     return t(i18nKey);
   };
-
-  const handleFilterList = async (filter: string) => {
-    logAllDebugMessages("TRIGGER FILTER with" + filter);
-    await setCurrentFilter(filter);
-
-    if (filter === "total") {
-      return setShownToDoList(ToDoListService.sortToDoList(toDoList));
-    } else if (filter === "today") {
-      return setShownToDoList(
-        ToDoListService.sortToDoList(
-          ToDoListService.filterToDoListByNextXDays(toDoList, 0)
-        )
-      );
-    } else if (filter === "7Days") {
-      return setShownToDoList(
-        ToDoListService.sortToDoList(
-          ToDoListService.filterToDoListByNextXDays(toDoList, 7)
-        )
-      );
-    } else if (filter === "Priority") {
-      return setShownToDoList(
-        ToDoListService.sortToDoList(
-          ToDoListService.filterToDoListByPriority(toDoList, [
-            Priority.High,
-            Priority.Highest,
-          ])
-        )
-      );
-    } else {
-      return setShownToDoList(
-        ToDoListService.filterToDoListByCategory(toDoList, filter)
-      );
-    }
-  };
+  
 
   const ContainerEditToDoWithValue = (
     <ContainerEditTodo
