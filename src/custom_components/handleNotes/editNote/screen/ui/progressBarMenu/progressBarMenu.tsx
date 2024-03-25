@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProgressBar from "../progressBar/progressBar";
 import { useTranslation } from "react-i18next";
+import './progressBarMenu.css';
 
 export interface ProgressBarCategoryMenuProps {
   categoriesList: string[];
@@ -20,46 +21,19 @@ const ProgressBarCategoryMenu: React.FC<ProgressBarCategoryMenuProps> = ({
   const { t } = useTranslation();
   const [isListVisible, setIsListVisible] = useState(false);
 
-  const menuStyles = {
-    container: {
-      overflow: "hidden",
-      borderRadius: "8px",
-      boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-    },
-    header: {
-      padding: "16px",
-      cursor: "pointer",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      fontSize: "18px",
-    },
-    content: {
-      padding: "10px",
-      display: isListVisible ? "block" : "none",
-    },
-    arrowIcon: {
-      transition: "transform 0.3s ease",
-      transform: isListVisible ? "rotate(-180deg)" : "rotate(0deg)",
-    },
-  };
-
   return (
-    <div
-      style={menuStyles.container}
-      className="backgroundColorHighlight margin2vw"
-    >
+    <div className="progressBarContainer backgroundColorHighlight margin2vw">
       <div
-        style={menuStyles.header}
+        className="progressBarHeader"
         onClick={() => setIsListVisible(!isListVisible)}
       >
         {t("viewNote_progressBarsCategories_title")}
-        <span style={menuStyles.arrowIcon} className="backgroundColorHighlight">
+        <span data-testid="progressBarArrowIcon" className={`progressBarArrowIcon ${isListVisible ? 'progressBarArrowIconUp' : 'progressBarArrowIconDown'} backgroundColorHighlight`}>
           ▼
         </span>
       </div>
-      <div style={menuStyles.content} className="backgroundColorHighlight">
-        {categoriesList.map((category, index) => (
+      <div className={`progressBarContent backgroundColorHighlight ${isListVisible ? 'progressBarContentVisible' : ''}`}>
+        {categoriesList.map((category) => (
           <ProgressBar
             key={category}
             title={category}

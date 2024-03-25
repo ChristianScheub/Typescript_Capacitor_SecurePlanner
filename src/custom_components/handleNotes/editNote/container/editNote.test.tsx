@@ -19,7 +19,6 @@ jest.mock("react-router-dom", () => ({
 
 beforeEach(async () => {
   localStorage.clear();
-  console.log("localStorage cleared");
   await encryptAndStore(
     '{"title":"TestTitel","date":"2024-03-24T01:23:59.851Z","content":"Tescht","toDoItem":[]}',
     mockEncryptionKey,

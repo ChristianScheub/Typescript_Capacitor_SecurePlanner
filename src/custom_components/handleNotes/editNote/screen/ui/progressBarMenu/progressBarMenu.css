@@ -1,0 +1,35 @@
+.progressBarContainer {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progressBarHeader {
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.progressBarContent {
+  padding: 10px;
+  display: none;
+}
+
+.progressBarContentVisible {
+  display: block;
+}
+
+.progressBarArrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.progressBarArrowIconUp {
+  transform: rotate(-180deg);
+}
+
+.progressBarArrowIconDown {
+  transform: rotate(0deg);
+}
