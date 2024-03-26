@@ -1,6 +1,5 @@
 import {
   act,
-  fireEvent,
   render,
   screen,
   waitFor,
