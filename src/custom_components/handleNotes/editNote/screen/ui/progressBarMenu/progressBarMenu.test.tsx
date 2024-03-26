@@ -1,4 +1,4 @@
-import { act, render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import ProgressBarCategoryMenu from "./progressBarMenu";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
