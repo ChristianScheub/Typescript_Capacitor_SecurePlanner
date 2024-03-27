@@ -129,14 +129,18 @@ export const decrypt = async (
   ).toString(CryptoJS.enc.Utf8);
 
   const [encryptedText, iv, salt] = decryptedDateWithDeviceId.split("::");
-  const key = deriveKeyPBKDF2(password, CryptoJS.enc.Hex.parse(salt));
-  const decrypted = CryptoJS.AES.decrypt(encryptedText, key, {
-    iv: CryptoJS.enc.Hex.parse(iv),
-    mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7,
-  }).toString(CryptoJS.enc.Utf8);
-
-  return decrypted;
+  if (salt && iv && encryptedText) {
+    const key = deriveKeyPBKDF2(password, CryptoJS.enc.Hex.parse(salt));
+    const decrypted = CryptoJS.AES.decrypt(encryptedText, key, {
+      iv: CryptoJS.enc.Hex.parse(iv),
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7,
+    }).toString(CryptoJS.enc.Utf8);
+    return decrypted;
+  }
+  else{
+    return "";
+  }
 };
 
 export const getDeviceIdHash = async (): Promise<string> => {

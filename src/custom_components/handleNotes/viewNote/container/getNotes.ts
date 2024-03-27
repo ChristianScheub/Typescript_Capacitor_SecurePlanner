@@ -17,7 +17,7 @@ const useAllNotes = (
     const loadAndDecryptNotes = async () => {
       const loadedNotes = await toDoListService.loadAllToDoLists(encryptionKey);
       if (loadedNotes) {
-        const filteredNotes = filterNotes2(loadedNotes, searchQuery);
+        const filteredNotes = filterNotes(loadedNotes, searchQuery);
         const sortedNotes = sortNotes(filteredNotes);
         setToDoLists(sortedNotes);
       }
@@ -28,7 +28,7 @@ const useAllNotes = (
   return toDoLists;
 };
 
-const sortNotes = (notes: ToDoListWithKey[]): ToDoListWithKey[] => {
+export const sortNotes = (notes: ToDoListWithKey[]): ToDoListWithKey[] => {
   return notes.sort((a, b) => {
     if (a.key < b.key) return -1;
     if (a.key > b.key) return 1;
@@ -37,7 +37,7 @@ const sortNotes = (notes: ToDoListWithKey[]): ToDoListWithKey[] => {
 };
 
 
-const filterNotes2 = (
+export const filterNotes = (
   loadedNotes: [ToDoList, string][],
   searchQuery: string
 ) => {

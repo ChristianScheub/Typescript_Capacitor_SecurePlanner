@@ -16,12 +16,12 @@ describe("ViewNote Component", () => {
       "1"
     );
     await encryptAndStore(
-      '{"title":"second","date":"2023-12-09T20:10:56.534Z","content":"zwei"}',
+      '{"title":"second","date":"2023-12-09T20:10:56.534Z","content":""}',
       mockEncryptionKey,
       "2"
     );
 
-    act(() => {
+    await act(async () => {
       render(
         <Router>
           <ViewNoteContainer
@@ -37,14 +37,21 @@ describe("ViewNote Component", () => {
     await waitFor(() => {
       expect(screen.getByText("TestTitel")).toBeInTheDocument();
       expect(screen.getByText("second")).toBeInTheDocument();
+
+      const styleCard1 = window.getComputedStyle(screen.getByText("TestTitel"));
+      expect(styleCard1.marginLeft).toBe("1vw");
+
+      const styleCard2 = window.getComputedStyle(screen.getByText("second"));
+      expect(styleCard2.marginLeft).toBe("2vw");
     });
   });
+
   test("should navigate to edit page on note click", async () => {
-    await waitFor(()=> {
+    await waitFor(() => {
       expect(screen.getByText("TestTitel")).toBeInTheDocument();
     });
 
-    act(() => {
+    await act(async () => {
       fireEvent.click(screen.getByText("TestTitel"));
       expect(window.location.pathname).toBe("/edit/1");
     });
@@ -55,7 +62,7 @@ describe("ViewNote Component", () => {
       expect(screen.getByTestId("floating-btn")).toBeInTheDocument();
     });
 
-    act(() => {
+    await act(async () => {
       fireEvent.click(screen.getByTestId("floating-btn"));
       expect(window.location.pathname).toContain("/edit");
     });

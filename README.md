@@ -124,9 +124,9 @@ The tests here are always written in Typescript.
 The goal is actually to have about 80% test coverage of the lines. This number appears to be enough as this is a freetime project. 
 This seems to be sufficient, as there are already more than 160 tests...
 
-File                                                                               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line                              
+File                                                                               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line                                       
 -----------------------------------------------------------------------------------|---------|----------|---------|---------|----------------------------------------------------------
-All files                                                                          |   81.22 |     65.7 |   77.82 |   81.76 |                                                          
+All files                                                                          |    83.4 |    71.36 |   78.66 |   83.89 |                                                          
  src                                                                               |      95 |     62.5 |      80 |     100 |                                                          
   App.tsx                                                                          |     100 |      100 |     100 |     100 |                                                          
   darkModeDetector.ts                                                              |      90 |       25 |      75 |     100 | 8-12                                                     
@@ -157,11 +157,11 @@ All files                                                                       
   dataPicker.tsx                                                                   |      80 |       50 |   66.66 |      80 | 41                                                       
  src/custom_components/handleNotes/editToDoElement/screens/ui/priorityIndicator    |     100 |      100 |     100 |     100 |                                                          
   priorityIndicator.tsx                                                            |     100 |      100 |     100 |     100 |                                                          
- src/custom_components/handleNotes/viewNote/container                              |      90 |       60 |   88.23 |   91.22 |                                                          
+ src/custom_components/handleNotes/viewNote/container                              |      95 |       84 |   94.11 |   94.73 |                                                          
   container-viewNote.tsx                                                           |   91.17 |    78.57 |    87.5 |    90.9 | 28,38,68                                                 
-  getNotes.ts                                                                      |   88.46 |    36.36 |   88.88 |   91.66 | 35,54                                                    
- src/custom_components/handleNotes/viewNote/screen                                 |     100 |    66.66 |     100 |     100 |                                                          
-  screen-viewNote.tsx                                                              |     100 |    66.66 |     100 |     100 | 54-67                                                    
+  getNotes.ts                                                                      |     100 |     90.9 |     100 |     100 | 19                                                       
+ src/custom_components/handleNotes/viewNote/screen                                 |     100 |      100 |     100 |     100 |                                                          
+  screen-viewNote.tsx                                                              |     100 |      100 |     100 |     100 |                                                          
  src/custom_components/notNotesRelated/encryption_modal/container                  |   73.58 |       50 |   86.66 |   73.58 |                                                          
   container-encryption-modal.tsx                                                   |   73.58 |       50 |   86.66 |   73.58 | 47-49,65-71,115-134                                      
  src/custom_components/notNotesRelated/encryption_modal/screen                     |     100 |      100 |     100 |     100 |                                                          
@@ -196,8 +196,8 @@ All files                                                                       
   progressDots.tsx                                                                 |     100 |      100 |     100 |     100 |                                                          
  src/custom_components/notNotesRelated/welcomeScreen/screens/ui/radioBtns          |     100 |      100 |     100 |     100 |                                                          
   generic-radioBtn.tsx                                                             |     100 |      100 |     100 |     100 |                                                          
- src/custom_components/services/encryptionEngine                                   |   72.22 |    33.33 |   88.88 |   72.22 |                                                          
-  encryptionEngine.ts                                                              |   72.22 |    33.33 |   88.88 |   72.22 | 23-34,46-69,112,123,153,186                              
+ src/custom_components/services/encryptionEngine                                   |   97.29 |    89.65 |     100 |   97.29 |                                                          
+  encryptionEngine.ts                                                              |   97.29 |    89.65 |     100 |   97.29 | 157,190                                                  
  src/custom_components/services/equals                                             |     100 |      100 |     100 |     100 |                                                          
   equals.ts                                                                        |     100 |      100 |     100 |     100 |                                                          
  src/custom_components/services/fingerprintLogic                                   |   97.87 |    92.85 |     100 |   97.87 |                                                          
@@ -215,8 +215,8 @@ All files                                                                       
   categories.ts                                                                    |     100 |      100 |     100 |     100 |                                                          
  src/custom_components/services/toDoListHandler/Filter                             |     100 |      100 |     100 |     100 |                                                          
   toDoListFilter.ts                                                                |     100 |      100 |     100 |     100 |                                                          
- src/custom_components/services/toDoListHandler/Persistence                        |      75 |       75 |   57.14 |   75.55 |                                                          
-  toDoListPersistence.ts                                                           |      75 |       75 |   57.14 |   75.55 | 14-15,42-43,57-58,70-76                                  
+ src/custom_components/services/toDoListHandler/Persistence                        |      75 |    81.25 |   57.14 |   75.55 |                                                          
+  toDoListPersistence.ts                                                           |      75 |    81.25 |   57.14 |   75.55 | 14-15,42-43,57-58,70-76                                  
  src/custom_components/services/toDoListHandler/Sorter                             |    92.3 |    91.66 |     100 |    92.3 |                                                          
   toDoListSort.ts                                                                  |    92.3 |    91.66 |     100 |    92.3 | 26                                                       
  src/custom_components/types                                                       |       0 |        0 |       0 |       0 |                                                          
@@ -235,7 +235,7 @@ All files                                                                       
  src/modules/ui/floatingBtn                                                        |     100 |      100 |     100 |     100 |                                                          
   floatingBtn.tsx                                                                  |     100 |      100 |     100 |     100 |                                                          
  src/modules/ui/progress/progressCircle                                            |     100 |      100 |     100 |     100 |                                                          
-  progressCircle.tsx                                                               |     100 |      100 |     100 |     100 |                   
+  progressCircle.tsx                                                               |     100 |      100 |     100 |     100 |        
 
 ## Architecture
 
