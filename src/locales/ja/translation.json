@@ -95,5 +95,8 @@
   "trial_welcomeScreen1_Headline": "選んでくれてありがとう！これは私たちのトライアルバージョンです。ToDoリストを2つ作成できます+ToDoアイテム4つ",
   "trial_editToDoElement_Title": "申し訳ありません！",
   "trial_editToDoElement_Text": "トライアルバージョンではToDoアイテムを4つしか作成できません！何かを編集するには、まずToDoアイテムを1つ削除する必要があります",
-  "trial_viewNote_TrialAlert": "これはトライアルバージョンです！ToDoリストを2つしか作成できません！"
+  "trial_viewNote_TrialAlert": "これはトライアルバージョンです！ToDoリストを2つしか作成できません！",
+  "settings_Dialog_ImportNoPass":"注意、設定によりパスワードなしでToDoリストをインポートできます！",
+  "settings_Dialog_ImportJustOne":"注意、設定により同じパスワードのToDoリストのみをインポートできます！",
+  "error_containsNotAllowedCharacters": "データにはセキュリティ対策のため許可されていない文字が含まれています。"
 }

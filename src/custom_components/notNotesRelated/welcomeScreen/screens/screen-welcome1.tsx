@@ -3,7 +3,7 @@ import ProgressDots from "./ui/progressDots/progressDots";
 import illustration from "../welcomeIllustration.webp";
 import ContinueButton from "./ui/continueBtn/continue-button";
 import { TFunction } from "i18next";
-import { featureFlag_IsTrialVersion } from "../../../featureFlags/featureFlags";
+import { featureFlag_IsTrialVersion } from "../../../config/featureFlags";
 
 const ViewWelcomeScreen1 = ({
   onNext,

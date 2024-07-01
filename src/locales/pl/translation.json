@@ -95,5 +95,8 @@
   "trial_welcomeScreen1_Headline": "Świetnie, że nas wybrałeś! To nasza wersja próbna. Możesz utworzyć tylko 2 listy zadań + 4 elementy listy zadań",
   "trial_editToDoElement_Title": "Przepraszamy!",
   "trial_editToDoElement_Text": "W wersji próbnej możesz utworzyć tylko 4 elementy listy zadań! Aby coś edytować, musisz najpierw usunąć jedno zadanie!",
-  "trial_viewNote_TrialAlert": "To wersja próbna! Możesz utworzyć tylko 2 listy zadań!"
+  "trial_viewNote_TrialAlert": "To wersja próbna! Możesz utworzyć tylko 2 listy zadań!",
+  "settings_Dialog_ImportNoPass":"Uwaga, możesz importować tylko listy zadań bez hasła ze względu na swoje ustawienia!",
+  "settings_Dialog_ImportJustOne":"Uwaga, możesz importować tylko listy zadań z tym samym hasłem ze względu na swoje ustawienia!",
+  "error_containsNotAllowedCharacters": "Dane zawierają znaki, które nie są dozwolone ze względu na środki bezpieczeństwa."
 }

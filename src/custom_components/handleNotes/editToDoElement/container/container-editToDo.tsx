@@ -8,7 +8,7 @@ import { ToDoList } from "../../../types/ToDoList.types";
 import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
 import {
   featureFlag_IsTrialVersion,
-} from "../../../featureFlags/featureFlags";
+} from "../../../config/featureFlags";
 import { logError } from "../../../services/logger/loggerFeatureFlags";
 
 interface ContainerEditTodoProps {

@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
 import UsedLibsListContainer from "../../../../modules/legal/usedLibs/container_usedLibList";
 import NavBarContainer from "../../navBar/container/container-navBar";
-import { featureFlag_DebugShowAllSettings } from "../../../featureFlags/featureFlags";
+import { featureFlag_DebugShowAllSettings } from "../../../config/featureFlags";
 
 interface ViewSettingsProps {
   showFingerprintBtn: boolean;

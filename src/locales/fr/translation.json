@@ -95,5 +95,8 @@
   "trial_welcomeScreen1_Headline": "Génial que vous nous ayez choisis ! C'est notre version d'essai. Vous ne pouvez créer que 2 listes de tâches + 4 éléments de liste de tâches",
   "trial_editToDoElement_Title": "Désolé !",
   "trial_editToDoElement_Text": "Vous ne pouvez créer que 4 éléments de liste de tâches dans la version d'essai ! Pour modifier quelque chose, vous devez d'abord supprimer un élément de liste de tâches",
-  "trial_viewNote_TrialAlert": "Ceci est une version d'essai ! Vous ne pouvez créer que 2 listes de tâches !"
+  "trial_viewNote_TrialAlert": "Ceci est une version d'essai ! Vous ne pouvez créer que 2 listes de tâches !",
+  "settings_Dialog_ImportNoPass":"Attention, vous ne pouvez importer que des listes de tâches sans mot de passe en raison de vos paramètres!",
+  "settings_Dialog_ImportJustOne":"Attention, vous ne pouvez importer que des listes de tâches avec le même mot de passe en raison de vos paramètres!",
+  "error_containsNotAllowedCharacters": "Les données contiennent des caractères non autorisés en raison de mesures de sécurité."
 }

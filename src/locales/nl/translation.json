@@ -95,5 +95,8 @@
   "trial_welcomeScreen1_Headline": "Fijn dat je voor ons hebt gekozen! Dit is onze proefversie. Je kunt slechts 2 takenlijsten + 4 taken maken",
   "trial_editToDoElement_Title": "Sorry!",
   "trial_editToDoElement_Text": "In de proefversie kun je slechts 4 taken maken! Om iets te bewerken, moet je eerst een taak verwijderen",
-  "trial_viewNote_TrialAlert": "Dit is een proefversie! Je kunt slechts 2 takenlijsten maken!"
+  "trial_viewNote_TrialAlert": "Dit is een proefversie! Je kunt slechts 2 takenlijsten maken!",
+  "settings_Dialog_ImportNoPass":"Let op, u kunt alleen ToDo-lijsten importeren zonder wachtwoord vanwege uw instellingen!",
+  "settings_Dialog_ImportJustOne":"Let op, u kunt alleen ToDo-lijsten importeren met hetzelfde wachtwoord vanwege uw instellingen!",
+  "error_containsNotAllowedCharacters": "De gegevens bevatten tekens die niet zijn toegestaan vanwege veiligheidsmaatregelen."
 }

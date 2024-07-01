@@ -1,6 +1,6 @@
 {
   "name": "Secure-Planner",
-  "version": "1.5.4",
+  "version": "1.6.0",
   "private": true,
   "dependencies": {
     "@capacitor-community/electron": "^5.0.1",

@@ -1,4 +1,4 @@
-import { featureFlag_Debug_Errors,featureFlag_Debug_AllLogs } from "../../featureFlags/featureFlags";
+import { featureFlag_Debug_Errors,featureFlag_Debug_AllLogs } from "../../config/featureFlags";
 
 
 export function logError(errorMsg: string, error: unknown): void {

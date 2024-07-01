@@ -14,7 +14,7 @@ import {
 import { useTranslation } from "react-i18next";
 import WelcomeContainer from "../../welcomeScreen/container/container-welcomeScreen";
 import SecurityLevel from "../../../enums/SecurityLevel.enum";
-import { featureFlag_newWelcomeScreen } from "../../../featureFlags/featureFlags";
+import { featureFlag_newWelcomeScreen } from "../../../config/featureFlags";
 
 interface ContainerEncryptionKeyModalProps {
   onSubmit: (encryptionKey: string) => void;

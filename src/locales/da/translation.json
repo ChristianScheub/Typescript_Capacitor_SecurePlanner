@@ -95,5 +95,8 @@
   "trial_welcomeScreen1_Headline": "Fantastiskt at du har valgt os! Dette er vores prøveversion. Du kan bare oprette 2 opgavelister + 4 opgaveelementer",
   "trial_editToDoElement_Title": "Beklager!",
   "trial_editToDoElement_Text": "Du kan kun oprette 4 opgaveelementer i prøveversionen! For at redigere noget skal du først slette et opgaveelement!",
-  "trial_viewNote_TrialAlert": "Dette er en prøveversion! Du kan kun oprette 2 opgavelister!"
+  "trial_viewNote_TrialAlert": "Dette er en prøveversion! Du kan kun oprette 2 opgavelister!",
+  "settings_Dialog_ImportNoPass":"Bemærk, du kan kun importere ToDo-lister uden adgangskode på grund af dine indstillinger!",
+  "settings_Dialog_ImportJustOne":"Bemærk, du kan kun importere ToDo-lister med den samme adgangskode på grund af dine indstillinger!",
+  "error_containsNotAllowedCharacters": "Dataene indeholder tegn, der ikke er tilladt på grund af sikkerhedsforanstaltninger."
 }

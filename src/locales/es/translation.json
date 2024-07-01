@@ -96,5 +96,8 @@
   "trial_welcomeScreen1_Headline": "¡Genial que nos hayas elegido! Esta es nuestra versión de prueba. Solo puedes crear 2 listas de tareas pendientes + 4 elementos de lista de tareas pendientes",
   "trial_editToDoElement_Title": "¡Lo siento!",
   "trial_editToDoElement_Text": "¡Solo puedes crear 4 elementos de lista de tareas pendientes en la versión de prueba! Para editar algo, primero debes eliminar un elemento de lista de tareas pendientes",
-  "trial_viewNote_TrialAlert": "¡Esta es una versión de prueba! ¡Solo puedes crear 2 listas de tareas pendientes!"
+  "trial_viewNote_TrialAlert": "¡Esta es una versión de prueba! ¡Solo puedes crear 2 listas de tareas pendientes!",
+  "settings_Dialog_ImportNoPass":"¡Atención, solo puede importar listas de tareas sin contraseña debido a su configuración!",
+  "settings_Dialog_ImportJustOne":"¡Atención, solo puede importar listas de tareas con la misma contraseña debido a su configuración!",
+  "error_containsNotAllowedCharacters": "Los datos contienen caracteres que no están permitidos debido a medidas de seguridad."
 }

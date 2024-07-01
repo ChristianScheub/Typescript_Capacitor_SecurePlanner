@@ -2,6 +2,7 @@ import CryptoJS from "crypto-js";
 import { Device } from "@capacitor/device";
 import SecurityLevel from "../../enums/SecurityLevel.enum";
 import { t } from "i18next";
+import { containsNotAllowedCharacters } from "../textValidation/containsNotAllowedCharacters";
 
 const deriveKeyPBKDF2 = (
   password: string,
@@ -42,6 +43,7 @@ export const encryptAndStore = async (
   const noPasswordNeeded =
     localStorage.getItem("securityLevel") === SecurityLevel.Low;
   let encryptedData = "";
+
   if (noPasswordNeeded) {
     if (password === " " || password === "") {
       const securityLevelLowValue = localStorage.getItem(
@@ -136,9 +138,9 @@ export const decrypt = async (
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7,
     }).toString(CryptoJS.enc.Utf8);
+    
     return decrypted;
-  }
-  else{
+  } else {
     return "";
   }
 };
@@ -160,15 +162,20 @@ export const makeReadyForExport = async (
     ).toString();
   }
 
-  let decryptedDateWithDeviceId = "";
+  let decryptedDataWithDeviceId = "";
   try {
-    decryptedDateWithDeviceId = CryptoJS.TripleDES.decrypt(
+    decryptedDataWithDeviceId = CryptoJS.TripleDES.decrypt(
       encryptedData,
       await getDeviceIdHash()
     ).toString(CryptoJS.enc.Utf8);
   } catch (e) {}
+
+  if (containsNotAllowedCharacters(decryptedDataWithDeviceId)) {
+    alert(t("error_containsNotAllowedCharacters"));
+    return "";
+  }
   return CryptoJS.AES.encrypt(
-    decryptedDateWithDeviceId,
+    decryptedDataWithDeviceId,
     "securePlanerSecureExport"
   ).toString();
 };
@@ -189,6 +196,12 @@ export const makeReadyForImport = async (
   if (noPasswordNeeded) {
     return decrypted;
   }
+
+  if (containsNotAllowedCharacters(encryptedData)) {
+    alert(t("error_containsNotAllowedCharacters"));
+    return "";
+  }
+
   return CryptoJS.TripleDES.encrypt(
     decrypted,
     await getDeviceIdHash()

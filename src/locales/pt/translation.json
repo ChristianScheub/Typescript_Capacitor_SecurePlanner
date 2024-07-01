@@ -95,5 +95,8 @@
   "trial_welcomeScreen1_Headline": "Que bom que nos escolheu! Esta é a nossa versão de teste. Você só pode criar 2 listas de tarefas + 4 itens de lista de tarefas",
   "trial_editToDoElement_Title": "Desculpe!",
   "trial_editToDoElement_Text": "Na versão de teste, você só pode criar 4 itens de lista de tarefas! Para editar algo, primeiro é necessário excluir um item de lista de tarefas",
-  "trial_viewNote_TrialAlert": "Esta é uma versão de teste! Você só pode criar 2 listas de tarefas!"
+  "trial_viewNote_TrialAlert": "Esta é uma versão de teste! Você só pode criar 2 listas de tarefas!",
+  "settings_Dialog_ImportNoPass":"Atenção, você só pode importar listas de tarefas sem senha devido às suas configurações!",
+  "settings_Dialog_ImportJustOne":"Atenção, você só pode importar listas de tarefas com a mesma senha devido às suas configurações!",
+  "error_containsNotAllowedCharacters": "Os dados contêm caracteres que não são permitidos devido a medidas de segurança."
 }

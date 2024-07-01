@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import WelcomeScreen4View from "../../screens/screen-welcome4";
 import SecurityLevel from "../../../../enums/SecurityLevel.enum";
 import { encrypt, getDeviceIdHash } from "../../../../services/encryptionEngine/encryptionEngine";
-import { featureFlag_HighestSec } from "../../../../featureFlags/featureFlags";
+import { featureFlag_HighestSec } from "../../../../config/featureFlags";
 import { useTranslation } from "react-i18next";
 import { logAllDebugMessages } from "../../../../services/logger/loggerFeatureFlags";
 

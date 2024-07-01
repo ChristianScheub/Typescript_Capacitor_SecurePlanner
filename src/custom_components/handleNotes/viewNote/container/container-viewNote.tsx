@@ -4,7 +4,7 @@ import getAllNotes from './getNotes';
 import ViewViewNote from '../screen/screen-viewNote';
 import { ToDoList } from "../../../types/ToDoList.types";
 import ProgressToDoListService from "../../../services/progressToDoListService/progressToDoListService";
-import { featureFlag_IsTrialVersion } from "../../../featureFlags/featureFlags";
+import { featureFlag_IsTrialVersion } from "../../../config/featureFlags";
 import { useTranslation } from 'react-i18next';
 
 interface ContainerViewNoteProps {

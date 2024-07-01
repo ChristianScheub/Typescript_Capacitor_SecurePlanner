@@ -95,5 +95,9 @@
   "trial_welcomeScreen1_Headline": "This is our trial Version! You can just create 2 ToDo Lists + 4 ToDo Items",
   "trial_editToDoElement_Title": "Sorry!",
   "trial_editToDoElement_Text": "You can just create 4 ToDo Items in the trial version! To edit the other delete one ToDo Item!",
-  "trial_viewNote_TrialAlert": "This is a trial version! You can just create 2 ToDo Lists!"
+  "trial_viewNote_TrialAlert": "This is a trial version! You can just create 2 ToDo Lists!",
+
+  "settings_Dialog_ImportNoPass":"Attention, you can only import ToDo lists without a password due to your settings!",
+  "settings_Dialog_ImportJustOne":"Attention, you can only import ToDo lists with the same password due to your settings!",
+  "error_containsNotAllowedCharacters": "The data contains characters that are not allowed due to security measures."
 }

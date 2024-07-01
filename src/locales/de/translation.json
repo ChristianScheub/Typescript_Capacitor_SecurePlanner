@@ -97,5 +97,9 @@
   "trial_welcomeScreen1_Headline": "Schön, dass du uns gewählt hast! Dies ist unsere Testversion. Du kannst nur 2 ToDo-Listen + 4 ToDo-Elemente erstellen.",
   "trial_editToDoElement_Title": "Entschuldigung!",
   "trial_editToDoElement_Text": "In der Testversion können Sie nur 4 ToDo-Elemente erstellen! Um etwas zu bearbeiten, müssen Sie zuerst ein ToDo-Element löschen!",
-  "trial_viewNote_TrialAlert": "Dies ist eine Testversion! Du kannst nur 2 ToDo-Listen erstellen!"
+  "trial_viewNote_TrialAlert": "Dies ist eine Testversion! Du kannst nur 2 ToDo-Listen erstellen!",
+
+  "settings_Dialog_ImportNoPass":"Achtung, Sie können nur ToDo Listen importieren ohne Passwort aufgrund ihrer Einstellungen!",
+  "settings_Dialog_ImportJustOne":"Achtung, Sie können nur ToDo Listen mit dem selben Passwort importieren aufgrund ihrer Einstellungen!",
+  "error_containsNotAllowedCharacters": "Die Daten enthalten Zeichen, die aufgrund von Sicherheitsmaßnahmen nicht erlaubt sind."
 }
