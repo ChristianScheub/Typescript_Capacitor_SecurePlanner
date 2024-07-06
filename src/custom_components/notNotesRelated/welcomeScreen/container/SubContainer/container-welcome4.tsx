@@ -25,14 +25,15 @@ const WelcomeScreen4Container: React.FC<WelcomeScreen4ContainerProps> = ({
   useEffect(() => {
     const screenCount = securityLevelSelected === SecurityLevel.Low ? 4 : 5;
     setAvailableScreens(screenCount);
-    logAllDebugMessages("selectedSecurity:"+securityLevelSelected);
-    logAllDebugMessages("screenCount:" + screenCount);
+    logAllDebugMessages("WelcomeScreen4Container::useEffect: selectedSecurity:"+securityLevelSelected);
+    logAllDebugMessages("WelcomeScreen4Container::useEffect: screenCount:" + screenCount);
   }, [securityLevelSelected, setAvailableScreens]);
 
   const handleSubmit = async () => {
     localStorage.setItem("securityLevel", securityLevelSelected);
-    logAllDebugMessages("submit security");
-    logAllDebugMessages("selectedSecurity:"+securityLevelSelected);
+    logAllDebugMessages("WelcomeScreen4Container::handleSubmit: submit security");
+    logAllDebugMessages("WelcomeScreen4Container::handleSubmit: selectedSecurity:"+securityLevelSelected);
+    
     if (securityLevelSelected === SecurityLevel.Low) {
       localStorage.setItem("welcomeScreenDone", "true");
       //securityLevelReallyLow will be used later to authenticate that we really have the low level

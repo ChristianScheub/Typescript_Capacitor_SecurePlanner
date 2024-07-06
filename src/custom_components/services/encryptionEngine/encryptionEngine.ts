@@ -3,6 +3,7 @@ import { Device } from "@capacitor/device";
 import SecurityLevel from "../../enums/SecurityLevel.enum";
 import { t } from "i18next";
 import { containsNotAllowedCharacters } from "../textValidation/containsNotAllowedCharacters";
+import { logAllDebugMessages } from "../logger/loggerFeatureFlags";
 
 const deriveKeyPBKDF2 = (
   password: string,
@@ -138,6 +139,8 @@ export const decrypt = async (
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7,
     }).toString(CryptoJS.enc.Utf8);
+    
+    logAllDebugMessages("EncryptionEngine::decrypt: " + decrypted);
     
     return decrypted;
   } else {

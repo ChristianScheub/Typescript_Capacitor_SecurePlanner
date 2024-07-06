@@ -6,10 +6,11 @@ import { useTranslation } from "react-i18next";
 import { ToDoItem } from "../../../types/ToDoItem.types";
 import { ToDoList } from "../../../types/ToDoList.types";
 import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
+import { featureFlag_IsTrialVersion } from "../../../config/featureFlags";
 import {
-  featureFlag_IsTrialVersion,
-} from "../../../config/featureFlags";
-import { logError } from "../../../services/logger/loggerFeatureFlags";
+  logAllDebugMessages,
+  logError,
+} from "../../../services/logger/loggerFeatureFlags";
 
 interface ContainerEditTodoProps {
   encryptionKey: string;
@@ -61,13 +62,16 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
             }
           }
         } catch (error) {
-          logError("Fehler beim Laden und Entschlüsseln der Notiz:", error);
+          logError(
+            "ContainerEditNote::loadAndDecryptNote:65 Fehler beim Laden und Entschlüsseln der Notiz:",
+            error
+          );
         }
       }
     };
 
     loadAndDecryptNote();
-  }, [noteId, encryptionKey]);
+  }, [noteId, encryptionKey,toDoItemId]);
 
   const extractAndSetCategories = useCallback(() => {
     const categoriesSet = new Set<string>();
@@ -76,7 +80,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
         categoriesSet.add(item.toDoCategorie);
       }
     });
-  
+
     setCategoriesList(Array.from(categoriesSet));
   }, [toDoList]);
 
@@ -114,22 +118,33 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
           } else {
             updatedToDoList.toDoItem[existingIndex] = toDoListItem;
           }
+          logAllDebugMessages(
+            "ContainerEditTodo::loadAndDecryptNote::118 saveToDoList:"
+          );
+          logAllDebugMessages(JSON.stringify(updatedToDoList, null, 2));
           await ToDoListService.saveToDoList(
             updatedToDoList,
             encryptionKey,
             noteId
           );
         } catch (error) {
-          logError("Fehler beim Sichern des ToDos:", error);
+          logError(
+            "ContainerEditNote::loadAndDecryptNote:132 Fehler beim Sichern des ToDos:",
+            error
+          );
         }
       }
     };
     loadAndDecryptNote();
     extractAndSetCategories();
-  }, [toDoListItem, noteId, encryptionKey,toDoList,extractAndSetCategories]);
+  }, [toDoListItem, noteId, encryptionKey, toDoList, extractAndSetCategories]);
 
   useEffect(() => {
     const loadAndDecryptNote = async () => {
+      logAllDebugMessages(
+        "ContainerEditTodo::loadAndDecryptNote:: START LOADING" +
+          JSON.stringify(toDoItemIdInt)
+      );
       if (noteId && toDoItemIdInt !== null && !isNaN(toDoItemIdInt)) {
         try {
           const noteData = await ToDoListService.loadToDoList(
@@ -143,36 +158,55 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
                 (item) => item.toDoId === toDoItemId
               );
               if (toDoItem) {
+                logAllDebugMessages(
+                  "ContainerEditTodo::loadAndDecryptNote::Set ToDoItem" +
+                    JSON.stringify(toDoItem)
+                );
                 setToDoListItem(toDoItem);
               }
             } else {
-              logError("ToDoItem-Array nicht vorhanden", new Error());
+              logError(
+                "ContainerEditTodo::loadAndDecryptNote::165:: ToDoItem-Array nicht vorhanden",
+                new Error()
+              );
             }
           }
         } catch (error) {
-          logError("Fehler beim Laden und Entschlüsseln der Notiz:", error);
+          logError(
+            "ContainerEditTodo::loadAndDecryptNote::172:: Fehler beim Laden und Entschlüsseln der Notiz:",
+            error
+          );
         }
       }
     };
 
     loadAndDecryptNote();
     extractAndSetCategories();
-  }, [noteId, toDoItemIdInt, encryptionKey,toDoItemId,extractAndSetCategories]);
+  }, [
+    noteId,
+    toDoItemIdInt,
+    encryptionKey,
+    toDoItemId,
+    extractAndSetCategories,
+  ]);
 
   const updateToDoItem = <K extends keyof ToDoItem>(
     key: K,
     value: ToDoItem[K]
   ) => {
+    logAllDebugMessages("ContainerEditTodo::updateToDoItem::SetToDoItem:start");
+    if (value !== null && value !== undefined) {
+      logAllDebugMessages(
+        "ContainerEditTodo::updateToDoItem::SetToDoItem" + JSON.stringify(value)
+      );
+    }
     setToDoListItem({ ...toDoListItem, [key]: value });
   };
 
   const [categoriesList, setCategoriesList] = useState<string[]>([]);
 
   if (trialAndToMuch) {
-    return (
-      <ViewEditTodoTooMuch
-      />
-    );
+    return <ViewEditTodoTooMuch />;
   }
 
   return (

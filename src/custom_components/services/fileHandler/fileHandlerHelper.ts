@@ -34,7 +34,7 @@ export const processFileContent = async (content: string) => {
     value = value.substring(1);
     value = await makeReadyForImport(value);
     if (key) {
-      logAllDebugMessages("Import:" + key + "__INHALT__" + value);
+      logAllDebugMessages("FileHandlerHelper::processFileContent::Import:" + key + "__INHALT__" + value);
       localStorage.setItem(key, value);
     }
   }

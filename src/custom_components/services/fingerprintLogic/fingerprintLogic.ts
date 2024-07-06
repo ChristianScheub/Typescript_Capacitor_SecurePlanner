@@ -54,7 +54,7 @@ export const getPasswordFromFingerprint = async (
 
     onPasswordRetrieved(decryptedPassword);
   } catch (e) {
-    logError("Error at get Password from Fingerprint", e);
+    logError("fingerprintLogic::getPasswordFromFingerprint: Error at get Password from Fingerprint", e);
     if (e) {
       onEmptyPassword();
     } else {
@@ -92,7 +92,7 @@ export const storePasswordFromFingerprint = async (
     
     onSuccess();
   } catch (e) {
-    logError("Error at store Password from Fingerprint", e);
+    logError("fingerprintLogic::storePasswordFromFingerprint: Error at store Password from Fingerprint", e);
     onError(t('fingerprint_error'));
   }
 };
@@ -101,7 +101,7 @@ export const availableBiometric = async (): Promise<boolean> => {
   try {
     return ((await NativeBiometric.isAvailable()).isAvailable);
   } catch (error) {
-    logError("Error at available Biometric", error);
+    logError("fingerprintLogic::storePasswordFromFingerprint: Error at available Biometric", error);
     return false;
   }
 }

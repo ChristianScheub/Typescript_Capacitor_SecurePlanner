@@ -50,7 +50,7 @@ const ContainerSettings: React.FC = () => {
             server: "www.securePlaner.com",
           });
         } catch (error) {
-          logError("Error at delete Credentials", error);
+          logError("ContainerSettings::handleDeleteAllClick: Error at delete Credentials", error);
         }
       }
       navigate("/");
@@ -74,7 +74,7 @@ const ContainerSettings: React.FC = () => {
         });
         alert(t("settings_Dialog_DeleteBioSuccessful"));
       } catch (error) {
-        logError("Error at delete Credentials", error);
+        logError("ContainerSettings::handleDeleteBiometryClick: Error at delete Credentials", error);
         alert(t("settings_Dialog_DeleteBioError"));
       }
     }

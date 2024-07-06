@@ -105,7 +105,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
           setShownToDoList(noteData);
         }
       } catch (error) {
-        logError("Fehler beim Laden und Entschlüsseln der Notiz", error);
+        logError("ContainerEditNote::loadAndDecryptNote: Fehler beim Laden und Entschlüsseln der Notiz", error);
       }
     }
   }, [noteId, encryptionKey]);
@@ -115,7 +115,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
   }, [noteId, encryptionKey, showToDoEdit,loadAndDecryptNote]);
 
   const storeNotes = useCallback(async () => {
-    logAllDebugMessages("triggerStore");
+    logAllDebugMessages("ContainerEditNote::storeNotes: triggerStore");
     logAllDebugMessages(JSON.stringify(toDoList, null, 2));
     if (
       noteId &&
@@ -128,7 +128,7 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
         handleFilterList(currentFilter);
         setCategoriesList(ToDoListService.getCategories(toDoList));
       } catch (error) {
-        logError("Fehler beim Speichern der Notiz", error);
+        logError("ContainerEditNote::storeNotes: Fehler beim Speichern der Notiz", error);
       }
     }
   }, [toDoList, encryptionKey, currentFilter, noteId, handleFilterList]);  
@@ -173,9 +173,9 @@ const ContainerEditNote: React.FC<ContainerEditNoteProps> = ({
     key: K,
     value: ToDoList[K]
   ) => {
-    logAllDebugMessages("updateToDoList");
-    logAllDebugMessages(value.toString());
+    logAllDebugMessages("ContainerEditNote::updateToDoList: "+value.toString());
     setToDoList({ ...toDoList, [key]: value });
+    logAllDebugMessages("ContainerEditNote::updateToDoList::178: ");
     logAllDebugMessages(JSON.stringify(toDoList, null, 2));
   };
 

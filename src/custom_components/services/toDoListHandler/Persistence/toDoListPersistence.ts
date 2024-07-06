@@ -11,7 +11,7 @@ const isJsonString = (str: string): boolean => {
     const data = JSON.parse(str);
     return "content" in data && "title" in data;
   } catch (e) {
-    logError("Fehler beim isJsonString Check", e);
+    logError("toDoListPersistence::isJsonString: Fehler beim isJsonString Check", e);
     return false;
   }
 };
@@ -33,13 +33,14 @@ export const loadAllToDoLists = async (
             loadedNotes.push([noteData, key]);
           }
         } catch (error) {
-          logError("Fehler beim Laden und Entschlüsseln der Liste:", error);
+          logError("toDoListPersistence::loadAllToDoLists: Fehler beim Laden und Entschlüsseln der Liste:", error);
         }
       }
     }
     return loadedNotes;
   } catch (error) {
-    logError("Fehler beim Laden und Entschlüsseln der Liste:", error);
+    
+    logError("toDoListPersistence::loadAllToDoLists: Fehler beim Laden und Entschlüsseln der Liste:", error);
     return [];
   }
 };
@@ -49,7 +50,7 @@ export const loadToDoList = async (
   encryptionKey: string
 ): Promise<ToDoList | null> => {
   try {
-    logAllDebugMessages("trigger load One List");
+    logAllDebugMessages("toDoListPersistence::loadToDoList: Start try load One List with trigger");
     const decryptedContent = await decryptFromStorage(encryptionKey, noteId);
     const parsedToDoList: ToDoList = JSON.parse(decryptedContent);
 
@@ -58,10 +59,12 @@ export const loadToDoList = async (
         item.toDoId = generateUniqueToDoId(parsedToDoList.toDoItem);
       }
     });
+    logAllDebugMessages("toDoListPersistence::loadToDoList: Empfangene Liste:");
+    logAllDebugMessages(JSON.stringify(parsedToDoList, null, 2));
 
     return parsedToDoList;
   } catch (error) {
-    logError("Fehler beim Laden und Entschlüsseln der Liste:", error);
+    logError("toDoListPersistence::loadToDoList: Fehler beim Laden und Entschlüsseln der Liste:", error);
     return null;
   }
 };
@@ -82,7 +85,8 @@ export const saveToDoList = async (
   noteId?: string
 ): Promise<void> => {
   try {
-    logAllDebugMessages("trigger save One List");
+    logAllDebugMessages("toDoListPersistence::saveToDoList: Trigger Save one to Do List:");
+    logAllDebugMessages(JSON.stringify(note, null, 2));
     const noteDataString = JSON.stringify(note);
     await encryptAndStore(
       noteDataString,
@@ -90,6 +94,6 @@ export const saveToDoList = async (
       noteId ?? Date.now().toString()
     );
   } catch (error) {
-    logError("Fehler speichern der Liste:", error);
+    logError("toDoListPersistence::saveToDoList: Fehler speichern der Liste:", error);
   }
 };

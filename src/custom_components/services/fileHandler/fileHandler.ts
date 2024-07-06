@@ -46,7 +46,7 @@ export const handleExportAllClick = async () => {
       downloadFile(notes, fileName);
     }
   } catch (e) {
-    logError("Error during export or sharing", e);
+    logError("fileHandler::handleExportAllClick: Error during export or sharing", e);
   }
 };
 
@@ -75,6 +75,6 @@ export const handleFileChangeTranslation = async (
       alert(t("settings_Dialog_ImportSuccessful"));
     }
   } catch (error) {
-    logError("Error processing file", error);
+    logError("fileHandler::handleFileChangeTranslation: Error processing file", error);
   }
 };
