@@ -124,7 +124,6 @@ const ContainerEncryptionKeyModal: React.FC<
         password === ""
       )
     ) {
-      localStorage.setItem("justOnePassword", "true");
       password = getPBKDF2_Password(password);
       if (localStorage.getItem("justOnePassword") === "true") {
         encryptAndStore("onlyOnePass", password, "justOnePassword2");

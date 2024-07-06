@@ -5,6 +5,7 @@ import {
   screen,
   fireEvent,
   waitFor,
+  act,
 } from "@testing-library/react";
 import React from "react";
 import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
@@ -31,7 +32,11 @@ jest.mock("react-router-dom", () => ({
 const renderContainerEditToDo = () =>
   render(
     <Router>
-      <ContainerEditTodo encryptionKey="testKey" noteId="testNoteId" toDoItemId={3} />
+      <ContainerEditTodo
+        encryptionKey="testKey"
+        noteId="testNoteId"
+        toDoItemId={3}
+      />
     </Router>
   );
 
@@ -75,14 +80,15 @@ describe("ContainerEditTodo", () => {
       .mockImplementationOnce((callback) => callback());
 
     renderContainerEditToDo();
-
-    //The first time the component is called up, the retrieved data is also saved directly because of the onChange
     await waitFor(() => {
-      expect(mockSaveToDoList).toHaveBeenCalled();
+      expect(screen.getByTestId("noteTextTest")).toBeInTheDocument();
     });
-
     const descInput = screen.getByTestId("noteTextTest");
+
     fireEvent.change(descInput, { target: { value: "New Description" } });
-    expect(mockSaveToDoList).toHaveBeenCalledTimes(2);
+
+    await waitFor(() => {
+      expect(mockSaveToDoList).toHaveBeenCalledTimes(1);
+    });
   });
 });

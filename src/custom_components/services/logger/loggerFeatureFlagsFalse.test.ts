@@ -1,6 +1,6 @@
 import { logError, logAllDebugMessages } from './loggerFeatureFlags';
 
-jest.mock('../../featureFlags/featureFlags', () => ({
+jest.mock('../../config/featureFlags', () => ({
     featureFlag_Debug_Errors: false,
     featureFlag_Debug_AllLogs: false
   }));

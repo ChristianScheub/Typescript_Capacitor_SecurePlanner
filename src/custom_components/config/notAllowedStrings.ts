@@ -8,8 +8,8 @@ export const NotAllowedStrings = [
   "==",
   "!=",
   "javascript:", // eslint-disable-line no-script-url
-  "data:",
-  "vbscript:",
+  "data:", // eslint-disable-line no-script-url
+  "vbscript:", // eslint-disable-line no-script-url
   "onload",
   "onerror",
   "onclick",

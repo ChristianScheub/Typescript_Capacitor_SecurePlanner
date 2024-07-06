@@ -5,7 +5,7 @@ import { TFunction } from 'i18next';
 
 const tMock: TFunction = ((key: string) => key) as TFunction;
 
-jest.mock('../../../featureFlags/featureFlags', () => ({
+jest.mock('../../../config/featureFlags', () => ({
   featureFlag_IsTrialVersion: true,
 }));
 

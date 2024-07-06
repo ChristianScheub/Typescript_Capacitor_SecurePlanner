@@ -3,7 +3,7 @@ import { featureFlag_Debug_Errors,featureFlag_Debug_AllLogs } from "../../config
 
 export function logError(errorMsg: string, error: unknown): void {
   if (featureFlag_Debug_Errors) {
-    console.error("ERROR______"+errorMsg, error);
+    console.error(errorMsg, error);
   }
 }
 

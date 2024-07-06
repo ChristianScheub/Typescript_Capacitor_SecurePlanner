@@ -28,7 +28,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
   const toDoItemIdInt = toDoItemId ?? 1;
   const [trialAndToMuch, setTrialAndToMuch] = useState<boolean>(false);
 
-  //ToDoList wird benötigt für den Speichervorgang
+  //This ToDoList is required for the save process (the entire list is always saved)
   const [toDoList, setToDoList] = useState<ToDoList>({
     title: "",
     date: new Date(),
@@ -44,15 +44,24 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
       },
     ],
   });
+
   useEffect(() => {
-    const loadAndDecryptNote = async () => {
+    //The first time the ToDoList is loaded
+    const loadAndDecryptToDoList = async () => {
       if (noteId) {
+        logAllDebugMessages(
+          "ContainerEditTodo::loadAndDecryptToDoList::53: Begin to load the toDoList"
+        );
         try {
           const noteData = await ToDoListService.loadToDoList(
             noteId,
             encryptionKey
           );
           if (noteData) {
+            logAllDebugMessages(
+              "ContainerEditTodo::loadAndDecryptToDoList::62: Set now the toDoList"
+            );
+            logAllDebugMessages(JSON.stringify(noteData, null, 2));
             setToDoList(noteData);
             //Trial Version Check
             if (featureFlag_IsTrialVersion) {
@@ -63,15 +72,15 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
           }
         } catch (error) {
           logError(
-            "ContainerEditNote::loadAndDecryptNote:65 Fehler beim Laden und Entschlüsseln der Notiz:",
+            "ContainerEditNote::loadAndDecryptToDoList:75 Error loading and decrypting the note:",
             error
           );
         }
       }
     };
 
-    loadAndDecryptNote();
-  }, [noteId, encryptionKey,toDoItemId]);
+    loadAndDecryptToDoList();
+  }, [noteId, encryptionKey, toDoItemId]);
 
   const extractAndSetCategories = useCallback(() => {
     const categoriesSet = new Set<string>();
@@ -94,20 +103,19 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
     toDoCategorie: "",
     toDoId: toDoItemIdInt,
   });
-  useEffect(() => {
-    const priorityKeyMap: Record<Priority, string> = {
-      [Priority.Low]: "editToDoElement_Low",
-      [Priority.Middle]: "editToDoElement_Middle",
-      [Priority.High]: "editToDoElement_High",
-      [Priority.Highest]: "editToDoElement_Highest",
-    };
-    const i18nKey = priorityKeyMap[toDoListItem.toDoPriority];
-    setTranslatedPrio(t(i18nKey));
-  }, [toDoListItem.toDoPriority, t]);
 
   useEffect(() => {
-    const loadAndDecryptNote = async () => {
-      if (noteId) {
+    const storeModifedToDoList = async () => {
+      //Represent the save of the ToDoList in the Background after an change
+      if (
+        noteId &&
+        (toDoListItem.toDoTitle !== "" ||
+          toDoListItem.toDoText !== "" ||
+          toDoListItem.toDoCategorie !== "")
+      ) {
+        logAllDebugMessages(
+          "ContainerEditTodo::storeModifedToDoList::117 saveToDoList: ToDoListe was changed!"
+        );
         try {
           const updatedToDoList = { ...toDoList };
           const existingIndex = updatedToDoList.toDoItem.findIndex(
@@ -119,7 +127,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
             updatedToDoList.toDoItem[existingIndex] = toDoListItem;
           }
           logAllDebugMessages(
-            "ContainerEditTodo::loadAndDecryptNote::118 saveToDoList:"
+            "ContainerEditTodo::storeModifedToDoList::131 saveToDoList:"
           );
           logAllDebugMessages(JSON.stringify(updatedToDoList, null, 2));
           await ToDoListService.saveToDoList(
@@ -129,62 +137,76 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
           );
         } catch (error) {
           logError(
-            "ContainerEditNote::loadAndDecryptNote:132 Fehler beim Sichern des ToDos:",
+            "ContainerEditNote::storeModifedToDoList::141 Error when saving the ToDo:",
             error
           );
         }
       }
     };
-    loadAndDecryptNote();
+    storeModifedToDoList();
     extractAndSetCategories();
-  }, [toDoListItem, noteId, encryptionKey, toDoList, extractAndSetCategories]);
+  }, [toDoListItem, encryptionKey, extractAndSetCategories, noteId, toDoList]);
 
   useEffect(() => {
-    const loadAndDecryptNote = async () => {
+    //set the i18n key for the priority
+    const priorityKeyMap: Record<Priority, string> = {
+      [Priority.Low]: "editToDoElement_Low",
+      [Priority.Middle]: "editToDoElement_Middle",
+      [Priority.High]: "editToDoElement_High",
+      [Priority.Highest]: "editToDoElement_Highest",
+    };
+    const i18nKey = priorityKeyMap[toDoListItem.toDoPriority];
+    setTranslatedPrio(t(i18nKey));
+  }, [toDoListItem.toDoPriority, t]);
+
+  useEffect(() => {
+    //Hook to set the ToDo item after the ToDoList has been loaded from memory
+    const setToDoItemFromList = async () => {
       logAllDebugMessages(
-        "ContainerEditTodo::loadAndDecryptNote:: START LOADING" +
+        "ContainerEditTodo::setToDoItemFromList:: START LOADING" +
           JSON.stringify(toDoItemIdInt)
       );
       if (noteId && toDoItemIdInt !== null && !isNaN(toDoItemIdInt)) {
         try {
-          const noteData = await ToDoListService.loadToDoList(
-            noteId,
-            encryptionKey
-          );
-          if (noteData) {
-            const listData: ToDoList = noteData;
-            if (listData.toDoItem) {
-              const toDoItem = listData.toDoItem.find(
+          if (toDoList) {
+            if (toDoList.toDoItem) {
+              const toDoItem = toDoList.toDoItem.find(
                 (item) => item.toDoId === toDoItemId
               );
               if (toDoItem) {
                 logAllDebugMessages(
-                  "ContainerEditTodo::loadAndDecryptNote::Set ToDoItem" +
+                  "ContainerEditTodo::setToDoItemFromList::Set ToDoItem" +
                     JSON.stringify(toDoItem)
                 );
                 setToDoListItem(toDoItem);
+              } else {
+                logError(
+                  "ContainerEditTodo::setToDoItemFromList::184::ToDoItem not found",
+                  new Error()
+                );
               }
             } else {
               logError(
-                "ContainerEditTodo::loadAndDecryptNote::165:: ToDoItem-Array nicht vorhanden",
+                "ContainerEditTodo::setToDoItemFromList::190:: ToDoItem not exist",
                 new Error()
               );
             }
           }
         } catch (error) {
           logError(
-            "ContainerEditTodo::loadAndDecryptNote::172:: Fehler beim Laden und Entschlüsseln der Notiz:",
+            "ContainerEditTodo::setToDoItemFromList::197:: Error loading and decrypting the note:",
             error
           );
         }
       }
     };
 
-    loadAndDecryptNote();
+    setToDoItemFromList();
     extractAndSetCategories();
   }, [
     noteId,
     toDoItemIdInt,
+    toDoList,
     encryptionKey,
     toDoItemId,
     extractAndSetCategories,

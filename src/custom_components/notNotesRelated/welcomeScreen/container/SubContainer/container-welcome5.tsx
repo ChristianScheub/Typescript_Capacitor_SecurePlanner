@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import WelcomeScreen5View from "../../screens/screen-welcome5";
 import { useTranslation } from "react-i18next";
 
