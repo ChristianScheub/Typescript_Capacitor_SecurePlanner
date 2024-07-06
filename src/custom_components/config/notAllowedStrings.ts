@@ -1,3 +1,5 @@
+/* eslint-disable no-script-url */
+
 // The disallowed characters indicate that an attempt is being made to import malicious code or something similar.
 // Not safe, but better than nothing...
 export const NotAllowedStrings = [
@@ -5,7 +7,7 @@ export const NotAllowedStrings = [
   ">>",
   "==",
   "!=",
-  "javascript:",
+  "javascript:", // eslint-disable-line no-script-url
   "data:",
   "vbscript:",
   "onload",
@@ -52,3 +54,5 @@ export const NotAllowedStrings = [
   "<script>",
   "</script>",
 ];
+
+/* eslint-enable no-script-url */
