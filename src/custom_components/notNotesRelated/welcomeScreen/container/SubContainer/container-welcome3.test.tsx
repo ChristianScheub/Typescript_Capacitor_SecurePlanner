@@ -1,4 +1,5 @@
-import { act, render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import { act } from 'react';
 import WelcomeScreen3Container from "./container-welcome3";
 
 jest.useFakeTimers();

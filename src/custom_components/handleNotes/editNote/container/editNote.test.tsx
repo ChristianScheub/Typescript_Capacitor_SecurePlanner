@@ -6,7 +6,7 @@ import {
   encryptAndStore,
   decryptFromStorage,
 } from "../../../services/encryptionEngine/encryptionEngine";
-import { act } from "react-dom/test-utils";
+import { act } from 'react';
 
 const mockEncryptionKey = "some-encryption-key";
 

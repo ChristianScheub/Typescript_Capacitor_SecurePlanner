@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import ProgressBarScreen from './progressBarScreen';
 import { ProgressBarProps } from '../progressBar/progressBar'; // Importieren Sie die richtigen Prop-Typen

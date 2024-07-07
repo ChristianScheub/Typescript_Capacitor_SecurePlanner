@@ -1,9 +1,9 @@
 import {
-  act,
   render,
   screen,
   waitFor,
 } from "@testing-library/react";
+import { act } from 'react';
 import userEvent from "@testing-library/user-event";
 import WelcomeScreen5Container from "./container-welcome5";
 

@@ -1,11 +1,11 @@
-import React from "react";
 import UsedLibsListContainer from "./container_usedLibList";
 import {
     render,
     fireEvent,
     waitFor,
-    act,
   } from "@testing-library/react";
+  import { act } from 'react';
+
 
 describe("UsedLibsListContainer", () => {
   test("renders button with correct text", () => {
