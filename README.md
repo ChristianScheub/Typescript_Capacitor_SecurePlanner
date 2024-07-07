@@ -366,35 +366,35 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 According to the command npm list
 You can see the deeper NPM modules used and which of these are used in the licenses.json.
 
-├── @babel/core@7.23.9
+├── @babel/core@7.24.7
 
 ├── @babel/plugin-proposal-private-property-in-object@7.21.11
 
-├── @babel/preset-env@7.23.9
+├── @babel/preset-env@7.24.7
 
 ├── @capacitor-community/electron@5.0.1
 
-├── @capacitor/android@5.7.0
+├── @capacitor/android@5.7.6
 
-├── @capacitor/app@5.0.7
+├── @capacitor/app@5.0.8
 
-├── @capacitor/cli@5.7.0
+├── @capacitor/cli@5.7.6
 
-├── @capacitor/core@5.7.0
+├── @capacitor/core@5.7.6
 
-├── @capacitor/device@5.0.7
+├── @capacitor/device@5.0.8
 
-├── @capacitor/filesystem@5.2.1
+├── @capacitor/filesystem@5.2.2
 
-├── @capacitor/ios@5.7.0
+├── @capacitor/ios@5.7.6
 
-├── @capacitor/share@5.0.7
+├── @capacitor/share@5.0.8
 
-├── @emotion/react@11.11.3
+├── @emotion/react@11.11.4
 
-├── @emotion/styled@11.11.0
+├── @emotion/styled@11.11.5
 
-├── @mui/material@5.15.7
+├── @mui/material@5.16.0
 
 ├── @testing-library/jest-dom@5.17.0
 
@@ -406,48 +406,48 @@ You can see the deeper NPM modules used and which of these are used in the licen
 
 ├── @types/jest@27.5.2
 
-├── @types/node@16.18.79
+├── @types/node@16.18.101
 
-├── @types/react-datepicker@6.0.1
+├── @types/react-datepicker@6.2.0
 
-├── @types/react-dom@18.2.19
+├── @types/react-dom@18.3.0
 
-├── @types/react@18.2.55
+├── @types/react@18.3.3
 
 ├── babel-jest@29.7.0
 
 ├── bootstrap-icons@1.11.3
 
-├── bootstrap@5.3.2
+├── bootstrap@5.3.3
 
 ├── capacitor-native-biometric@4.2.2
 
 ├── crypto-js@4.2.0
 
-├── electron-builder@24.9.1
+├── electron-builder@24.13.3
 
-├── i18next-browser-languagedetector@7.2.0
+├── i18next-browser-languagedetector@7.2.1
 
-├── i18next@23.8.2
+├── i18next@23.11.5
 
 ├── license-checker@25.0.1
 
-├── react-bootstrap@2.10.0
+├── react-bootstrap@2.10.4
 
-├── react-datepicker@6.1.0
+├── react-datepicker@6.9.0
 
-├── react-dom@18.2.0
+├── react-dom@18.3.1
 
-├── react-i18next@14.0.5
+├── react-i18next@14.1.2
 
 ├── react-icons@4.12.0
 
-├── react-router-dom@6.22.0
+├── react-router-dom@6.24.1
 
 ├── react-scripts@5.0.1
 
 ├── react-swipeable@7.0.1
 
-├── react@18.2.0
+├── react@18.3.1
 
 └── typescript@4.9.5

@@ -1,16 +1,16 @@
 PODS:
-  - Capacitor (5.7.0):
+  - Capacitor (5.7.6):
     - CapacitorCordova
-  - CapacitorApp (5.0.7):
+  - CapacitorApp (5.0.8):
     - Capacitor
-  - CapacitorCordova (5.7.0)
-  - CapacitorDevice (5.0.7):
+  - CapacitorCordova (5.7.6)
+  - CapacitorDevice (5.0.8):
     - Capacitor
-  - CapacitorFilesystem (5.2.1):
+  - CapacitorFilesystem (5.2.2):
     - Capacitor
   - CapacitorNativeBiometric (0.0.1):
     - Capacitor
-  - CapacitorShare (5.0.7):
+  - CapacitorShare (5.0.8):
     - Capacitor
 
 DEPENDENCIES:
@@ -39,13 +39,13 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/share"
 
 SPEC CHECKSUMS:
-  Capacitor: fc155ee2ee45a2093d716f13cf5aa5a865e2d85a
-  CapacitorApp: 17fecd0e6cb23feafac7eb0939417389038b0979
-  CapacitorCordova: e825fce1a2e14e4b5730641c7e098dccf74397b7
-  CapacitorDevice: fc91bdb484dc0e70755e9b621cd557afe642613a
-  CapacitorFilesystem: 9f3e3c7fea2fff12f46dd5b07a2914f2103e4cfc
+  Capacitor: 6e86d6f68a9348c76b6da7349ab3ee4a9edd3b9a
+  CapacitorApp: 102e553c3b1fdc255969c39aa19b529675690ef4
+  CapacitorCordova: 46df0372f7768ff20aa659ba1658b5d7315ea42a
+  CapacitorDevice: 5f5951e4839ff4e0cbdd50d0865f50933f2b117a
+  CapacitorFilesystem: 202b158a878462ab4f401d0eb4d9644c67927333
   CapacitorNativeBiometric: b47637a8cd349bdac014424bb4ddcae9ee5d4919
-  CapacitorShare: c6a1ebbf0114ff9e863b966cd6052678fa25d480
+  CapacitorShare: abef1f7be4e10b448693b0b83b540cb4b92dc849
 
 PODFILE CHECKSUM: 7bbc718d2568e46b3742d17f3181a988b417cb23
 

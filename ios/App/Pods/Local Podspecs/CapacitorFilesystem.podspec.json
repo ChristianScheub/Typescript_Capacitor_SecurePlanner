@@ -1,13 +1,13 @@
 {
   "name": "CapacitorFilesystem",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "summary": "The Filesystem API provides a NodeJS-like API for working with files on the device.",
   "license": "MIT",
   "homepage": "https://capacitorjs.com",
   "authors": "Ionic <hi@ionicframework.com>",
   "source": {
     "git": "https://github.com/ionic-team/capacitor-plugins.git",
-    "tag": "@capacitor/filesystem@5.2.1"
+    "tag": "@capacitor/filesystem@5.2.2"
   },
   "source_files": [
     "ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}",

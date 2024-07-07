@@ -1,16 +1,10 @@
-import { Filesystem, Directory } from "@capacitor/filesystem";
-import { Share } from "@capacitor/share";
 import { logError } from "../logger/loggerFeatureFlags";
-import { makeReadyForExport } from "../encryptionEngine/encryptionEngine";
 import {
-  downloadFile,
-  generateFileName,
   readFileContent,
   processFileContent,
 } from "./fileHandlerHelper";
 import SecurityLevel from "../../enums/SecurityLevel.enum";
 import {
-  handleExportAllClick,
   handleFileChangeTranslation,
 } from "./fileHandler";
 

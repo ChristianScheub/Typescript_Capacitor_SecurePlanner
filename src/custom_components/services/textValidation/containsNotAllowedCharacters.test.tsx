@@ -1,5 +1,4 @@
 import { containsNotAllowedCharacters } from './containsNotAllowedCharacters';
-import * as notAllowedStringsModule from '../../config/notAllowedStrings';
 import * as loggerFeatureFlagsModule from '../logger/loggerFeatureFlags';
 
 // Mock der Abhängigkeiten
