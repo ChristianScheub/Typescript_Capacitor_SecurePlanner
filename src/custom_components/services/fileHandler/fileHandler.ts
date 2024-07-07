@@ -56,6 +56,11 @@ export const handleFileChangeTranslation = async (
 ) => {
   const file = event.target.files ? event.target.files[0] : null;
 
+  if (!file || file.type !== "text/plain") {
+    alert(t("settings_Dialog_ImportWrongFiletype"));
+    return;
+  }
+
   if (localStorage.getItem("securityLevel") === SecurityLevel.Low) {
     if (!window.confirm(t("settings_Dialog_ImportNoPass")) || !file) return;
 

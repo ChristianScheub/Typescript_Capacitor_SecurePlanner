@@ -8,7 +8,7 @@ interface ContinueButtonProps {
 
 const ContinueButton: React.FC<ContinueButtonProps> = ({ onClick, textBtn }) => {
   return (
-    <div id="div-welcome-btn">
+    <div id="div-welcome-btn" data-testid="welcome-screen-continueBtn">
           <button onClick={onClick}><b>{textBtn}</b></button>
     </div>
   );

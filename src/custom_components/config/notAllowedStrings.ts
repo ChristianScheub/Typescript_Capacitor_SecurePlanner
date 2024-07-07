@@ -3,10 +3,6 @@
 // The disallowed characters indicate that an attempt is being made to import malicious code or something similar.
 // Not safe, but better than nothing...
 export const NotAllowedStrings = [
-  "<<",
-  ">>",
-  "==",
-  "!=",
   "javascript:", // eslint-disable-line no-script-url
   "data:", // eslint-disable-line no-script-url
   "vbscript:", // eslint-disable-line no-script-url

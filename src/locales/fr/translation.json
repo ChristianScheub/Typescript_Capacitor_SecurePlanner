@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "Ceci est une version d'essai ! Vous ne pouvez créer que 2 listes de tâches !",
   "settings_Dialog_ImportNoPass":"Attention, vous ne pouvez importer que des listes de tâches sans mot de passe en raison de vos paramètres!",
   "settings_Dialog_ImportJustOne":"Attention, vous ne pouvez importer que des listes de tâches avec le même mot de passe en raison de vos paramètres!",
-  "error_containsNotAllowedCharacters": "Les données contiennent des caractères non autorisés en raison de mesures de sécurité."
+  "error_containsNotAllowedCharacters": "Les données contiennent des caractères non autorisés en raison de mesures de sécurité.",
+  "settings_Dialog_ImportWrongFiletype": "Fichier invalide! Les fichiers exportés d'ici sont de type .txt!"
 }

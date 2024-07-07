@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "Esta é uma versão de teste! Você só pode criar 2 listas de tarefas!",
   "settings_Dialog_ImportNoPass":"Atenção, você só pode importar listas de tarefas sem senha devido às suas configurações!",
   "settings_Dialog_ImportJustOne":"Atenção, você só pode importar listas de tarefas com a mesma senha devido às suas configurações!",
-  "error_containsNotAllowedCharacters": "Os dados contêm caracteres que não são permitidos devido a medidas de segurança."
+  "error_containsNotAllowedCharacters": "Os dados contêm caracteres que não são permitidos devido a medidas de segurança.",
+  "settings_Dialog_ImportWrongFiletype": "Arquivo inválido! Os arquivos exportados daqui têm .txt como tipo de dados!"
 }

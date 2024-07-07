@@ -29,10 +29,11 @@ export const downloadFile = (base64Data: string, fileName: string) => {
 export const processFileContent = async (content: string) => {
   const lines = content.trim().split("*_*_*");
   for (let i = 0; i < lines.length; i += 2) {
-    const key = lines[i].slice(1);
+    const key = lines[i].trim();
     let value = lines[i + 1] ?? "";
     value = value.substring(1);
     value = await makeReadyForImport(value);
+    
     if (key) {
       logAllDebugMessages("FileHandlerHelper::processFileContent::Import:" + key + "__INHALT__" + value);
       localStorage.setItem(key, value);

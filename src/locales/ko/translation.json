@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "이것은 체험판입니다! 할 일 목록을 2개만 생성할 수 있습니다!",
   "settings_Dialog_ImportNoPass":"주의, 설정으로 인해 비밀번호 없이 할 일 목록만 가져올 수 있습니다!",
   "settings_Dialog_ImportJustOne":"주의, 설정으로 인해 동일한 비밀번호가 있는 할 일 목록만 가져올 수 있습니다!",
-  "error_containsNotAllowedCharacters": "데이터에 보안 조치로 인해 허용되지 않는 문자가 포함되어 있습니다."
+  "error_containsNotAllowedCharacters": "데이터에 보안 조치로 인해 허용되지 않는 문자가 포함되어 있습니다.",
+  "settings_Dialog_ImportWrongFiletype": "잘못된 파일입니다! 여기에서 내보낸 파일의 데이터 유형은 .txt입니다!"
 }

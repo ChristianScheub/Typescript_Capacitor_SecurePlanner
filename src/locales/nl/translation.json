@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "Dit is een proefversie! Je kunt slechts 2 takenlijsten maken!",
   "settings_Dialog_ImportNoPass":"Let op, u kunt alleen ToDo-lijsten importeren zonder wachtwoord vanwege uw instellingen!",
   "settings_Dialog_ImportJustOne":"Let op, u kunt alleen ToDo-lijsten importeren met hetzelfde wachtwoord vanwege uw instellingen!",
-  "error_containsNotAllowedCharacters": "De gegevens bevatten tekens die niet zijn toegestaan vanwege veiligheidsmaatregelen."
+  "error_containsNotAllowedCharacters": "De gegevens bevatten tekens die niet zijn toegestaan vanwege veiligheidsmaatregelen.",
+  "settings_Dialog_ImportWrongFiletype": "Ongeldig bestand! Bestanden die van hier geëxporteerd zijn, hebben .txt als gegevenstype!"
 }

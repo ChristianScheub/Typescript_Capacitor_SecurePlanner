@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "Questa è una versione di prova! Puoi creare solo 2 elenchi di cose da fare!",
   "settings_Dialog_ImportNoPass":"Attenzione, puoi importare solo liste ToDo senza password a causa delle tue impostazioni!",
   "settings_Dialog_ImportJustOne":"Attenzione, puoi importare solo liste ToDo con la stessa password a causa delle tue impostazioni!",
-  "error_containsNotAllowedCharacters": "I dati contengono caratteri non consentiti a causa delle misure di sicurezza."
+  "error_containsNotAllowedCharacters": "I dati contengono caratteri non consentiti a causa delle misure di sicurezza.",
+  "settings_Dialog_ImportWrongFiletype": "File non valido! I file esportati da qui sono di tipo .txt!"
 }

@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "这是试用版！您只能创建2个待办事项列表！",
   "settings_Dialog_ImportNoPass":"注意，由于您的设置，您只能导入不带密码的待办事项清单！",
   "settings_Dialog_ImportJustOne":"注意，由于您的设置，您只能导入具有相同密码的待办事项清单！",
-  "error_containsNotAllowedCharacters": "数据包含由于安全措施而不允许的字符。"
+  "error_containsNotAllowedCharacters": "数据包含由于安全措施而不允许的字符。",
+  "settings_Dialog_ImportWrongFiletype": "无效文件！从这里导出的文件的数据类型为.txt！"
 }

@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "!هذه نسخة تجريبية! يمكنك إنشاء قائمتي مهام فقط",
   "settings_Dialog_ImportNoPass":"تنبيه، يمكنك فقط استيراد قوائم المهام بدون كلمة مرور بسبب إعداداتك!",
   "settings_Dialog_ImportJustOne":"تنبيه، يمكنك فقط استيراد قوائم المهام بنفس كلمة المرور بسبب إعداداتك!",
-  "error_containsNotAllowedCharacters": "البيانات تحتوي على أحرف غير مسموح بها بسبب تدابير الأمان."
+  "error_containsNotAllowedCharacters": "البيانات تحتوي على أحرف غير مسموح بها بسبب تدابير الأمان.",
+  "settings_Dialog_ImportWrongFiletype": "ملف غير صالح! الملفات التي تم تصديرها من هنا لها نوع بيانات .txt!"
 }

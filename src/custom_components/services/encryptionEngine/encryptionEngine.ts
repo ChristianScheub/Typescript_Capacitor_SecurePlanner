@@ -202,7 +202,7 @@ export const makeReadyForImport = async (
 
   if (containsNotAllowedCharacters(encryptedData)) {
     alert(t("error_containsNotAllowedCharacters"));
-    return "";
+    throw new Error("error_containsNotAllowedCharacters");
   }
 
   return CryptoJS.TripleDES.encrypt(

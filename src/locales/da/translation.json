@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "Dette er en prøveversion! Du kan kun oprette 2 opgavelister!",
   "settings_Dialog_ImportNoPass":"Bemærk, du kan kun importere ToDo-lister uden adgangskode på grund af dine indstillinger!",
   "settings_Dialog_ImportJustOne":"Bemærk, du kan kun importere ToDo-lister med den samme adgangskode på grund af dine indstillinger!",
-  "error_containsNotAllowedCharacters": "Dataene indeholder tegn, der ikke er tilladt på grund af sikkerhedsforanstaltninger."
+  "error_containsNotAllowedCharacters": "Dataene indeholder tegn, der ikke er tilladt på grund af sikkerhedsforanstaltninger.",
+  "settings_Dialog_ImportWrongFiletype": "Ugyldig fil! Filer, der eksporteres herfra, har .txt som datatype!"
 }

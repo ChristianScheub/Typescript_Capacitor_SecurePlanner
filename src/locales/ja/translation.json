@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "これはトライアルバージョンです！ToDoリストを2つしか作成できません！",
   "settings_Dialog_ImportNoPass":"注意、設定によりパスワードなしでToDoリストをインポートできます！",
   "settings_Dialog_ImportJustOne":"注意、設定により同じパスワードのToDoリストのみをインポートできます！",
-  "error_containsNotAllowedCharacters": "データにはセキュリティ対策のため許可されていない文字が含まれています。"
+  "error_containsNotAllowedCharacters": "データにはセキュリティ対策のため許可されていない文字が含まれています。",
+  "settings_Dialog_ImportWrongFiletype": "無効なファイルです！ここからエクスポートされたファイルのデータタイプは.txtです！"
 }

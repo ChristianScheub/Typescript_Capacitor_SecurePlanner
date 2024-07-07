@@ -98,5 +98,6 @@
     "trial_viewNote_TrialAlert": "Detta är en provversion! Du kan bara skapa 2 att-göra-listor!",
     "settings_Dialog_ImportNoPass":"Observera, du kan bara importera att göra-listor utan lösenord på grund av dina inställningar!",
     "settings_Dialog_ImportJustOne":"Observera, du kan bara importera att göra-listor med samma lösenord på grund av dina inställningar!",
-    "error_containsNotAllowedCharacters": "Uppgifterna innehåller tecken som inte är tillåtna på grund av säkerhetsåtgärder."
+    "error_containsNotAllowedCharacters": "Uppgifterna innehåller tecken som inte är tillåtna på grund av säkerhetsåtgärder.",
+    "settings_Dialog_ImportWrongFiletype": "Ogiltig fil! Filer som exporteras härifrån har .txt som datatyp!"
   }  

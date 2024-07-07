@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "Tämä on kokeiluversio! Voit luoda vain 2 tehtävälistaa!",
   "settings_Dialog_ImportNoPass":"Huomio, voit tuoda ToDo-listoja ilman salasanaa asetustesi vuoksi!",
   "settings_Dialog_ImportJustOne":"Huomio, voit tuoda ToDo-listoja vain samalla salasanalla asetustesi vuoksi!",
-  "error_containsNotAllowedCharacters": "Tiedot sisältävät merkkejä, joita ei sallita turvallisuustoimenpiteiden vuoksi."
+  "error_containsNotAllowedCharacters": "Tiedot sisältävät merkkejä, joita ei sallita turvallisuustoimenpiteiden vuoksi.",
+  "settings_Dialog_ImportWrongFiletype": "Virheellinen tiedosto! Täältä viedyt tiedostot ovat tiedostotyypiltään .txt!"
 }

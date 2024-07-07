@@ -14,8 +14,10 @@ jest.mock("react-i18next", () => ({
 }));
 
 describe("WelcomeScreen5Container", () => {
+  const closeOverlayMock = jest.fn();
+
   beforeEach(() => {
-    render(<WelcomeScreen5Container closeOverlay={jest.fn()} />);
+    render(<WelcomeScreen5Container closeOverlay={closeOverlayMock} />);
   });
 
   it("should display a password short error when the password is too short and attempt to submit", async () => {
@@ -28,6 +30,22 @@ describe("WelcomeScreen5Container", () => {
       expect(
         screen.getByText("encryption-modal_PasswordShort")
       ).toBeInTheDocument();
+    });
+  });
+
+  it("should call closeOverlay with the correct password when password length is more than 4 characters", () => {
+    localStorage.clear();
+    userEvent.type(
+      screen.getByTestId("welcome-screen-password-input"),
+      "12345"
+    );
+
+    userEvent.click(screen.getByTestId("welcome-screen-continueBtn"));
+    expect(localStorage.getItem("welcomeScreenDone") === "true");
+    expect(localStorage.getItem("justOnePassword") === "false");
+
+    waitFor(() => {
+      expect(closeOverlayMock).toHaveBeenCalledWith("12345");
     });
   });
 });

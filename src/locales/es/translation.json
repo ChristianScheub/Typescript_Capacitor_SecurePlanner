@@ -99,5 +99,6 @@
   "trial_viewNote_TrialAlert": "¡Esta es una versión de prueba! ¡Solo puedes crear 2 listas de tareas pendientes!",
   "settings_Dialog_ImportNoPass":"¡Atención, solo puede importar listas de tareas sin contraseña debido a su configuración!",
   "settings_Dialog_ImportJustOne":"¡Atención, solo puede importar listas de tareas con la misma contraseña debido a su configuración!",
-  "error_containsNotAllowedCharacters": "Los datos contienen caracteres que no están permitidos debido a medidas de seguridad."
+  "error_containsNotAllowedCharacters": "Los datos contienen caracteres que no están permitidos debido a medidas de seguridad.",
+  "settings_Dialog_ImportWrongFiletype": "¡Archivo no válido! ¡Los archivos exportados desde aquí tienen .txt como tipo de datos!"
 }

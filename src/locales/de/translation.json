@@ -101,5 +101,6 @@
 
   "settings_Dialog_ImportNoPass":"Achtung, Sie können nur ToDo Listen importieren ohne Passwort aufgrund ihrer Einstellungen!",
   "settings_Dialog_ImportJustOne":"Achtung, Sie können nur ToDo Listen mit dem selben Passwort importieren aufgrund ihrer Einstellungen!",
-  "error_containsNotAllowedCharacters": "Die Daten enthalten Zeichen, die aufgrund von Sicherheitsmaßnahmen nicht erlaubt sind."
+  "error_containsNotAllowedCharacters": "Die Daten enthalten Zeichen, die aufgrund von Sicherheitsmaßnahmen nicht erlaubt sind.",
+  "settings_Dialog_ImportWrongFiletype": "Ungültige Datei! Dateien die von hier exportiert wurden, haben .txt als Datentyp!"
 }

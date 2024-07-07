@@ -98,5 +98,6 @@
   "trial_viewNote_TrialAlert": "To wersja próbna! Możesz utworzyć tylko 2 listy zadań!",
   "settings_Dialog_ImportNoPass":"Uwaga, możesz importować tylko listy zadań bez hasła ze względu na swoje ustawienia!",
   "settings_Dialog_ImportJustOne":"Uwaga, możesz importować tylko listy zadań z tym samym hasłem ze względu na swoje ustawienia!",
-  "error_containsNotAllowedCharacters": "Dane zawierają znaki, które nie są dozwolone ze względu na środki bezpieczeństwa."
+  "error_containsNotAllowedCharacters": "Dane zawierają znaki, które nie są dozwolone ze względu na środki bezpieczeństwa.",
+  "settings_Dialog_ImportWrongFiletype": "Nieprawidłowy plik! Pliki eksportowane stąd mają typ danych .txt!"
 }
