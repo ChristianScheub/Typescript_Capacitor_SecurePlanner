@@ -160,7 +160,7 @@ const ContainerEditTodo: React.FC<ContainerEditTodoProps> = ({
   }, [toDoListItem.toDoPriority, t]);
 
   useEffect(() => {
-    //Hook to set the ToDo item after the ToDoList has been loaded from memory
+    //Hook to set the Item after the List has been loaded from memory
     const setToDoItemFromList = async () => {
       logAllDebugMessages(
         "ContainerEditTodo::setToDoItemFromList:: START LOADING" +

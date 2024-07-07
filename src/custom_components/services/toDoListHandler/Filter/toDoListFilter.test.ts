@@ -9,10 +9,10 @@ import {
 
 describe("toDoListFilter", () => {
   const toDoItemsData = [
-    { title: "1", endDate: "2024-01-02", categorie: "Work", done: false, priority: Priority.Middle },
-    { title: "2", endDate: "2024-01-03", categorie: "Home", done: true, priority: Priority.Highest },
-    { title: "3", endDate: "2024-01-03", categorie: "Work", done: false, priority: Priority.Middle },
-    { title: "4", endDate: "2024-03-30", categorie: "", done: false, priority: Priority.Highest },
+    { title: "1", endDate: "2024-07-02", categorie: "Work", done: false, priority: Priority.Middle },
+    { title: "2", endDate: "2024-07-03", categorie: "Home", done: true, priority: Priority.Highest },
+    { title: "3", endDate: "2024-07-03", categorie: "Work", done: false, priority: Priority.Middle },
+    { title: "4", endDate: "2024-07-30", categorie: "", done: false, priority: Priority.Highest },
   ];
   
   const mockToDoList: ToDoList = {
@@ -41,10 +41,10 @@ describe("toDoListFilter", () => {
     expect(result.toDoItem.length).toBe(0);
   });
 
- /* test("filterToDoListByNextXDays", () => {
+  test("filterToDoListByNextXDays", () => {
     const result = filterToDoListByNextXDays(mockToDoList, 60);
     expect(result.toDoItem.length).toBe(1);
-  });*/
+  });
 
   test("filterToDoListByNextXDays no match", () => {
     const result = filterToDoListByNextXDays(mockToDoList, -10);

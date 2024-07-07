@@ -269,6 +269,7 @@ There is a large ToDo List service which is also subdivided into smaller service
 
 ![Secure Banner Architecture](images/SecurePlannerArchitecture_Layers.png)
 Note: The App.tsx, the interfaces and props are hidden here to make it easy to keep an overview.
+(The architecture image is not completely up-to-date and therefore does not yet include the logger service, for example. However, it still gives a good overview and includes almost everything)
 
 ## Troubleshooting
 

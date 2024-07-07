@@ -5,7 +5,6 @@ import {
   screen,
   fireEvent,
   waitFor,
-  act,
 } from "@testing-library/react";
 import React from "react";
 import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";

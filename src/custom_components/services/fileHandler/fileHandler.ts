@@ -56,15 +56,14 @@ export const handleFileChangeTranslation = async (
 ) => {
   const file = event.target.files ? event.target.files[0] : null;
 
-  //ToDoYEY: Übersetzuungen anpassen, dass Nutzer weiß wie man es interpretiert
   if (localStorage.getItem("securityLevel") === SecurityLevel.Low) {
     if (!window.confirm(t("settings_Dialog_ImportNoPass")) || !file) return;
 
   } else if (localStorage.getItem("justOnePassword") === "true") {
     if (!window.confirm(t("settings_Dialog_ImportJustOne")) || !file) return;
 
-  } else {
-    if (!window.confirm(t("settings_Dialog_Import")) || !file) return;
+  } else if (!window.confirm(t("settings_Dialog_Import")) || !file) {
+    return;
   }
   
 

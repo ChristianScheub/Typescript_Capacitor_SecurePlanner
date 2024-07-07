@@ -1,5 +1,5 @@
 import { makeReadyForImport } from "../encryptionEngine/encryptionEngine";
-import { logAllDebugMessages } from "../logger/loggerFeatureFlags";
+import { logAllDebugMessages, logError } from "../logger/loggerFeatureFlags";
 
 //needed for handleExportAllClick
 export const generateFileName = () => {
@@ -50,7 +50,9 @@ export const readFileContent = (file: File): Promise<string | null> => {
     };
 
     reader.onerror = (event) => {
-      reject(event.target?.error);
+      const error = event.target?.error instanceof Error ? event.target.error : new Error("Error while reading the file.");
+      logError("fileHandlerHelper::readFileContent: Error while reading the file", error);
+      reject(error);
     };
 
     reader.readAsText(file);
