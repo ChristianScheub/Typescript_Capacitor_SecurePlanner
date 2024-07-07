@@ -129,26 +129,26 @@ describe("filterNotes Function", () => {
     ],
   ];
 
-  it("should filter notes based on the title of the ToDoList", () => {
-    const filteredNotes = filterNotes(mockNotes, "Einkaufen");
-    expect(filteredNotes.length).toBe(1);
-    expect(filteredNotes[0].key).toBe("1");
+  describe('filterToDos', () => {
+    const testCases = [
+      { query: "Einkaufen", expectedLength: 1, expectedKey: "1" },
+      { query: "Lauftraining", expectedLength: 1, expectedKey: "2" },
+      { query: "Milch", expectedLength: 1, expectedKey: "1" },
+      { query: "Schwimmen", expectedLength: 0, expectedKey: null },
+    ];
+  
+    test.each(testCases)(
+      "should filter notes correctly for query '$query'",
+      ({ query, expectedLength, expectedKey }) => {
+        const filteredNotes = filterNotes(mockNotes, query);
+        expect(filteredNotes.length).toBe(expectedLength);
+        if (expectedLength > 0) {
+          expect(filteredNotes[0].key).toBe(expectedKey);
+        } else {
+          expect(filteredNotes).toEqual([]);
+        }
+      }
+    );
   });
-
-  it("should filter notes based on the content of the ToDoList", () => {
-    const filteredNotes = filterNotes(mockNotes, "Lauftraining");
-    expect(filteredNotes.length).toBe(1);
-    expect(filteredNotes[0].key).toBe("2");
-  });
-
-  it("should filter notes based on the title of a ToDoItem", () => {
-    const filteredNotes = filterNotes(mockNotes, "Milch");
-    expect(filteredNotes.length).toBe(1);
-    expect(filteredNotes[0].key).toBe("1");
-  });
-
-  it("should return an empty array when no notes match the search query", () => {
-    const filteredNotes = filterNotes(mockNotes, "Schwimmen");
-    expect(filteredNotes).toEqual([]);
-  });
+  
 });

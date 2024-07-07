@@ -81,31 +81,6 @@ describe("EditNote Component", () => {
     expect(contentTextArea.value).toBe("");
   });
 
-  it("handles input changes correctly", async () => {
-    await act(async () => {
-      render(
-        <Router>
-          <EditNoteContainer encryptionKey={mockEncryptionKey} />
-        </Router>
-      );
-    });
-
-    await waitFor(() => {
-      const titleInput = screen.getByTestId(
-        "noteTitleTest"
-      ) as HTMLInputElement;
-      const contentTextArea = screen.getByTestId(
-        "noteTextTest"
-      ) as HTMLTextAreaElement;
-
-      fireEvent.change(titleInput, { target: { value: "New Title" } });
-      fireEvent.change(contentTextArea, { target: { value: "New Content" } });
-
-      expect(titleInput.value).toBe("New Title");
-      expect(contentTextArea.value).toBe("New Content");
-    });
-  });
-
   it("handles input changes and save button click correctly", async () => {
     await act(async () => {
       render(
@@ -132,7 +107,6 @@ describe("EditNote Component", () => {
       expect(decryptFromStorage(mockEncryptionKey, "22")).not.toBe(oldValue);
     });
   });
-
 
   const isJsonString = (str: string): boolean => {
     try {
