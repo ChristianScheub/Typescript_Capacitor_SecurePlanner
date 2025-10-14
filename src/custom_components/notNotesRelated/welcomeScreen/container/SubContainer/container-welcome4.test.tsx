@@ -1,5 +1,5 @@
 import { render, fireEvent, waitFor, screen } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 import WelcomeScreen4Container from "./container-welcome4";
 import SecurityLevel from "../../../../enums/SecurityLevel.enum";
 

@@ -5,7 +5,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { act } from 'react';
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 import EncryptionKeyModalContainer from "./container-encryption-modal";
 import { BrowserRouter as Router } from "react-router-dom";
 import * as fingerprintLogic from "../../../services/fingerprintLogic/fingerprintLogic";

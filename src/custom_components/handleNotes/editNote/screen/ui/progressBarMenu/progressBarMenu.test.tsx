@@ -29,6 +29,7 @@ describe("ProgressBarCategoryMenu", () => {
   it("should change arrow Icon to Up/Down when it is clicked", async () => {
     const mockHandleProgressBarClick = jest.fn();
     const categories = ["Category 1", "Category 2"];
+    const user = userEvent.setup();
 
     render(
       <ProgressBarCategoryMenu
@@ -42,14 +43,14 @@ describe("ProgressBarCategoryMenu", () => {
     expect(screen.getByTestId("progressBarArrowIcon")).toHaveClass(
       "progressBarArrowIconDown"
     );
-    act(() => {
-      userEvent.click(screen.getByText("Progress per Category"));
+    await act(async () => {
+      await user.click(screen.getByText("Progress per Category"));
     });
     expect(screen.getByTestId("progressBarArrowIcon")).toHaveClass(
       "progressBarArrowIconUp"
     );
-    act(() => {
-      userEvent.click(screen.getByText("Progress per Category"));
+    await act(async () => {
+      await user.click(screen.getByText("Progress per Category"));
     });
     expect(screen.getByTestId("progressBarArrowIcon")).toHaveClass(
       "progressBarArrowIconDown"
@@ -59,6 +60,7 @@ describe("ProgressBarCategoryMenu", () => {
   it("shows the category list by click", async () => {
     const mockHandleProgressBarClick = jest.fn();
     const categories = ["Category 1", "Category 2"];
+    const user = userEvent.setup();
 
     render(
       <ProgressBarCategoryMenu
@@ -69,14 +71,16 @@ describe("ProgressBarCategoryMenu", () => {
         highlightedId={null}
       />
     );
-    act(() => {
-      userEvent.click(screen.getByText("Progress per Category"));
+    await act(async () => {
+      await user.click(screen.getByText("Progress per Category"));
     });
 
     const progressBars = document.querySelectorAll(
       ".progressBarContainerStyle"
     );
-    userEvent.click(progressBars[0]);
+    await act(async () => {
+      await user.click(progressBars[0]);
+    });
 
     expect(mockHandleProgressBarClick).toHaveBeenCalledWith(categories[0]);
   });

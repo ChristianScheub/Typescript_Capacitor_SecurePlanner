@@ -15,7 +15,7 @@ describe("fileHandlerHelper", () => {
     it("should generate a file name with the current date and time", () => {
       // Arrange
       const date = new Date("2024-07-07T14:30:15");
-      jest.spyOn(global, "Date").mockImplementation(() => date as unknown as string);
+      jest.spyOn(global, "Date").mockImplementation((() => date) as any);
 
       // Act
       const fileName = generateFileName();

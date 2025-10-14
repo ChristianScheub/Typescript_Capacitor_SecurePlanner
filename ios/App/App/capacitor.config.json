@@ -12,5 +12,12 @@
 				"WRITE_EXTERNAL_STORAGE"
 			]
 		}
-	}
+	},
+	"packageClassList": [
+		"AppPlugin",
+		"DevicePlugin",
+		"FilesystemPlugin",
+		"SharePlugin",
+		"NativeBiometric"
+	]
 }
