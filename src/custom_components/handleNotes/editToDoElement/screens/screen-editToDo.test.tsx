@@ -3,7 +3,7 @@ import ViewEditTodo from "./screen-editToDo";
 import { Priority } from "../../../enums/priority.enum";
 
 describe("ViewEditTodo Component", () => {
-  const mockUpdateToDoItem = jest.fn();
+  const mockUpdateToDoItem = vi.fn();
 
   beforeEach(() => {
     mockUpdateToDoItem.mockClear();

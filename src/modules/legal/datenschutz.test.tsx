@@ -3,13 +3,13 @@ import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Datenschutz from './datenschutz';
 
-jest.mock('../app_configuration/app_texts', () => ({
+vi.mock('../app_configuration/app_texts', () => ({
     datenschutz_text: 'Mocked Datenschutz Text'
 }));
 
-jest.mock('react-router-dom', () => ({
-    ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn(),
+vi.mock('react-router-dom', async () => ({
+    ...await vi.importActual('react-router-dom'),
+    useNavigate: vi.fn(),
 }));
 
 

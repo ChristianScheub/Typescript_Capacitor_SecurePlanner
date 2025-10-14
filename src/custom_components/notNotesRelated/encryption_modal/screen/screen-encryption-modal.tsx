@@ -18,7 +18,7 @@ interface ViewEncryptionKeyModalProps {
   activateFingerprint: () => void;
   handleKeySubmit: (event: FormEvent) => void;
   navigateToPrivacy: () => void;
-  inputRef: RefObject<HTMLInputElement>;
+  inputRef: RefObject<HTMLInputElement | null>;
 }
 
 const ViewEncryptionKeyModal: React.FC<ViewEncryptionKeyModalProps> = ({

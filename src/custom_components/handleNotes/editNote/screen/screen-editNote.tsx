@@ -35,7 +35,7 @@ interface ViewEditNoteViewProps {
     event: React.MouseEvent,
     toDoId: number
   ) => void;
-  CustomComponent: JSX.Element;
+  CustomComponent: React.ReactElement;
   showToDoEdit: boolean;
   onHandleToDoSave: () => void;
   handleFilterList: (filterArgument: string) => void;

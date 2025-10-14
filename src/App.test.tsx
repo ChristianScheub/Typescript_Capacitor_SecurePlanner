@@ -11,24 +11,24 @@ const renderWithRouter = (component: React.ReactElement) => {
   return render(component);
 };
 
-jest.mock("capacitor-native-biometric", () => ({
+vi.mock("capacitor-native-biometric", () => ({
   NativeBiometric: {
-    isAvailable: jest.fn(),
+    isAvailable: vi.fn(),
   },
 }));
 
-jest.mock('./custom_components/services/encryptionEngine/encryptionEngine', () => ({
-  getPBKDF2_Password: jest.fn().mockImplementation(password => password),
+vi.mock('./custom_components/services/encryptionEngine/encryptionEngine', () => ({
+  getPBKDF2_Password: vi.fn().mockImplementation(password => password),
 }));
 
 describe("App Component", () => {
   beforeEach(() => {
     localStorage.setItem("welcomeScreenDone", "true");
-    jest.mocked(getPBKDF2_Password).mockImplementation(password => password);
-    window.matchMedia = jest.fn().mockImplementation(query => ({
+    vi.mocked(getPBKDF2_Password).mockImplementation(password => password);
+    window.matchMedia = vi.fn().mockImplementation(query => ({
       matches: query === '(prefers-color-scheme: dark)',
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
     }));
   });
 

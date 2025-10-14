@@ -9,19 +9,19 @@ import {
   getPBKDF2_Password,
 } from "./encryptionEngine";
 
-jest.mock("@capacitor/device", () => ({
+vi.mock("@capacitor/device", () => ({
   Device: {
-    getId: jest.fn(),
+    getId: vi.fn(),
   },
 }));
 
 describe("Encryption Tests", () => {
   beforeEach(() => {
     window.localStorage.clear();
-    (Device.getId as jest.Mock).mockResolvedValue({
+    (Device.getId as MockInstance).mockResolvedValue({
       identifier: "deviceIdentifier",
     });
-    window.alert = jest.fn();
+    window.alert = vi.fn();
   });
 
   it("activated encryption: should properly encrypt and decrypt data for export", async () => {

@@ -10,9 +10,9 @@ import { act } from 'react';
 
 const mockEncryptionKey = "some-encryption-key";
 
-const mockedNavigate = jest.fn();
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+const mockedNavigate = vi.fn();
+vi.mock("react-router-dom", () => ({
+  ...await vi.importActual("react-router-dom"),
   useParams: () => ({ noteId: "22" }),
   useNavigate: () => mockedNavigate,
 }));
@@ -59,8 +59,8 @@ describe("EditNote Component", () => {
 
   
   it("renders with empty fields when no noteId is provided", async () => {
-    jest.mock("react-router-dom", () => ({
-      ...jest.requireActual("react-router-dom"),
+    vi.mock("react-router-dom", () => ({
+      ...await vi.importActual("react-router-dom"),
       useParams: () => ({}),
     }));
     localStorage.clear();
@@ -119,8 +119,8 @@ describe("EditNote Component", () => {
   };
 
   it("renders with empty fields and save button click", async () => {
-    jest.mock("react-router-dom", () => ({
-      ...jest.requireActual("react-router-dom"),
+    vi.mock("react-router-dom", () => ({
+      ...await vi.importActual("react-router-dom"),
       useParams: () => ({}),
     }));
     localStorage.clear();

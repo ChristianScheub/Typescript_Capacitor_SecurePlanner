@@ -4,14 +4,14 @@ import WelcomeScreen4Container from "./container-welcome4";
 import SecurityLevel from "../../../../enums/SecurityLevel.enum";
 
 describe("<WelcomeScreen4Container />", () => {
-  const mockCloseOverlay = jest.fn();
-  const mockSetAvailableScreens = jest.fn();
-  const mockSetCurrentScreen = jest.fn();
+  const mockCloseOverlay = vi.fn();
+  const mockSetAvailableScreens = vi.fn();
+  const mockSetCurrentScreen = vi.fn();
 
   beforeEach(() => {
-    jest.clearAllMocks();
-    Storage.prototype.setItem = jest.fn();
-    Storage.prototype.getItem = jest.fn();
+    vi.clearAllMocks();
+    Storage.prototype.setItem = vi.fn();
+    Storage.prototype.getItem = vi.fn();
   });
 
   test("sets the number of available screens based on the selected security level", () => {

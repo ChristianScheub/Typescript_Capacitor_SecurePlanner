@@ -5,8 +5,8 @@ import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 describe("ProgressBarCategoryMenu", () => {
-  const mockHandleProgressBarClick = jest.fn();
-  const mockGetCategoryProgress = jest.fn().mockReturnValue(50);
+  const mockHandleProgressBarClick = vi.fn();
+  const mockGetCategoryProgress = vi.fn().mockReturnValue(50);
   const categoriesList = ["Category 1", "Category 2", "Category 3"];
   const activeTooltip = "Category 1";
   const highlightedId = "Category 2";
@@ -27,7 +27,7 @@ describe("ProgressBarCategoryMenu", () => {
   });
 
   it("should change arrow Icon to Up/Down when it is clicked", async () => {
-    const mockHandleProgressBarClick = jest.fn();
+    const mockHandleProgressBarClick = vi.fn();
     const categories = ["Category 1", "Category 2"];
     const user = userEvent.setup();
 
@@ -58,7 +58,7 @@ describe("ProgressBarCategoryMenu", () => {
   });
 
   it("shows the category list by click", async () => {
-    const mockHandleProgressBarClick = jest.fn();
+    const mockHandleProgressBarClick = vi.fn();
     const categories = ["Category 1", "Category 2"];
     const user = userEvent.setup();
 

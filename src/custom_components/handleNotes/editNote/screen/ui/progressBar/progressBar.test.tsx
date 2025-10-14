@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import ProgressBar from "./progressBar";
 
 describe("ProgressBar Component", () => {
-  const mockOnClick = jest.fn();
+  const mockOnClick = vi.fn();
 
   beforeEach(() => {
     mockOnClick.mockClear();
@@ -13,7 +13,7 @@ describe("ProgressBar Component", () => {
     title: "Test Progress",
     infoText: "Info about the progress",
     active: false,
-    onClick: jest.fn(),
+    onClick: vi.fn(),
   };
 
   it("displays the correct title and progress", () => {

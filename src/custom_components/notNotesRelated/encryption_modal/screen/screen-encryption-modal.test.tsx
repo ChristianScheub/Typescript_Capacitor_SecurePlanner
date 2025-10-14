@@ -3,9 +3,9 @@ import EncryptionKeyModalView from "./screen-encryption-modal";
 import "@testing-library/jest-dom";
 
 describe("EncryptionKeyModalView", () => {
-  const mockHandleKeySubmit = jest.fn();
-  const mockActivateFingerprint = jest.fn();
-  const mockNavigateToPrivacy = jest.fn();
+  const mockHandleKeySubmit = vi.fn();
+  const mockActivateFingerprint = vi.fn();
+  const mockNavigateToPrivacy = vi.fn();
   const mockInputRef = {
     current: document.createElement("input"),
   };

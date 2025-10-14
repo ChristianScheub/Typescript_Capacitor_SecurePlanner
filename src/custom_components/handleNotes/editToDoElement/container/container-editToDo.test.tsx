@@ -10,22 +10,22 @@ import React from "react";
 import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
 import { ToDoList } from "../../../types/ToDoList.types";
 
-jest.mock("../../../services/toDoListHandler/toDoListHandler", () => ({
-  loadToDoList: jest.fn(),
-  saveToDoList: jest.fn() as jest.Mock<
+vi.mock("../../../services/toDoListHandler/toDoListHandler", () => ({
+  loadToDoList: vi.fn(),
+  saveToDoList: vi.fn() as MockInstance<
     Promise<void>,
     [ToDoList, string, string?]
   >,
 }));
 
-jest.mock("react-i18next", () => ({
+vi.mock("react-i18next", () => ({
   useTranslation: () => ({ t: (key: string) => key }),
 }));
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
-  useNavigate: jest.fn(),
-  useParams: jest.fn(),
+vi.mock("react-router-dom", () => ({
+  ...await vi.importActual("react-router-dom"),
+  useNavigate: vi.fn(),
+  useParams: vi.fn(),
 }));
 
 const renderContainerEditToDo = () =>
@@ -41,7 +41,7 @@ const renderContainerEditToDo = () =>
 
 describe("ContainerEditTodo", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("renders without errors", () => {
@@ -54,12 +54,12 @@ describe("ContainerEditTodo", () => {
   });
 
   beforeEach(() => {
-    jest.clearAllMocks();
-    jest.fn().mockReturnValue({ noteId: "testNoteId", toDoItemId: 3 });
+    vi.clearAllMocks();
+    vi.fn().mockReturnValue({ noteId: "testNoteId", toDoItemId: 3 });
   });
 
   it("should load and decrypt note on mount", async () => {
-    const mockLoadToDoList = jest.spyOn(ToDoListService, "loadToDoList");
+    const mockLoadToDoList = vi.spyOn(ToDoListService, "loadToDoList");
     jest
       .spyOn(React, "useEffect")
       .mockImplementationOnce((callback) => callback());
@@ -73,7 +73,7 @@ describe("ContainerEditTodo", () => {
   });
 
   it("should save to-do item on change", async () => {
-    const mockSaveToDoList = jest.spyOn(ToDoListService, "saveToDoList");
+    const mockSaveToDoList = vi.spyOn(ToDoListService, "saveToDoList");
     jest
       .spyOn(React, "useEffect")
       .mockImplementationOnce((callback) => callback());

@@ -7,14 +7,14 @@ import { act } from 'react';
 import userEvent from "@testing-library/user-event";
 import WelcomeScreen5Container from "./container-welcome5";
 
-jest.mock("react-i18next", () => ({
+vi.mock("react-i18next", () => ({
   useTranslation: () => ({
     t: (key: string) => key,
   }),
 }));
 
 describe("WelcomeScreen5Container", () => {
-  const closeOverlayMock = jest.fn();
+  const closeOverlayMock = vi.fn();
 
   beforeEach(() => {
     render(<WelcomeScreen5Container closeOverlay={closeOverlayMock} />);

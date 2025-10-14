@@ -9,15 +9,15 @@ import {
 } from "./fileHandler";
 
 // Mock Capacitor plugins and other dependencies
-jest.mock("@capacitor/filesystem");
-jest.mock("@capacitor/share");
-jest.mock("../logger/loggerFeatureFlags");
-jest.mock("../encryptionEngine/encryptionEngine");
-jest.mock("./fileHandlerHelper");
+vi.mock("@capacitor/filesystem");
+vi.mock("@capacitor/share");
+vi.mock("../logger/loggerFeatureFlags");
+vi.mock("../encryptionEngine/encryptionEngine");
+vi.mock("./fileHandlerHelper");
 
 describe("fileHandler", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe("handleFileChangeTranslation", () => {
@@ -53,7 +53,7 @@ describe("fileHandler", () => {
     it("should handle file import with low security level", async () => {
       // Arrange
       localStorage.setItem("securityLevel", SecurityLevel.Low);
-      const confirmMock = jest.spyOn(window, "confirm").mockReturnValue(true);
+      const confirmMock = vi.spyOn(window, "confirm").mockReturnValue(true);
       const alertMock = jest
         .spyOn(window, "alert")
         .mockImplementation(() => {});
@@ -69,7 +69,7 @@ describe("fileHandler", () => {
         },
       } as unknown as React.ChangeEvent<HTMLInputElement>;
 
-      (readFileContent as jest.Mock).mockResolvedValue("file content");
+      (readFileContent as MockInstance).mockResolvedValue("file content");
 
       // Act
       await handleFileChangeTranslation(event, t);
@@ -88,7 +88,7 @@ describe("fileHandler", () => {
     it("should log error if file processing fails", async () => {
       // Arrange
       localStorage.setItem("securityLevel", SecurityLevel.Low);
-      const confirmMock = jest.spyOn(window, "confirm").mockReturnValue(true);
+      const confirmMock = vi.spyOn(window, "confirm").mockReturnValue(true);
 
       const event = {
         target: {
@@ -101,7 +101,7 @@ describe("fileHandler", () => {
         },
       } as unknown as React.ChangeEvent<HTMLInputElement>;
 
-      (readFileContent as jest.Mock).mockRejectedValue(
+      (readFileContent as MockInstance).mockRejectedValue(
         new Error("read failed")
       );
 
@@ -122,7 +122,7 @@ describe("fileHandler", () => {
       localStorage.setItem("securityLevel", SecurityLevel.High);
       localStorage.setItem("justOnePassword", "true");
 
-      const confirmMock = jest.spyOn(window, "confirm").mockReturnValue(true);
+      const confirmMock = vi.spyOn(window, "confirm").mockReturnValue(true);
 
       const event = {
         target: {
@@ -135,7 +135,7 @@ describe("fileHandler", () => {
         },
       } as unknown as React.ChangeEvent<HTMLInputElement>;
 
-      (readFileContent as jest.Mock).mockResolvedValue("file content");
+      (readFileContent as MockInstance).mockResolvedValue("file content");
 
       // Act
       await handleFileChangeTranslation(event, t);
@@ -153,7 +153,7 @@ describe("fileHandler", () => {
       localStorage.setItem("securityLevel", SecurityLevel.High);
       localStorage.setItem("justOnePassword", "true");
 
-      const confirmMock = jest.spyOn(window, "confirm").mockReturnValue(false);
+      const confirmMock = vi.spyOn(window, "confirm").mockReturnValue(false);
 
       const event = {
         target: {

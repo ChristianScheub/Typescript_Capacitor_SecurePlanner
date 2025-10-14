@@ -13,7 +13,7 @@ describe("UsedLibListScreen", () => {
 
   test("clicking list item opens module repository in new tab", () => {
     // Mock window.open
-    const mockWindowOpen = jest.fn();
+    const mockWindowOpen = vi.fn();
     window.open = mockWindowOpen;
 
     const { getByText } = render(

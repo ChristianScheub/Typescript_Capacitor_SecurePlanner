@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { act } from 'react';
 import WelcomeScreen3Container from "./container-welcome3";
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe("<WelcomeScreen3Container />", () => {
   it("renders WelcomeScreen3View with initial progress", () => {
@@ -10,7 +10,7 @@ describe("<WelcomeScreen3Container />", () => {
       <WelcomeScreen3Container
         isActivate={false}
         availableScreens={1}
-        onNext={jest.fn()}
+        onNext={vi.fn()}
       />
     );
     expect(screen.getByText("7 Days"));
@@ -20,13 +20,13 @@ describe("<WelcomeScreen3Container />", () => {
   });
 
   test("renders WelcomeScreen3View with initial progress and updates after 4 seconds", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
 
     render(
       <WelcomeScreen3Container
         isActivate={true}
         availableScreens={1}
-        onNext={jest.fn()}
+        onNext={vi.fn()}
       />
     );
 
@@ -36,7 +36,7 @@ describe("<WelcomeScreen3Container />", () => {
     expect(screen.getAllByText("0%").length).toBe(3);
 
     act(() => {
-      jest.advanceTimersByTime(90);
+      vi.advanceTimersByTime(90);
     });
 
     await waitFor(() => {
@@ -45,6 +45,6 @@ describe("<WelcomeScreen3Container />", () => {
 
     });
 
-    jest.useRealTimers();
+    vi.useRealTimers();
   });
 });

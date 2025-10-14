@@ -6,14 +6,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 
 describe('SettingsView Component', () => {
-  const mockOnDeleteAllClick = jest.fn();
-  const mockOnDeleteBiometryClick = jest.fn();
-  const mockOnDatenschutzClick = jest.fn();
-  const mockOnImpressumClick = jest.fn();
-  const mockOnExportAllClick = jest.fn();
-  const mockOnFileChange = jest.fn();
-  const mockOnDeleteNotesClick = jest.fn();
-  const mockOnDeleteTechnicalDataClick = jest.fn();
+  const mockOnDeleteAllClick = vi.fn();
+  const mockOnDeleteBiometryClick = vi.fn();
+  const mockOnDatenschutzClick = vi.fn();
+  const mockOnImpressumClick = vi.fn();
+  const mockOnExportAllClick = vi.fn();
+  const mockOnFileChange = vi.fn();
+  const mockOnDeleteNotesClick = vi.fn();
+  const mockOnDeleteTechnicalDataClick = vi.fn();
 
   const defaultProps = {
     showFingerprintBtn: true,
@@ -30,7 +30,7 @@ describe('SettingsView Component', () => {
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   const renderWithRouter = (component: React.ReactElement): RenderResult => {

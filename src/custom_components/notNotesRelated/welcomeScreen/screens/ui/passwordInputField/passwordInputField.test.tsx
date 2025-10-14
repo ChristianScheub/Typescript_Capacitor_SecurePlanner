@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import PasswordInput from './passwordInputField';
 
 it('renders and can change value', () => {
-  const onChangeMock = jest.fn();
+  const onChangeMock = vi.fn();
   render(<PasswordInput onChange={onChangeMock} />);
 
   const inputElement = screen.getByTestId("welcome-screen-password-input").querySelector('input');

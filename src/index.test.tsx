@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import ReactDOM from 'react-dom/client';
 
-jest.mock('capacitor-native-biometric', () => ({
+vi.mock('capacitor-native-biometric', () => ({
   NativeBiometric: {
-    isAvailable: jest.fn(),
+    isAvailable: vi.fn(),
   },
 }));
 
@@ -12,10 +12,10 @@ jest.mock('capacitor-native-biometric', () => ({
 describe('App Component Tests', () => {
   beforeEach(() => {
     localStorage.setItem("welcomeScreenDone", "true");
-    window.matchMedia = jest.fn().mockImplementation(query => ({
+    window.matchMedia = vi.fn().mockImplementation(query => ({
       matches: query === '(prefers-color-scheme: dark)',
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
     }));
   });
 
@@ -25,11 +25,11 @@ describe('App Component Tests', () => {
   });
 
   it('calls ReactDOM.createRoot', () => {
-    const mockRender = jest.fn();
-    const createRootMock = jest.fn(() => ({ render: mockRender }));
+    const mockRender = vi.fn();
+    const createRootMock = vi.fn(() => ({ render: mockRender }));
     ReactDOM.createRoot = createRootMock as any;
 
-    document.getElementById = jest.fn().mockReturnValue(document.createElement('div'));
+    document.getElementById = vi.fn().mockReturnValue(document.createElement('div'));
     require('./index');
 
     expect(createRootMock).toHaveBeenCalled();
@@ -37,6 +37,6 @@ describe('App Component Tests', () => {
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 });
