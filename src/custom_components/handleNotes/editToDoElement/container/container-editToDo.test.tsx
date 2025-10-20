@@ -12,8 +12,10 @@ import ToDoListService from "../../../services/toDoListHandler/toDoListHandler";
 import { ToDoList } from "../../../types/ToDoList.types";
 
 vi.mock("../../../services/toDoListHandler/toDoListHandler", () => ({
-  loadToDoList: vi.fn(),
-  saveToDoList: vi.fn() as any,
+  default: {
+    loadToDoList: vi.fn(),
+    saveToDoList: vi.fn(),
+  }
 }));
 
 vi.mock("react-i18next", () => ({
@@ -58,10 +60,7 @@ describe("ContainerEditTodo", () => {
 
   it("should load and decrypt note on mount", async () => {
     const mockLoadToDoList = vi.spyOn(ToDoListService, "loadToDoList");
-    jest
-      .spyOn(React, "useEffect")
-      .mockImplementationOnce((callback) => callback());
-
+    
     renderContainerEditToDo();
 
     expect(mockLoadToDoList).toHaveBeenCalledWith(
@@ -72,9 +71,6 @@ describe("ContainerEditTodo", () => {
 
   it("should save to-do item on change", async () => {
     const mockSaveToDoList = vi.spyOn(ToDoListService, "saveToDoList");
-    jest
-      .spyOn(React, "useEffect")
-      .mockImplementationOnce((callback) => callback());
 
     renderContainerEditToDo();
     await waitFor(() => {

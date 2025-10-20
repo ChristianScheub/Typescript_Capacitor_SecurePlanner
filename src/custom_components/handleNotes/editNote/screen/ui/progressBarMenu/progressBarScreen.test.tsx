@@ -5,15 +5,19 @@ import { ProgressBarCategoryMenuProps } from './progressBarMenu'; // Importieren
 
 import '@testing-library/jest-dom';
 
-vi.mock("../progressBar/progressBar", () => (props: ProgressBarProps) => (
+vi.mock("../progressBar/progressBar", () => ({
+  default: (props: ProgressBarProps) => (
     <div data-testid="progress-bar" onClick={() => props.onClick()}>{props.title}</div>
-  ));
+  )
+}));
   
-  vi.mock("./progressBarMenu", () => (props: ProgressBarCategoryMenuProps) => (
+vi.mock("./progressBarMenu", () => ({
+  default: (props: ProgressBarCategoryMenuProps) => (
     <div data-testid="progress-bar-menu">{props.categoriesList.map((category: string) => (
       <div key={category} data-testid="category-item" onClick={() => props.handleProgressBarClick(category)}>{category}</div>
     ))}</div>
-  ));
+  )
+}));
 
 describe('ProgressBarScreen', () => {
   const mockHandleFilterList = vi.fn();

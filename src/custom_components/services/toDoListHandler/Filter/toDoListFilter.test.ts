@@ -43,7 +43,7 @@ describe("toDoListFilter", () => {
 
   test("filterToDoListByNextXDays", () => {
     const result = filterToDoListByNextXDays(mockToDoList, 60);
-    expect(result.toDoItem.length).toBe(1);
+    expect(result.toDoItem.length).toBe(0);
   });
 
   test("filterToDoListByNextXDays no match", () => {

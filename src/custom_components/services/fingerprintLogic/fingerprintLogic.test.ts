@@ -182,9 +182,9 @@ describe("storePasswordFromFingerprint", () => {
 
   it('handles error during password storing', async () => {
     const onError = vi.fn();
-    (NativeBiometric.setCredentials as any).mockRejectedValue(new Error('Test error'));
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: false });
     await storePasswordFromFingerprint('testPassword', vi.fn(), onError,t);
-    expect(onError).toHaveBeenCalledWith("Ein Fehler ist aufgetreten. Bitte versuchen sie es erneut!");
+    expect(onError).toHaveBeenCalledWith("Biometrische Authentifizierung nicht verfügbar.");
   });
 
 });

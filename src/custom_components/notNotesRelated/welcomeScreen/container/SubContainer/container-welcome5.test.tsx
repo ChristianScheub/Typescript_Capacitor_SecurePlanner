@@ -15,16 +15,20 @@ vi.mock("react-i18next", () => ({
 
 describe("WelcomeScreen5Container", () => {
   const closeOverlayMock = vi.fn();
+  let user: ReturnType<typeof userEvent.setup>;
 
   beforeEach(() => {
+    user = userEvent.setup();
+    vi.clearAllMocks();
     render(<WelcomeScreen5Container closeOverlay={closeOverlayMock} />);
   });
 
   it("should display a password short error when the password is too short and attempt to submit", async () => {
-    userEvent.type(screen.getByTestId("welcome-screen-password-input"), "123");
-    act(() => {
-      userEvent.click(screen.getByText("welcomeScreen_Complete"));
-    });
+    const passwordInput = screen.getByTestId("welcome-screen-password-input");
+    const submitButton = screen.getByText("welcomeScreen_Complete");
+    
+    await user.type(passwordInput, "123");
+    await user.click(submitButton);
 
     await waitFor(() => {
       expect(
@@ -33,19 +37,28 @@ describe("WelcomeScreen5Container", () => {
     });
   });
 
-  it("should call closeOverlay with the correct password when password length is more than 4 characters", () => {
+  it("should call closeOverlay with the correct password when password length is more than 4 characters", async () => {
     localStorage.clear();
-    userEvent.type(
-      screen.getByTestId("welcome-screen-password-input"),
-      "12345"
-    );
-
-    userEvent.click(screen.getByTestId("welcome-screen-continueBtn"));
-    expect(localStorage.getItem("welcomeScreenDone") === "true");
-    expect(localStorage.getItem("justOnePassword") === "false");
-
-    waitFor(() => {
-      expect(closeOverlayMock).toHaveBeenCalledWith("12345");
+    
+    const passwordInput = screen.getByTestId("welcome-screen-password-input");
+    
+    await user.type(passwordInput, "12345");
+    
+    // Find the actual button element inside the testid container
+    const continueButtonContainer = screen.getByTestId("welcome-screen-continueBtn");
+    const continueButton = continueButtonContainer.querySelector("button");
+    expect(continueButton).toBeTruthy();
+    
+    await act(async () => {
+      await user.click(continueButton!);
     });
+    
+    // Wait for localStorage to be set first
+    await waitFor(() => {
+      expect(localStorage.getItem("welcomeScreenDone")).toBe("true");
+    }, { timeout: 3000 });
+    
+    expect(localStorage.getItem("justOnePassword")).toBe("false");
+    expect(closeOverlayMock).toHaveBeenCalledWith("12345");
   });
 });
