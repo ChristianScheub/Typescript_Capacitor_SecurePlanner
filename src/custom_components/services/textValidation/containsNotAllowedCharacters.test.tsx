@@ -2,12 +2,12 @@ import { containsNotAllowedCharacters } from './containsNotAllowedCharacters';
 import * as loggerFeatureFlagsModule from '../logger/loggerFeatureFlags';
 
 // Mock der Abhängigkeiten
-jest.mock('../../config/notAllowedStrings', () => ({
+vi.mock('../../config/notAllowedStrings', () => ({
   NotAllowedStrings: ['abc', 'def'],
 }));
 
-jest.mock('../logger/loggerFeatureFlags', () => ({
-  logAllDebugMessages: jest.fn(),
+vi.mock('../logger/loggerFeatureFlags', () => ({
+  logAllDebugMessages: vi.fn(),
 }));
 
 describe('containsNotAllowedCharacters', () => {
@@ -17,13 +17,13 @@ describe('containsNotAllowedCharacters', () => {
   });
 
   it('should return true and call logAllDebugMessages if non-permitted characters are contained', () => {
-    const spyLogAllDebugMessages = jest.spyOn(loggerFeatureFlagsModule, 'logAllDebugMessages');
+    const spyLogAllDebugMessages = vi.spyOn(loggerFeatureFlagsModule, 'logAllDebugMessages');
     const result = containsNotAllowedCharacters('abc');
     expect(result).toBe(true);
     expect(spyLogAllDebugMessages).toHaveBeenCalledWith(expect.stringContaining('abc contains abc'));
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 });

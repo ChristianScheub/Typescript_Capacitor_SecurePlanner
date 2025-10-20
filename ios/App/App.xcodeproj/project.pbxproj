@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2FAD9763203C412B000D30F8 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2FAD9762203C412B000D30F8 /* config.xml */; };
-		4B0BAB0D2B82C8DE000A3E26 /* BackswipePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0BAB0C2B82C8DE000A3E26 /* BackswipePlugin.swift */; };
-		4B0BAB102B82C90E000A3E26 /* Backswipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0BAB0F2B82C90E000A3E26 /* Backswipe.m */; };
+		4B0BAB122B82CAFE000A3E26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0BAB112B82CAFE000A3E26 /* MainViewController.swift */; };
 		50379B232058CBB4000EE86E /* capacitor.config.json in Resources */ = {isa = PBXBuildFile; fileRef = 50379B222058CBB4000EE86E /* capacitor.config.json */; };
 		504EC3081FED79650016851F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EC3071FED79650016851F /* AppDelegate.swift */; };
 		504EC30D1FED79650016851F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC30B1FED79650016851F /* Main.storyboard */; };
@@ -21,8 +20,7 @@
 
 /* Begin PBXFileReference section */
 		2FAD9762203C412B000D30F8 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
-		4B0BAB0C2B82C8DE000A3E26 /* BackswipePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackswipePlugin.swift; sourceTree = "<group>"; };
-		4B0BAB0F2B82C90E000A3E26 /* Backswipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Backswipe.m; sourceTree = "<group>"; };
+		4B0BAB112B82CAFE000A3E26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50379B222058CBB4000EE86E /* capacitor.config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = capacitor.config.json; sourceTree = "<group>"; };
 		504EC3041FED79650016851F /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504EC3071FED79650016851F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,23 +54,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4B0BAB0A2B82C8B8000A3E26 /* plugins */ = {
-			isa = PBXGroup;
-			children = (
-				4B0BAB0B2B82C8C3000A3E26 /* backswipe */,
-			);
-			path = plugins;
-			sourceTree = "<group>";
-		};
-		4B0BAB0B2B82C8C3000A3E26 /* backswipe */ = {
-			isa = PBXGroup;
-			children = (
-				4B0BAB0C2B82C8DE000A3E26 /* BackswipePlugin.swift */,
-				4B0BAB0F2B82C90E000A3E26 /* Backswipe.m */,
-			);
-			path = backswipe;
-			sourceTree = "<group>";
-		};
 		504EC2FB1FED79650016851F = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +75,8 @@
 		504EC3061FED79650016851F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				4B0BAB0A2B82C8B8000A3E26 /* plugins */,
 				50379B222058CBB4000EE86E /* capacitor.config.json */,
+				4B0BAB112B82CAFE000A3E26 /* MainViewController.swift */,
 				504EC3071FED79650016851F /* AppDelegate.swift */,
 				504EC30B1FED79650016851F /* Main.storyboard */,
 				504EC30E1FED79650016851F /* Assets.xcassets */,
@@ -229,8 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0BAB102B82C90E000A3E26 /* Backswipe.m in Sources */,
-				4B0BAB0D2B82C8DE000A3E26 /* BackswipePlugin.swift in Sources */,
+				4B0BAB122B82CAFE000A3E26 /* MainViewController.swift in Sources */,
 				504EC3081FED79650016851F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,14 +351,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = D5RL6755HQ;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Secure Planner";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.7.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = de.scheub.securePlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -396,14 +376,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = D5RL6755HQ;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Secure Planner";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.scheub.securePlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";

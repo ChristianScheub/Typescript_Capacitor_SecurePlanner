@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import WelcomeContainer from './container-welcomeScreen';
 
 describe('WelcomeContainer', () => {
-  const closeOverlayMock = jest.fn();
+  const closeOverlayMock = vi.fn();
 
   const simulateSwipeLeft = (element: HTMLElement) => {
     fireEvent.touchStart(element, {

@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import { NativeBiometric } from "capacitor-native-biometric";
 import CryptoJS from "crypto-js";
 import { Device } from "@capacitor/device";
@@ -7,36 +8,48 @@ import {
 } from "./fingerprintLogic";
 import { getPBKDF2_Password } from '../encryptionEngine/encryptionEngine';
 
-jest.mock("capacitor-native-biometric", () => ({
+vi.mock("capacitor-native-biometric", () => ({
   NativeBiometric: {
-    isAvailable: jest.fn(),
-    verifyIdentity: jest.fn(),
-    getCredentials: jest.fn(),
-    setCredentials: jest.fn(),
+    isAvailable: vi.fn(),
+    verifyIdentity: vi.fn(),
+    getCredentials: vi.fn(),
+    setCredentials: vi.fn(),
   },
 }));
 
-jest.mock("crypto-js", () => ({
-  SHA256: jest.fn(),
+vi.mock("crypto-js", () => ({
+  default: {
+    SHA256: vi.fn(),
+    TripleDES: {
+      encrypt: vi.fn(),
+      decrypt: vi.fn(),
+    },
+    enc: {
+      Utf8: {
+        stringify: vi.fn(),
+      },
+    },
+  },
+  SHA256: vi.fn(),
   TripleDES: {
-    encrypt: jest.fn(),
-    decrypt: jest.fn(),
+    encrypt: vi.fn(),
+    decrypt: vi.fn(),
   },
   enc: {
     Utf8: {
-      stringify: jest.fn(),
+      stringify: vi.fn(),
     },
   },
 }));
 
-jest.mock("@capacitor/device", () => ({
+vi.mock("@capacitor/device", () => ({
   Device: {
-    getId: jest.fn(),
+    getId: vi.fn(),
   },
 }));
 
-jest.mock('../encryptionEngine/encryptionEngine', () => ({
-  getPBKDF2_Password: jest.fn().mockImplementation(password => password),
+vi.mock('../encryptionEngine/encryptionEngine', () => ({
+  getPBKDF2_Password: vi.fn().mockImplementation(password => password),
 }));
 
 const t = (key: string): string => {
@@ -55,33 +68,33 @@ const t = (key: string): string => {
 describe("getPasswordFromFingerprint", () => {
 
   beforeEach(() => {
-    jest.clearAllMocks();
-    (getPBKDF2_Password as jest.Mock).mockImplementation(password => password);
+    vi.clearAllMocks();
+    (getPBKDF2_Password as any).mockImplementation((password: string) => password);
   });
 
   it("successfully retrieves password", async () => {
-    (NativeBiometric.isAvailable as jest.Mock).mockResolvedValue({
+    (NativeBiometric.isAvailable as any).mockResolvedValue({
       isAvailable: true,
     });
-    (NativeBiometric.verifyIdentity as jest.Mock).mockResolvedValue(true);
-    (NativeBiometric.getCredentials as jest.Mock).mockResolvedValue({
+    (NativeBiometric.verifyIdentity as any).mockResolvedValue(true);
+    (NativeBiometric.getCredentials as any).mockResolvedValue({
       password: "encryptedPassword",
     });
-    (Device.getId as jest.Mock).mockResolvedValue({
+    (Device.getId as any).mockResolvedValue({
       identifier: "deviceIdentifier",
     });
-    (CryptoJS.SHA256 as jest.Mock).mockReturnValue("hashedIdentifier");
-    (CryptoJS.TripleDES.decrypt as jest.Mock).mockReturnValue({
-      toString: jest.fn(() => "decryptedPassword"),
+    (CryptoJS.SHA256 as any).mockReturnValue("hashedIdentifier");
+    (CryptoJS.TripleDES.decrypt as any).mockReturnValue({
+      toString: vi.fn(() => "decryptedPassword"),
     });
 
-    const onPasswordRetrieved = jest.fn();
-    const onError = jest.fn();
+    const onPasswordRetrieved = vi.fn();
+    const onError = vi.fn();
 
 
     await getPasswordFromFingerprint(
       "www.securePlaner.com",
-      jest.fn(),
+      vi.fn(),
       onPasswordRetrieved,
       onError,
       t
@@ -92,37 +105,37 @@ describe("getPasswordFromFingerprint", () => {
   });
 
   it('handles the case where biometric authentication is not available', async () => {
-    (NativeBiometric.isAvailable as jest.Mock).mockResolvedValue({ isAvailable: false });
-    const onError = jest.fn();
-    await getPasswordFromFingerprint('www.securePlaner.com', jest.fn(), jest.fn(), onError,t);
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: false });
+    const onError = vi.fn();
+    await getPasswordFromFingerprint('www.securePlaner.com', vi.fn(), vi.fn(), onError,t);
     expect(onError).toHaveBeenCalledWith("Biometrische Authentifizierung nicht verfügbar.");
   });
 
   it('handles biometric authentication failure', async () => {
-    (NativeBiometric.isAvailable as jest.Mock).mockResolvedValue({ isAvailable: true });
-    (NativeBiometric.verifyIdentity as jest.Mock).mockRejectedValue(new Error());
-    const onError = jest.fn();
-    await getPasswordFromFingerprint('www.securePlaner.com', jest.fn(), jest.fn(), onError,t);
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: true });
+    (NativeBiometric.verifyIdentity as any).mockRejectedValue(new Error());
+    const onError = vi.fn();
+    await getPasswordFromFingerprint('www.securePlaner.com', vi.fn(), vi.fn(), onError,t);
     expect(onError).toHaveBeenCalledWith("Ein Fehler ist aufgetreten. Bitte versuchen sie es erneut!");
   });
 
   it('handles empty password scenario', async () => {
-    (NativeBiometric.isAvailable as jest.Mock).mockResolvedValue({ isAvailable: true });
-    (NativeBiometric.verifyIdentity as jest.Mock).mockResolvedValue(true);
-    (NativeBiometric.getCredentials as jest.Mock).mockResolvedValue({ password: '' });
-    const onEmptyPassword = jest.fn();
-    const onError = jest.fn();
-    await getPasswordFromFingerprint('www.securePlaner.com', onEmptyPassword, jest.fn(), onError,t);
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: true });
+    (NativeBiometric.verifyIdentity as any).mockResolvedValue(true);
+    (NativeBiometric.getCredentials as any).mockResolvedValue({ password: '' });
+    const onEmptyPassword = vi.fn();
+    const onError = vi.fn();
+    await getPasswordFromFingerprint('www.securePlaner.com', onEmptyPassword, vi.fn(), onError,t);
     expect(onEmptyPassword).toHaveBeenCalled();
     expect(onError).toHaveBeenCalledWith("Ein Fehler ist aufgetreten. Bitte versuchen sie es erneut!");
   });
 
   it('handles general error during password retrieval', async () => {
-    const onEmptyPassword = jest.fn();
-    const onError = jest.fn();
+    const onEmptyPassword = vi.fn();
+    const onError = vi.fn();
   
-    (NativeBiometric.getCredentials as jest.Mock).mockRejectedValue(new Error('General error'));
-    await getPasswordFromFingerprint('www.securePlaner.com', onEmptyPassword, jest.fn(), onError,t);
+    (NativeBiometric.getCredentials as any).mockRejectedValue(new Error('General error'));
+    await getPasswordFromFingerprint('www.securePlaner.com', onEmptyPassword, vi.fn(), onError,t);
   
     expect(onEmptyPassword).toHaveBeenCalled();
   });
@@ -130,23 +143,23 @@ describe("getPasswordFromFingerprint", () => {
 
 describe("storePasswordFromFingerprint", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("successfully stores password", async () => {
-    (NativeBiometric.isAvailable as jest.Mock).mockResolvedValue({
+    (NativeBiometric.isAvailable as any).mockResolvedValue({
       isAvailable: true,
     });
-    (Device.getId as jest.Mock).mockResolvedValue({
+    (Device.getId as any).mockResolvedValue({
       identifier: "deviceIdentifier",
     });
-    (CryptoJS.SHA256 as jest.Mock).mockReturnValue("hashedIdentifier");
-    (CryptoJS.TripleDES.encrypt as jest.Mock).mockReturnValue({
-      toString: jest.fn(() => "encryptedPassword"),
+    (CryptoJS.SHA256 as any).mockReturnValue("hashedIdentifier");
+    (CryptoJS.TripleDES.encrypt as any).mockReturnValue({
+      toString: vi.fn(() => "encryptedPassword"),
     });
 
-    const onSuccess = jest.fn();
-    const onError = jest.fn();
+    const onSuccess = vi.fn();
+    const onError = vi.fn();
 
     await storePasswordFromFingerprint("testPassword", onSuccess, onError,t);
 
@@ -155,23 +168,23 @@ describe("storePasswordFromFingerprint", () => {
   });
 
   it('handles case where biometric authentication is not available', async () => {
-    (NativeBiometric.isAvailable as jest.Mock).mockResolvedValue({ isAvailable: false });
-    const onError = jest.fn();
-    await storePasswordFromFingerprint('testPassword', jest.fn(), onError,t);
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: false });
+    const onError = vi.fn();
+    await storePasswordFromFingerprint('testPassword', vi.fn(), onError,t);
     expect(onError).toHaveBeenCalledWith("Biometrische Authentifizierung nicht verfügbar.");
   });
 
   it('handles case where no password is provided', async () => {
-    const onError = jest.fn();
-    await storePasswordFromFingerprint('', jest.fn(), onError,t);
+    const onError = vi.fn();
+    await storePasswordFromFingerprint('', vi.fn(), onError,t);
     expect(onError).toHaveBeenCalledWith("Bitte geben Sie das zu speichernde Passwort erst ein und drücken sie dann diesen Button zum speichern.");
   });
 
   it('handles error during password storing', async () => {
-    const onError = jest.fn();
-    (NativeBiometric.setCredentials as jest.Mock).mockRejectedValue(new Error('Test error'));
-    await storePasswordFromFingerprint('testPassword', jest.fn(), onError,t);
-    expect(onError).toHaveBeenCalledWith("Ein Fehler ist aufgetreten. Bitte versuchen sie es erneut!");
+    const onError = vi.fn();
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: false });
+    await storePasswordFromFingerprint('testPassword', vi.fn(), onError,t);
+    expect(onError).toHaveBeenCalledWith("Biometrische Authentifizierung nicht verfügbar.");
   });
 
 });

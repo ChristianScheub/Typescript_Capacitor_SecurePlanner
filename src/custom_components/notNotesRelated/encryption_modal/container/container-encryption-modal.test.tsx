@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import {
   render,
   fireEvent,
@@ -5,68 +6,68 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { act } from 'react';
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 import EncryptionKeyModalContainer from "./container-encryption-modal";
 import { BrowserRouter as Router } from "react-router-dom";
 import * as fingerprintLogic from "../../../services/fingerprintLogic/fingerprintLogic";
 import { getPBKDF2_Password } from '../../../services/encryptionEngine/encryptionEngine';
 
 
-jest.mock("capacitor-native-biometric", () => ({
+vi.mock("capacitor-native-biometric", () => ({
   NativeBiometric: {
-    isAvailable: jest.fn().mockResolvedValue({ isAvailable: true }),
-    verifyIdentity: jest.fn().mockResolvedValue(true),
+    isAvailable: vi.fn().mockResolvedValue({ isAvailable: true }),
+    verifyIdentity: vi.fn().mockResolvedValue(true),
     getCredentials: jest
       .fn()
       .mockResolvedValue({ password: "encryptedPassword" }),
-    setCredentials: jest.fn().mockResolvedValue(undefined),
+    setCredentials: vi.fn().mockResolvedValue(undefined),
   },
 }));
 
-jest.mock("@capacitor/device", () => ({
+vi.mock("@capacitor/device", () => ({
   Device: {
-    getId: jest.fn().mockResolvedValue({ identifier: "uniqueIdentifier" }),
+    getId: vi.fn().mockResolvedValue({ identifier: "uniqueIdentifier" }),
   },
 }));
 
-jest.mock("crypto-js", () => ({
-  SHA256: jest.fn().mockReturnValue({ toString: () => "hashedIdentifier" }),
+vi.mock("crypto-js", () => ({
+  SHA256: vi.fn().mockReturnValue({ toString: () => "hashedIdentifier" }),
   TripleDES: {
-    encrypt: jest.fn().mockReturnValue({ toString: () => "encryptedData" }),
-    decrypt: jest.fn().mockReturnValue({ toString: () => "decryptedData" }),
+    encrypt: vi.fn().mockReturnValue({ toString: () => "encryptedData" }),
+    decrypt: vi.fn().mockReturnValue({ toString: () => "decryptedData" }),
   },
 }));
 
-jest.mock("../../../services/fingerprintLogic/fingerprintLogic", () => ({
-  availableBiometric: jest.fn(),
-  getPasswordFromFingerprint: jest.fn(),
-  storePasswordFromFingerprint: jest.fn(),
+vi.mock("../../../services/fingerprintLogic/fingerprintLogic", () => ({
+  availableBiometric: vi.fn(),
+  getPasswordFromFingerprint: vi.fn(),
+  storePasswordFromFingerprint: vi.fn(),
 }));
 
-jest.mock('../../../services/encryptionEngine/encryptionEngine', () => ({
-  getPBKDF2_Password: jest.fn().mockImplementation(password => password),
+vi.mock('../../../services/encryptionEngine/encryptionEngine', () => ({
+  getPBKDF2_Password: vi.fn().mockImplementation((password: any) => password),
 }));
 
 
 beforeEach(() => {
-  (fingerprintLogic.availableBiometric as jest.Mock).mockResolvedValue(true);
-  (getPBKDF2_Password as jest.Mock).mockImplementation(password => password);
+  (fingerprintLogic.availableBiometric as any).mockResolvedValue(true);
+  (getPBKDF2_Password as any).mockImplementation((password: any) => password);
   localStorage.setItem("welcomeScreenDone", "true");
 });
 
 describe("<EncryptionKeyModal />", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
-    jest.spyOn(window, "alert").mockImplementation(() => {});
+    vi.clearAllMocks();
+    vi.spyOn(window, "alert").mockImplementation(() => {});
 
     (
-      fingerprintLogic.getPasswordFromFingerprint as jest.Mock
-    ).mockImplementation((_, onSuccess, __, ___) => {
+      fingerprintLogic.getPasswordFromFingerprint as any
+    ).mockImplementation((_: any, onSuccess: any, __: any, ___: any) => {
       onSuccess("mocked password");
     });
     (
-      fingerprintLogic.storePasswordFromFingerprint as jest.Mock
-    ).mockImplementation((_, onSuccess, __) => {
+      fingerprintLogic.storePasswordFromFingerprint as any
+    ).mockImplementation((_: any, onSuccess: any, __: any) => {
       onSuccess();
     });
   });
@@ -85,7 +86,7 @@ describe("<EncryptionKeyModal />", () => {
   });
 
   it("submits the form with the entered encryption key", async () => {
-    const onSubmitMock = jest.fn();
+    const onSubmitMock = vi.fn();
     await act(async () => {
       render(
         <Router>
@@ -121,7 +122,7 @@ describe("<EncryptionKeyModal />", () => {
   });
 
   it("handles fingerprint authentication success", async () => {
-    const onSubmitMock = jest.fn();
+    const onSubmitMock = vi.fn();
     await act(async () => {
       render(
         <Router>
@@ -140,8 +141,8 @@ describe("<EncryptionKeyModal />", () => {
   it("handles error in storePasswordFromFingerprint", async () => {
     const errorMessage = "Store error";
     (
-      fingerprintLogic.storePasswordFromFingerprint as jest.Mock
-    ).mockImplementation((_, __, onError) => {
+      fingerprintLogic.storePasswordFromFingerprint as any
+    ).mockImplementation((_: any, __: any, onError: any) => {
       onError(errorMessage);
     });
 
@@ -163,12 +164,12 @@ describe("<EncryptionKeyModal />", () => {
   it("handles successful password retrieval", async () => {
     const mockPassword = "retrievedPassword";
     (
-      fingerprintLogic.getPasswordFromFingerprint as jest.Mock
-    ).mockImplementation((_, __, onSuccess) => {
+      fingerprintLogic.getPasswordFromFingerprint as any
+    ).mockImplementation((_: any, __: any, onSuccess: any) => {
       onSuccess(mockPassword);
     });
 
-    const onSubmitMock = jest.fn();
+    const onSubmitMock = vi.fn();
     await act(async () => {
       render(
         <Router>
@@ -187,8 +188,8 @@ describe("<EncryptionKeyModal />", () => {
   it("handles error in getPasswordFromFingerprint", async () => {
     const errorMessage = "Retrieval error";
     (
-      fingerprintLogic.getPasswordFromFingerprint as jest.Mock
-    ).mockImplementation((_, __, ___, onError) => {
+      fingerprintLogic.getPasswordFromFingerprint as any
+    ).mockImplementation((_: any, __: any, ___: any, onError: any) => {
       onError(errorMessage);
     });
 

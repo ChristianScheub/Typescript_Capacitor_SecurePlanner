@@ -11,8 +11,8 @@ describe("ViewWelcomeScreen4", () => {
       <ViewWelcomeScreen4
         t={tMock}
         securityLevelSelected={SecurityLevel.Low}
-        setSecurityLevel={jest.fn()}
-        handleSubmit={jest.fn()}
+        setSecurityLevel={vi.fn()}
+        handleSubmit={vi.fn()}
         featureFlag_HighestSec={true}
         availableScreens={4}
       />
@@ -28,8 +28,8 @@ describe("ViewWelcomeScreen4", () => {
       <ViewWelcomeScreen4
         t={tMock}
         securityLevelSelected={SecurityLevel.Medium} // Verändere den SecurityLevel zu einem anderen Wert als Low
-        setSecurityLevel={jest.fn()}
-        handleSubmit={jest.fn()}
+        setSecurityLevel={vi.fn()}
+        handleSubmit={vi.fn()}
         featureFlag_HighestSec={true}
         availableScreens={4}
       />

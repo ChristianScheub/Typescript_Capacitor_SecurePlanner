@@ -4,7 +4,7 @@ import SecurityLevel from '../../../../../enums/SecurityLevel.enum';
 
 describe('SecurityOption', () => {
   it('displays the label correctly and can be selected', () => {
-    const onChangeMock = jest.fn();
+    const onChangeMock = vi.fn();
     const { getByText } = render(
       <SecurityOption
         label="High Security"

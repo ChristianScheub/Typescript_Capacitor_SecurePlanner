@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import { ToDoList } from "../../types/ToDoList.types";
 import {
@@ -7,17 +8,17 @@ import {
 import { Priority } from "../../enums/priority.enum";
 import { ToDoItem } from "../../types/ToDoItem.types";
 
-jest.mock("../encryptionEngine/encryptionEngine");
+vi.mock("../encryptionEngine/encryptionEngine");
 
 describe("loadAllToDoLists", () => {
   beforeEach(() => {
     localStorage.clear();
-    (decryptFromStorage as jest.Mock).mockClear();
+    (decryptFromStorage as any).mockClear();
   });
 
   it("should load all to-do lists successfully", async () => {
     localStorage.setItem("note1", "encryptedData1");
-    (decryptFromStorage as jest.Mock).mockImplementation(() =>
+    (decryptFromStorage as any).mockImplementation(() =>
       Promise.resolve('{"title":"Test","content":"Content"}')
     );
     const result = await ToDoListService.loadAllToDoLists("dummyKey");
@@ -27,7 +28,7 @@ describe("loadAllToDoLists", () => {
 
   it("should handle errors gracefully", async () => {
     localStorage.setItem("note2", "encryptedData2");
-    (decryptFromStorage as jest.Mock).mockImplementation(() =>
+    (decryptFromStorage as any).mockImplementation(() =>
       Promise.reject(new Error("Decryption failed"))
     );
 
@@ -110,17 +111,17 @@ const toDoList: ToDoList = {
 };
 
 describe("saveToDoList", () => {
-  let mockedEncryptAndStore: jest.Mock;
+  let mockedEncryptAndStore: MockInstance;
 
   beforeEach(() => {
     localStorage.clear();
-    (encryptAndStore as jest.Mock).mockClear();
-    mockedEncryptAndStore = encryptAndStore as jest.Mock;
+    (encryptAndStore as any).mockClear();
+    mockedEncryptAndStore = encryptAndStore as any;
     mockedEncryptAndStore.mockClear();
   });
 
   it("saves a to-do list successfully", async () => {
-    (encryptAndStore as jest.Mock).mockResolvedValue(undefined);
+    (encryptAndStore as any).mockResolvedValue(undefined);
 
     await ToDoListService.saveToDoList(toDoList, "dummyKey", "todo_1");
     expect(encryptAndStore).toHaveBeenCalledWith(
@@ -131,7 +132,7 @@ describe("saveToDoList", () => {
   });
 
   it("generates an ID if none is provided", async () => {
-    (encryptAndStore as jest.Mock).mockResolvedValue(undefined);
+    (encryptAndStore as any).mockResolvedValue(undefined);
 
     await ToDoListService.saveToDoList(toDoList, "dummyKey");
     expect(encryptAndStore).toHaveBeenCalled();
@@ -141,7 +142,7 @@ describe("saveToDoList", () => {
   });
 
   it("handles encryption failures gracefully", async () => {
-    (encryptAndStore as jest.Mock).mockRejectedValue(
+    (encryptAndStore as any).mockRejectedValue(
       new Error("Encryption failed")
     );
 

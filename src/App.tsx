@@ -24,24 +24,7 @@ const App: React.FC = () => {
   
   return (
     <div className={theme}>
-      {!encryptionKey&&!noPasswordNeeded ? (
-        <div>
-          <Router>
-            <Routes>
-              <Route path="/datenschutzHome" element={<Datenschutz />} />
-              <Route
-                path="/"
-                element={
-                  <ContainerEncryptionKeyModal onSubmit={setEncryptionKey} />
-                }
-              />
-              <Route path="/settingsHome" element={<ContainerSettings />} />
-              <Route path="/impressumHome" element={<Impressum />} />
-
-            </Routes>
-          </Router>
-        </div>
-      ) : (
+      {(encryptionKey || noPasswordNeeded) ? (
         <div
           className="App backgroundColor"
           style={{
@@ -90,6 +73,23 @@ const App: React.FC = () => {
               <NavBarContainer setSearchQuery={setSearchQuery} />
             </Router>
           </div>
+        </div>
+      ) : (
+        <div>
+          <Router>
+            <Routes>
+              <Route path="/datenschutzHome" element={<Datenschutz />} />
+              <Route
+                path="/"
+                element={
+                  <ContainerEncryptionKeyModal onSubmit={setEncryptionKey} />
+                }
+              />
+              <Route path="/settingsHome" element={<ContainerSettings />} />
+              <Route path="/impressumHome" element={<Impressum />} />
+
+            </Routes>
+          </Router>
         </div>
       )}
     </div>

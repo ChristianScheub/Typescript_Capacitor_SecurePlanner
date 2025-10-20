@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import {
   render,
   fireEvent,
@@ -12,32 +13,32 @@ import { NativeBiometric } from "capacitor-native-biometric";
 import * as fingerprintLogic from "../../../services/fingerprintLogic/fingerprintLogic";
 import { act } from 'react';
 
-jest.mock("capacitor-native-biometric", () => ({
+vi.mock("capacitor-native-biometric", () => ({
   NativeBiometric: {
-    isAvailable: jest.fn().mockResolvedValue({ isAvailable: true }),
-    verifyIdentity: jest.fn().mockResolvedValue(true),
-    getCredentials: jest
+    isAvailable: vi.fn().mockResolvedValue({ isAvailable: true }),
+    verifyIdentity: vi.fn().mockResolvedValue(true),
+    getCredentials: vi
       .fn()
       .mockResolvedValue({ password: "encryptedPassword" }),
-    setCredentials: jest.fn().mockResolvedValue(undefined),
-    deleteCredentials: jest.fn(),
+    setCredentials: vi.fn().mockResolvedValue(undefined),
+    deleteCredentials: vi.fn(),
   },
 }));
 
-jest.mock("@capacitor/filesystem", () => ({
+vi.mock("@capacitor/filesystem", () => ({
   Filesystem: {
-    writeFile: jest.fn(() => Promise.resolve({ uri: "mock-uri" })),
-    getUri: jest.fn(),
+    writeFile: vi.fn(() => Promise.resolve({ uri: "mock-uri" })),
+    getUri: vi.fn(),
   },
   Directory: {
     Documents: "Documents",
   },
 }));
 
-jest.mock("../../../services/fingerprintLogic/fingerprintLogic", () => ({
-  availableBiometric: jest.fn(),
-  getPasswordFromFingerprint: jest.fn(),
-  storePasswordFromFingerprint: jest.fn(),
+vi.mock("../../../services/fingerprintLogic/fingerprintLogic", () => ({
+  availableBiometric: vi.fn(),
+  getPasswordFromFingerprint: vi.fn(),
+  storePasswordFromFingerprint: vi.fn(),
 }));
 
 
@@ -46,18 +47,18 @@ const renderWithRouter = (component: React.ReactElement): RenderResult => {
 };
 
 beforeEach(() => {
-  (fingerprintLogic.availableBiometric as jest.Mock).mockResolvedValue(true);
+  (fingerprintLogic.availableBiometric as any).mockResolvedValue(true);
 });
 
 
 describe("Container Settings Component", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
-    window.alert = jest.fn();
-    jest.spyOn(window, "alert").mockImplementation(() => {});
-    global.URL.createObjectURL = jest.fn();
-    global.URL.revokeObjectURL = jest.fn();
-    global.Blob = jest.fn();
+    vi.clearAllMocks();
+    window.alert = vi.fn();
+    vi.spyOn(window, "alert").mockImplementation(() => {});
+    global.URL.createObjectURL = vi.fn();
+    global.URL.revokeObjectURL = vi.fn();
+    global.Blob = vi.fn();
   });
 
   it("renders the settings view and initializes correctly", async () => {
@@ -68,7 +69,7 @@ describe("Container Settings Component", () => {
   });
 
   it("handles deleting biometric credentials correctly", async () => {
-    jest.spyOn(window, "confirm").mockImplementation(() => true);
+    vi.spyOn(window, "confirm").mockImplementation(() => true);
     await act(async () => {
       renderWithRouter(<SettingsContainer />);
     });
@@ -79,7 +80,7 @@ describe("Container Settings Component", () => {
   });
 
   it("handles deleting all notes correctly", async () => {
-    jest.spyOn(window, "confirm").mockImplementation(() => true);
+    vi.spyOn(window, "confirm").mockImplementation(() => true);
 
     await encryptAndStore(
       '{"title":"TestTitel","date":"2023-12-09T20:10:56.534Z","content":"TeschtTescht"}',

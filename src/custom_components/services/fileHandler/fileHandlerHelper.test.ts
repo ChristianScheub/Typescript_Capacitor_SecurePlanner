@@ -1,21 +1,22 @@
+import { MockInstance } from 'vitest';
 import { generateFileName, downloadFile, processFileContent, readFileContent } from "./fileHandlerHelper";
 import { makeReadyForImport } from "../encryptionEngine/encryptionEngine";
 import { logAllDebugMessages, logError } from "../logger/loggerFeatureFlags";
 
 // Mock external dependencies
-jest.mock("../encryptionEngine/encryptionEngine");
-jest.mock("../logger/loggerFeatureFlags");
+vi.mock("../encryptionEngine/encryptionEngine");
+vi.mock("../logger/loggerFeatureFlags");
 
 describe("fileHandlerHelper", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe("generateFileName", () => {
     it("should generate a file name with the current date and time", () => {
       // Arrange
       const date = new Date("2024-07-07T14:30:15");
-      jest.spyOn(global, "Date").mockImplementation(() => date as unknown as string);
+      vi.spyOn(global, "Date").mockImplementation((() => date) as any);
 
       // Act
       const fileName = generateFileName();
@@ -30,20 +31,20 @@ describe("fileHandlerHelper", () => {
       // Arrange
       const base64Data = "dGVzdCBkYXRh"; // base64 for "test data"
       const fileName = "testFile.txt";
-      const createElementSpy = jest.spyOn(document, "createElement");
-      const appendChildSpy = jest.spyOn(document.body, "appendChild");
-      const removeChildSpy = jest.spyOn(document.body, "removeChild");
+      const createElementSpy = vi.spyOn(document, "createElement");
+      const appendChildSpy = vi.spyOn(document.body, "appendChild");
+      const removeChildSpy = vi.spyOn(document.body, "removeChild");
 
       // Mock createElement to return an anchor element
       const mockLink = document.createElement("a");
       mockLink.href = "";
       mockLink.download = "";
-      mockLink.click = jest.fn();
+      mockLink.click = vi.fn();
 
       createElementSpy.mockReturnValue(mockLink);
 
-      const createObjectURLMock = jest.fn().mockReturnValue("blob:test");
-      const revokeObjectURLMock = jest.fn();
+      const createObjectURLMock = vi.fn().mockReturnValue("blob:test");
+      const revokeObjectURLMock = vi.fn();
       // @ts-ignore
       global.URL.createObjectURL = createObjectURLMock;
       // @ts-ignore
@@ -67,9 +68,9 @@ describe("fileHandlerHelper", () => {
     it("should process the file content and store it in localStorage", async () => {
       // Arrange
       const content = " note1*_*_* value1*_*_* note2*_*_* value2*_*_*";
-      (makeReadyForImport as jest.Mock).mockImplementation((value) => Promise.resolve(value));
+      (makeReadyForImport as any).mockImplementation((value: any) => Promise.resolve(value));
 
-      const setItemSpy = jest.spyOn(Storage.prototype, "setItem");
+      const setItemSpy = vi.spyOn(Storage.prototype, "setItem");
 
       // Act
       await processFileContent(content);
@@ -87,13 +88,13 @@ describe("fileHandlerHelper", () => {
       // Arrange
       const file = new File(["file content"], "test.txt", { type: "text/plain" });
       const fileReaderMock = {
-        readAsText: jest.fn(),
-        onload: jest.fn(),
-        onerror: jest.fn(),
+        readAsText: vi.fn(),
+        onload: vi.fn(),
+        onerror: vi.fn(),
         result: "file content",
       };
 
-      jest.spyOn(window, "FileReader").mockImplementation(() => fileReaderMock as unknown as FileReader);
+      vi.spyOn(window, "FileReader").mockImplementation(() => fileReaderMock as unknown as FileReader);
 
       // Act
       const promise = readFileContent(file);
@@ -109,14 +110,14 @@ describe("fileHandlerHelper", () => {
       // Arrange
       const file = new File(["file content"], "test.txt", { type: "text/plain" });
       const fileReaderMock = {
-        readAsText: jest.fn(),
-        onload: jest.fn(),
-        onerror: jest.fn(),
+        readAsText: vi.fn(),
+        onload: vi.fn(),
+        onerror: vi.fn(),
         result: "file content",
         error: new Error("Read error"),
       };
 
-      jest.spyOn(window, "FileReader").mockImplementation(() => fileReaderMock as unknown as FileReader);
+      vi.spyOn(window, "FileReader").mockImplementation(() => fileReaderMock as unknown as FileReader);
 
       // Act
       const promise = readFileContent(file);

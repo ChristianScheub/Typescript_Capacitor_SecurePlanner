@@ -1,17 +1,19 @@
 PODS:
-  - Capacitor (5.7.6):
+  - Capacitor (7.4.3):
     - CapacitorCordova
-  - CapacitorApp (5.0.8):
+  - CapacitorApp (7.1.0):
     - Capacitor
-  - CapacitorCordova (5.7.6)
-  - CapacitorDevice (5.0.8):
+  - CapacitorCordova (7.4.3)
+  - CapacitorDevice (7.0.2):
     - Capacitor
-  - CapacitorFilesystem (5.2.2):
+  - CapacitorFilesystem (7.1.4):
     - Capacitor
+    - IONFilesystemLib (~> 1.0.1)
   - CapacitorNativeBiometric (0.0.1):
     - Capacitor
-  - CapacitorShare (5.0.8):
+  - CapacitorShare (7.0.2):
     - Capacitor
+  - IONFilesystemLib (1.0.1)
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
@@ -21,6 +23,10 @@ DEPENDENCIES:
   - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
   - CapacitorNativeBiometric (from `../../node_modules/capacitor-native-biometric`)
   - "CapacitorShare (from `../../node_modules/@capacitor/share`)"
+
+SPEC REPOS:
+  trunk:
+    - IONFilesystemLib
 
 EXTERNAL SOURCES:
   Capacitor:
@@ -39,14 +45,15 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/share"
 
 SPEC CHECKSUMS:
-  Capacitor: 6e86d6f68a9348c76b6da7349ab3ee4a9edd3b9a
-  CapacitorApp: 102e553c3b1fdc255969c39aa19b529675690ef4
-  CapacitorCordova: 46df0372f7768ff20aa659ba1658b5d7315ea42a
-  CapacitorDevice: 5f5951e4839ff4e0cbdd50d0865f50933f2b117a
-  CapacitorFilesystem: 202b158a878462ab4f401d0eb4d9644c67927333
+  Capacitor: b4741ca7affb32c1b70debd03df92cbf522d8a80
+  CapacitorApp: 846d4b4a1dbb19dd1e9029c08ba6f028aa7be862
+  CapacitorCordova: 435121e81a2df4d0034f0fb11fcefab5104cfdb5
+  CapacitorDevice: a50a45f0d075e55e2392c7a4be5404d4f69515de
+  CapacitorFilesystem: ac0a386949ed6c295a3dffa129ecd26b881ae5be
   CapacitorNativeBiometric: b47637a8cd349bdac014424bb4ddcae9ee5d4919
-  CapacitorShare: abef1f7be4e10b448693b0b83b540cb4b92dc849
+  CapacitorShare: 051c3ceee0ddf3bb54574851a622bbb317eed5bd
+  IONFilesystemLib: 89258b8e3e85465da93127d25d7ce37f977e8a6f
 
-PODFILE CHECKSUM: 7bbc718d2568e46b3742d17f3181a988b417cb23
+PODFILE CHECKSUM: 1e7d113cf5274cd7107faff408df0fda86cce4b5
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.16.2

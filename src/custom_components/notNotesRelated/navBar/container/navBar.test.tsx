@@ -6,14 +6,14 @@ import {
 import NavBar from "./container-navBar";
 import "@testing-library/jest-dom";
 
-const mockedNavigate = jest.fn();
-    jest.mock("react-router-dom", () => ({
-      ...jest.requireActual("react-router-dom"),
+const mockedNavigate = vi.fn();
+    vi.mock("react-router-dom", async () => ({
+      ...await vi.importActual("react-router-dom"),
       useNavigate: () => mockedNavigate,
     }));
 
 describe("NavBar Component", () => {
-  const mockSetSearchQuery = jest.fn();
+  const mockSetSearchQuery = vi.fn();
   
 
   const renderNavBar = () =>

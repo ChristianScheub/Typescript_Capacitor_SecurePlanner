@@ -1,13 +1,13 @@
 import { logError, logAllDebugMessages } from './loggerFeatureFlags';
 
-jest.mock('../../config/featureFlags', () => ({
+vi.mock('../../config/featureFlags', () => ({
     featureFlag_Debug_Errors: true,
     featureFlag_Debug_AllLogs: true
   }));
 
 describe('logger', () => {
-  const consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
-  const consoleLogMock = jest.spyOn(console, 'log').mockImplementation(() => {});
+  const consoleErrorMock = vi.spyOn(console, 'error').mockImplementation(() => {});
+  const consoleLogMock = vi.spyOn(console, 'log').mockImplementation(() => {});
 
   test('logError logs errors when featureFlag_Debug_Errors is true', () => {
     const errorMsg = 'Test Error Message';

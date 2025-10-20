@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import PrioritySlider from "./priorityIndicator";
 import { Priority } from "../../../../../enums/priority.enum";
 
-const mockOnPriorityChange = jest.fn();
+const mockOnPriorityChange = vi.fn();
 
 interface RenderPrioritySliderProps {
   selectedPriority: Priority;
@@ -22,7 +22,7 @@ describe("PrioritySlider Component", () => {
   
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
 

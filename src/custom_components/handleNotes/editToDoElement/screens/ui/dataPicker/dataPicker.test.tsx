@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 import DatePickerComponent from "./dataPicker";
 
 describe("DatePickerComponent", () => {
   it("should render correctly with given date", async () => {
-    const mockOnDateChange = jest.fn();
+    const mockOnDateChange = vi.fn();
     const selectedDate = new Date("2023-01-01");
     const { container } = render(
       <DatePickerComponent

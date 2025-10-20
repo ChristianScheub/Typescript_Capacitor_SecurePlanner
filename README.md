@@ -1,6 +1,7 @@
 # Secure Planner
 
 Last Edit: 07.2024 <br>
+Last Dependencies update: 10.2025<br>
 Language: Typescript React Capacitor<br>
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ChristianScheub_Typescript_Capacitor_SecurePlanner&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ChristianScheub_Typescript_Capacitor_SecurePlanner)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ChristianScheub_Typescript_Capacitor_SecurePlanner&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=ChristianScheub_Typescript_Capacitor_SecurePlanner) 
@@ -366,88 +367,46 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 According to the command npm list
 You can see the deeper NPM modules used and which of these are used in the licenses.json.
 
-├── @babel/core@7.24.7
-
-├── @babel/plugin-proposal-private-property-in-object@7.21.11
-
-├── @babel/preset-env@7.24.7
-
-├── @capacitor-community/electron@5.0.1
-
-├── @capacitor/android@5.7.6
-
-├── @capacitor/app@5.0.8
-
-├── @capacitor/cli@5.7.6
-
-├── @capacitor/core@5.7.6
-
-├── @capacitor/device@5.0.8
-
-├── @capacitor/filesystem@5.2.2
-
-├── @capacitor/ios@5.7.6
-
-├── @capacitor/share@5.0.8
-
-├── @emotion/react@11.11.4
-
-├── @emotion/styled@11.11.5
-
-├── @mui/material@5.16.0
-
-├── @testing-library/jest-dom@5.17.0
-
-├── @testing-library/react@13.4.0
-
-├── @testing-library/user-event@13.5.0
-
-├── @types/crypto-js@4.2.2
-
-├── @types/jest@27.5.2
-
-├── @types/node@16.18.101
-
-├── @types/react-datepicker@6.2.0
-
-├── @types/react-dom@18.3.0
-
-├── @types/react@18.3.3
-
-├── babel-jest@29.7.0
-
-├── bootstrap-icons@1.11.3
-
-├── bootstrap@5.3.3
-
-├── capacitor-native-biometric@4.2.2
-
-├── crypto-js@4.2.0
-
-├── electron-builder@24.13.3
-
-├── i18next-browser-languagedetector@7.2.1
-
-├── i18next@23.11.5
-
-├── license-checker@25.0.1
-
-├── react-bootstrap@2.10.4
-
-├── react-datepicker@6.9.0
-
-├── react-dom@18.3.1
-
-├── react-i18next@14.1.2
-
-├── react-icons@4.12.0
-
-├── react-router-dom@6.24.1
-
-├── react-scripts@5.0.1
-
-├── react-swipeable@7.0.1
-
-├── react@18.3.1
-
-└── typescript@4.9.5
+<br />├── @capacitor/android@7.4.3
+<br />├── @capacitor/app@7.1.0
+<br />├── @capacitor/cli@7.4.3
+<br />├── @capacitor/core@7.4.3
+<br />├── @capacitor/device@7.0.2
+<br />├── @capacitor/filesystem@7.1.4
+<br />├── @capacitor/ios@7.4.3
+<br />├── @capacitor/share@7.0.2
+<br />├── @emotion/react@11.14.0
+<br />├── @emotion/styled@11.14.1
+<br />├── @mui/material@7.3.4
+<br />├── @testing-library/jest-dom@6.9.1
+<br />├── @testing-library/react@16.3.0
+<br />├── @testing-library/user-event@14.6.1
+<br />├── @types/crypto-js@4.2.2
+<br />├── @types/jest@29.5.14
+<br />├── @types/node@22.18.11
+<br />├── @types/react-datepicker@7.0.0
+<br />├── @types/react-dom@19.2.2
+<br />├── @types/react@19.2.2
+<br />├── @vitejs/plugin-react@5.0.4
+<br />├── @vitest/coverage-v8@3.2.4
+<br />├── @vitest/ui@3.2.4
+<br />├── bootstrap-icons@1.13.1
+<br />├── bootstrap@5.3.8
+<br />├── capacitor-native-biometric@4.2.2
+<br />├── crypto-js@4.2.0
+<br />├── i18next-browser-languagedetector@8.2.0
+<br />├── i18next@25.6.0
+<br />├── jsdom@27.0.1
+<br />├── license-checker@25.0.1
+<br />├── react-bootstrap@2.10.10
+<br />├── react-datepicker@8.8.0
+<br />├── react-dom@19.2.0
+<br />├── react-i18next@16.1.0
+<br />├── react-icons@5.5.0
+<br />├── react-router-dom@7.9.4
+<br />├── react-swipeable@7.0.2
+<br />├── react@19.2.0
+<br />├── typescript@5.9.3
+<br />├── vite-tsconfig-paths@5.1.4
+<br />├── vite@7.1.11
+<br />└── vitest@3.2.4

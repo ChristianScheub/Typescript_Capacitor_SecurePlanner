@@ -1,18 +1,5 @@
 import { formatDate, getTodayWithoutHours } from './formatDate';
 
-
-
-beforeEach(() => {
-    jest.mock('./formatDate', () => ({
-      ...jest.requireActual('./formatDate'),
-      getTodayWithoutHours: jest.fn(() => new Date('2023-01-01T00:00:00Z')),
-    }));
-  });
-  
-  afterEach(() => {
-    jest.restoreAllMocks();
-  });
-
 describe('getTodayWithoutHours', () => {
   it('should return today\'s date with zeroed hours, minutes, seconds, and milliseconds', () => {
     const todayWithoutHours = getTodayWithoutHours();
@@ -22,14 +9,15 @@ describe('getTodayWithoutHours', () => {
     expect(todayWithoutHours.getMilliseconds()).toBe(0);
   });
 });
+
 describe('formatDate', () => {
     // Mock 'getTodayWithoutHours' direkt in dem Testfall, um sicherzustellen, dass es korrekt funktioniert
     beforeEach(() => {
-      jest.spyOn(Date, 'now').mockImplementation(() => new Date('2023-01-01T00:00:00Z').getTime());
+      vi.spyOn(Date, 'now').mockImplementation(() => new Date('2023-01-01T00:00:00Z').getTime());
     });
   
     afterEach(() => {
-      jest.restoreAllMocks();
+      vi.restoreAllMocks();
     });
   
     it('should return a date in DD.MM.YYYY format', () => {

@@ -4,7 +4,7 @@ import ContinueButton from './continue-button';
 
 describe('ContinueButton', () => {
   it('renders button and responds to click', () => {
-    const onClickMock = jest.fn();
+    const onClickMock = vi.fn();
     render(<ContinueButton onClick={onClickMock} textBtn="Click Me" />);
 
     fireEvent.click(screen.getByText(/Click Me/i));
