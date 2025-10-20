@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "FilesystemPlugin.h"
 
 FOUNDATION_EXPORT double CapacitorFilesystemVersionNumber;
 FOUNDATION_EXPORT const unsigned char CapacitorFilesystemVersionString[];
