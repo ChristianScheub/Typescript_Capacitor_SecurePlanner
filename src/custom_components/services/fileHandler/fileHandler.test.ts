@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import { logError } from "../logger/loggerFeatureFlags";
 import {
   readFileContent,
@@ -25,7 +26,7 @@ describe("fileHandler", () => {
 
     it("should show alert for wrong file type", async () => {
       // Arrange
-      const alertMock = jest
+      const alertMock = vi
         .spyOn(window, "alert")
         .mockImplementation(() => {});
 
@@ -54,7 +55,7 @@ describe("fileHandler", () => {
       // Arrange
       localStorage.setItem("securityLevel", SecurityLevel.Low);
       const confirmMock = vi.spyOn(window, "confirm").mockReturnValue(true);
-      const alertMock = jest
+      const alertMock = vi
         .spyOn(window, "alert")
         .mockImplementation(() => {});
 
@@ -69,7 +70,7 @@ describe("fileHandler", () => {
         },
       } as unknown as React.ChangeEvent<HTMLInputElement>;
 
-      (readFileContent as MockInstance).mockResolvedValue("file content");
+      (readFileContent as any).mockResolvedValue("file content");
 
       // Act
       await handleFileChangeTranslation(event, t);
@@ -101,7 +102,7 @@ describe("fileHandler", () => {
         },
       } as unknown as React.ChangeEvent<HTMLInputElement>;
 
-      (readFileContent as MockInstance).mockRejectedValue(
+      (readFileContent as any).mockRejectedValue(
         new Error("read failed")
       );
 
@@ -135,7 +136,7 @@ describe("fileHandler", () => {
         },
       } as unknown as React.ChangeEvent<HTMLInputElement>;
 
-      (readFileContent as MockInstance).mockResolvedValue("file content");
+      (readFileContent as any).mockResolvedValue("file content");
 
       // Act
       await handleFileChangeTranslation(event, t);

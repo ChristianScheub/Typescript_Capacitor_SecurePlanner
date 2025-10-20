@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import {
   render,
   fireEvent,
@@ -46,7 +47,7 @@ const renderWithRouter = (component: React.ReactElement): RenderResult => {
 };
 
 beforeEach(() => {
-  (fingerprintLogic.availableBiometric as MockInstance).mockResolvedValue(true);
+  (fingerprintLogic.availableBiometric as any).mockResolvedValue(true);
 });
 
 

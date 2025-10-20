@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import {
   render,
   fireEvent,
@@ -44,13 +45,13 @@ vi.mock("../../../services/fingerprintLogic/fingerprintLogic", () => ({
 }));
 
 vi.mock('../../../services/encryptionEngine/encryptionEngine', () => ({
-  getPBKDF2_Password: vi.fn().mockImplementation(password => password),
+  getPBKDF2_Password: vi.fn().mockImplementation((password: any) => password),
 }));
 
 
 beforeEach(() => {
-  (fingerprintLogic.availableBiometric as MockInstance).mockResolvedValue(true);
-  (getPBKDF2_Password as MockInstance).mockImplementation(password => password);
+  (fingerprintLogic.availableBiometric as any).mockResolvedValue(true);
+  (getPBKDF2_Password as any).mockImplementation((password: any) => password);
   localStorage.setItem("welcomeScreenDone", "true");
 });
 
@@ -60,13 +61,13 @@ describe("<EncryptionKeyModal />", () => {
     vi.spyOn(window, "alert").mockImplementation(() => {});
 
     (
-      fingerprintLogic.getPasswordFromFingerprint as MockInstance
-    ).mockImplementation((_, onSuccess, __, ___) => {
+      fingerprintLogic.getPasswordFromFingerprint as any
+    ).mockImplementation((_: any, onSuccess: any, __: any, ___: any) => {
       onSuccess("mocked password");
     });
     (
-      fingerprintLogic.storePasswordFromFingerprint as MockInstance
-    ).mockImplementation((_, onSuccess, __) => {
+      fingerprintLogic.storePasswordFromFingerprint as any
+    ).mockImplementation((_: any, onSuccess: any, __: any) => {
       onSuccess();
     });
   });
@@ -140,8 +141,8 @@ describe("<EncryptionKeyModal />", () => {
   it("handles error in storePasswordFromFingerprint", async () => {
     const errorMessage = "Store error";
     (
-      fingerprintLogic.storePasswordFromFingerprint as MockInstance
-    ).mockImplementation((_, __, onError) => {
+      fingerprintLogic.storePasswordFromFingerprint as any
+    ).mockImplementation((_: any, __: any, onError: any) => {
       onError(errorMessage);
     });
 
@@ -163,8 +164,8 @@ describe("<EncryptionKeyModal />", () => {
   it("handles successful password retrieval", async () => {
     const mockPassword = "retrievedPassword";
     (
-      fingerprintLogic.getPasswordFromFingerprint as MockInstance
-    ).mockImplementation((_, __, onSuccess) => {
+      fingerprintLogic.getPasswordFromFingerprint as any
+    ).mockImplementation((_: any, __: any, onSuccess: any) => {
       onSuccess(mockPassword);
     });
 
@@ -187,8 +188,8 @@ describe("<EncryptionKeyModal />", () => {
   it("handles error in getPasswordFromFingerprint", async () => {
     const errorMessage = "Retrieval error";
     (
-      fingerprintLogic.getPasswordFromFingerprint as MockInstance
-    ).mockImplementation((_, __, ___, onError) => {
+      fingerprintLogic.getPasswordFromFingerprint as any
+    ).mockImplementation((_: any, __: any, ___: any, onError: any) => {
       onError(errorMessage);
     });
 

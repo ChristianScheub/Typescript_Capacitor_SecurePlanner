@@ -1,18 +1,5 @@
 import { formatDate, getTodayWithoutHours } from './formatDate';
 
-
-
-beforeEach(() => {
-    vi.mock('./formatDate', () => ({
-      ...vi.importActual('./formatDate'),
-      getTodayWithoutHours: vi.fn(() => new Date('2023-01-01T00:00:00Z')),
-    }));
-  });
-  
-  afterEach(() => {
-    vi.restoreAllMocks();
-  });
-
 describe('getTodayWithoutHours', () => {
   it('should return today\'s date with zeroed hours, minutes, seconds, and milliseconds', () => {
     const todayWithoutHours = getTodayWithoutHours();
@@ -22,6 +9,7 @@ describe('getTodayWithoutHours', () => {
     expect(todayWithoutHours.getMilliseconds()).toBe(0);
   });
 });
+
 describe('formatDate', () => {
     // Mock 'getTodayWithoutHours' direkt in dem Testfall, um sicherzustellen, dass es korrekt funktioniert
     beforeEach(() => {

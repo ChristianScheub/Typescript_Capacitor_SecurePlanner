@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import { generateFileName, downloadFile, processFileContent, readFileContent } from "./fileHandlerHelper";
 import { makeReadyForImport } from "../encryptionEngine/encryptionEngine";
 import { logAllDebugMessages, logError } from "../logger/loggerFeatureFlags";
@@ -67,7 +68,7 @@ describe("fileHandlerHelper", () => {
     it("should process the file content and store it in localStorage", async () => {
       // Arrange
       const content = " note1*_*_* value1*_*_* note2*_*_* value2*_*_*";
-      (makeReadyForImport as MockInstance).mockImplementation((value) => Promise.resolve(value));
+      (makeReadyForImport as any).mockImplementation((value: any) => Promise.resolve(value));
 
       const setItemSpy = vi.spyOn(Storage.prototype, "setItem");
 

@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import { NativeBiometric } from "capacitor-native-biometric";
 import CryptoJS from "crypto-js";
 import { Device } from "@capacitor/device";
@@ -17,6 +18,18 @@ vi.mock("capacitor-native-biometric", () => ({
 }));
 
 vi.mock("crypto-js", () => ({
+  default: {
+    SHA256: vi.fn(),
+    TripleDES: {
+      encrypt: vi.fn(),
+      decrypt: vi.fn(),
+    },
+    enc: {
+      Utf8: {
+        stringify: vi.fn(),
+      },
+    },
+  },
   SHA256: vi.fn(),
   TripleDES: {
     encrypt: vi.fn(),
@@ -56,22 +69,22 @@ describe("getPasswordFromFingerprint", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    (getPBKDF2_Password as MockInstance).mockImplementation(password => password);
+    (getPBKDF2_Password as any).mockImplementation((password: string) => password);
   });
 
   it("successfully retrieves password", async () => {
-    (NativeBiometric.isAvailable as MockInstance).mockResolvedValue({
+    (NativeBiometric.isAvailable as any).mockResolvedValue({
       isAvailable: true,
     });
-    (NativeBiometric.verifyIdentity as MockInstance).mockResolvedValue(true);
-    (NativeBiometric.getCredentials as MockInstance).mockResolvedValue({
+    (NativeBiometric.verifyIdentity as any).mockResolvedValue(true);
+    (NativeBiometric.getCredentials as any).mockResolvedValue({
       password: "encryptedPassword",
     });
-    (Device.getId as MockInstance).mockResolvedValue({
+    (Device.getId as any).mockResolvedValue({
       identifier: "deviceIdentifier",
     });
-    (CryptoJS.SHA256 as MockInstance).mockReturnValue("hashedIdentifier");
-    (CryptoJS.TripleDES.decrypt as MockInstance).mockReturnValue({
+    (CryptoJS.SHA256 as any).mockReturnValue("hashedIdentifier");
+    (CryptoJS.TripleDES.decrypt as any).mockReturnValue({
       toString: vi.fn(() => "decryptedPassword"),
     });
 
@@ -92,24 +105,24 @@ describe("getPasswordFromFingerprint", () => {
   });
 
   it('handles the case where biometric authentication is not available', async () => {
-    (NativeBiometric.isAvailable as MockInstance).mockResolvedValue({ isAvailable: false });
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: false });
     const onError = vi.fn();
     await getPasswordFromFingerprint('www.securePlaner.com', vi.fn(), vi.fn(), onError,t);
     expect(onError).toHaveBeenCalledWith("Biometrische Authentifizierung nicht verfügbar.");
   });
 
   it('handles biometric authentication failure', async () => {
-    (NativeBiometric.isAvailable as MockInstance).mockResolvedValue({ isAvailable: true });
-    (NativeBiometric.verifyIdentity as MockInstance).mockRejectedValue(new Error());
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: true });
+    (NativeBiometric.verifyIdentity as any).mockRejectedValue(new Error());
     const onError = vi.fn();
     await getPasswordFromFingerprint('www.securePlaner.com', vi.fn(), vi.fn(), onError,t);
     expect(onError).toHaveBeenCalledWith("Ein Fehler ist aufgetreten. Bitte versuchen sie es erneut!");
   });
 
   it('handles empty password scenario', async () => {
-    (NativeBiometric.isAvailable as MockInstance).mockResolvedValue({ isAvailable: true });
-    (NativeBiometric.verifyIdentity as MockInstance).mockResolvedValue(true);
-    (NativeBiometric.getCredentials as MockInstance).mockResolvedValue({ password: '' });
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: true });
+    (NativeBiometric.verifyIdentity as any).mockResolvedValue(true);
+    (NativeBiometric.getCredentials as any).mockResolvedValue({ password: '' });
     const onEmptyPassword = vi.fn();
     const onError = vi.fn();
     await getPasswordFromFingerprint('www.securePlaner.com', onEmptyPassword, vi.fn(), onError,t);
@@ -121,7 +134,7 @@ describe("getPasswordFromFingerprint", () => {
     const onEmptyPassword = vi.fn();
     const onError = vi.fn();
   
-    (NativeBiometric.getCredentials as MockInstance).mockRejectedValue(new Error('General error'));
+    (NativeBiometric.getCredentials as any).mockRejectedValue(new Error('General error'));
     await getPasswordFromFingerprint('www.securePlaner.com', onEmptyPassword, vi.fn(), onError,t);
   
     expect(onEmptyPassword).toHaveBeenCalled();
@@ -134,14 +147,14 @@ describe("storePasswordFromFingerprint", () => {
   });
 
   it("successfully stores password", async () => {
-    (NativeBiometric.isAvailable as MockInstance).mockResolvedValue({
+    (NativeBiometric.isAvailable as any).mockResolvedValue({
       isAvailable: true,
     });
-    (Device.getId as MockInstance).mockResolvedValue({
+    (Device.getId as any).mockResolvedValue({
       identifier: "deviceIdentifier",
     });
-    (CryptoJS.SHA256 as MockInstance).mockReturnValue("hashedIdentifier");
-    (CryptoJS.TripleDES.encrypt as MockInstance).mockReturnValue({
+    (CryptoJS.SHA256 as any).mockReturnValue("hashedIdentifier");
+    (CryptoJS.TripleDES.encrypt as any).mockReturnValue({
       toString: vi.fn(() => "encryptedPassword"),
     });
 
@@ -155,7 +168,7 @@ describe("storePasswordFromFingerprint", () => {
   });
 
   it('handles case where biometric authentication is not available', async () => {
-    (NativeBiometric.isAvailable as MockInstance).mockResolvedValue({ isAvailable: false });
+    (NativeBiometric.isAvailable as any).mockResolvedValue({ isAvailable: false });
     const onError = vi.fn();
     await storePasswordFromFingerprint('testPassword', vi.fn(), onError,t);
     expect(onError).toHaveBeenCalledWith("Biometrische Authentifizierung nicht verfügbar.");
@@ -169,7 +182,7 @@ describe("storePasswordFromFingerprint", () => {
 
   it('handles error during password storing', async () => {
     const onError = vi.fn();
-    (NativeBiometric.setCredentials as MockInstance).mockRejectedValue(new Error('Test error'));
+    (NativeBiometric.setCredentials as any).mockRejectedValue(new Error('Test error'));
     await storePasswordFromFingerprint('testPassword', vi.fn(), onError,t);
     expect(onError).toHaveBeenCalledWith("Ein Fehler ist aufgetreten. Bitte versuchen sie es erneut!");
   });

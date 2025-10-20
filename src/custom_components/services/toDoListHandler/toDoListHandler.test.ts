@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import ToDoListService from "../../services/toDoListHandler/toDoListHandler";
 import { ToDoList } from "../../types/ToDoList.types";
 import {
@@ -12,12 +13,12 @@ vi.mock("../encryptionEngine/encryptionEngine");
 describe("loadAllToDoLists", () => {
   beforeEach(() => {
     localStorage.clear();
-    (decryptFromStorage as MockInstance).mockClear();
+    (decryptFromStorage as any).mockClear();
   });
 
   it("should load all to-do lists successfully", async () => {
     localStorage.setItem("note1", "encryptedData1");
-    (decryptFromStorage as MockInstance).mockImplementation(() =>
+    (decryptFromStorage as any).mockImplementation(() =>
       Promise.resolve('{"title":"Test","content":"Content"}')
     );
     const result = await ToDoListService.loadAllToDoLists("dummyKey");
@@ -27,7 +28,7 @@ describe("loadAllToDoLists", () => {
 
   it("should handle errors gracefully", async () => {
     localStorage.setItem("note2", "encryptedData2");
-    (decryptFromStorage as MockInstance).mockImplementation(() =>
+    (decryptFromStorage as any).mockImplementation(() =>
       Promise.reject(new Error("Decryption failed"))
     );
 
@@ -114,13 +115,13 @@ describe("saveToDoList", () => {
 
   beforeEach(() => {
     localStorage.clear();
-    (encryptAndStore as MockInstance).mockClear();
-    mockedEncryptAndStore = encryptAndStore as MockInstance;
+    (encryptAndStore as any).mockClear();
+    mockedEncryptAndStore = encryptAndStore as any;
     mockedEncryptAndStore.mockClear();
   });
 
   it("saves a to-do list successfully", async () => {
-    (encryptAndStore as MockInstance).mockResolvedValue(undefined);
+    (encryptAndStore as any).mockResolvedValue(undefined);
 
     await ToDoListService.saveToDoList(toDoList, "dummyKey", "todo_1");
     expect(encryptAndStore).toHaveBeenCalledWith(
@@ -131,7 +132,7 @@ describe("saveToDoList", () => {
   });
 
   it("generates an ID if none is provided", async () => {
-    (encryptAndStore as MockInstance).mockResolvedValue(undefined);
+    (encryptAndStore as any).mockResolvedValue(undefined);
 
     await ToDoListService.saveToDoList(toDoList, "dummyKey");
     expect(encryptAndStore).toHaveBeenCalled();
@@ -141,7 +142,7 @@ describe("saveToDoList", () => {
   });
 
   it("handles encryption failures gracefully", async () => {
-    (encryptAndStore as MockInstance).mockRejectedValue(
+    (encryptAndStore as any).mockRejectedValue(
       new Error("Encryption failed")
     );
 

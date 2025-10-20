@@ -7,7 +7,7 @@ import NavBar from "./container-navBar";
 import "@testing-library/jest-dom";
 
 const mockedNavigate = vi.fn();
-    vi.mock("react-router-dom", () => ({
+    vi.mock("react-router-dom", async () => ({
       ...await vi.importActual("react-router-dom"),
       useNavigate: () => mockedNavigate,
     }));

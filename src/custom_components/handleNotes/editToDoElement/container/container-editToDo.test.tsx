@@ -1,3 +1,4 @@
+import { MockInstance } from 'vitest';
 import ContainerEditTodo from "./container-editToDo";
 import { BrowserRouter as Router } from "react-router-dom";
 import {
@@ -12,17 +13,14 @@ import { ToDoList } from "../../../types/ToDoList.types";
 
 vi.mock("../../../services/toDoListHandler/toDoListHandler", () => ({
   loadToDoList: vi.fn(),
-  saveToDoList: vi.fn() as MockInstance<
-    Promise<void>,
-    [ToDoList, string, string?]
-  >,
+  saveToDoList: vi.fn() as any,
 }));
 
 vi.mock("react-i18next", () => ({
   useTranslation: () => ({ t: (key: string) => key }),
 }));
 
-vi.mock("react-router-dom", () => ({
+vi.mock("react-router-dom", async () => ({
   ...await vi.importActual("react-router-dom"),
   useNavigate: vi.fn(),
   useParams: vi.fn(),
