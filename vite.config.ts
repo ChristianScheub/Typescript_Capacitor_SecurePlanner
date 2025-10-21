@@ -21,5 +21,20 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
     css: true,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'lcov', 'html'],
+      exclude: [
+        'node_modules/',
+        'src/**/*.test.{ts,tsx,js,jsx}',
+        'src/**/*.spec.{ts,tsx,js,jsx}',
+        'src/setupTests.ts',
+        'src/react-app-env.d.ts',
+        'src/vite-env.d.ts',
+        '**/*.d.ts',
+        '**/build/**',
+        '**/dist/**'
+      ]
+    }
   },
 });
