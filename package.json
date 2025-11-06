@@ -1,6 +1,6 @@
 {
   "name": "Secure-Planner",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "private": true,
   "dependencies": {
     "@capacitor/android": "^7.4.3",

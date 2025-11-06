@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "de.scheub.securePlaner"
-    compileSdkVersion 34
+    compileSdkVersion 35
     defaultConfig {
         applicationId "de.scheub.securePlaner"
-        minSdk 22
-        targetSdk 34
-        versionCode 12
-        versionName "1.6.0"
+        minSdk 25
+        targetSdk 35
+        versionCode 13
+        versionName "1.7.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.

@@ -87,7 +87,7 @@
     "path": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@babel/types",
     "licenseFile": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@babel/types/LICENSE"
   },
-  "@capacitor/android@7.4.3": {
+  "@capacitor/android@7.4.4": {
     "licenses": "MIT",
     "repository": "https://github.com/ionic-team/capacitor",
     "publisher": "Ionic Team",
@@ -104,7 +104,7 @@
     "path": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/app",
     "licenseFile": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/app/LICENSE"
   },
-  "@capacitor/cli@7.4.3": {
+  "@capacitor/cli@7.4.4": {
     "licenses": "MIT",
     "repository": "https://github.com/ionic-team/capacitor",
     "publisher": "Ionic Team",
@@ -122,7 +122,7 @@
     "path": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/node_modules/@capacitor/core",
     "licenseFile": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/capacitor-native-biometric/node_modules/@capacitor/core/LICENSE"
   },
-  "@capacitor/core@7.4.3": {
+  "@capacitor/core@7.4.4": {
     "licenses": "MIT",
     "repository": "https://github.com/ionic-team/capacitor",
     "publisher": "Ionic Team",
@@ -146,7 +146,7 @@
     "path": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/filesystem",
     "licenseFile": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@capacitor/filesystem/LICENSE"
   },
-  "@capacitor/ios@7.4.3": {
+  "@capacitor/ios@7.4.4": {
     "licenses": "MIT",
     "repository": "https://github.com/ionic-team/capacitor",
     "publisher": "Ionic Team",
@@ -555,7 +555,7 @@
     "path": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@xmldom/xmldom",
     "licenseFile": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner/node_modules/@xmldom/xmldom/LICENSE"
   },
-  "Secure-Planner@1.6.0": {
+  "Secure-Planner@1.7.0": {
     "licenses": "UNLICENSED",
     "private": true,
     "path": "/Users/christianscheub/Documents/Develope/Capacitor/Repos/SecurePlanner/Typescript_Capacitor_SecurePlanner",
