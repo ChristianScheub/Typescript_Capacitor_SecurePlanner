@@ -15,14 +15,16 @@ describe("fileHandlerHelper", () => {
   describe("generateFileName", () => {
     it("should generate a file name with the current date and time", () => {
       // Arrange
-      const date = new Date("2024-07-07T14:30:15");
-      vi.spyOn(global, "Date").mockImplementation((() => date) as any);
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date("2024-07-07T14:30:15"));
 
       // Act
       const fileName = generateFileName();
 
       // Assert
       expect(fileName).toBe("notes-20240707-143015.txt");
+
+      vi.useRealTimers();
     });
   });
 
@@ -89,21 +91,37 @@ describe("fileHandlerHelper", () => {
       const file = new File(["file content"], "test.txt", { type: "text/plain" });
       const fileReaderMock = {
         readAsText: vi.fn(),
-        onload: vi.fn(),
-        onerror: vi.fn(),
+        onload: null as any,
+        onerror: null as any,
         result: "file content",
       };
 
-      vi.spyOn(window, "FileReader").mockImplementation(() => fileReaderMock as unknown as FileReader);
+      function MockFileReader(this: any) {
+        Object.assign(this, fileReaderMock);
+        fileReaderMock.readAsText = this.readAsText;
+        Object.defineProperty(fileReaderMock, 'onload', {
+          get: () => this.onload,
+          set: (v) => { this.onload = v; },
+          configurable: true,
+        });
+        Object.defineProperty(fileReaderMock, 'onerror', {
+          get: () => this.onerror,
+          set: (v) => { this.onerror = v; },
+          configurable: true,
+        });
+      }
+      vi.stubGlobal("FileReader", MockFileReader);
 
       // Act
       const promise = readFileContent(file);
-      fileReaderMock.onload!({ target: { result: "file content" } } as ProgressEvent<FileReader>);
+      (fileReaderMock as any).onload({ target: { result: "file content" } } as ProgressEvent<FileReader>);
       const content = await promise;
 
       // Assert
       expect(fileReaderMock.readAsText).toHaveBeenCalledWith(file);
       expect(content).toBe("file content");
+
+      vi.unstubAllGlobals();
     });
 
     it("should handle read error", async () => {
@@ -111,17 +129,26 @@ describe("fileHandlerHelper", () => {
       const file = new File(["file content"], "test.txt", { type: "text/plain" });
       const fileReaderMock = {
         readAsText: vi.fn(),
-        onload: vi.fn(),
-        onerror: vi.fn(),
+        onload: null as any,
+        onerror: null as any,
         result: "file content",
         error: new Error("Read error"),
       };
 
-      vi.spyOn(window, "FileReader").mockImplementation(() => fileReaderMock as unknown as FileReader);
+      function MockFileReader(this: any) {
+        Object.assign(this, fileReaderMock);
+        fileReaderMock.readAsText = this.readAsText;
+        Object.defineProperty(fileReaderMock, 'onerror', {
+          get: () => this.onerror,
+          set: (v) => { this.onerror = v; },
+          configurable: true,
+        });
+      }
+      vi.stubGlobal("FileReader", MockFileReader);
 
       // Act
       const promise = readFileContent(file);
-      fileReaderMock.onerror!({ target: { error: new Error("Read error") } } as ProgressEvent<FileReader>);
+      (fileReaderMock as any).onerror({ target: { error: new Error("Read error") } } as ProgressEvent<FileReader>);
 
       // Assert
       await expect(promise).rejects.toThrow("Read error");
@@ -129,6 +156,8 @@ describe("fileHandlerHelper", () => {
         "fileHandlerHelper::readFileContent: Error while reading the file",
         new Error("Read error")
       );
+
+      vi.unstubAllGlobals();
     });
   });
 });

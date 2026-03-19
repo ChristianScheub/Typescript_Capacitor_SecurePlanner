@@ -38,7 +38,7 @@ const DatePickerComponent: React.FC<DatePickerComponentProps> = ({ selectedDate,
   return (
     <DatePicker
       selected={selectedDate}
-      onChange={date => onDateChange("toDoEndDate",date as Date)}
+      onChange={(date: Date | null) => onDateChange("toDoEndDate",date as Date)}
       dateFormat="dd.MM.yyyy"
       customInput={<CustomInput />}
 
