@@ -121,7 +121,7 @@ jobs:
       - name: Build Xcode archive
         run: |
           xcodebuild \
-            -project ios/App/App.xcodeproj \
+            -workspace ios/App/App.xcworkspace \
             -scheme App \
             -configuration Release \
             -destination "generic/platform=iOS" \
