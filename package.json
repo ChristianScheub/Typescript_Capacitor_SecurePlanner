@@ -32,7 +32,7 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && ./node_modules/.bin/license-checker --json --production --out src/modules/legal/usedLibs/licenses.json",
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
